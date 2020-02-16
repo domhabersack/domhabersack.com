@@ -7,16 +7,16 @@
   margin: 0 auto 2.4em;
   width: 100%;
 
-  @media ($query-small) {
+  @include _s {
     margin-bottom: 2.4em;
     margin-top: 0;
   }
 
-  @media ($query-medium) {
+  @include _m {
     width: 100%;
   }
 
-  @media ($query-large) {
+  @include _l {
     margin-bottom: 2.4em;
     margin-top: 0;
     width: 100%;

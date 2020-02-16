@@ -1,0 +1,73 @@
+@mixin _xs {
+  @media (min-width: 420px) {
+    @content;
+  }
+}
+
+@mixin _s {
+  @media (min-width: 540px) {
+    @content;
+  }
+}
+
+@mixin _m {
+  @media (min-width: 780px) {
+    @content;
+  }
+}
+
+@mixin _l {
+  @media (min-width: 960px) {
+    @content;
+  }
+}
+
+@mixin _xl {
+  @media (min-width: 1300px) {
+    @content;
+  }
+}
+
+@mixin _at-breakpoints {
+  @include _xs {
+    $selector: str-insert('#{&}', 'xs\\:', 2);
+
+    @at-root #{$selector} {
+      @content
+    }
+  }
+
+  @include _s {
+    $selector: str-insert('#{&}', 's\\:', 2);
+
+    @at-root #{$selector} {
+      @content
+    }
+  }
+
+  @include _m {
+    $selector: str-insert('#{&}', 'm\\:', 2);
+
+    @at-root #{$selector} {
+      @content
+    }
+  }
+
+  @include _l {
+    $selector: str-insert('#{&}', 'l\\:', 2);
+
+    @at-root #{$selector} {
+      @content
+    }
+  }
+
+  @include _xl {
+    $selector: str-insert('#{&}', 'xl\\:', 2);
+
+    @at-root #{$selector} {
+      @content
+    }
+  }
+
+  @content;
+}

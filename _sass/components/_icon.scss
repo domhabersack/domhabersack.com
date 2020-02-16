@@ -15,12 +15,12 @@
   flex-shrink: 0;
   margin-right: 0.5em;
 
-  @media ($query-small) {
+  @include _s {
     height: 3em;
     width: 3em;
   }
 
-  @media ($query-large) {
+  @include _l {
     height: 3.6em;
     width: 3.6em;
   }

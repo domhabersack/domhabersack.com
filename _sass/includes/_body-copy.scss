@@ -1,11 +1,11 @@
 @mixin body-copy {
   @include _font-size(16, medium);
 
-  @media ($query-medium) {
+  @include _m {
     @include _font-size(18, medium);
   }
 
-  @media ($query-extra-large) {
+  @include _xl {
     @include _font-size(20, medium);
   }
 }

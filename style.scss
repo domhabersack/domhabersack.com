@@ -3,11 +3,14 @@
 @import
   'variables/colors',
 
+  'utility-generators/at-breakpoints',
+
   'utilities/background-color',
   'utilities/border-color',
   'utilities/border-radius',
   'utilities/box-shadow',
   'utilities/color',
+  'utilities/columns',
   'utilities/display',
   'utilities/flexbox',
   'utilities/font-family',
@@ -22,11 +25,9 @@
   'utilities/white-space',
   'utilities/width',
 
-  'functions/columns',
   'functions/hsb',
 
   'font-face',
-  'media-queries',
 
   'includes/body-copy',
   'includes/responsive-container',

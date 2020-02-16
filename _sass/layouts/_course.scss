@@ -11,17 +11,17 @@
   grid-template-columns: 1fr;
   margin-bottom: 4.8em;
 
-  @media ($query-extra-small) {
+  @include _xs {
     grid-row-gap: 1.5em;
     grid-template-columns: repeat(2, 1fr);
   }
 
-  @media ($query-medium) {
+  @include _m {
     grid-row-gap: 2.1em;
     grid-template-columns: repeat(3, 1fr);
   }
 
-  @media ($query-large) {
+  @include _l {
     grid-row-gap: 2.4em;
     // grid-template-columns: repeat(4, 1fr);
   }

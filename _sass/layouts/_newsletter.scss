@@ -6,17 +6,17 @@
   padding-left: 1.875em; /* 30px */;
   position: relative;
 
-  @media ($query-extra-small) {
+  @include _xs {
     margin-bottom: 1.2rem;
     padding-left: 3.5rem;
   }
 
-  @media ($query-medium) {
+  @include _m {
     margin-bottom: 1.2rem;
     padding-left: 3rem;
   }
 
-  @media ($query-large) {
+  @include _l {
     margin-bottom: 1.8rem;
     padding-left: 3.5rem;
   }
@@ -39,20 +39,20 @@
   top: 0;
   width: 2.4em;
 
-  @media ($query-extra-small) {
+  @include _xs {
     background-size: 1.5em;
     height: 2.7em;
     width: 2.7em;
   }
 
-  @media ($query-medium) {
+  @include _m {
     background-size: 1.2em;
     height: 2.4em;
     top: 0.3em;
     width: 2.4em;
   }
 
-  @media ($query-large) {
+  @include _l {
     background-size: 1.5em;
     height: 2.7em;
     width: 2.7em;

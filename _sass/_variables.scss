@@ -3,26 +3,26 @@
   --grid-gutter: 2vw;
   --icon-grid-column-gap: 2vw;
 
-  @media ($query-extra-small) {
+  @include _xs {
     --content-horizontal-padding: 6%;
   }
 
-  @media ($query-small) {
+  @include _s {
     --content-horizontal-padding: 8%;
   }
 
-  @media ($query-medium) {
+  @include _m {
     --content-horizontal-padding: 6%;
     --icon-grid-column-gap: 1.5vw;
   }
 
-  @media ($query-large) {
+  @include _l {
     --content-horizontal-padding: 8%;
     --grid-gutter: 1.5vw;
     --icon-grid-column-gap: 1vw;
   }
 
-  @media ($query-extra-large) {
+  @include _xl {
     --grid-gutter: 20px;
     --content-horizontal-padding: calc(50vw - 54em);
   }

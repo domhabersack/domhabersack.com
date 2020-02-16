@@ -4,17 +4,17 @@
   grid-row-gap: 2.4em;
   grid-template-columns: 1fr;
 
-  @media ($query-small) {
+  @include _s {
     grid-row-gap: 1.5em;
     grid-template-columns: repeat(2, 1fr);
   }
 
-  @media ($query-medium) {
+  @include _m {
     grid-row-gap: 2.1em;
     grid-template-columns: repeat(3, 1fr);
   }
 
-  @media ($query-large) {
+  @include _l {
     grid-template-columns: repeat(4, 1fr);
   }
 }

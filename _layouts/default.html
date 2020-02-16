@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-US" prefix="og: http://ogp.me/ns#">
+<html lang="en-US" prefix="og: http://ogp.me/ns#" class="debug">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -15,11 +15,9 @@
   </head>
 
   <body>
-    <div class="l-default">
-      <div class="l-default__header">
-        <div class="l-default__content">
-          {% include header.html %}
-        </div>
+    <div class="flex flex-column height-full">
+      <div class="flex-noshrink margin-horizontal-m">
+        {% include header.html %}
       </div>
 
       <main class="l-default__main">

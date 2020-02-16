@@ -1,17 +1,11 @@
-.l-default {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-}
-
 .l-default__content {
-  @media ($query-medium) {
+  @include _m {
     margin: 0 auto;
-    width: _columns(10, 12);
+    // width: _columns(10);
   }
 
-  @media ($query-large) {
-    width: _columns(8, 12);
+  @include _l {
+    // width: _columns(8);
   }
 }
 
@@ -28,15 +22,15 @@
 
     margin: 0 0 0.1875em; /* 0 0 3px */
 
-    @media ($query-extra-small) {
+    @include _xs {
       margin-bottom: #{(6 / 18)}em;
     }
 
-    @media ($query-medium) {
+    @include _m {
       margin-bottom: 0.3em; /* 6px */
     }
 
-    @media ($query-large) {
+    @include _l {
       margin-bottom: #{(6 / 22)}em;
     }
   }
@@ -50,19 +44,19 @@
     margin: 0 auto 1.5em;
     padding: 0;
 
-    @media ($query-extra-small) {
+    @include _xs {
       margin-bottom: 1.8em;
-      width: _columns(10, 12);
+      width: _columns(10);
     }
 
-    @media ($query-medium) {
+    @include _m {
       margin-bottom: 2.1em;
       width: _columns(8, 10);
     }
 
-    @media ($query-large) {
+    @include _l {
       margin-bottom: 2.4em;
-      width: _columns(6, 8);
+      width: _columns(9);
     }
   }
 }
@@ -77,14 +71,6 @@
 
 .l-default__footer {
   @include responsive-container;
-
   @include _background-color(gray, 200);
-  flex: none;
-}
-
-.l-default__header {
-  @include responsive-container;
-
-  @include _background-color(white);
   flex: none;
 }

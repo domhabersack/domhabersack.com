@@ -6,19 +6,27 @@
   @each $label, $value in $list {
     @if $label == 0 {
       .background-color-#{"" + $color} {
-        background-color: $value;
+        @include _at-breakpoints {
+          background-color: $value;
+        }
       }
 
       .visited\:background-color-#{"" + $color}:visited {
-        background-color: $value;
+        @include _at-breakpoints {
+          background-color: $value;
+        }
       }
     } @else {
       .background-color-#{"" + $color}-#{$label} {
-        background-color: $value;
+        @include _at-breakpoints {
+          background-color: $value;
+        }
       }
 
       .visited\:background-color-#{"" + $color}-#{$label}:visited {
-        background-color: $value;
+        @include _at-breakpoints {
+          background-color: $value;
+        }
       }
     }
   }

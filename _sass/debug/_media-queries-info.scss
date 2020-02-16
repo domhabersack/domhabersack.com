@@ -12,23 +12,23 @@ html.debug {
     right: 0;
     z-index: 1001;
 
-    @media ($query-extra-small) {
+    @include _xs {
       content: 'extra-small';
     }
 
-    @media ($query-small) {
+    @include _s {
       content: 'small';
     }
 
-    @media ($query-medium) {
+    @include _m {
       content: 'medium';
     }
 
-    @media ($query-large) {
+    @include _l {
       content: 'large';
     }
 
-    @media ($query-extra-large) {
+    @include _xl {
       content: 'extra-large';
     }
   }
