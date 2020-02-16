@@ -1,6 +1,6 @@
 ---
 title: How to name color-variables in Sass
-category: [CSS, Sass]
+categories: ["CSS", "Sass"]
 excerpt: Using semantic names, color-variables defined with CSS-preprocessors become easier to manage.
 hero_alt: A cut orange with it’s outside painted blue.
 hero_caption: Name colors after what they are used for, not what they look like.

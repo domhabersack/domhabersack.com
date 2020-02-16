@@ -1,6 +1,6 @@
 ---
 title: Debunking whitewashed exam statistics
-category: Education
+categories: ["Education"]
 date_updated: 2013-03-19
 excerpt: The official statistics of a recent exam present an incorrectly positive picture.
 hero_alt: Laundry hanging out to dry over a road in a small country town.

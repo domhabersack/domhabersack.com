@@ -1,6 +1,6 @@
 ---
 title: grunt-contrib-sass and Node.js 0.10.8
-category: CSS
+categories: ["CSS"]
 excerpt: Downgrade Node.js to an earlier version to get grunt-contrib-sass working with it.
 hero_alt: Two foxes screaming at each other.
 hero_caption: Unexpected disruptions to your development workflow are no fun.

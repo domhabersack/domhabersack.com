@@ -1,6 +1,6 @@
 ---
 title: Typography test
-category: Design
+categories: ["Design"]
 excerpt: Using this to test the typography of this site
 ---
 <style>

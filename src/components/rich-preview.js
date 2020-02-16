@@ -1,3 +1,10 @@
+import React from 'react';
+
+export default () => (
+  <div />
+);
+
+/*
 {% assign is_post = page.collection == "posts" %}
 {% assign rich_previews = site.static_files | where: "type", "rich-preview" %}
 {% assign slug = page.title | slugify %}
@@ -58,3 +65,4 @@
 
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:creator" content="@{{ site.profiles.twitter }}" />
+*/

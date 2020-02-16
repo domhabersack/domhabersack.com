@@ -1,6 +1,6 @@
 ---
 title: Your API might be sexist
-category: [Equality, Software architecture]
+categories: ["Equality", "Software architecture"]
 excerpt: Gender is not “true” or “false”.
 hero_alt: A wooden mannequin inviting you to have a seat.
 hero_caption: Keep your assumptions on gender out of your products.

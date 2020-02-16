@@ -1,6 +1,6 @@
 ---
 title: Make your time count
-category: Inspiration
+categories: ["Inspiration"]
 excerpt: When working in tech, we can do a great many things, some of which are absolutely not worth doing.
 hero_alt: An hourglass with it’s contents running through to the bottom half.
 hero_caption: Just because a product can be created does not mean it deserves to be.

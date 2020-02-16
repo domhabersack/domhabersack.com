@@ -1,6 +1,6 @@
 ---
 title: Screencasts on Standard ML in German
-category: [Education, Functional programming]
+categories: ["Education", "Functional programming"]
 excerpt: A well-intentioned but ultimately unfair move by a lecture’s organizers inspired me to record a number of screencasts on functional programming.
 hero_alt: An illuminated sign that says “STANDARD”.
 hero_caption: To experiment with a new medium, I recorded some screencasts on functional programming.

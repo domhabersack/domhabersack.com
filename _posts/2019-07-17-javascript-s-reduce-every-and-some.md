@@ -1,6 +1,6 @@
 ---
 title: JavaScript’s reduce, every, and some
-category: JavaScript
+categories: ["JavaScript"]
 tags: Array, reduce, every, some
 date: 2019-07-17 21:13
 excerpt: What happens when you forget to specify reduce’s second parameter?

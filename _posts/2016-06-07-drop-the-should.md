@@ -1,6 +1,6 @@
 ---
 title: Drop the “should”
-category: Language hacks
+categories: ["Language hacks"]
 excerpt: The word “should” is often completely unnecessary. Avoiding it makes your language more assertive.
 hero_alt: A person’s legs dangling off of a skyscraper at a dangerous height.
 hero_caption: Language becomes more assertive if we avoid the word “should”.

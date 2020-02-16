@@ -1,6 +1,6 @@
 ---
 title: On lazy journalism
-category: Rant
+categories: ["Rant"]
 excerpt: Some bogus “journalism” led to me inappropriately being quoted on the death of a former colleague.
 hero_alt: A lion yawning.
 hero_caption: Without proper research, “news” becomes sensational and hurtful with little regard to the people involved.

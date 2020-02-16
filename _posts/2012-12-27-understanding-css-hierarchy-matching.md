@@ -1,6 +1,6 @@
 ---
 title: Understanding CSS hierarchy-matching
-category: CSS
+categories: ["CSS"]
 excerpt: Understanding how browsers match CSS-selectors and HTML helps us write better stylesheets.
 hero_alt: An exit-sign with an arrow pointing to the left.
 hero_caption: We can write better CSS-selectors once we know how browsers interpret them.

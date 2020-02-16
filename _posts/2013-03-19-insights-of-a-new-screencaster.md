@@ -1,6 +1,6 @@
 ---
 title: Insights of a new screencaster
-category: Education
+categories: ["Education"]
 excerpt: Publishing screencasts taught me what to look out for when creating infoproducts.
 hero_alt: A cup of coffee with the word “begin” printed on it.
 hero_caption: What goes into making a good screencast?

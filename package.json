@@ -1,0 +1,27 @@
+{
+  "name": "islovely.co",
+  "private": true,
+  "description": "Personal portfolio",
+  "version": "0.1.0",
+  "author": "Dom Habersack <dom@islovely.co>",
+  "dependencies": {
+    "gatsby": "2.19.7",
+    "gatsby-plugin-postcss": "2.1.20",
+    "gatsby-plugin-sass": "2.1.28",
+    "gatsby-source-filesystem": "2.1.46",
+    "gatsby-transformer-remark": "2.6.51",
+    "node-sass": "4.13.1",
+    "postcss-combine-media-query": "1.0.0",
+    "react": "16.12.0",
+    "react-dom": "16.12.0"
+  },
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop --host=0.0.0.0",
+    "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
+    "start": "npm run develop",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+  }
+}

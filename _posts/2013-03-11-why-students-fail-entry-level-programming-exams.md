@@ -1,6 +1,6 @@
 ---
 title: Why students fail entry-level programming exams
-category: Education
+categories: ["Education"]
 excerpt: The common approach to teaching development is rarely tailored to newcomers, which results in high failure and dropout rates.
 hero_alt: A narrow walkway that leads into a modern, menacing-looking building.
 hero_caption: If a lecture “filters out” many students, it’s not a good lecture.

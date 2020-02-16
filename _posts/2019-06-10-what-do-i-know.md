@@ -1,6 +1,6 @@
 ---
 title: What do I know?
-category: [Education, Blogging]
+categories: ["Education", "Blogging"]
 date: 2019-06-10 18:16
 excerpt: You know a lot of things others don’t. Help them by sharing what you know, no matter how easy or obvious you might think it is.
 hero_alt: A tiny plant that is growing.

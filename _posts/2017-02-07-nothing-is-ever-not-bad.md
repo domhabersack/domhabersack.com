@@ -1,6 +1,6 @@
 ---
 title: Nothing is ever “not bad”
-category: Language hacks
+categories: ["Language hacks"]
 excerpt: Camouflaged as a pleasantry, we can show appreciation much more effectively than through using “that’s not bad”.
 hero_alt: Colorful and happy balloons in front of a brightly colored wall.
 hero_caption: So many alternatives to “that’s not bad” are much better compliments.

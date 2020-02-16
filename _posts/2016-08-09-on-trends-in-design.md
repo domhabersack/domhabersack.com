@@ -1,6 +1,6 @@
 ---
 title: On trends in design
-category: Design
+categories: ["Design"]
 excerpt: Trends make defining a product’s visual appearance easier, but they come with some drawbacks.
 hero_alt: An orange siren on a completely orange background.
 hero_caption: If you blindly follow trends, you become indistinguishable from those around you.

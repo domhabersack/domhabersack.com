@@ -1,6 +1,6 @@
 ---
 title: Painless installation of SML on OS X
-category: [macOS, Functional programming]
+categories: ["macOS", "Functional programming"]
 excerpt: Homebrew enables a hassle- and clutter-free installation of SML/NJ on your system.
 hero_alt: A neon sign saying “and breathe” that is covered by greenery.
 hero_caption: Using Homebrew, we can quickly set up a development environment for Standard ML on OS X.

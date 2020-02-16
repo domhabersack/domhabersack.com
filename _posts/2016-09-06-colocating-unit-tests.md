@@ -1,6 +1,6 @@
 ---
 title: Why it’s best to colocate unit tests
-category: Software architecture
+categories: ["Software architecture"]
 excerpt: Grouping unit tests and the code they test is much more maintainable than keeping them in separate directories.
 hero_alt: Pins spread out over a map of the world.
 hero_caption: Keep your tests close to the code they test instead of spreading them out over your codebase.

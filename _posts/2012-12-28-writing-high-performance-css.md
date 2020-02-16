@@ -1,6 +1,6 @@
 ---
 title: Writing high-performance CSS
-category: CSS
+categories: ["CSS"]
 excerpt: Aside from the established best practices for reducing load times, a few things that can be done to stylesheets to make browsers render pages faster.
 hero_alt: Goal markers on a running track.
 hero_caption: We can reduce the time it takes browsers to interpret stylesheets by following a few best practices.

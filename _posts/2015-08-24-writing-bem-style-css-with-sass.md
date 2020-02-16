@@ -1,6 +1,6 @@
 ---
 title: Writing BEM-style CSS with Sass
-category: [CSS, Sass]
+categories: ["CSS", "Sass"]
 excerpt: The &-operator in Sass can greatly reduce the typing work required when using BEM in your stylesheets.
 hero_alt: A giant ampersand-character painted on a wall.
 hero_caption: Sass’ &-operator reduces the amount of typing we need to do when using BEM.

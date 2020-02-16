@@ -1,6 +1,6 @@
 ---
 title: What to consider when picking a library or plugin
-category: Software architecture
+categories: ["Software architecture"]
 excerpt: How do we decide between hundreds of libraries? When does “roll your own” make sense?
 hero_alt: A bookshelf filled with hundreds of books.
 hero_caption: With so many libraries available, it’s difficult to pick the “right” one.
