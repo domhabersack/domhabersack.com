@@ -2,8 +2,8 @@
 title: Your API might be sexist
 categories: ["Equality", "Software architecture"]
 excerpt: Gender is not “true” or “false”.
-hero_alt: A wooden mannequin inviting you to have a seat.
-hero_caption: Keep your assumptions on gender out of your products.
+heroAlt: A wooden mannequin inviting you to have a seat.
+heroCaption: Keep your assumptions on gender out of your products.
 ---
 I recently came across an API that exposed a reasonable but unfortunate design decision, the specifics of which are irrelevant safe for the fact that the data in question concerned humans in one form or another. It is described well in the following simplification:
 

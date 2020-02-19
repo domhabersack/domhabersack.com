@@ -3,8 +3,8 @@ title: What do I know?
 categories: ["Education", "Blogging"]
 date: 2019-06-10 18:16
 excerpt: You know a lot of things others don’t. Help them by sharing what you know, no matter how easy or obvious you might think it is.
-hero_alt: A tiny plant that is growing.
-hero_caption: Every tiny bit of information could help someone out.
+heroAlt: A tiny plant that is growing.
+heroCaption: Every tiny bit of information could help someone out.
 ---
 I recently started [an email newsletter helping people improve their English](http://hellotogether.academy). I manage the content and list on [ConvertKit](https://mbsy.co/convertkit/29937053) (👈 affiliate link), which is a fantastic tool. Their motto is highly motivating: **“teach everything you know”**.
 

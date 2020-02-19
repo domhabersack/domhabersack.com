@@ -59,6 +59,12 @@ exports.onCreateNode = ({ actions, getNode, node }) => {
 
     actions.createNodeField({
       node,
+      name: `permalink`,
+      value: `/posts/${slug}`
+    })
+
+    actions.createNodeField({
+      node,
       name: `hero`,
       value: `/assets/hero.jpg`
     })

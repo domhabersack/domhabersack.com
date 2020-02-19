@@ -3,11 +3,11 @@ layout: default
 ---
 {% capture hero %}
   <figure class="l-post__hero">
-    <img alt="{{ page.hero_alt }}" src="/assets/heroes/{{ page.title | slugify }}.jpg">
+    <img alt="{{ page.heroAlt }}" src="/assets/heroes/{{ page.title | slugify }}.jpg">
 
-    {% if page.hero_caption %}
+    {% if page.heroCaption %}
       <figcaption>
-        {{ page.hero_caption }}
+        {{ page.heroCaption }}
       </figcaption>
     {% endif %}
   </figure>

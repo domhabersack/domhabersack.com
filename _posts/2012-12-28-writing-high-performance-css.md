@@ -2,8 +2,8 @@
 title: Writing high-performance CSS
 categories: ["CSS"]
 excerpt: Aside from the established best practices for reducing load times, a few things that can be done to stylesheets to make browsers render pages faster.
-hero_alt: Goal markers on a running track.
-hero_caption: We can reduce the time it takes browsers to interpret stylesheets by following a few best practices.
+heroAlt: Goal markers on a running track.
+heroCaption: We can reduce the time it takes browsers to interpret stylesheets by following a few best practices.
 ---
 **Disclaimer:** Browsers are incredibly fast at parsing CSS, which makes gains through optimization marginal at best. There are a lot of other areas to tackle first to improve load times, like lowering the number of requests as well as file sizes of assets such as stylesheets, images and JavaScript.
 

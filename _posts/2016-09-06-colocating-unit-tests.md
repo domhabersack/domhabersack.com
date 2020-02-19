@@ -2,8 +2,8 @@
 title: Why it’s best to colocate unit tests
 categories: ["Software architecture"]
 excerpt: Grouping unit tests and the code they test is much more maintainable than keeping them in separate directories.
-hero_alt: Pins spread out over a map of the world.
-hero_caption: Keep your tests close to the code they test instead of spreading them out over your codebase.
+heroAlt: Pins spread out over a map of the world.
+heroCaption: Keep your tests close to the code they test instead of spreading them out over your codebase.
 ---
 Most JavaScript-based frontend frameworks do not impose a “one true directory structure” on the developers using them. While this allows us to use whatever model we are most comfortable with, it also does not provide guidelines or best practices to follow. Of the various valid approaches, not all are equally well-suited to projects that grow over time, impacting the manageability of our applications.
 

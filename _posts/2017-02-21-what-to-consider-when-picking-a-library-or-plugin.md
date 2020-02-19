@@ -2,8 +2,8 @@
 title: What to consider when picking a library or plugin
 categories: ["Software architecture"]
 excerpt: How do we decide between hundreds of libraries? When does “roll your own” make sense?
-hero_alt: A bookshelf filled with hundreds of books.
-hero_caption: With so many libraries available, it’s difficult to pick the “right” one.
+heroAlt: A bookshelf filled with hundreds of books.
+heroCaption: With so many libraries available, it’s difficult to pick the “right” one.
 ---
 When adding new features to our applications, we are often faced with a choice: do we build it from scratch, or can we use one of the many solutions that are freely available in the form of libraries and plugins?
 

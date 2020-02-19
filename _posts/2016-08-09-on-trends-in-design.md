@@ -2,8 +2,8 @@
 title: On trends in design
 categories: ["Design"]
 excerpt: Trends make defining a product’s visual appearance easier, but they come with some drawbacks.
-hero_alt: An orange siren on a completely orange background.
-hero_caption: If you blindly follow trends, you become indistinguishable from those around you.
+heroAlt: An orange siren on a completely orange background.
+heroCaption: If you blindly follow trends, you become indistinguishable from those around you.
 ---
 Working in design is challenging. Everybody has at least some opinion about it, regardless of their background. They might not always be able to put into words (or pictures) what they consider to be “good design”, but they certainly know what they don’t like once they see it. We can all look at something and instantly know if we find it attractive or repulsive. It is instinctual, and as such difficult to put into concrete terms.
 

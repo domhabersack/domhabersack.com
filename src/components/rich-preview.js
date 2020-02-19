@@ -30,8 +30,8 @@ export default () => (
 
 <meta property="og:image" content="{{ image.path | absolute_url }}" />
 
-{% if page.hero_alt %}
-  <meta property="og:image:alt" content="{{ page.hero_alt }}" />
+{% if page.heroAlt %}
+  <meta property="og:image:alt" content="{{ page.heroAlt }}" />
 {% endif %}
 
 <meta property="og:image:height" content="360" />

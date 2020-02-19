@@ -2,8 +2,8 @@
 title: Nothing is ever “not bad”
 categories: ["Language hacks"]
 excerpt: Camouflaged as a pleasantry, we can show appreciation much more effectively than through using “that’s not bad”.
-hero_alt: Colorful and happy balloons in front of a brightly colored wall.
-hero_caption: So many alternatives to “that’s not bad” are much better compliments.
+heroAlt: Colorful and happy balloons in front of a brightly colored wall.
+heroCaption: So many alternatives to “that’s not bad” are much better compliments.
 ---
 You might fondly remember the post in which I urged readers to [drop the “should”](/posts/drop-the-should). Several months in, I can say that I have successfully stuck to that change in the language that I use, and my writing has gotten more precise because of it. I also now feel bad whenever I catch myself still falling back to using “should”, because it is usually a cop-out preventing me from stating my honest opinion. It’s an ongoing process, but one that I am very happy about.
 

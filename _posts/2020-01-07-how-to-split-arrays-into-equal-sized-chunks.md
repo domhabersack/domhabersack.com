@@ -3,8 +3,8 @@ title: How to split arrays into equal-sized chunks
 categories: ["JavaScript"]
 date: 2020-01-07 08:27
 excerpt: JavaScript does not provide a function to split arrays into several smaller arrays. Let’s build one ourselves.
-hero_alt: A lot of rubber ducks, neatly organized on shelves.
-hero_caption: Look at all these neatly grouped rubber ducks.
+heroAlt: A lot of rubber ducks, neatly organized on shelves.
+heroCaption: Look at all these neatly grouped rubber ducks.
 ---
 JavaScript provides a way to split strings into arrays with [`split()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split). If we want to split arrays into smaller arrays, we have to do so by hand, as there is no native function for that. To break a long list of elements into smaller groups, we can use a combination of [`map()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map) and [`slice()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/slice).
 

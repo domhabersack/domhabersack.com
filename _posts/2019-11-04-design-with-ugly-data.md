@@ -3,8 +3,8 @@ title: Design with ugly data
 categories: ["Design"]
 date: 2019-11-05 8:23
 excerpt: By using imperfect images and texts in our mockups, we can design more robust layouts.
-hero_alt: An overripe banana that is presented with an origami butterfly and flower petals.
-hero_caption: Make sure your design looks good even with unexpected and unusual content.
+heroAlt: An overripe banana that is presented with an origami butterfly and flower petals.
+heroCaption: Make sure your design looks good even with unexpected and unusual content.
 ---
 There is no shortage of beautiful, pixel-perfect design mockups on the web. [dribbble](https://dribbble.com) is full of designs so good it’s intimidating. If a mockup seems _too_ perfect to you, you might be right. Designs built only with “ideal content” in mind could break when faced with real texts and images. By designing with ugly data from the start, we can design more robust layouts.
 

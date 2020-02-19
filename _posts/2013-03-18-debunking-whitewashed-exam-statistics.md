@@ -3,8 +3,8 @@ title: Debunking whitewashed exam statistics
 categories: ["Education"]
 date_updated: 2013-03-19
 excerpt: The official statistics of a recent exam present an incorrectly positive picture.
-hero_alt: Laundry hanging out to dry over a road in a small country town.
-hero_caption: If we look into the numbers, an exam’s performance record is less positive than it is being sold as.
+heroAlt: Laundry hanging out to dry over a road in a small country town.
+heroCaption: If we look into the numbers, an exam’s performance record is less positive than it is being sold as.
 ---
 **Edit (March 19, 2013):** I updated my calculations at the end to no longer include phantom students. While their inclusion was meant to highlight a disregard of their needs, I inadvertently and unfairly ended up distorting the numbers in favor of my argument.
 

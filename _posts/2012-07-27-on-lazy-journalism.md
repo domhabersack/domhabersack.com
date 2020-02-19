@@ -2,8 +2,8 @@
 title: On lazy journalism
 categories: ["Rant"]
 excerpt: Some bogus “journalism” led to me inappropriately being quoted on the death of a former colleague.
-hero_alt: A lion yawning.
-hero_caption: Without proper research, “news” becomes sensational and hurtful with little regard to the people involved.
+heroAlt: A lion yawning.
+heroCaption: Without proper research, “news” becomes sensational and hurtful with little regard to the people involved.
 ---
 A few weeks ago Alan McCandlish, a Kiwi and former colleague of mine, died basejumping in Switzerland. Many friends paid tribute to him on social media, most of them via Facebook. I, on the other hand, took a slightly more “public” approach and sent out a tweet:
 

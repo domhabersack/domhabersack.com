@@ -2,8 +2,8 @@
 title: grunt-contrib-sass and Node.js 0.10.8
 categories: ["CSS"]
 excerpt: Downgrade Node.js to an earlier version to get grunt-contrib-sass working with it.
-hero_alt: Two foxes screaming at each other.
-hero_caption: Unexpected disruptions to your development workflow are no fun.
+heroAlt: Two foxes screaming at each other.
+heroCaption: Unexpected disruptions to your development workflow are no fun.
 ---
 Over the last few weeks, I have become a massive fan of [Grunt](http://gruntjs.com/). Amongst other things, it makes development with [Sass](http://sass-lang.com/) and [CoffeeScript](http://coffeescript.org/) much easier by running their compile-processes automatically and reloading the browser via LiveReload. It basically gives you frontend-superpowers.
 

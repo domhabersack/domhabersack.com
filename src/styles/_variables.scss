@@ -1,6 +1,5 @@
 :root {
   --content-horizontal-padding: 4%;
-  --grid-gutter: 2vw;
   --icon-grid-column-gap: 2vw;
 
   @include _xs {
@@ -18,12 +17,10 @@
 
   @include _l {
     --content-horizontal-padding: 8%;
-    --grid-gutter: 1.5vw;
     --icon-grid-column-gap: 1vw;
   }
 
   @include _xl {
-    --grid-gutter: 20px;
     --content-horizontal-padding: calc(50vw - 54em);
   }
 }

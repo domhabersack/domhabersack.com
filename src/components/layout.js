@@ -15,10 +15,6 @@ export default ({ children }) => (
           include breadcrumbs.html
         </p>
 
-        <h1>
-          page.title
-        </h1>
-
         {children}
       </div>
     </main>
