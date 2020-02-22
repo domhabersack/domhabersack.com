@@ -1,41 +1,34 @@
 import React from 'react'
 
 import Layout from '../components/layout'
+import LandingPageBlock from '../components/landing-page-block'
 
 export default () => (
   <Layout>
-    <div className="align-items-center flex flex-column-reverse justify-between margin-bottom-xxl m:flex-row">
-      <div className="m:columns-8">
-        <h1 className="font-size-36-short">
+    <div className="align-items-center flex flex-column-reverse justify-between margin-bottom-xxl s:align-items-start s:flex-row">
+      <div className="s:columns-8 m:columns-7 xl:columns-8">
+        <h1 className="font-size-30-short xl:font-size-36-medium">
           Learn web development through courses tailor-made for beginners.
         </h1>
 
         <p>
-          Level up your skills from basic to advanced with videos ???
+          Level up your skills from basic to advanced with videos on HTML, CSS, JavaScript, and more.
         </p>
 
         <p>
-          <a className="background-color-yellow-400 border-radius-xl box-shadow-s color-gray-900 inline-block padding-horizontal-xl padding-vertical-m" href="/courses">
+          <a className="background-color-yellow-400 border-radius-xl box-shadow-s color-gray-900 inline-block padding-horizontal-xl padding-vertical-m visited:color-gray-900" href="/courses">
             See all courses
           </a>
         </p>
       </div>
 
-      <div className="columns-12 xs:columns-10 s:columns-8 m:columns-6 l:columns-4 xl:columns-2">
-        <img src="/assets/flame/flame-welcome.png" />
+      <div className="columns-8 xs:columns-6 s:columns-4 m:columns-5 xl:columns-4">
+        <img alt="" src="/assets/flame/flame-welcome.png" />
       </div>
     </div>
 
-    <div className="align-items-center flex flex-column margin-bottom-l xl:align-items-start xl:justify-between">
-      <div className="columns-8 xl:columns-4">
-        <img src="/assets/flame/flame-page-under-construction.png" />
-      </div>
-
-      <div className="xl:columns-8">
-        <h2 className="font-size-24-medium">
-          These courses take you from novice to advanced to senior developer.
-        </h2>
-
+    <div class="margin-bottom-xxl">
+      <LandingPageBlock heading="These courses take you from novice to advanced to senior developer." imageUrl="/assets/flame/flame-page-under-construction.png">
         <p>
           When you are just starting out, it is difficult to know where to invest your energy. What are you supposed to learn first? There are so many interesting technologies we could to use, with new ones coming out all the time. I will help you take your first steps by teaching you everything you need to get started.
         </p>
@@ -43,19 +36,11 @@ export default () => (
         <p>
           If you already know enough of the basics to use a technology, I will show you how to unlock their full potential. Together, we will dive into their advanced features so you can work with them more efficiently. We will learn how to get the most out of everything you work with so you can get more work done both better and faster.
         </p>
-      </div>
+      </LandingPageBlock>
     </div>
 
-    <div className="align-items-start flex justify-between margin-bottom-l">
-      <div className="columns-4">
-        <img src="/assets/flame/flame-books.png" />
-      </div>
-
-      <div className="columns-8">
-        <h2 className="font-size-24-medium">
-          Reading documentation is boring. Let me do that part for you.
-        </h2>
-
+    <div class="margin-bottom-xxl">
+      <LandingPageBlock heading="Reading documentation is boring. Let me do that part for you." imageUrl="/assets/flame/flame-books.png">
         <p>
           Documentation can be a tough read. It throws a lot of new and unfamiliar terms at you and expects you to “get it”. Abstract explanations and variables called foo and bar make for a terrible learning experience.
         </p>
@@ -67,28 +52,18 @@ export default () => (
         <p>
           Don’t believe me? Here is a free sample taken from one of our courses:
         </p>
-      </div>
+      </LandingPageBlock>
     </div>
 
-    <div className="align-items-start flex justify-between margin-bottom-l">
-      <div className="columns-4">
-        <img src="/assets/flame/flame-no-connection.png" />
-      </div>
+    <LandingPageBlock heading="Go from “changing random stuff until it works” to knowing what you are doing." imageUrl="/assets/flame/flame-no-connection.png">
+      <p>
+        Knowing “just enough to be dangerous” is, well, dangerous. If you try to fix bugs by throwing more code at a problem, you are only putting temporary bandaids on them. Those bugs are coming back to haunt you, and they will be much harder to fix when they do.
+      </p>
 
-      <div className="columns-8">
-        <h2 className="font-size-24-medium">
-          Go from “changing random stuff until it works” to knowing what you are doing.
-        </h2>
-
-        <p>
-          Knowing “just enough to be dangerous” is, well, dangerous. If you try to fix bugs by throwing more code at a problem, you are only putting temporary bandaids on them. Those bugs are coming back to haunt you, and they will be much harder to fix when they do.
-        </p>
-
-        <p>
-          We will explore how to find the causes of different problems and learn to solve them methodically. This gives you the skills necessary to tackle any unforeseen challenges with ease. Those bugs won’t know what hit them!
-        </p>
-      </div>
-    </div>
+      <p>
+        We will explore how to find the causes of different problems and learn to solve them methodically. This gives you the skills necessary to tackle any unforeseen challenges with ease. Those bugs won’t know what hit them!
+      </p>
+    </LandingPageBlock>
   </Layout>
 )
 

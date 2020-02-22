@@ -3,7 +3,9 @@
 }
 
 .align-items-start {
-  align-items: start;
+  @include _at-breakpoints {
+    align-items: start;
+  }
 }
 
 .flex-column {
@@ -51,7 +53,9 @@
 }
 
 .justify-between {
-  justify-content: space-between;
+  @include _at-breakpoints {
+    justify-content: space-between;
+  }
 }
 
 .justify-center {
