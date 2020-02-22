@@ -4,26 +4,9 @@ import Layout from '../components/layout'
 
 export default () => (
   <Layout>
-    <div
-      class="
-        align-items-center
-        flex
-        flex-column-reverse
-        justify-between
-        margin-bottom-xxl
-      "
-    >
-      <div
-        class="
-          background-color-yellow-300
-          m:columns-8
-        "
-      >
-        <h1
-          class="
-            font-size-36-short
-          "
-        >
+    <div className="align-items-center flex flex-column-reverse justify-between margin-bottom-xxl m:flex-row">
+      <div className="m:columns-8">
+        <h1 className="font-size-36-short">
           Learn web development through courses tailor-made for beginners.
         </h1>
 
@@ -32,33 +15,24 @@ export default () => (
         </p>
 
         <p>
-          <a class="background-color-yellow-400 border-radius-xl box-shadow-s color-gray-900 inline-block padding-horizontal-xl padding-vertical-m" href="/courses">
+          <a className="background-color-yellow-400 border-radius-xl box-shadow-s color-gray-900 inline-block padding-horizontal-xl padding-vertical-m" href="/courses">
             See all courses
           </a>
         </p>
       </div>
 
-      <div
-        class="
-          background-color-yellow-400
-          columns-12
-          xs:columns-10
-          s:columns-8
-          m:columns-6
-          l:columns-4
-          xl:columns-2
-        ">
-          <img src="/assets/flame/flame-welcome.png" />
+      <div className="columns-12 xs:columns-10 s:columns-8 m:columns-6 l:columns-4 xl:columns-2">
+        <img src="/assets/flame/flame-welcome.png" />
       </div>
     </div>
 
-    <div class="align-items-start flex justify-between margin-bottom-l">
-      <div class="columns-4-">
+    <div className="align-items-center flex flex-column margin-bottom-l xl:align-items-start xl:justify-between">
+      <div className="columns-8 xl:columns-4">
         <img src="/assets/flame/flame-page-under-construction.png" />
       </div>
 
-      <div class="columns-8">
-        <h2 class="font-size-24-medium">
+      <div className="xl:columns-8">
+        <h2 className="font-size-24-medium">
           These courses take you from novice to advanced to senior developer.
         </h2>
 
@@ -72,13 +46,13 @@ export default () => (
       </div>
     </div>
 
-    <div class="align-items-start flex justify-between margin-bottom-l">
-      <div class="columns-4">
+    <div className="align-items-start flex justify-between margin-bottom-l">
+      <div className="columns-4">
         <img src="/assets/flame/flame-books.png" />
       </div>
 
-      <div class="columns-8">
-        <h2 class="font-size-24-medium">
+      <div className="columns-8">
+        <h2 className="font-size-24-medium">
           Reading documentation is boring. Let me do that part for you.
         </h2>
 
@@ -96,13 +70,13 @@ export default () => (
       </div>
     </div>
 
-    <div class="align-items-start flex justify-between margin-bottom-l">
-      <div class="columns-4">
+    <div className="align-items-start flex justify-between margin-bottom-l">
+      <div className="columns-4">
         <img src="/assets/flame/flame-no-connection.png" />
       </div>
 
-      <div class="columns-8">
-        <h2 class="font-size-24-medium">
+      <div className="columns-8">
+        <h2 className="font-size-24-medium">
           Go from “changing random stuff until it works” to knowing what you are doing.
         </h2>
 

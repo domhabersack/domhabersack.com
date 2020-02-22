@@ -1,16 +1,17 @@
 $columns: 12;
 $color: rgba(#FC7576, 0.25);
-$column-width: calc((100% / #{$columns}) - var(--grid-gutter));
+$column-width: calc((100% - #{($columns - 1)} * var(--grid-gutter)) / #{$columns});
 
-html.debug {
+html.debug body {
   position: relative;
 }
 
-html.debug::before {
+html.debug body::before {
   background-image: repeating-linear-gradient(to right, $color, $color $column-width, transparent $column-width, transparent calc(100% / #{$columns}));
   background-size: calc(100% + var(--grid-gutter)) 100%;
   bottom: 0;
   content: '';
+  font-size: 1rem;
   left: var(--content-horizontal-padding);
   margin: 0 auto;
   pointer-events: none;

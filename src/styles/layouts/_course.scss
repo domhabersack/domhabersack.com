@@ -6,7 +6,7 @@
 
 .l-course__videos {
   display: grid;
-  grid-column-gap: var(--grid-gutter);
+  // @include grid-column-gap;
   grid-row-gap: 2.4em;
   grid-template-columns: 1fr;
   margin-bottom: 4.8em;
