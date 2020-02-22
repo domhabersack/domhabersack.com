@@ -2,7 +2,6 @@
 title: JavaScript’s reduce, every, and some
 categories: ["JavaScript"]
 tags: Array, reduce, every, some
-date: 2019-07-17 21:13
 excerpt: What happens when you forget to specify reduce’s second parameter?
 heroAlt: A dark spiralling staircase going down.
 heroCaption: When avoiding loops, look out for some pitfalls.

@@ -1,7 +1,6 @@
 ---
 title: Design with ugly data
 categories: ["Design"]
-date: 2019-11-05 8:23
 excerpt: By using imperfect images and texts in our mockups, we can design more robust layouts.
 heroAlt: An overripe banana that is presented with an origami butterfly and flower petals.
 heroCaption: Make sure your design looks good even with unexpected and unusual content.

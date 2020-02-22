@@ -18,7 +18,7 @@ export default ({ date }) => (
       </span>
 
       <span className="color-gray-500 font-weight-400">
-        {formatDate(date, "%B %-d, %Y")}
+        {formatDate(date)}
       </span>
     </div>
   </div>

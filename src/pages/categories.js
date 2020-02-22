@@ -42,11 +42,12 @@ export const pageQuery = graphql`
       edges {
         node {
           fields {
+            date
             permalink
+            slug
           }
           frontmatter {
             categories
-            date
             excerpt
             heroAlt
             heroCaption

@@ -9,10 +9,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const result = await graphql(`
     {
       allMarkdownRemark(
-        sort: {
-          fields: [frontmatter___date],
-          order: DESC
-        }
         limit: 1000
       ) {
         edges {
@@ -49,7 +45,13 @@ exports.onCreateNode = ({ actions, getNode, node }) => {
   const parent = getNode(node.parent)
 
   if (parent && parent.sourceInstanceName === 'posts') {
-    const slug = parent.name.match(/^\d{4}-\d{2}-\d{2}-(.*)/)[1]
+    const [, date, slug] = parent.name.match(/^(\d{4}-\d{2}-\d{2})-(.*)/)
+
+    actions.createNodeField({
+      node,
+      name: `date`,
+      value: date
+    })
 
     actions.createNodeField({
       node,

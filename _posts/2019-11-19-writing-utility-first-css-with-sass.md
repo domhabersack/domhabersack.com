@@ -1,7 +1,6 @@
 ---
 title: Writing utility-first CSS with Sass
 categories: ["CSS", "Sass"]
-date: 2019-11-19 9:07
 excerpt: We can use maps and loops in Sass to auto-generate many classes used in utility-first CSS.
 heroAlt: Three potted plants vertically aligned in a row. They look almost identical and only differ in their color.
 heroCaption: These look almost identical. It’ll make sense in a bit.

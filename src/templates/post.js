@@ -28,10 +28,12 @@ export const pageQuery = graphql`
         eq: $slug
       }
     }) {
+      fields {
+        date
+      }
       html
       frontmatter {
         title
-        date
       }
     }
   }

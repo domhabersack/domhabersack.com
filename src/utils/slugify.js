@@ -1,1 +1,1 @@
-export default text => text
+export default text => text.toLowerCase().replace(/ /g, '-')

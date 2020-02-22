@@ -6,7 +6,7 @@ import Tag from './tag'
 export default ({ post }) => (
   <article className="background-color-white border-radius-xs box-shadow-s flex flex-column height-full overflow-hidden">
     <a href={post.fields.permalink}>
-      <img alt={post.frontmatter.heroAlt} className="width-full" src={`/assets/heroes/${post.frontmatter.title}--teaser.jpg`} />
+      <img alt={post.frontmatter.heroAlt} className="width-full" src={`/assets/heroes/${post.fields.slug}--teaser.jpg`} />
     </a>
 
     <div className="flex flex-column height-full padding-horizontal-s padding-vertical-m">
@@ -28,7 +28,7 @@ export default ({ post }) => (
         ))}
       </div>
 
-      <PostMeta date={post.frontmatter.date} />
+      <PostMeta date={post.fields.date} />
     </div>
   </article>
 )
