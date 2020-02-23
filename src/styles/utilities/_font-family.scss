@@ -50,12 +50,3 @@
 .sans-serif {
   @include _sans-serif;
 }
-
-@mixin _serif {
-  font-family: source-serif-pro, // 300, 300 italic, 600, 600 italic
-               serif;
-}
-
-.serif {
-  @include _serif;
-}

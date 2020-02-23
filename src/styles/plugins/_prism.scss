@@ -1,0 +1,124 @@
+// .highlight {
+//   .c {
+//     @include _color(blue, 400);
+//   }
+//
+//   .k {
+//     @include _color(yellow, 400);
+//   }
+//
+//   .kc {
+//     @include _color(purple, 400);
+//   }
+//
+//   .m {
+//     @include _color(red, 500);
+//   }
+//
+//   .mh {
+//     @include _color(purple, 400);
+//   }
+//
+//   .na {
+//   }
+//
+//   .nc,
+//   .nf,
+//   .nt,
+//   .nv {
+      // @include _color(cyan, 300);
+//   }
+//
+//   .s,
+//   .s1 {
+//     @include _color(green, 400);
+//   }
+//
+//   .si {
+//     @include _color(red, 500);
+//   }
+// }
+
+
+
+/* Code blocks */
+pre[class*="language-"] {
+  @include _background-color(gray, 800);
+  @include _border-radius(xs);
+  @include _color(gray, 100);
+  @include _margin(0);
+  @include _margin-bottom(xl);
+  @include _monospace;
+  @include _padding-horizontal(xs);
+  @include _padding-vertical(m);
+  font-weight: 300;
+  overflow-x: auto;
+  position: relative;
+  width: 100%;
+}
+
+pre[class*="language-"] code[class*="language-"] {
+  @include _font-size(12, medium);
+}
+
+.token.attr-name {
+  @include _color(yellow, 400);
+}
+
+.token.attr-value {
+  @include _color(gray, 100);
+}
+
+.token.comment {
+  @include _color(blue, 400);
+}
+
+.token.constant {
+  @include _color(cyan, 300);
+}
+
+.token.function {
+  @include _color(cyan, 300);
+}
+
+.token.keyword {
+  @include _color(yellow, 400);
+}
+
+.token.number {
+  @include _color(red, 500);
+}
+
+.token.operator {}
+
+.token.tag {
+  @include _color(cyan, 300);
+}
+
+
+
+.language-css .token.string,
+.namespace,
+.style .token.string,
+.token.atrule,
+.token.bold,
+.token.boolean,
+.token.builtin,
+.token.cdata,
+.token.char,
+.token.deleted,
+.token.doctype,
+.token.entity,
+.token.important,
+.token.inserted,
+.token.italic,
+.token.prolog,
+.token.property,
+.token.regex,
+.token.selector,
+.token.string,
+.token.symbol,
+.token.url,
+.token.variable {
+  background: red;
+}

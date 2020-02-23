@@ -9,7 +9,7 @@ Utility-first CSS uses many small utility classes that each have a very specific
 
 Most of the rules we need in utility-first CSS do very little. One rule might control only the color of the text, while another controls only its weight. Depending on how many colors and weights we want to use, we need a lot of those small rules. If our design uses five different font sizes, we need five different rules:
 
-{% highlight sass %}
+```sass
 .font-size-xs {
   font-size: 1.2rem;
 }
@@ -29,19 +29,19 @@ Most of the rules we need in utility-first CSS do very little. One rule might co
 .font-size-xl {
   font-size: 4.8rem;
 }
-{% endhighlight %}
+```
 
 These rules all look very similar. The size in the selector (`xs`, `s`, etc.) and the value of the `font-size` change, while everything else remains the same. These rules all follow the same pattern:
 
-{% highlight sass %}
+```sass
 .font-size-[SIZE] {
   font-size: [VALUE];
 }
-{% endhighlight %}
+```
 
 We can use these similarities to our advantage and have Sass generate the rules for us in a loop. To prepare this, we first extract the size-value-pairs to a [Map](https://sass-lang.com/documentation/values/maps). We can then loop over the pairs using an `@each`-loop:
 
-{% highlight sass %}
+```sass
 $font-sizes: (
   "xs": 1.2rem,
   "s":  1.6rem,
@@ -53,11 +53,11 @@ $font-sizes: (
 @each $size, $value in $font-sizes {
   // do something with $size and $value
 }
-{% endhighlight %}
+```
 
 Writing it as `#{$size}`, we can add the size to the selector through [interpolation](https://sass-lang.com/documentation/interpolation). We can use the `$value` directly in the body of the rule:
 
-{% highlight sass %}
+```sass
 $font-sizes: (
   "xs": 1.2rem,
   "s":  1.6rem,
@@ -71,11 +71,11 @@ $font-sizes: (
     font-size: $value;
   }
 }
-{% endhighlight %}
+```
 
 Sass takes these instructions and generates the exact same CSS we wrote by hand before. To add a rule for `.font-size-xxl`, we add a new entry to our map and Sass does the rest:
 
-{% highlight sass %}
+```sass
 $font-sizes: (
   "xs":  1.2rem,
   "s":   1.6rem,
@@ -84,11 +84,11 @@ $font-sizes: (
   "xl":  4.8rem,
   "xxl": 6.0rem // <-- new entry
 );
-{% endhighlight %}
+```
 
 In utility-first CSS, we set an element’s `background-color` through classes like `background-color-red`. Written by hand, a few of these rules would look like this:
 
-{% highlight sass %}
+```sass
 .background-color-red {
   background-color: #f45a5a;
 }
@@ -100,11 +100,11 @@ In utility-first CSS, we set an element’s `background-color` through classes l
 .background-color-blue {
   background-color: #398fdd;
 }
-{% endhighlight %}
+```
 
 Writing many of those out by hand would be tedious. We can apply the same pattern we used for the font-sizes:
 
-{% highlight sass %}
+```sass
 $colors: (
   "red":  #f45a5a,
   "green: #3fb26d,
@@ -116,11 +116,11 @@ $colors: (
     background-color: $value;
   }
 }
-{% endhighlight %}
+```
 
 It is common to use more than one shade of the same color. Instead of using a single red, we might want to use a light, medium, and dark shade of red. After adding these qualifiers to all rules, they would look something like this:
 
-{% highlight sass %}
+```sass
 .background-color-red-light {
   background-color: #fea9a9;
 }
@@ -156,11 +156,11 @@ It is common to use more than one shade of the same color. Instead of using a si
 .background-color-blue-dark {
   background-color: #2661a7;
 }
-{% endhighlight %}
+```
 
 We could achieve this by using longer keys in our `$colors`-map and leaving the `@each`-loop unchanged:
 
-{% highlight sass %}
+```sass
 $colors: (
   "red-light":    #fea9a9,
   "red-medium":   #f45a5a,
@@ -178,13 +178,13 @@ $colors: (
     background-color: $value;
   }
 }
-{% endhighlight %}
+```
 
 This would work, but there is still some duplication in there. As we have written it now, we still have to repeat the name of the color in each of its variations. Instead of writing “red” once, we have to repeat it three times. This problem multiplies with the numbers of colors and shades we want to use in our design.
 
 We can clean this up by nesting lists. Instead of mapping names to hex-values, we map them to _other_ maps that contain the shades. To access them in our loop when building the rules, we add a second `@each` in the body of our original `@each`:
 
-{% highlight sass %}
+```sass
 $colors: (
   "red": (
     "light":  #fea9a9,
@@ -210,6 +210,6 @@ $colors: (
     }
   }
 }
-{% endhighlight %}
+```
 
 We can transfer this same approach to `color`, `margin`, `padding`, and other properties. Sass can auto-generate many of the more repetitive classes needed in utility-first CSS. Using this approach, we are already close to building our own utility-first framework.

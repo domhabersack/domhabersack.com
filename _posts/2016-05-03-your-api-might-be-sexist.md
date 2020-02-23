@@ -7,7 +7,7 @@ heroCaption: Keep your assumptions on gender out of your products.
 ---
 I recently came across an API that exposed a reasonable but unfortunate design decision, the specifics of which are irrelevant safe for the fact that the data in question concerned humans in one form or another. It is described well in the following simplification:
 
-{% highlight json %}
+```json
 {
   employees: [
     {
@@ -25,7 +25,7 @@ I recently came across an API that exposed a reasonable but unfortunate design d
     }
   ]
 }
-{% endhighlight %}
+```
 
 The blunder here is that the above uses `male: true` and `male: false` to distinguish between genders. While it looks innocent enough, upon further consideration it can be considered politically incorrect and borderline sexist. This detail might seem like a non-issue, but it exposes a problematic subtlety that we must be aware of.
 
@@ -35,13 +35,13 @@ I am certain whoever created this API did not have bad intentions. This might be
 
 Even if this *was* acceptable, why use `male: true` and not `female: true`? This makes men the implied default, with women being “not men”. Imagine code using this information like this:
 
-{% highlight js %}
+```js
 if (male) {
   // do one thing
 } else {
   // do another thing
 }
-{% endhighlight %}
+```
 
 The omitted condition of the `else`-branch does not read as “if female”, but rather “if not male”, which is a subtle but undeniable difference.
 

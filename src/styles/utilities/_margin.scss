@@ -1,82 +1,106 @@
 $_margin: (
   horizontal: (
-    xxs: 0.5rem,
-    xs:  1rem,
-    s:   1.5rem,
-    m:   2rem,
-    l:   2.5rem,
-    xl:  3rem,
-    xxl: 3.5rem
+    0:    0,
+    auto: auto,
+    xxs:  0.5rem,
+    xs:   1rem,
+    s:    1.5rem,
+    m:    2rem,
+    l:    2.5rem,
+    xl:   3rem,
+    xxl:  3.5rem
   ),
   vertical: (
-    xxs: 0.3rem,
-    xs:  0.6rem,
-    s:   0.9rem,
-    m:   1.2rem,
-    l:   1.8rem,
-    xl:  2.4rem,
-    xxl: 4.8rem
+    0:    0,
+    auto: auto,
+    xxs:  0.3rem,
+    xs:   0.6rem,
+    s:    0.9rem,
+    m:    1.2rem,
+    l:    1.8rem,
+    xl:   2.4rem,
+    xxl:  4.8rem
   )
 );
 
-@function _margin-horizontal($size) {
-  @if ($size == 0 or $size == auto) {
-    @return $size;
-  }
+$sizes: ('0', 'auto', 'xxs', 'xs', 's', 'm', 'l', 'xl', 'xxl');
 
+@function get-horizontal-margin($size) {
   @return map-get(map-get($_margin, horizontal), $size);
 }
 
-@function _margin-vertical($size) {
-  @if ($size == 0 or $size == auto) {
-    @return $size;
-  }
-
+@function get-vertical-margin($size) {
   @return map-get(map-get($_margin, vertical), $size);
 }
 
-$sizes: 0, auto, xxs, xs, s, m, l, xl, xxl;
+@mixin _margin($size) {
+  margin: get-vertical-margin($size) get-horizontal-margin($size);
+}
+
+@mixin _margin-top($size) {
+  margin-top: get-vertical-margin($size);
+}
+
+@mixin _margin-right($size) {
+  margin-right: get-horizontal-margin($size);
+}
+
+@mixin _margin-bottom($size) {
+  margin-bottom: get-vertical-margin($size);
+}
+
+@mixin _margin-left($size) {
+  margin-left: get-horizontal-margin($size);
+}
+
+@mixin _margin-vertical($size) {
+  @include _margin-top($size);
+  @include _margin-bottom($size);
+}
+
+@mixin _margin-horizontal($size) {
+  @include _margin-left($size);
+  @include _margin-right($size);
+}
 
 @each $size in $sizes {
   .margin-#{$size} {
-    margin: _margin-vertical($size) _margin-horizontal($size);
+    @include _margin($size);
   }
 }
 
 @each $size in $sizes {
   .margin-top-#{$size} {
-    margin-top: _margin-vertical($size);
+    @include _margin-top($size);
   }
 }
 
 @each $size in $sizes {
   .margin-right-#{$size} {
-    margin-right: _margin-horizontal($size);
+    @include _margin-right($size);
   }
 }
 
 @each $size in $sizes {
   .margin-bottom-#{$size} {
-    margin-bottom: _margin-vertical($size);
+    @include _margin-bottom($size);
   }
 }
 
 @each $size in $sizes {
   .margin-left-#{$size} {
-    margin-left: _margin-horizontal($size);
+    @include _margin-left($size);
   }
 }
 
 @each $size in $sizes {
   .margin-vertical-#{$size} {
-    margin-top: _margin-vertical($size);
-    margin-bottom: _margin-vertical($size);
+    @include _margin-vertical($size);
   }
 }
 
 @each $size in $sizes {
   .margin-horizontal-#{$size} {
-    margin-right: _margin-horizontal($size);
-    margin-left: _margin-horizontal($size);
+    @include _margin-horizontal($size);
   }
 }

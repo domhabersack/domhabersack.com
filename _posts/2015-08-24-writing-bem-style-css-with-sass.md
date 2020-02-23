@@ -15,7 +15,7 @@ This approach also decouples the presentation of content further from its markup
 
 Consider the following markup for a site-wide navigation:
 
-{% highlight html %}
+```html
 <nav>
   <ul>
     <li>
@@ -31,20 +31,20 @@ Consider the following markup for a site-wide navigation:
     <li>
   </ul>
 <nav>
-{% endhighlight %}
+```
 
 The following selectors describe this markup accurately:
 
-{% highlight css %}
+```css
 nav {}
 nav > ul {}
 nav > ul > li {}
 nav > ul > li > a {}
-{% endhighlight %}
+```
 
 But what happens when we realize our navigation does have a specific order, so the `ul` should really be an `ol`? First, we need to change the HTML:
 
-{% highlight html %}
+```html
 <nav>
   <ol>
     <li>…</li>
@@ -52,16 +52,16 @@ But what happens when we realize our navigation does have a specific order, so t
     <li>…</li>
   </ol>
 </nav>
-{% endhighlight %}
+```
 
 However, the tag-based CSS also needs to be modified, or else our styles will no longer apply:
 
-{% highlight css %}
+```css
 nav {}
 nav > ol {}
 nav > ol > li {}
 nav > ol > li > a {}
-{% endhighlight %}
+```
 
 The problem with this is that it is easy to miss a selector that influences an element that needs updating. There remains an element of human error, which is increased with the number of selectors across all stylesheets that influence a specific element.
 
@@ -69,7 +69,7 @@ The problem with this is that it is easy to miss a selector that influences an e
 
 One could argue that the manual effort required to adjust the CSS could have been reduced by using a preprocessor such as Sass:
 
-{% highlight scss %}
+```scss
 nav {
   > ol {
     > li {
@@ -77,7 +77,7 @@ nav {
     }
   }
 }
-{% endhighlight %}
+```
 
 This reduces the necessary updates to our stylesheets to a single change in our Sass-file. While less error-prone, it still requires *two* changes when making one change: in HTML *and* CSS.
 
@@ -87,7 +87,7 @@ When referencing elements by a single class-selector, any change to the markup o
 
 When using BEM, the navigation could be marked up as follows:
 
-{% highlight html %}
+```html
 <nav
     class="navigation">
   <ul
@@ -120,18 +120,18 @@ When using BEM, the navigation could be marked up as follows:
     <li>
   </ul>
 <nav>
-{% endhighlight %}
+```
 
 (**Note:** I tend to split up long HTML so each attribute appears on its own, double-indented line to help with readability.)
 
 The associated CSS-selectors would no longer be a concatenation of multiple tags, but can instead be a flat list:
 
-{% highlight css %}
+```css
 .navigation {}
 .navigation__list {}
 .navigation__item {}
 .navigation__link {}
-{% endhighlight %}
+```
 
 Now, changing our list to an `ol` will only ever require the HTML to be updated, while the CSS can remain unchanged: the same selector still applies, so no adjustments need to be made.
 
@@ -141,13 +141,13 @@ Repeatedly writing the block-prefix (such as `.navigation`) can be a bit tedious
 
 Luckily, the `&`-operator in Sass, which always references the parent selector in a nested context, can be used as part of a new selector. We can append element- and modifier-names to it and Sass will compile the complete selectors for us:
 
-{% highlight scss %}
+```scss
 .navigation {
   &__list {}
   &__item {}
   &__link {}
 }
-{% endhighlight %}
+```
 
 This will generate the same list of selectors as shown above.
 
@@ -155,7 +155,7 @@ This will generate the same list of selectors as shown above.
 
 The `&`-selector can be used in conjunction with modifier- and state-selectors just the same. The one requirement to keep in mind is that no space may follow it, or else Sass will interpret the selectors as being nested rather than chained.
 
-{% highlight scss %}
+```scss
 .block {
   &__element {
     &--modifier {}
@@ -163,7 +163,7 @@ The `&`-selector can be used in conjunction with modifier- and state-selectors j
   }
   &.is-block-state {}
 }
-{% endhighlight %}
+```
 
 This keeps all selectors associated with a block neatly contained in its namespace.
 

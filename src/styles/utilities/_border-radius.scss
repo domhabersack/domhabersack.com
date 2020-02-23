@@ -1,4 +1,5 @@
 $_border-radius: (
+  0:     0,
   xxs:   0.3rem,
   xs:    0.6rem,
   s:     0.9rem,
@@ -9,41 +10,53 @@ $_border-radius: (
   round: 50%,
 );
 
-@function _border-radius($size) {
-  @if ($size == 0) {
-    @return $size;
-  }
+$sizes: ('0', 'xxs', 'xs', 's', 'm', 'l', 'xl', 'xxl', 'round');
 
-  @return map-get($_border-radius, $size);
+@mixin _border-radius($size) {
+  border-radius: map-get($_border-radius, $size);
 }
 
-$sizes: 0, xxs, xs, s, m, l, xl, xxl, round;
+@mixin _border-top-right-radius($size) {
+  border-top-right-radius: map-get($_border-radius, $size);
+}
+
+@mixin _border-bottom-right-radius($size) {
+  border-bottom-right-radius: map-get($_border-radius, $size);
+}
+
+@mixin _border-bottom-left-radius($size) {
+  border-bottom-left-radius: map-get($_border-radius, $size);
+}
+
+@mixin _border-top-left-radius($size) {
+  border-top-left-radius: map-get($_border-radius, $size);
+}
 
 @each $size in $sizes {
   .border-radius-#{$size} {
-    border-radius: _border-radius($size);
+    @include _border-radius($size);
   }
 }
 
 @each $size in $sizes {
   .border-top-right-radius-#{$size} {
-    border-top-right-radius: _border-radius($size);
+    @include _border-top-right-radius($size);
   }
 }
 
 @each $size in $sizes {
   .border-bottom-right-radius-#{$size} {
-    border-bottom-right-radius: _border-radius($size);
+    @include _border-bottom-right-radius($size);
   }
 }
 
 @each $size in $sizes {
   .border-bottom-left-radius-#{$size} {
-    border-bottom-left-radius: _border-radius($size);
+    @include _border-bottom-left-radius($size);
   }
 }
 @each $size in $sizes {
   .border-top-left-radius-#{$size} {
-    border-top-left-radius: _border-radius($size);
+    @include _border-top-right-radius($size);
   }
 }

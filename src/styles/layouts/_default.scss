@@ -71,6 +71,6 @@
 
 .l-default__footer {
   @include responsive-container;
-  @include _background-color(gray, 200);
+  @include _background-color(gray, 100);
   flex: none;
 }

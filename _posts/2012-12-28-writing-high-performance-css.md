@@ -59,19 +59,19 @@ If a selector consisting of multiple tags contains a class somewhere, a new clas
 
 In accordance with the above rules, these selectors:
 
-{% highlight css %}
+```css
 header nav ul li a#login {}
 table > thead > tr > th {}
 ul.navigation > li a {}
-{% endhighlight %}
+```
 
 can safely be rewritten as:
 
-{% highlight css %}
+```css
 #login {}
 thead th {}
 .navigation a {}
-{% endhighlight %}
+```
 
 ## Efficient rules
 
@@ -89,7 +89,7 @@ Writing bad stylesheets for preprocessing will result in bad stylesheets just th
 
 Consider the following CSS as written in [Sass](http://sass-lang.com/ 'Sass - Syntactically Swesome Stylesheets'):
 
-{% highlight scss %}
+```scss
 dl {
   overflow: hidden;
 
@@ -103,11 +103,11 @@ dl {
     width: 50%;
   }
 }
-{% endhighlight %}
+```
 
 While this makes it obvious that definition terms and definition descriptions are always nested in definition lists, this is the only way they _can_ appear, so the nesting should be removed and the rules rewritten as:
 
-{% highlight scss %}
+```scss
 dd {
   clear: left;
 }
@@ -121,7 +121,7 @@ dt {
 dl {
   overflow: hidden;
 }
-{% endhighlight %}
+```
 
 Preprocessors do not result in a decrease in performance when respecting the aforementioned rules, assuming they are deployed as static assets and not processed client-side.
 

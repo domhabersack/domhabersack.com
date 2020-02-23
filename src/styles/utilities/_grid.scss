@@ -8,13 +8,11 @@ $_grid-row-gap: (
   xxl: 3.5rem
 );
 
-$sizes: xxs, xs, s, m, l, xl, xxl;
-
 .grid-column-gap {
   grid-column-gap: var(--grid-gutter);
 }
 
-@each $size in $sizes {
+@each $size in (xxs, xs, s, m, l, xl, xxl) {
   .grid-row-gap-#{$size} {
     @include _at-breakpoints {
       grid-row-gap: map-get($_grid-row-gap, $size);

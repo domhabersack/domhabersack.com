@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-US" prefix="og: http://ogp.me/ns#" class="debug">
+<html lang="en-US" prefix="og: http://ogp.me/ns#">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -11,32 +11,8 @@
     <title>{{ page.title | replace_regexp: ':[a-z_]*?:', '' | strip }} · {{ site.name }}</title>
 
     <link rel="stylesheet" href="/style.css?{{ site.time | date: '%s' }}">
-    <link rel="stylesheet" href="https://use.typekit.net/gbp8hqr.css">
   </head>
 
   <body>
-    <div class="flex flex-column height-full">
-      <div class="flex-noshrink margin-horizontal-m">
-        {% include header.html %}
-      </div>
-
-      <main class="l-default__main">
-        <div class="l-default__content">
-          {% include breadcrumbs.html %}
-
-          <h1>
-            {{ page.title }}
-          </h1>
-
-          {{ content }}
-        </div>
-      </main>
-
-      <div class="l-default__footer">
-        <div class="l-default__content">
-          {% include footer.html %}
-        </div>
-      </div>
-    </div>
   </body>
 </html>

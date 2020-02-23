@@ -133,46 +133,46 @@ h6 {
 
 h1 {
   @include _font-size(24, short);
-  margin: 0.9em 0 0.4em; /* 27px 0 12px */
+  // margin: 0.9em 0 0.4em; /* 27px 0 12px */
 
   @include _xs {
     @include _font-size(30, short);
-    margin: 0.75em 0 0.5em; /* 27px 0 18px */
+    // margin: 0.75em 0 0.5em; /* 27px 0 18px */
   }
 
   @include _l {
     @include _font-size(36, short);
-    margin: 0.75em 0 0.525em; /* 30px 0 21px */
+    // margin: 0.75em 0 0.525em; /* 30px 0 21px */
   }
 }
 
 h2 {
   @include _font-size(20, short);
-  margin: 1em 0 0.375em; /* 24px 0 9px */
+  // margin: 1em 0 0.375em; /* 24px 0 9px */
 
   @include _xs {
     @include _font-size(24, short);
-    margin: 0.9em 0 0.4em; /* 27px 0 12px */
+    // margin: 0.9em 0 0.4em; /* 27px 0 12px */
   }
 
   @include _l {
     @include _font-size(30, short);
-    margin: 0.75em 0 0.5em; /* 27px 0 18px */
+    // margin: 0.75em 0 0.5em; /* 27px 0 18px */
   }
 }
 
 h3 {
   @include _font-size(16, medium);
-  margin: 1.05em 0 0.3em; /* 21px 0 6px */
+  // margin: 1.05em 0 0.3em; /* 21px 0 6px */
 
   @include _xs {
     @include _font-size(20, short);
-    margin: 1em 0 0.375em; /* 24px 0 9px */
+    // margin: 1em 0 0.375em; /* 24px 0 9px */
   }
 
   @include _l {
     @include _font-size(24, short);
-    margin: 0.9em 0 0.4em; /* 27px 0 12px */
+    // margin: 0.9em 0 0.4em; /* 27px 0 12px */
   }
 }
 

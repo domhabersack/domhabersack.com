@@ -9,23 +9,23 @@ JavaScript provides a way to split strings into arrays with [`split()`](https://
 
 Let’s say we have a lot of ducks. In the beginning, we have all our ducks in a ~~row~~ single array:
 
-{% highlight js %}
+```js
 [🦆, 🦆, 🦆, 🦆, 🦆, 🦆, 🦆, 🦆, 🦆, 🦆, 🦆, 🦆]
-{% endhighlight %}
+```
 
 We want to neatly organize our ducks. Because they don’t all fit on a single shelf, we want to put them on several smaller shelves. We know that each shelf holds four ducks, so we want to group them like this:
 
-{% highlight js %}
+```js
 [
   [🦆, 🦆, 🦆, 🦆],
   [🦆, 🦆, 🦆, 🦆],
   [🦆, 🦆, 🦆, 🦆]
 ]
-{% endhighlight %}
+```
 
 Instead of containing ducks directly, this array contains three smaller arrays. Each of _these_ arrays then contains a set of four ducks. We can write a function to build this structure for us:
 
-{% highlight js %}
+```js
 const chunkArray = (array, chunkSize) => {
   const numberOfChunks = Math.ceil(array.length / chunkSize)
 
@@ -34,11 +34,11 @@ const chunkArray = (array, chunkSize) => {
       return array.slice(index * chunkSize, (index + 1) * chunkSize)
     })
 }
-{% endhighlight %}
+```
 
 This function takes an array and chunk size and returns it grouped into chunks of that size. If we cannot split the values evenly, the last chunk will contain fewer elements:
 
-{% highlight js %}
+```js
 chunkArray([🐭, 🐭, 🐭, 🐭], 2)
 // => [
 //      [🐭, 🐭],
@@ -56,19 +56,19 @@ chunkArray([🐶, 🐶, 🐶, 🐶, 🐶, 🐶, 🐶], 4)
 //      [🐶, 🐶, 🐶, 🐶],
 //      [🐶, 🐶, 🐶]
 //    ]
-{% endhighlight %}
+```
 
 Let’s look at how this works line by line:
 
-{% highlight js %}
+```js
 const chunkArray = (array, chunkSize) => {
-{% endhighlight %}
+```
 
 The function `chunkArray` takes an array and the desired size of each chunk in its parameters.
 
-{% highlight js %}
+```js
 const numberOfChunks = Math.ceil(array.length / chunkSize)
-{% endhighlight %}
+```
 
 We need to know how many groups, or chunks, we need if we want to split the array into sets of the desired size. We get that value by dividing the number of elements in the array by the number of elements we want to have in each chunk. Four or eight ducks fit into four-element chunks nicely. To split six ducks into groups of four, we would need 1.5 chunks, because 6 divided by 4 is 1.5.
 
@@ -76,42 +76,42 @@ Each chunk is an array. Because there are no half arrays, we round the result to
 
 On to the next line.
 
-{% highlight js %}
+```js
 return [...Array(numberOfChunks)]
-{% endhighlight %}
+```
 
 Now that we know how many chunks we need, we create an outer array with this many empty spaces. [`Array(length)`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Array) returns an array that has its `length` set to the value we pass to it. That array is _empty_. It does not even contain `undefined` values:
 
-{% highlight js %}
+```js
 Array(3)
 // => []
 
 Array(3).length
 // => 3
-{% endhighlight %}
+```
 
 We want to iterate over these spaces with `map()` in the next step. Because we cannot iterate over an empty array, we need to put values into those empty spaces. We initialize a new array from the one we already created using the [spread syntax](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax). This way, the new array has the same length as the previous one, with each value set to `undefined`:
 
-{% highlight js %}
+```js
 [...Array(3)]
 // => [undefined, undefined, undefined]
-{% endhighlight %}
+```
 
 We can now iterate over this array with `.map()`:
 
-{% highlight js %}
+```js
 .map((value, index) => {
-{% endhighlight %}
+```
 
 The `value` will be `undefined` in each iteration. We don’t care much about the value, but we will use the `index`. If we split the array into three groups, the index goes from `0` to `2`. We will use that to grab shorter sections out of the array next.
 
-{% highlight js %}
+```js
 return array.slice(index * chunkSize, (index + 1) * chunkSize))
-{% endhighlight %}
+```
 
 [`slice()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/slice) returns a shallow copy of the array we call it on. Both parameters are index values that refer to positions in the array. When extracting a partial copy, `slice()` starts at the first value and stops before the second value. If the second value is greater than the length of the array, it stops at the end of the array:
 
-{% highlight js %}
+```js
 [🐭, 🐹, 🐰, 🦊, 🐨].slice(0, 2)
 // => [🐭, 🐹]
 
@@ -120,11 +120,11 @@ return array.slice(index * chunkSize, (index + 1) * chunkSize))
 
 [🐭, 🐹, 🐰, 🦊, 🐨].slice(4, 6)
 // => [🐨]
-{% endhighlight %}
+```
 
 We use each chunk’s `index` to calculate the parameters for `slice()`. By multiplying it by the size of each chunk, we copy groups of that many values from the array. If our `chunkSize` is `4`, these are the slices we would extract:
 
-{% highlight js %}
+```js
 // index = 0
 array.slice(0, 4)
 
@@ -133,18 +133,18 @@ array.slice(4, 8)
 
 // index = 2
 array.slice(8, 12)
-{% endhighlight %}
+```
 
 `map()` returns a new array. Instead of several `undefined` values, our function returns slices of the original array. Each of these slices is one chunk that contains four items. The outcome looks exactly like what we wanted:
 
-{% highlight js %}
+```js
 chunkArray([🦆, 🦆, 🦆, 🦆, 🦆, 🦆, 🦆, 🦆, 🦆, 🦆, 🦆, 🦆], 4)
 // => [
 //      [🦆, 🦆, 🦆, 🦆],
 //      [🦆, 🦆, 🦆, 🦆],
 //      [🦆, 🦆, 🦆, 🦆]
 //    ]
-{% endhighlight %}
+```
 
 ## What would I use this for?
 

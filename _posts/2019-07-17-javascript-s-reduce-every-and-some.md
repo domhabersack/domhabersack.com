@@ -8,7 +8,7 @@ heroCaption: When avoiding loops, look out for some pitfalls.
 ---
 To calculate the sum of all numbers in an array, you could use a `for`-loop:
 
-{% highlight js %}
+```js
 const calculateSum = values => {
   let sum = 0;
 
@@ -20,18 +20,18 @@ const calculateSum = values => {
 };
 
 calculateSum([16, 23, 42, 19]); // ⇒ 100
-{% endhighlight %}
+```
 
 [Array.prototype.reduce()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce) provides a shorter way to merge an array into a single value. This code does the exact same in fewer lines:
 
-{% highlight js %}
+```js
 const calculateSum = values => values.reduce(
   (sum, value) => sum + value,
   0
 );
 
 calculateSum([16, 23, 42, 19]); // ⇒ 100
-{% endhighlight %}
+```
 
 `reduce` is available on all arrays in JavaScript. It takes two arguments: a **reducer-function** and an **initial value** for that function. Our **reducer-function** receives two values, called the _accumulator_ and the _current value_. It returns a result based on these two values.
 
@@ -39,7 +39,7 @@ Every time the reducer-function is called, it saves its result to the _accumulat
 
 After going through all elements, `reduce` returns the result of its last calculation.
 
-{% highlight js %}
+```js
 const calculateSum = values => values.reduce(
   (sum, value) => sum + value,
   0
@@ -53,13 +53,13 @@ calculateSum([16, 23, 42, 19]); // ⇒ 100
     16 |      23 | 16 + 23 =  39
     39 |      42 | 39 + 32 =  81
     81 |      19 | 81 + 19 = 100 ⇒ 100
-{% endhighlight %}
+```
 
 ## The fallback “initial value”
 
 When not given an initial value, `reduce` uses the first element of the array as the initial value:
 
-{% highlight js %}
+```js
 const calculateSum = values => values.reduce(
   (sum, value) => sum + value
 );
@@ -74,7 +74,7 @@ calculateSum([16, 23, 42, 19]);
 
 // this call is equivalent
 calculateSum([23, 42, 19], 16);
-{% endhighlight %}
+```
 
 Instead of starting the calculation at `0`, we skip a step and begin directly with `16`. The result is the same, and our calculation requires fewer steps because it does not need to calculate `0 + 16`.
 
@@ -82,7 +82,7 @@ Instead of starting the calculation at `0`, we skip a step and begin directly wi
 
 `reduce` can do more than basic calculations. We could also write a function that checks if every value in an array is above a certain threshold. Let’s say we want to write a function that returns `false` if one person in a group is not older than 18 years. We set our initial value to `true` and set our accumulator to `false` as soon as one value does not match the condition:
 
-{% highlight js %}
+```js
 const isEverybodyOver18 = ages => ages.reduce(
   (accumulator, age) => accumulator && age > 18,
   true
@@ -96,11 +96,11 @@ isEverybodyOver18([16, 23, 42, 19]);
          false |    23 | false && 23 > 18 → false
          false |    42 | false && 42 > 18 → false
          false |    19 | false && 19 > 18 → false ⇒ false
-{% endhighlight %}
+```
 
 If we didn’t set an initial value, reduce would use `16` as the accumulator’s default value:
 
-{% highlight js %}
+```js
 const isEverybodyOver18 = ages => ages.reduce(
   (accumulator, age) => accumulator && age > 18
 );
@@ -115,7 +115,7 @@ isEverybodyOver18([16, 23, 42, 19]);
 
 // this call is equivalent
 isEverybodyOver18([23, 42, 19], 16);
-{% endhighlight %}
+```
 
 Something is not right here. While one of the values is clearly not greater than 18, our function returns `true`.
 
@@ -123,7 +123,7 @@ We get this incorrect result because the assumed initial value of `16` is “tru
 
 If the values were ordered differently, we would not have noticed this bug. Let’s run the same function again, this time passing in `16` as the _second_ value:
 
-{% highlight js %}
+```js
 const isEverybodyOver18 = ages => ages.reduce(
   (accumulator, age) => accumulator && age > 18
 );
@@ -135,13 +135,13 @@ isEverybodyOver18([23, 16, 42, 19]);
             23 |    16 |    23 && 16 > 18 → false
          false |    42 | false && 42 > 18 → false
          false |    19 | false && 19 > 18 → false ⇒ false
-{% endhighlight %}
+```
 
 This calculation uses `23` as its initial value, which coincidentally meets the condition of being greater than 18. Again, this first condition of `23 > 18` **is never evaluated**! It’s pure luck that this call returns the expected result. The result of our function _depends on the order of the elements in the array that is passed to it_. That would be a terrible bug to track down.
 
 It gets crazier. While the previous function checked if _all_ values matched a certain condition, imagine we want to check if _any_ values match it. We can replace the `&&` with `||` to rewrite our function so that it checks if anyone is older than 18 years:
 
-{% highlight js %}
+```js
 const isAnyoneOver18 = ages => ages.reduce(
   (accumulator, age) => accumulator || age > 18
 );
@@ -153,7 +153,7 @@ isAnyoneOver18([16, 23, 42, 19]);
             16 |    23 | 16 || 16 > 18 → 16
             16 |    42 | 16 || 42 > 18 → 16
             16 |    19 | 16 || 19 > 18 → 16 ⇒ 16
-{% endhighlight %}
+```
 
 We no longer receive a Boolean value at all! Because of how `||` works, our function now returns the first “truthy” value it encounters, giving us `16` instead of either `true` or `false`.
 
@@ -161,7 +161,7 @@ We no longer receive a Boolean value at all! Because of how `||` works, our func
 
 We could solve this problem by **always** passing an intial value to `reduce` through its second parameter. However, there are several cases in which doing so wouldn’t be necessary. When running basic arithmetic, such as addition or multiplication, it is perfectly fine to use `reduce` without specifying an initial value:
 
-{% highlight js %}
+```js
 const calculateProduct = values => values.reduce(
   (product, value) => product * value
 );
@@ -173,11 +173,11 @@ calculateProduct([16, 23, 42, 19]);
         16 |      23 |    16 * 23 →    368
        368 |      42 |   368 * 42 →  15456
      15456 |      19 | 15456 * 19 → 293664 ⇒ 293664
-{% endhighlight %}
+```
 
 If we specified the initial value of `1`, we would have to do an unnecessary calculation and still get the same result:
 
-{% highlight js %}
+```js
 const calculateProduct = values => values.reduce(
   (product, value) => product * value,
   1
@@ -191,7 +191,7 @@ calculateProduct([16, 23, 42, 19]);
         16 |      23 |    16 * 23 →    368
        368 |      42 |   368 * 42 →  15456
      15456 |      19 | 15456 * 19 → 293664 ⇒ 293664
-{% endhighlight %}
+```
 
 As we saw earlier, it is dangerous to not set an initial value if our reducer-function works with Boolean values. While we could make `reduce` work in these cases by specifying an initial value for them, JavaScript offers better alternatives for these exact scenarios.
 
@@ -199,13 +199,13 @@ As we saw earlier, it is dangerous to not set an initial value if our reducer-fu
 
 [Array.prototype.every()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/every) works like a `reduce`-function that tests all entries against a condition. It always returns a Boolean value.
 
-{% highlight js %}
+```js
 const isEverybodyOver18 = ages => ages.every(
   age => age > 18
 );
 
 isEverybodyOver18([16, 23, 42, 19]); // ⇒ false
-{% endhighlight %}
+```
 
 Not only does `every` not require an initial value, the callback also does not use an accumulator. This makes it much easier to read and understand.
 
@@ -213,19 +213,19 @@ Not only does `every` not require an initial value, the callback also does not u
 
 While `every` checks if _all_ elements in an array meet a condition, [Array.prototype.some()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/some) checks if _any_ element does:
 
-{% highlight js %}
+```js
 const isAnyoneOver18 = ages => ages.some(
   age => age > 18
 );
 
 isAnyoneOver18([16, 23, 42, 19]); // ⇒ true
-{% endhighlight %}
+```
 
 This has all the same benefits as `every`, without the pitfalls we ran into earlier.
 
 The callbacks used in our examples for `every` and `some` are identical, so we could even extract them to a shared helper function. If we contrast them with their `reduce`-equivalents, we get much shorter and more readable code:
 
-{% highlight js %}
+```js
 // before, using `reduce`
 const isEverybodyOver18 = ages => ages.reduce(
   (accumulator, age) => accumulator && age > 18,
@@ -243,7 +243,7 @@ const isOver18 = number => number > 18;
 
 const isEverybodyOver18 = ages => ages.every(isOver18);
 const isAnyoneOver18 = ages => ages.some(isOver18);
-{% endhighlight %}
+```
 
 We could now use `isEverybodyOver18` and `isAnyoneOver18` exactly as we did before.
 

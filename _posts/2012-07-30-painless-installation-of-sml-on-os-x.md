@@ -19,18 +19,18 @@ To install SML/NJ through Homebrew, just follow these steps.
 
 Installing Homebrew is a one-liner, which you can find in [their GitHub wiki](https://github.com/mxcl/homebrew/wiki/installation 'Installation instructions on the Homebrew GitHub-wiki'). The command you need to run is:
 
-{% highlight bash %}
+```bash
 $ ruby <(curl -fsSk https://raw.github.com/mxcl/homebrew/go)
-{% endhighlight %}
+```
 
 (Check their wiki if this command fails for you in case they changed it since.)
 
 If you already have Homebrew installed on your system, make sure it is up to
 date:
 
-{% highlight bash %}
+```bash
 $ brew update
-{% endhighlight %}
+```
 
 ### Install/update Xcode
 
@@ -44,9 +44,9 @@ Start Xcode, then go to “Preferences&hellip; - Downloads - Components” and i
 
 Now you are all set and can install SML/NJ through Homebrew:
 
-{% highlight bash %}
+```bash
 $ brew install smlnj
-{% endhighlight %}
+```
 
 ### Update your `PATH`
 
@@ -54,29 +54,29 @@ Once SML is installed, you need to tell the operating system where to look for i
 
 First, open your profile in your text editor of choice:
 
-{% highlight bash %}
+```bash
 $ open -t ~/.bash_profile
-{% endhighlight %}
+```
 
 Add an `export PATH`-directive to this file:
 
-{% highlight bash %}
+```bash
 export PATH=/usr/local/Cellar/smlnj/110.74/libexec/bin:$PATH
-{% endhighlight %}
+```
 
 You can now reload your profile with:
 
-{% highlight bash %}
+```bash
 $ source ~/.bash_profile
-{% endhighlight %}
+```
 
 Your new `PATH` will also be loaded every time you open a new terminal session.
 
 Now that you are all done, you can start SML/NJ by typing:
 
-{% highlight bash %}
+```bash
 $ sml
-{% endhighlight %}
+```
 
 ## One more thing
 

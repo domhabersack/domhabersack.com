@@ -13,7 +13,7 @@ To get a feel for how CSS-selectors should be written, you need to understand ho
 
 Consider a site with the following markup:
 
-{% highlight html %}
+```html
 <html>
   <head>
     <!-- omitted -->
@@ -59,7 +59,7 @@ Consider a site with the following markup:
     </section>
   </body>
 </html>
-{% endhighlight %}
+```
 
 When discarding the content and chaining all tags together according to their nesting, the path to each tag can be extracted:
 

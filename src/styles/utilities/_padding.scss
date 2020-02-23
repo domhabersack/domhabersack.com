@@ -1,82 +1,106 @@
 $_padding: (
   horizontal: (
-    xxs: 0.5rem,
-    xs:  1rem,
-    s:   1.5rem,
-    m:   2rem,
-    l:   2.5rem,
-    xl:  3rem,
-    xxl: 3.5rem
+    0:    0,
+    auto: auto,
+    xxs:  0.5rem,
+    xs:   1rem,
+    s:    1.5rem,
+    m:    2rem,
+    l:    2.5rem,
+    xl:   3rem,
+    xxl:  3.5rem
   ),
   vertical: (
-    xxs: 0.3rem,
-    xs:  0.6rem,
-    s:   0.9rem,
-    m:   1.2rem,
-    l:   1.8rem,
-    xl:  2.4rem,
-    xxl: 4.8rem
+    0:    0,
+    auto: auto,
+    xxs:  0.3rem,
+    xs:   0.6rem,
+    s:    0.9rem,
+    m:    1.2rem,
+    l:    1.8rem,
+    xl:   2.4rem,
+    xxl:  4.8rem
   )
 );
 
-@function _padding-horizontal($size) {
-  @if ($size == 0 or $size == auto) {
-    @return $size;
-  }
+$sizes: ('0', 'auto', 'xxs', 'xs', 's', 'm', 'l', 'xl', 'xxl');
 
+@function get-horizontal-padding($size) {
   @return map-get(map-get($_padding, horizontal), $size);
 }
 
-@function _padding-vertical($size) {
-  @if ($size == 0 or $size == auto) {
-    @return $size;
-  }
-
+@function get-vertical-padding($size) {
   @return map-get(map-get($_padding, vertical), $size);
 }
 
-$sizes: 0, xxs, xs, s, m, l, xl, xxl;
+@mixin _padding($size) {
+  padding: get-vertical-padding($size) get-horizontal-padding($size);
+}
+
+@mixin _padding-top($size) {
+  padding-top: get-vertical-padding($size);
+}
+
+@mixin _padding-right($size) {
+  padding-right: get-horizontal-padding($size);
+}
+
+@mixin _padding-bottom($size) {
+  padding-bottom: get-vertical-padding($size);
+}
+
+@mixin _padding-left($size) {
+  padding-left: get-horizontal-padding($size);
+}
+
+@mixin _padding-vertical($size) {
+  @include _padding-top($size);
+  @include _padding-bottom($size);
+}
+
+@mixin _padding-horizontal($size) {
+  @include _padding-left($size);
+  @include _padding-right($size);
+}
 
 @each $size in $sizes {
   .padding-#{$size} {
-    padding: _padding-vertical($size) _padding-horizontal($size);
+    @include _padding($size);
   }
 }
 
 @each $size in $sizes {
   .padding-top-#{$size} {
-    padding-top: _padding-vertical($size);
+    @include _padding-top($size);
   }
 }
 
 @each $size in $sizes {
   .padding-right-#{$size} {
-    padding-right: _padding-horizontal($size);
+    @include _padding-right($size);
   }
 }
 
 @each $size in $sizes {
   .padding-bottom-#{$size} {
-    padding-bottom: _padding-vertical($size);
+    @include _padding-bottom($size);
   }
 }
 
 @each $size in $sizes {
   .padding-left-#{$size} {
-    padding-left: _padding-horizontal($size);
+    @include _padding-left($size);
   }
 }
 
 @each $size in $sizes {
   .padding-vertical-#{$size} {
-    padding-top: _padding-vertical($size);
-    padding-bottom: _padding-vertical($size);
+    @include _padding-vertical($size);
   }
 }
 
 @each $size in $sizes {
   .padding-horizontal-#{$size} {
-    padding-right: _padding-horizontal($size);
-    padding-left: _padding-horizontal($size);
+    @include _padding-horizontal($size);
   }
 }

@@ -13,8 +13,18 @@ module.exports = {
         name: `posts`,
         path: `${__dirname}/_posts`,
       },
+    }, {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          {
+            resolve: `gatsby-remark-prismjs`,
+            options: {
+            }
+          }
+        ]
+      }
     },
-    `gatsby-transformer-remark`,
     `gatsby-plugin-react-helmet`
   ]
 }

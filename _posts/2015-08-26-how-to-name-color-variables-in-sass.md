@@ -39,7 +39,7 @@ While the colors hidden behind these variables are not obvious from this list, t
 
 We introduce new color-variables for every new purpose of a color we encounter. We can still use color-based variable names to make this easier (in which case I add the prefix `_` to the name to signal that these variables should not be used anywhere else) and create purpose-based variables that “proxy” these values:
 
-{% highlight scss %}
+```scss
 // never use these directly!
 $_blue:   #0074d9;
 $_red:    #ff4136;
@@ -50,7 +50,7 @@ $color-brand:   $_blue;
 $color-link:    $_blue;
 $color-error:   $_red;
 $color-warning: $_yellow;
-{% endhighlight %}
+```
 
 Note that several variables can reference the same color. A single color often has several different meanings in the same design, which makes it even more important to think of them by their semantic value instead.
 

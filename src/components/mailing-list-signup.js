@@ -1,6 +1,6 @@
 import React from 'react'
 
-import ConvertkitForm from './ConvertkitForm'
+import ConvertkitForm from './convertkit-form'
 
 export default () => (
   <div>
