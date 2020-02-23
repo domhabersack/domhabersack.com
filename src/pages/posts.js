@@ -21,10 +21,19 @@ export default ({ data }) => {
 
 export const pageQuery = graphql`
   query {
-    allMarkdownRemark(sort: {
-      fields: [fields___date],
-      order: DESC
-    }) {
+    allMarkdownRemark(
+      filter: {
+        fields: {
+          type: {
+            eq: "post"
+          }
+        }
+      },
+      sort: {
+        fields: fields___date,
+        order: DESC
+      }
+    ) {
       edges {
         node {
           id

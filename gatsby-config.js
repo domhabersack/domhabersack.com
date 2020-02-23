@@ -10,6 +10,21 @@ module.exports = {
     }, {
       resolve: `gatsby-source-filesystem`,
       options: {
+        ignore: [`**/\.*`],
+        name: `newsletters`,
+        path: `${__dirname}/_newsletters`,
+      },
+    }, {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        ignore: [`**/\.*`],
+        name: `pages`,
+        path: `${__dirname}/_pages`,
+      },
+    }, {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        ignore: [`**/\.*`],
         name: `posts`,
         path: `${__dirname}/_posts`,
       },

@@ -1,0 +1,9 @@
+@mixin _border-style($style) {
+  border-style: $style;
+}
+
+@each $style in (solid) {
+  .border-style-#{$style} {
+    @include _border-style($style);
+  }
+}

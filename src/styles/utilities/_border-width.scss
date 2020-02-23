@@ -1,0 +1,16 @@
+$_border-width: (
+  0:  0,
+  s:  0.1rem,
+  m:  0.2rem,
+  l:  0.3rem
+);
+
+@mixin _border-width($size) {
+  border-width: map-get($_border-width, $size);
+}
+
+@each $size in (0, s, m, l) {
+  .border-width-#{$size} {
+    @include _border-width($size);
+  }
+}

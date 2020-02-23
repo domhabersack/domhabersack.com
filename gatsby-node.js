@@ -6,18 +6,20 @@
 const path = require(`path`)
 
 exports.createPages = async ({ actions, graphql, reporter }) => {
-  const result = await graphql(`
+  const newsletters = await graphql(`
     {
-      allMarkdownRemark(
-        limit: 1000
-      ) {
+      allFile(filter: {
+        sourceInstanceName: {
+          eq: "newsletters"
+        }
+      }) {
         edges {
           node {
-            fields {
-              slug
-            }
-            frontmatter {
-              title
+            childMarkdownRemark {
+              fields {
+                permalink
+                slug
+              }
             }
           }
         }
@@ -25,18 +27,102 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     }
   `)
 
-  if (result.errors) {
+  if (newsletters.errors) {
     reporter.panicOnBuild(`Error while running GraphQL query.`)
     return
   }
 
-  result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+  newsletters.data.allFile.edges.forEach(({ node }) => {
+    const { permalink, slug } = node.childMarkdownRemark.fields
+
+    actions.createPage({
+      component: path.resolve(`src/templates/newsletter.js`),
+      context: {
+        slug
+      },
+      path: permalink
+    })
+
+    console.log(`created page at ${permalink}`)
+  })
+
+
+  const pages = await graphql(`
+    {
+      allFile(filter: {
+        sourceInstanceName: {
+          eq: "pages"
+        }
+      }) {
+        edges {
+          node {
+            childMarkdownRemark {
+              fields {
+                permalink
+                slug
+              }
+            }
+          }
+        }
+      }
+    }
+  `)
+
+  if (pages.errors) {
+    reporter.panicOnBuild(`Error while running GraphQL query.`)
+    return
+  }
+
+  pages.data.allFile.edges.forEach(({ node }) => {
+    const { permalink, slug } = node.childMarkdownRemark.fields
+
+    actions.createPage({
+      component: path.resolve(`src/templates/page.js`),
+      context: {
+        slug
+      },
+      path: permalink
+    })
+
+    console.log(`created page at ${permalink}`)
+  })
+
+
+  const posts = await graphql(`
+    {
+      allFile(filter: {
+        sourceInstanceName: {
+          eq: "posts"
+        }
+      }) {
+        edges {
+          node {
+            childMarkdownRemark {
+              fields {
+                permalink
+                slug
+              }
+            }
+          }
+        }
+      }
+    }
+  `)
+
+  if (posts.errors) {
+    reporter.panicOnBuild(`Error while running GraphQL query.`)
+    return
+  }
+
+  posts.data.allFile.edges.forEach(({ node }) => {
+    const { permalink, slug } = node.childMarkdownRemark.fields
+
     actions.createPage({
       component: path.resolve(`src/templates/post.js`),
       context: {
-        slug: node.fields.slug
+        slug
       },
-      path: `/posts/${node.fields.slug}`
+      path: permalink
     })
   })
 }
@@ -44,31 +130,89 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 exports.onCreateNode = ({ actions, getNode, node }) => {
   const parent = getNode(node.parent)
 
-  if (parent && parent.sourceInstanceName === 'posts') {
-    const [, date, slug] = parent.name.match(/^(\d{4}-\d{2}-\d{2})-(.*)/)
+  if (parent) {
+    switch (parent.sourceInstanceName) {
+      case 'newsletters': {
+        const [, date, slug] = parent.name.match(/^(\d{4}-\d{2}-\d{2})-(.*)/)
 
-    actions.createNodeField({
-      node,
-      name: `date`,
-      value: date
-    })
+        actions.createNodeField({
+          node,
+          name: `date`,
+          value: date
+        })
 
-    actions.createNodeField({
-      node,
-      name: `slug`,
-      value: slug
-    })
+        actions.createNodeField({
+          node,
+          name: `permalink`,
+          value: `/newsletter/archive/${slug}`
+        })
 
-    actions.createNodeField({
-      node,
-      name: `permalink`,
-      value: `/posts/${slug}`
-    })
+        actions.createNodeField({
+          node,
+          name: `slug`,
+          value: slug
+        })
 
-    actions.createNodeField({
-      node,
-      name: `hero`,
-      value: `/assets/hero.jpg`
-    })
+        actions.createNodeField({
+          node,
+          name: `type`,
+          value: `newsletter`
+        })
+
+        break
+      }
+      case 'pages': {
+        const slug = parent.name
+
+        actions.createNodeField({
+          node,
+          name: `permalink`,
+          value: `/${slug}`
+        })
+
+        actions.createNodeField({
+          node,
+          name: `slug`,
+          value: slug
+        })
+
+        actions.createNodeField({
+          node,
+          name: `type`,
+          value: `page`
+        })
+
+        break
+      }
+      case 'posts': {
+        const [, date, slug] = parent.name.match(/^(\d{4}-\d{2}-\d{2})-(.*)/)
+
+        actions.createNodeField({
+          node,
+          name: `date`,
+          value: date
+        })
+
+        actions.createNodeField({
+          node,
+          name: `permalink`,
+          value: `/posts/${slug}`
+        })
+
+        actions.createNodeField({
+          node,
+          name: `slug`,
+          value: slug
+        })
+
+        actions.createNodeField({
+          node,
+          name: `type`,
+          value: `post`
+        })
+
+        break
+      }
+    }
   }
 }
