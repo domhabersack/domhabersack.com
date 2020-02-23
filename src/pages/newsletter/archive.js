@@ -6,6 +6,7 @@ import React from 'react'
 
 import Layout from '../../components/layout'
 import formatDate from '../../utils/format-date'
+import showEmoji from '../../utils/show-emoji'
 
 export default ({ data }) => (
   <Layout>
@@ -21,7 +22,7 @@ export default ({ data }) => (
 
         <h2 class="font-size-20-medium margin-0">
           <a href={node.fields.permalink}>
-            {node.frontmatter.title}
+            {showEmoji(node.frontmatter.title)}
           </a>
         </h2>
       </div>
