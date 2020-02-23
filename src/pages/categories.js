@@ -1,9 +1,9 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 
-import Breakout from '../components/breakout'
 import Layout from '../components/layout'
 import PostTeasers from '../components/post-teasers'
+import Taper from '../components/taper'
 
 export default ({ data }) => {
   const categories = [
@@ -19,17 +19,19 @@ export default ({ data }) => {
 
   return (
     <Layout>
-      <h1>Categories</h1>
+      <Taper>
+        <h1>Categories</h1>
+      </Taper>
 
       {categories.map(category => (
         <>
-          <h2>
-            {category} &times; {postsByCategory[category].length}
-          </h2>
+          <Taper>
+            <h2>
+              {category} &times; {postsByCategory[category].length}
+            </h2>
+          </Taper>
 
-          <Breakout>
-            <PostTeasers posts={postsByCategory[category]} />
-          </Breakout>
+          <PostTeasers posts={postsByCategory[category]} />
         </>
       ))}
     </Layout>
@@ -38,7 +40,15 @@ export default ({ data }) => {
 
 export const pageQuery = graphql`
   query {
-    allMarkdownRemark {
+    allMarkdownRemark(
+      filter: {
+        fields: {
+          type: {
+            eq: "post"
+          }
+        }
+      }
+    ) {
       edges {
         node {
           fields {

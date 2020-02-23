@@ -3,8 +3,8 @@ import React from 'react'
 import ConvertkitForm from './convertkit-form'
 
 export default () => (
-  <div>
-    <h1 class="font-size-24-short margin-bottom-xs">
+  <div className="background-color-gray-200 border-radius-xs padding-horizontal-m padding-vertical-l">
+    <h1 className="font-size-24-short margin-0 margin-bottom-xs">
       There is more to learn
     </h1>
 

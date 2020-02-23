@@ -1,20 +1,20 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 
-import Breakout from '../components/breakout'
-import PostTeasers from '../components/post-teasers'
 import Layout from '../components/layout'
+import PostTeasers from '../components/post-teasers'
+import Taper from '../components/taper'
 
 export default ({ data }) => {
   console.log(data.allMarkdownRemark.edges.map(({ node }) => node))
 
   return (
     <Layout>
-      <h1>Blog</h1>
+      <Taper>
+        <h1>Blog</h1>
+      </Taper>
 
-      <Breakout>
-        <PostTeasers posts={data.allMarkdownRemark.edges.map(({ node }) => node)} />
-      </Breakout>
+      <PostTeasers posts={data.allMarkdownRemark.edges.map(({ node }) => node)} />
     </Layout>
   )
 }

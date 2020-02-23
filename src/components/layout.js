@@ -4,6 +4,7 @@ import { Helmet } from 'react-helmet'
 import Breadcrumbs from './breadcrumbs'
 import Footer from './footer'
 import Header from './header'
+import Taper from './taper'
 
 const IS_IN_DEBUG_MODE = false;
 
@@ -21,9 +22,9 @@ export default ({ children }) => (
 
       <main className="l-default__main">
         <div className="l-default__content">
-          <div>
+          <Taper>
             <Breadcrumbs />
-          </div>
+          </Taper>
 
           {children}
         </div>

@@ -1,11 +1,7 @@
 import React from 'react'
 
 export default ({ children }) => (
-  <>
-    <p>END_CONTAINER</p>
-
+  <div class="m:columns-10 l:columns-8 margin-horizontal-auto">
     {children}
-
-    <p>START_CONTAINER</p>
-  </>
+  </div>
 )
