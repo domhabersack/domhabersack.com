@@ -1,14 +1,17 @@
 import React from 'react'
 
-// used for breadcrumbs!
-// navigation_title: Newsletter
-
 import Layout from '../components/layout'
 import ConvertkitForm from '../components/convertkit-form'
 import Taper from '../components/taper'
 
 export default () => (
-  <Layout>
+  <Layout
+    breadcrumbs={[
+      {
+        label: 'Newsletter'
+      }
+    ]}
+  >
     <Taper>
       <h1>More tips, straight to your inbox</h1>
 

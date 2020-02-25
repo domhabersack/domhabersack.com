@@ -1,8 +1,6 @@
 import React from 'react'
 
-// title: Newsletter archive
 // excerpt: Read some of my previous newsletters. Sign up to get them delivered to your inbox.
-// navigation_title: Archive
 
 import Emoji from '../../components/emoji'
 import Layout from '../../components/layout'
@@ -10,7 +8,16 @@ import Taper from '../../components/taper'
 import formatDate from '../../utils/format-date'
 
 export default ({ data }) => (
-  <Layout>
+  <Layout
+    breadcrumbs={[
+      {
+        label: 'Newsletter',
+        url: '/newsletter'
+      }, {
+        label: 'Archive',
+      }
+    ]}
+  >
     <Taper>
       <h1>Newsletter archive</h1>
 
