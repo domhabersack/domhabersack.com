@@ -1,6 +1,7 @@
 ---
-title: ":wind_face: CSS that has a tail wind"
-excerpt: In utility-first CSS, we do not limit ourselves to single classes. Instead, we use many small classes that each add small pieces of styling.
+title: "CSS that has a tail wind"
+excerpt: "In utility-first CSS, we do not limit ourselves to single classes. Instead, we use many small classes that each add small pieces of styling."
+emoji: ":wind_face:"
 ---
 Whelp, hell has frozen over. For _years_, I have been vocal about my support for the BEM-approach to writing CSS. Following BEM, we give elements we want to style a single semantic class that describes what it does. The title of a blog post could be called `.blog__title`, its description `.blog__description`. Once you get past the ugly underscores, it’s a really solid approach. Recently, some interesting alternatives are gaining momentum.
 

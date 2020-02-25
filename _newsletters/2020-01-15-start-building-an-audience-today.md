@@ -1,6 +1,7 @@
 ---
-title: ":mailbox_with_mail: Start building an audience today"
-excerpt: At the end of December, ConvertKit made it easier than ever to get started by introducing a free tier. You can now sign up for free, with access to most functionality.
+title: "Start building an audience today"
+excerpt: "At the end of December, ConvertKit made it easier than ever to get started by introducing a free tier. You can now sign up for free, with access to most functionality."
+emoji: ":mailbox_with_mail:"
 ---
 Last year, I started using [ConvertKit](https://convertkit.com) for my newsletters and email courses. Email is still the best medium to share what you are working on. Posts on social media might show up in your audience’s feed, or algorithms could hide them from others. Through newsletters, we can follow what each other are up to and find inspiration for our own work.
 

@@ -27,7 +27,7 @@ export default () => (
       </div>
     </div>
 
-    <div class="margin-bottom-xxl">
+    <div className="margin-bottom-xxl">
       <LandingPageBlock heading="These courses take you from novice to advanced to senior developer." imageUrl="/assets/flame/flame-page-under-construction.png">
         <p>
           When you are just starting out, it is difficult to know where to invest your energy. What are you supposed to learn first? There are so many interesting technologies we could to use, with new ones coming out all the time. I will help you take your first steps by teaching you everything you need to get started.
@@ -39,7 +39,7 @@ export default () => (
       </LandingPageBlock>
     </div>
 
-    <div class="margin-bottom-xxl">
+    <div className="margin-bottom-xxl">
       <LandingPageBlock heading="Reading documentation is boring. Let me do that part for you." imageUrl="/assets/flame/flame-books.png">
         <p>
           Documentation can be a tough read. It throws a lot of new and unfamiliar terms at you and expects you to “get it”. Abstract explanations and variables called foo and bar make for a terrible learning experience.
@@ -67,8 +67,6 @@ export default () => (
   </Layout>
 )
 
-// title: Learn web development through courses tailor-made for beginners.
-// navigation_title: Home
 // excerpt: I’ll help you clear up your messaging and focus your product so your customers will love you.
 
   /*

@@ -1,6 +1,7 @@
 ---
-title: ":mountain: Is this a hill you want to die on?"
-excerpt: There are disagreements in all teams about what we build and how we build it. Given several options, we need to understand each of their effects.
+title: "Is this a hill you want to die on?"
+excerpt: "There are disagreements in all teams about what we build and how we build it. Given several options, we need to understand each of their effects."
+emoji: ":mountain:"
 ---
 I once worked with a developer that refused to work on a feature as long as any detail was unclear. He would not work on an image slider if the duration of the transition between images was not specified.
 

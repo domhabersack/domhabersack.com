@@ -1,6 +1,7 @@
 ---
-title: ":control_knobs: The Inter typeface family"
-excerpt: Variable fonts are about to fix some of the performance issues caused by adding many custom fonts to our sites.
+title: "The Inter typeface family"
+excerpt: "Variable fonts are about to fix some of the performance issues caused by adding many custom fonts to our sites."
+emoji: ":control_knobs:"
 ---
 Thanks to [`@font-face`](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face), we are no longer limited to using [“web-safe fonts”](https://en.wikipedia.org/wiki/Web_typography#Web-safe_fonts) on our websites. [Google Fonts](https://fonts.google.com) or [Adobe Fonts](https://fonts.adobe.com) make thousands of typefaces easy and reliable to use. However, each new variation of a typeface results in a larger download for our visitors. If we wanted to use regular and bold versions of a typeface, our visitors had to download two separate files. Throw in italic versions of both and we’re at four files. Using many typefaces impacts our site’s performance through larger and longer downloads.
 

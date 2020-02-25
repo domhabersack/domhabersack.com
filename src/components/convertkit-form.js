@@ -12,7 +12,7 @@ export default ({
     <div>
       <form
         action={`https://app.convertkit.com/forms/${svForm}/subscriptions`}
-        class="convertkit-form__form"
+        className="convertkit-form__form"
         method="post"
         data-sv-form={svForm}
         data-uid={uid}
@@ -22,14 +22,14 @@ export default ({
         min-width="400 500 600 700 800"
       >
         <ul
-          class="convertkit-form__alert convertkit-form__alert--error"
+          className="convertkit-form__alert convertkit-form__alert--error"
           data-element="errors"
           data-group="alert"
         />
 
-        <div class="convertkit-form__fields">
+        <div className="convertkit-form__fields">
           <input
-            class="convertkit-form__input"
+            className="convertkit-form__input"
             name="email_address"
             placeholder="Enter your email"
             required
@@ -45,14 +45,14 @@ export default ({
 
           <button
             data-element="submit"
-            class="convertkit-form__submit"
+            className="convertkit-form__submit"
           >
             {cta}
           </button>
         </div>
       </form>
 
-      <p class="convertkit-form__disclaimer">
+      <p className="convertkit-form__disclaimer">
         I respect your email privacy. Unsubscribe anytime.
       </p>
     </div>

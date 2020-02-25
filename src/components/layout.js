@@ -8,9 +8,9 @@ import Taper from './taper'
 
 const IS_IN_DEBUG_MODE = false;
 
-export default ({ children }) => (
+export default ({ breadcrumbs, children }) => (
   <>
-    <Helmet htmlAttributes={IS_IN_DEBUG_MODE && { 'class': 'debug' }}>
+    <Helmet htmlAttributes={IS_IN_DEBUG_MODE ? { 'class': 'debug' } : {}}>
       <link rel="stylesheet" href="https://use.typekit.net/gbp8hqr.css" />
       <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
     </Helmet>
@@ -23,7 +23,7 @@ export default ({ children }) => (
       <main className="l-default__main">
         <div className="l-default__content">
           <Taper>
-            <Breadcrumbs />
+            <Breadcrumbs breadcrumbs={breadcrumbs} />
           </Taper>
 
           {children}

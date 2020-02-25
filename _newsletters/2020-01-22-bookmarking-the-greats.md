@@ -1,6 +1,7 @@
 ---
-title: ":bookmark: Bookmarking the greats"
-excerpt: By looking at what others have done before us, we can find combinations of their ideas that work for us.
+title: "Bookmarking the greats"
+excerpt: "By looking at what others have done before us, we can find combinations of their ideas that work for us."
+emoji: ":bookmark:"
 ---
 As a developer, making things visually attractive does not come easy to me. I look at all these beautifully designed apps and product pages in awe and admiration. While I could recreate many of their designs in code, I could not yet come up with them on my own. You can learn anything, and I am trying to make the process of learning how to design easier for myself.
 

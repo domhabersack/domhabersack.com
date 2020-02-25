@@ -1,6 +1,7 @@
 ---
-title: ":ship: Shipped is better than perfect [content preview]"
-excerpt: This week, I am sharing an early draft of what will soon become a full post.
+title: "Shipped is better than perfect [content preview]"
+excerpt: "This week, I am sharing an early draft of what will soon become a full post."
+emoji: ":ship:"
 ---
 This week, I’m sharing an early draft of what will soon become a full post. I’d love to hear if you agree (or disagree!) with it so I can round it off:
 

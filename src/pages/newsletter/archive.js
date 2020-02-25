@@ -4,10 +4,10 @@ import React from 'react'
 // excerpt: Read some of my previous newsletters. Sign up to get them delivered to your inbox.
 // navigation_title: Archive
 
+import Emoji from '../../components/emoji'
 import Layout from '../../components/layout'
 import Taper from '../../components/taper'
 import formatDate from '../../utils/format-date'
-import showEmoji from '../../utils/show-emoji'
 
 export default ({ data }) => (
   <Layout>
@@ -19,14 +19,15 @@ export default ({ data }) => (
       </p>
 
       {data.allMarkdownRemark.edges.map(({ node }) => (
-        <div class="margin-bottom-xl">
-          <span class="color-gray-600 font-size-12-short">
+        <div className="margin-bottom-xl" key={`newsletter-${node.id}`}>
+          <span className="color-gray-600 font-size-12-short">
             {formatDate(node.fields.date)}
           </span>
 
-          <h2 class="font-size-20-medium margin-0">
+          <h2 className="font-size-20-medium margin-0">
             <a href={node.fields.permalink}>
-              {showEmoji(node.frontmatter.title)}
+              <Emoji name={node.frontmatter.emoji} />
+              {node.frontmatter.title}
             </a>
           </h2>
         </div>
@@ -59,6 +60,7 @@ export const pageQuery = graphql`
             slug
           }
           frontmatter {
+            emoji
             title
           }
         }

@@ -1,6 +1,7 @@
 ---
-title: ":man: Use dad jokes to get better at design"
-excerpt: We can design better pages and screens if we use real data when creating our mockups. I released a Sketch-plugin that replaces texts with dad jokes.
+title: "Use dad jokes to get better at design"
+excerpt: "We can design better pages and screens if we use real data when creating our mockups. I released a Sketch-plugin that replaces texts with dad jokes."
+emoji: ":man:"
 ---
 We can design better pages and screens if we use real data when creating our mockups. Using “ideal” content could even mask issues our design cannot handle. If we use Lorem Ipsum or joke content, we miss opportunities for creating better designs.
 

@@ -18,7 +18,13 @@ export default ({ data }) => {
   }, {})
 
   return (
-    <Layout>
+    <Layout
+      breadcrumbs={[
+        {
+          label: 'Categories'
+        }
+      ]}
+    >
       <Taper>
         <h1>Categories</h1>
       </Taper>

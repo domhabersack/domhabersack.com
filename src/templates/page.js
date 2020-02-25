@@ -5,7 +5,13 @@ import Layout from '../components/layout'
 import Taper from '../components/taper'
 
 export default ({ data }) => (
-  <Layout>
+  <Layout
+    breadcrumbs={[
+      {
+        label: data.markdownRemark.frontmatter.title
+      }
+    ]}
+  >
     <Taper>
       <h1>{data.markdownRemark.frontmatter.title}</h1>
 

@@ -8,16 +8,25 @@ import Tag from '../components/tag'
 import Taper from '../components/taper'
 
 export default ({ data }) => (
-  <Layout>
+  <Layout
+    breadcrumbs={[
+      {
+        label: 'Blog',
+        url: '/posts'
+      }, {
+        label: data.markdownRemark.frontmatter.title
+      }
+    ]}
+  >
     <Taper>
       <h1>{data.markdownRemark.frontmatter.title}</h1>
 
-      <div class="l-post__meta">
+      <div className="l-post__meta">
         <PostMeta date={data.markdownRemark.fields.date} />
       </div>
     </Taper>
 
-    <figure class="l-post__hero">
+    <figure className="l-post__hero">
       <img alt={data.markdownRemark.frontmatter.heroAlt} src={`/assets/heroes/${data.markdownRemark.fields.slug}.jpg`} />
 
       {data.markdownRemark.frontmatter.heroCaption && (
@@ -28,23 +37,23 @@ export default ({ data }) => (
     </figure>
 
     <Taper>
-      <div class="l-post__content" dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }} />
+      <div className="l-post__content" dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }} />
 
-      <div class="l-post__tagged">
-        <p class="l-post__tagged-label">
+      <div className="l-post__tagged">
+        <p className="l-post__tagged-label">
           Tags:
         </p>
 
-        <div class="l-post__tags">
+        <div className="l-post__tags">
           {data.markdownRemark.frontmatter.categories.map(category => (
-            <div class="l-post__tag">
+            <div className="l-post__tag" key={`category-${category}`}>
               <Tag tag={category} />
             </div>
           ))}
         </div>
       </div>
 
-      <div class="l-post__mailing-list-signup">
+      <div className="l-post__mailing-list-signup">
         <MailingListSignup />
       </div>
     </Taper>
