@@ -9,7 +9,7 @@ export default ({ data }) => (
     breadcrumbs={[
       {
         label: 'Projects',
-        url: '/projecs'
+        url: '/projects'
       }, {
         label: data.markdownRemark.frontmatter.title
       }
