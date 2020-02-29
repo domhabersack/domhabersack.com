@@ -23,9 +23,7 @@ export default ({ data }) => (
   >
     <Taper>
       <h1>
-        <Emoji
-          name={data.markdownRemark.frontmatter.emoji}
-        />
+        <Emoji name={data.markdownRemark.frontmatter.emoji} />
 
         {data.markdownRemark.frontmatter.title}
       </h1>

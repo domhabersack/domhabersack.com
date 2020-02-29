@@ -11,23 +11,37 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         ignore: [`**/\.*`],
+        name: `courses`,
+        path: `${__dirname}/_courses`,
+      }
+    }, {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        ignore: [`**/\.*`],
         name: `newsletters`,
         path: `${__dirname}/_newsletters`,
-      },
+      }
     }, {
       resolve: `gatsby-source-filesystem`,
       options: {
         ignore: [`**/\.*`],
         name: `pages`,
         path: `${__dirname}/_pages`,
-      },
+      }
+    }, {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        ignore: [`**/\.*`],
+        name: `projects`,
+        path: `${__dirname}/_projects`,
+      }
     }, {
       resolve: `gatsby-source-filesystem`,
       options: {
         ignore: [`**/\.*`],
         name: `posts`,
         path: `${__dirname}/_posts`,
-      },
+      }
     }, {
       resolve: `gatsby-transformer-remark`,
       options: {

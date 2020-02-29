@@ -1,37 +1,25 @@
 import React from 'react'
 
-export default ({ video }) => (
-  <div>
-    <div class="intrinsic-ratio-16-by-10 margin-bottom-xxs">
-      {video.vimeoId && (
-        <iframe
-          src={`https://player.vimeo.com/video/${video.vimeoId}?byline=false&title=false`}
-          frameborder="0"
-          allow="autoplay; fullscreen"
-          allowfullscreen
-        />
-      )}
+export default ({ title, vimeoId, youtubeId }) => (
+  <div className="intrinsic-ratio-16-by-10">
+    {vimeoId && (
+      <iframe
+        allow="autoplay; fullscreen"
+        allowFullScreen
+        frameBorder="0"
+        src={`https://player.vimeo.com/video/${vimeoId}?byline=false&title=false`}
+        title={title}
+      />
+    )}
 
-      {video.youtubeId && (
-        <iframe
-          src={`https://www.youtube.com/embed/${video.youtubeId}`}
-          frameborder="0"
-          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
-        />
-      )}
-    </div>
-
-    <h4 class="font-size-16 font-weight-400">
-      <span class="color-gray-500">
-        #{video.number}
-      </span>
-
-      {video.title}
-
-      <span class="color-gray-500">
-        ({video.duration})
-      </span>
-    </h4>
+    {youtubeId && (
+      <iframe
+        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+        allowFullScreen
+        frameBorder="0"
+        src={`https://www.youtube.com/embed/${youtubeId}`}
+        title={title}
+      />
+    )}
   </div>
 )

@@ -6,8 +6,8 @@ excerpt: Information on who is responsible for this property.
 Lazarettstr. 8  
 80636 Munich  
 Germany  
-Tel.: 0049 157 77808615  
-E-Mail: <{{ site.email }}>
+Tel.: 0049 1577 7808615  
+E-Mail: <dom@islovely.co>
 
 USt-IdNr.: DE 266202016
 

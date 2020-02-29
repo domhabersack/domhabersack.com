@@ -2,6 +2,7 @@ import React from 'react'
 
 import Layout from '../components/layout'
 import LandingPageBlock from '../components/landing-page-block'
+import Video from '../components/video'
 
 export default () => (
   <Layout>
@@ -52,6 +53,8 @@ export default () => (
         <p>
           Don’t believe me? Here is a free sample taken from one of our courses:
         </p>
+
+        <Video vimeoId="372044005" />
       </LandingPageBlock>
     </div>
 

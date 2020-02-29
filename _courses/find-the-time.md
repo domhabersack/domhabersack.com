@@ -1,6 +1,6 @@
 ---
 title: Find the Time
-excerpt: Reclaim your calendar and find more time for the people and activities you love. Do more of what _you_ want to do.
+excerpt: Reclaim your calendar and find more time for the people and activities you love. Do more of what you want to do.
 emails: 6
 weeks: 2
 sv_form: TODO

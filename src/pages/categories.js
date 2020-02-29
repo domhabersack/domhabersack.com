@@ -30,7 +30,7 @@ export default ({ data }) => {
       </Taper>
 
       {categories.map(category => (
-        <>
+        <React.Fragment key={`category-${category}`}>
           <Taper>
             <h2>
               {category} &times; {postsByCategory[category].length}
@@ -38,7 +38,7 @@ export default ({ data }) => {
           </Taper>
 
           <PostTeasers posts={postsByCategory[category]} />
-        </>
+        </React.Fragment>
       ))}
     </Layout>
   )
