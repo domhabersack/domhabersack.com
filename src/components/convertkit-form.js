@@ -2,6 +2,7 @@ import React from 'react'
 
 export default ({
   cta = 'Get me early access!',
+  location,
   svForm,
   sourceUrl,
   uid

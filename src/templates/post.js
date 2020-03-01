@@ -7,7 +7,7 @@ import PostMeta from '../components/post-meta'
 import Tag from '../components/tag'
 import Taper from '../components/taper'
 
-export default ({ data }) => {
+export default ({ data, location }) => {
   const {
     fields,
     frontmatter,
@@ -40,7 +40,7 @@ export default ({ data }) => {
       <Taper>
         <h1>{title}</h1>
 
-        <div className="l-post__meta">
+        <div className="margin-bottom-l">
           <PostMeta date={date} />
         </div>
       </Taper>
@@ -56,16 +56,16 @@ export default ({ data }) => {
       </figure>
 
       <Taper>
-        <div className="l-post__content" dangerouslySetInnerHTML={{ __html: html }} />
+        <div className="break-words margin-bottom-xxl" dangerouslySetInnerHTML={{ __html: html }} />
 
-        <div className="l-post__tagged">
-          <p className="l-post__tagged-label">
+        <div className="flex margin-bottom-xxl">
+          <p className="color-gray-700 font-size-12-medium margin-0 margin-bottom-xs margin-right-xxs padding-vertical-xs">
             Tags:
           </p>
 
-          <div className="l-post__tags">
+          <div className="align-items-center flex flex-wrap">
             {categories.map(category => (
-              <div className="l-post__tag" key={`category-${category}`}>
+              <div className="margin-bottom-xs margin-right-xxs" key={`category-${category}`}>
                 <Tag tag={category} />
               </div>
             ))}
@@ -73,7 +73,7 @@ export default ({ data }) => {
         </div>
 
         <div className="l-post__mailing-list-signup">
-          <MailingListSignup />
+          <MailingListSignup sourceUrl={location.href} />
         </div>
       </Taper>
     </Layout>

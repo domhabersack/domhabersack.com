@@ -1,43 +1,63 @@
 import React from 'react'
 
-export default ({ course }) => (
-  <article className="background-color-white border-radius-xs box-shadow-s flex flex-column height-full">
-    <div className="flex-grow padding-horizontal-s padding-vertical-m">
-      <h2 className="font-size-16-short margin-0 margin-bottom-xs">
-        <a href={course.fields.permalink}>
-          {course.frontmatter.title}
-        </a>
-      </h2>
+export default ({ course }) => {
+  const {
+    fields,
+    frontmatter
+  } = course
 
-      <p className="font-size-16-medium margin-0">
-        {course.frontmatter.excerpt}
-      </p>
-    </div>
+  const {
+    permalink
+  } = fields
 
-    <footer className="course-teaser__footer background-color-gray-100 color-gray-600 flex flex-wrap padding-horizontal-s padding-vertical-m">
-      {course.frontmatter.emails && (
-        <span className="course-teaser__meta course-teaser__meta--emails">
-          <strong>{course.frontmatter.emails}</strong> emails
-        </span>
-      )}
+  const {
+    emails,
+    excerpt,
+    hours,
+    title,
+    videos,
+    weeks
+  } = frontmatter
 
-      {course.frontmatter.videos && (
-        <span className="course-teaser__meta course-teaser__meta--videos">
-          <strong>{course.frontmatter.videos}</strong> videos
-        </span>
-      )}
+  return (
+    <article className="background-color-white border-radius-xs box-shadow-s flex flex-column height-full">
+      <div className="flex-grow padding-horizontal-s padding-vertical-m">
+        <h2 className="font-size-16-short margin-0 margin-bottom-xs">
+          <a href={permalink}>
+            {title}
+          </a>
+        </h2>
 
-      {course.frontmatter.hours && (
-        <span className="course-teaser__meta course-teaser__meta--hours">
-          <strong>{course.frontmatter.hours}</strong> hours
-        </span>
-      )}
+        <p className="font-size-16-medium margin-0">
+          {excerpt}
+        </p>
+      </div>
 
-      {course.frontmatter.weeks && (
-        <span className="course-teaser__meta course-teaser__meta--weeks">
-          <strong>{course.frontmatter.weeks}</strong> weeks
-        </span>
-      )}
-    </footer>
-  </article>
-)
+      <footer className="course-teaser__footer background-color-gray-100 border-bottom-radius-xs color-gray-600 flex flex-wrap font-weight-400 padding-horizontal-s padding-vertical-m">
+        {emails && (
+          <span className="course-teaser__meta course-teaser__meta--emails">
+            <strong>{emails}</strong> emails
+          </span>
+        )}
+
+        {videos && (
+          <span className="course-teaser__meta course-teaser__meta--videos">
+            <strong>{videos}</strong> videos
+          </span>
+        )}
+
+        {hours && (
+          <span className="course-teaser__meta course-teaser__meta--hours">
+            <strong>{hours}</strong> hours
+          </span>
+        )}
+
+        {weeks && (
+          <span className="course-teaser__meta course-teaser__meta--weeks">
+            <strong>{weeks}</strong> weeks
+          </span>
+        )}
+      </footer>
+    </article>
+  )
+}

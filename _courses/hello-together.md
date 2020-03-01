@@ -3,6 +3,8 @@ title: Hello Together
 excerpt: This course clears up common mistranslations to help non-native speakers feel more comfortable speaking English.
 emails: 24
 weeks: 8
+svForm: 1242118
+uid: d1addbb1ee
 ---
 “I can’t speak up in meetings because my English isn’t good enough.”
 

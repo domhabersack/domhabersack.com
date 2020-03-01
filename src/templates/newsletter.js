@@ -7,7 +7,7 @@ import MailingListSignup from '../components/mailing-list-signup'
 import Taper from '../components/taper'
 import formatDate from '../utils/format-date'
 
-export default ({ data }) => (
+export default ({ data, location }) => (
   <Layout
     breadcrumbs={[
       {
@@ -34,7 +34,7 @@ export default ({ data }) => (
 
       <div className="margin-bottom-xxl" dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }} />
 
-      <MailingListSignup />
+      <MailingListSignup sourceUrl={location.href} />
     </Taper>
   </Layout>
 )

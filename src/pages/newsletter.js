@@ -4,7 +4,7 @@ import Layout from '../components/layout'
 import ConvertkitForm from '../components/convertkit-form'
 import Taper from '../components/taper'
 
-export default () => (
+export default ({ location }) => (
   <Layout
     breadcrumbs={[
       {
@@ -53,7 +53,7 @@ export default () => (
         You can find <a href="/newsletter/archive">all previous newsletters</a> in the archive. Get this bonus content before everybody else!
       </p>
 
-      <ConvertkitForm svForm='1067424' uid='627637e2b6' />
+      <ConvertkitForm svForm="1067424" uid="627637e2b6" sourceUrl={location.href} />
     </Taper>
   </Layout>
 )
