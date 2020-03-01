@@ -1,8 +1,8 @@
-import React from 'react';
+import React from 'react'
 
 export default () => (
   <div />
-);
+)
 
 /*
 {% assign is_post = page.collection == "posts" %}
