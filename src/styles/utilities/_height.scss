@@ -1,7 +1,9 @@
 $_height: (
-  s:    1.2rem,
-  m:    1.8rem,
-  l:    2.4rem,
+  '0':  0,
+  '12': 1.2rem,
+  '15': 1.5rem,
+  '24': 2.4rem,
+  '27': 2.7rem,
   full: 100%
 );
 
@@ -9,8 +11,10 @@ $_height: (
   height: map-get($_height, $size);
 }
 
-@each $size in (s, m, l, full) {
+@each $size in ('0', '12', '15', '24', '27', 'full') {
   .height-#{$size} {
-    @include _height($size);
+    @include _at-breakpoints {
+      @include _height($size);
+    }
   }
 }

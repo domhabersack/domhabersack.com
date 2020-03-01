@@ -1,3 +1,20 @@
-.width-full {
-  width: 100%;
+$_width: (
+  '0':  0,
+  '12': 1.2rem,
+  '15': 1.5rem,
+  '24': 2.4rem,
+  '27': 2.7rem,
+  full: 100%
+);
+
+@mixin _width($size) {
+  width: map-get($_width, $size);
+}
+
+@each $size in ('0', '12', '15', '24', '27', 'full') {
+  .width-#{$size} {
+    @include _at-breakpoints {
+      @include _width($size);
+    }
+  }
 }

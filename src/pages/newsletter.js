@@ -4,56 +4,50 @@ import Layout from '../components/layout'
 import ConvertkitForm from '../components/convertkit-form'
 import Taper from '../components/taper'
 
-export default ({ location }) => (
-  <Layout
-    breadcrumbs={[
-      {
-        label: 'Newsletter'
-      }
-    ]}
-  >
-    <Taper>
-      <h1>More tips, straight to your inbox</h1>
+export default ({ location }) => {
+  const listItems = [
+    'design and development tips you can use immediately',
+    'free previews of my upcoming course materials',
+    'discount codes for my courses and products',
+    'announcements of events I am going to speak at',
+    'access to video recordings of past speaking gigs'
+  ]
 
-      <p>
-        In addition to what I share on this site, I send out a weekly newsletter with tips to help you work smarter. By signing up, you get access to:
-      </p>
+  return (
+    <Layout
+      breadcrumbs={[
+        {
+          label: 'Newsletter'
+        }
+      ]}
+    >
+      <Taper>
+        <h1>More tips, straight to your inbox</h1>
 
-      <ul className="list-style-none">
-        <li>
-          <div className="border-color-blue-500 border-radius-round border-style-solid border-width-m inline-block margin-right-xxs padding-horizontal-xxs">
-            <img alt="" className="height-m" src="/assets/icons/checkmark--filled.svg" />
-          </div>
+        <p>
+          In addition to what I share on this site, I send out a weekly newsletter with tips to help you work smarter. By signing up, you get access to:
+        </p>
 
-          design and development tips you can use immediately
-        </li>
+        <ul className="list-style-none xs:columns-10 m:columns-8-of-10 l:columns-6-of-8">
+          {listItems.map(listItem => (
+            <li className="flex">
+              <div className="align-items-center border-color-blue-500 border-radius-round border-style-solid border-width-m flex-no-shrink height-24 inline-flex justify-center margin-right-xxs width-24 xs:height-27 xs:width-27 m:height-24 m:margin-top-xxs m:width-24 l:height-27 l:margin-right-xs l:width-27">
+                <img alt="" className="width-12 xs:width-15 m:width-12 l:width-15" src="/assets/icons/checkmark--filled.svg" />
+              </div>
 
-        <li>
-          <img alt="" className="background-color-yellow-800 border-color-blue-500 border-radius-round margin-right-xxs" src="/assets/icons/checkmark--filled.svg" />
-          free previews of my upcoming course materials
-        </li>
+              <span className="margin-bottom-xxs s:margin-bottom-xs">
+                {listItem}
+              </span>
+            </li>
+          ))}
+        </ul>
 
-        <li>
-          <img alt="" className="background-color-yellow-800 border-color-blue-500 border-radius-round margin-right-xxs" src="/assets/icons/checkmark--filled.svg" />
-          discount codes for my courses and products
-        </li>
+        <p>
+          You can find <a href="/newsletter/archive">all previous newsletters</a> in the archive. Get this bonus content before everybody else!
+        </p>
 
-        <li>
-          <img alt="" className="background-color-yellow-800 border-color-blue-500 border-radius-round margin-right-xxs" src="/assets/icons/checkmark--filled.svg" />
-          announcements of events I am going to speak at
-        </li>
-
-        <li>
-          <img alt="" className="background-color-yellow-800 border-color-blue-500 border-radius-round margin-right-xxs" src="/assets/icons/checkmark--filled.svg" />
-          access to video recordings of past speaking gigs
-        </li>
-      </ul>
-
-      <p>
-        You can find <a href="/newsletter/archive">all previous newsletters</a> in the archive. Get this bonus content before everybody else!
-      </p>
-
-      <ConvertkitForm svForm="1067424" uid="627637e2b6" sourceUrl={location.href} />
-    </Taper>
-  </Layout>
-)
+        <ConvertkitForm svForm="1067424" uid="627637e2b6" sourceUrl={location.href} />
+      </Taper>
+    </Layout>
+  )
+}

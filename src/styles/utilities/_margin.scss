@@ -65,42 +65,56 @@ $sizes: ('0', 'auto', 'xxs', 'xs', 's', 'm', 'l', 'xl', 'xxl');
 
 @each $size in $sizes {
   .margin-#{$size} {
-    @include _margin($size);
+    @include _at-breakpoints {
+      @include _margin($size);
+    }
   }
 }
 
 @each $size in $sizes {
   .margin-top-#{$size} {
-    @include _margin-top($size);
+    @include _at-breakpoints {
+      @include _margin-top($size);
+    }
   }
 }
 
 @each $size in $sizes {
   .margin-right-#{$size} {
-    @include _margin-right($size);
+    @include _at-breakpoints {
+      @include _margin-right($size);
+    }
   }
 }
 
 @each $size in $sizes {
   .margin-bottom-#{$size} {
-    @include _margin-bottom($size);
+    @include _at-breakpoints {
+      @include _margin-bottom($size);
+    }
   }
 }
 
 @each $size in $sizes {
   .margin-left-#{$size} {
-    @include _margin-left($size);
+    @include _at-breakpoints {
+      @include _margin-left($size);
+    }
   }
 }
 
 @each $size in $sizes {
   .margin-vertical-#{$size} {
-    @include _margin-vertical($size);
+    @include _at-breakpoints {
+      @include _margin-vertical($size);
+    }
   }
 }
 
 @each $size in $sizes {
   .margin-horizontal-#{$size} {
-    @include _margin-horizontal($size);
+    @include _at-breakpoints {
+      @include _margin-horizontal($size);
+    }
   }
 }

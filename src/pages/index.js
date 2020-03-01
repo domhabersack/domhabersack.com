@@ -16,8 +16,7 @@ export default () => (
           Level up your skills from basic to advanced with videos on HTML, CSS, JavaScript, and more.
         </p>
 
-        <a className="align-items-center background-color-yellow-400 border-radius-xl box-shadow-s color-gray-900 inline-flex padding-horizontal-xl padding-vertical-m visited:color-gray-900" href="/courses">
-          <img alt="" className="margin-right-xxs" src="/assets/icons/desktop.svg" />
+        <a className="align-items-center background-color-yellow-400 border-radius-xl box-shadow-s color-gray-900 inline-flex padding-horizontal-xl padding-vertical-m visited:color-gray-900" href="/courses"> <img alt="" className="margin-right-xxs" src="/assets/icons/desktop.svg" />
 
           <span className="font-size-16 font-weight-500">
             See all courses
