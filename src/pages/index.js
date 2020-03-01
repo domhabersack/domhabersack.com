@@ -16,11 +16,13 @@ export default () => (
           Level up your skills from basic to advanced with videos on HTML, CSS, JavaScript, and more.
         </p>
 
-        <p>
-          <a className="background-color-yellow-400 border-radius-xl box-shadow-s color-gray-900 inline-block padding-horizontal-xl padding-vertical-m visited:color-gray-900" href="/courses">
+        <a className="align-items-center background-color-yellow-400 border-radius-xl box-shadow-s color-gray-900 inline-flex padding-horizontal-xl padding-vertical-m visited:color-gray-900" href="/courses">
+          <img alt="" className="margin-right-xxs" src="/assets/icons/desktop.svg" />
+
+          <span className="font-size-16 font-weight-500">
             See all courses
-          </a>
-        </p>
+          </span>
+        </a>
       </div>
 
       <div className="columns-8 xs:columns-6 s:columns-4 m:columns-5 xl:columns-4">
