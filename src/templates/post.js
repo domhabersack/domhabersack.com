@@ -7,58 +7,78 @@ import PostMeta from '../components/post-meta'
 import Tag from '../components/tag'
 import Taper from '../components/taper'
 
-export default ({ data }) => (
-  <Layout
-    breadcrumbs={[
-      {
-        label: 'Blog',
-        url: '/posts'
-      }, {
-        label: data.markdownRemark.frontmatter.title
-      }
-    ]}
-  >
-    <Taper>
-      <h1>{data.markdownRemark.frontmatter.title}</h1>
+export default ({ data }) => {
+  const {
+    fields,
+    frontmatter,
+    html
+  } = data.markdownRemark
 
-      <div className="l-post__meta">
-        <PostMeta date={data.markdownRemark.fields.date} />
-      </div>
-    </Taper>
+  const {
+    date,
+    slug
+  } = fields
 
-    <figure className="l-post__hero">
-      <img alt={data.markdownRemark.frontmatter.heroAlt} src={`/assets/heroes/${data.markdownRemark.fields.slug}.jpg`} />
+  const {
+    categories,
+    heroAlt,
+    heroCaption,
+    title
+  } = frontmatter
 
-      {data.markdownRemark.frontmatter.heroCaption && (
-        <figcaption>
-          {data.markdownRemark.frontmatter.heroCaption}
-        </figcaption>
-      )}
-    </figure>
+  return (
+    <Layout
+      breadcrumbs={[
+        {
+          label: 'Blog',
+          url: '/posts'
+        }, {
+          label: title
+        }
+      ]}
+    >
+      <Taper>
+        <h1>{title}</h1>
 
-    <Taper>
-      <div className="l-post__content" dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }} />
-
-      <div className="l-post__tagged">
-        <p className="l-post__tagged-label">
-          Tags:
-        </p>
-
-        <div className="l-post__tags">
-          {data.markdownRemark.frontmatter.categories.map(category => (
-            <div className="l-post__tag" key={`category-${category}`}>
-              <Tag tag={category} />
-            </div>
-          ))}
+        <div className="l-post__meta">
+          <PostMeta date={date} />
         </div>
-      </div>
+      </Taper>
 
-      <div className="l-post__mailing-list-signup">
-        <MailingListSignup />
-      </div>
-    </Taper>
-  </Layout>
-)
+      <figure className="l-post__hero">
+        <img alt={heroAlt} src={`/assets/heroes/${slug}.jpg`} />
+
+        {heroCaption && (
+          <figcaption>
+            {heroCaption}
+          </figcaption>
+        )}
+      </figure>
+
+      <Taper>
+        <div className="l-post__content" dangerouslySetInnerHTML={{ __html: html }} />
+
+        <div className="l-post__tagged">
+          <p className="l-post__tagged-label">
+            Tags:
+          </p>
+
+          <div className="l-post__tags">
+            {categories.map(category => (
+              <div className="l-post__tag" key={`category-${category}`}>
+                <Tag tag={category} />
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="l-post__mailing-list-signup">
+          <MailingListSignup />
+        </div>
+      </Taper>
+    </Layout>
+  )
+}
 
 export const pageQuery = graphql`
   query($slug: String!) {
