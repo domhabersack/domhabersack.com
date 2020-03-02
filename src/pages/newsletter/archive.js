@@ -1,4 +1,5 @@
 import React from 'react'
+import { graphql } from 'gatsby'
 
 // excerpt: Read some of my previous newsletters. Sign up to get them delivered to your inbox.
 

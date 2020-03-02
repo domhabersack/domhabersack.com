@@ -1,4 +1,9 @@
 module.exports = {
+  siteMetadata: {
+    description: ``,
+    siteUrl: `https://islovely.co`,
+    title: ``
+  },
   plugins: [
     {
       resolve: `gatsby-plugin-sass`,
@@ -54,6 +59,7 @@ module.exports = {
         ]
       }
     },
-    `gatsby-plugin-react-helmet`
+    `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-feed`
   ]
 }
