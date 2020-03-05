@@ -1,6 +1,10 @@
 import React from 'react'
 
-export default ({ title, vimeoId, youtubeId }) => (
+export default ({
+  title,
+  vimeoId,
+  youtubeId
+}) => (
   <div className="intrinsic-ratio-16-by-10">
     {vimeoId && (
       <iframe

@@ -4,33 +4,50 @@ import { graphql } from 'gatsby'
 import Layout from '../components/layout'
 import Taper from '../components/taper'
 
-export default ({ data }) => (
-  <Layout
-    breadcrumbs={[
-      {
-        label: 'Projects'
-      }
-    ]}
-  >
-    <Taper>
-      <h1>Projects</h1>
+export default ({ data }) => {
+  const projects = data.allMarkdownRemark.edges.map(({ node }) => node)
 
-      {data.allMarkdownRemark.edges.map(({ node }) => (
-        <React.Fragment key={`project-${node.id}`} >
-          <h2>
-            <a href={node.fields.permalink}>
-              {node.frontmatter.title}
-            </a>
-          </h2>
+  return (
+    <Layout
+      breadcrumbs={[
+        {
+          label: 'Projects'
+        }
+      ]}
+    >
+      <Taper>
+        <h1>Projects</h1>
 
-          <p>
-            {node.frontmatter.excerpt}
-          </p>
-        </React.Fragment>
-      ))}
-    </Taper>
-  </Layout>
-)
+        {projects.map(({
+          fields,
+          frontmatter,
+          id
+        }) => {
+          const { permalink } = fields
+
+          const {
+            excerpt,
+            title
+          } = frontmatter
+
+          return (
+            <React.Fragment key={`project-${id}`} >
+              <h2>
+                <a href={permalink}>
+                  {title}
+                </a>
+              </h2>
+
+              <p>
+                {excerpt}
+              </p>
+            </React.Fragment>
+          )
+        })}
+      </Taper>
+    </Layout>
+  )
+}
 
 export const pageQuery = graphql`
   query {

@@ -5,21 +5,25 @@ import Layout from '../components/layout'
 import PostTeasers from '../components/post-teasers'
 import Taper from '../components/taper'
 
-export default ({ data }) => (
-  <Layout
-    breadcrumbs={[
-      {
-        label: 'Blog'
-      }
-    ]}
-  >
-    <Taper>
-      <h1>Blog</h1>
-    </Taper>
+export default ({ data }) => {
+  const posts = data.allMarkdownRemark.edges.map(({ node }) => node)
 
-    <PostTeasers posts={data.allMarkdownRemark.edges.map(({ node }) => node)} />
-  </Layout>
-)
+  return (
+    <Layout
+      breadcrumbs={[
+        {
+          label: 'Blog'
+        }
+      ]}
+    >
+      <Taper>
+        <h1>Blog</h1>
+      </Taper>
+
+      <PostTeasers posts={posts} />
+    </Layout>
+  )
+}
 
 export const pageQuery = graphql`
   query {

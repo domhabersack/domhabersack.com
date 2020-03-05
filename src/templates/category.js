@@ -1,28 +1,36 @@
-import React from "react"
-import { graphql } from "gatsby"
+import React from 'react'
+import { graphql } from 'gatsby'
 
 import Layout from '../components/layout'
 import PostTeasers from '../components/post-teasers'
 import Taper from '../components/taper'
 
-export default ({ data, pageContext }) => (
-  <Layout
-    breadcrumbs={[
-      {
-        label: 'Categories',
-        url: '/categories'
-      }, {
-        label: pageContext.category
-      }
-    ]}
-  >
-    <Taper>
-      <h1>Posts in “{pageContext.category}”</h1>
-    </Taper>
+export default ({
+  data,
+  pageContext
+}) => {
+  const posts = data.allMarkdownRemark.edges.map(({ node }) => node)
+  const { category } = pageContext
 
-    <PostTeasers posts={data.allMarkdownRemark.edges.map(({ node }) => node)} />
-  </Layout>
-)
+  return (
+    <Layout
+      breadcrumbs={[
+        {
+          label: 'Categories',
+          url: '/categories'
+        }, {
+          label: category
+        }
+      ]}
+    >
+      <Taper>
+        <h1>Posts in “{category}”</h1>
+      </Taper>
+
+      <PostTeasers posts={posts} />
+    </Layout>
+  )
+}
 
 export const pageQuery = graphql`
   query($category: [String]) {

@@ -1,5 +1,5 @@
-import React from "react"
-import { graphql } from "gatsby"
+import React from 'react'
+import { graphql } from 'gatsby'
 
 import Layout from '../components/layout'
 import MailingListSignup from '../components/mailing-list-signup'
@@ -7,7 +7,10 @@ import PostMeta from '../components/post-meta'
 import Tag from '../components/tag'
 import Taper from '../components/taper'
 
-export default ({ data, location }) => {
+export default ({
+  data,
+  location
+}) => {
   const {
     fields,
     frontmatter,
@@ -82,11 +85,13 @@ export default ({ data, location }) => {
 
 export const pageQuery = graphql`
   query($slug: String!) {
-    markdownRemark(fields: {
-      slug: {
-        eq: $slug
+    markdownRemark(
+      fields: {
+        slug: {
+          eq: $slug
+        }
       }
-    }) {
+    ) {
       fields {
         date
         slug

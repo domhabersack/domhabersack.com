@@ -30,7 +30,7 @@ export default ({ location }) => {
 
         <ul className="list-style-none xs:columns-10 m:columns-8-of-10 l:columns-6-of-8">
           {listItems.map(listItem => (
-            <li className="flex">
+            <li className="flex" key={`newsletter-benefit-${listItem}`}>
               <div className="align-items-center border-color-blue-500 border-radius-round border-style-solid border-width-m flex-no-shrink height-24 inline-flex justify-center margin-right-xxs width-24 xs:height-27 xs:width-27 m:height-24 m:margin-top-xxs m:width-24 l:height-27 l:margin-right-xs l:width-27">
                 <img alt="" className="width-12 xs:width-15 m:width-12 l:width-15" src="/assets/icons/checkmark--filled.svg" />
               </div>

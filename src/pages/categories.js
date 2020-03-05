@@ -6,16 +6,16 @@ import PostTeasers from '../components/post-teasers'
 import Taper from '../components/taper'
 
 export default ({ data }) => {
+  const posts = data.allMarkdownRemark.edges.map(({ node }) => node)
+
   const categories = [
-    ...new Set(data.allMarkdownRemark.edges.map(({ node }) => node.frontmatter.categories).flat())
+    ...new Set(posts.map(({ frontmatter }) => frontmatter.categories).flat())
   ].sort((a, b) => a.toLowerCase() > b.toLowerCase())
 
-  const postsByCategory = categories.reduce((object, category) => {
-    return {
-      ...object,
-      [category]: data.allMarkdownRemark.edges.filter(({ node }) => node.frontmatter.categories.includes(category)).map(({ node }) => node)
-    }
-  }, {})
+  const postsByCategory = categories.reduce((object, category) => ({
+    ...object,
+    [category]: posts.filter(({ frontmatter }) => frontmatter.categories.includes(category))
+  }), {})
 
   return (
     <Layout

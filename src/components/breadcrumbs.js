@@ -2,7 +2,16 @@ import React from 'react'
 
 export default ({ breadcrumbs }) => breadcrumbs ? (
   <nav className="font-size-14-medium font-weight-500 margin-bottom-xl">
-    {[{ label: 'Home', url: '/'}, ...breadcrumbs].map(({ label, url }) => url ? (
+    {[
+      {
+        label: 'Home',
+        url: '/'
+      },
+      ...breadcrumbs
+    ].map(({
+      label,
+      url
+    }) => url ? (
       <React.Fragment key={`breadcrumb-${label}`}>
         <a className="inline-block" href={url}>
           {label}

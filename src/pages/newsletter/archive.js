@@ -8,41 +8,61 @@ import Layout from '../../components/layout'
 import Taper from '../../components/taper'
 import formatDate from '../../utils/format-date'
 
-export default ({ data }) => (
-  <Layout
-    breadcrumbs={[
-      {
-        label: 'Newsletter',
-        url: '/newsletter'
-      }, {
-        label: 'Archive',
-      }
-    ]}
-  >
-    <Taper>
-      <h1>Newsletter archive</h1>
+export default ({ data }) => {
+  const newsletters = data.allMarkdownRemark.edges.map(({ node }) => node)
 
-      <p>
-        These are some of my previous newsletters. <a href="/newsletter">Sign up</a> if you want to get them delivered straight to your inbox.
-      </p>
+  return (
+    <Layout
+      breadcrumbs={[
+        {
+          label: 'Newsletter',
+          url: '/newsletter'
+        }, {
+          label: 'Archive',
+        }
+      ]}
+    >
+      <Taper>
+        <h1>Newsletter archive</h1>
 
-      {data.allMarkdownRemark.edges.map(({ node }) => (
-        <div className="margin-bottom-xl" key={`newsletter-${node.id}`}>
-          <span className="color-gray-600 font-size-12-short">
-            {formatDate(node.fields.date)}
-          </span>
+        <p>
+          These are some of my previous newsletters. <a href="/newsletter">Sign up</a> if you want to get them delivered straight to your inbox.
+        </p>
 
-          <h2 className="font-size-20-medium margin-0">
-            <a href={node.fields.permalink}>
-              <Emoji name={node.frontmatter.emoji} />
-              {node.frontmatter.title}
-            </a>
-          </h2>
-        </div>
-      ))}
-    </Taper>
-  </Layout>
-)
+        {newsletters.map(({
+          fields,
+          frontmatter,
+          id
+        }) => {
+          const {
+            date,
+            permalink
+          } = fields
+
+          const {
+            emoji,
+            title
+          } = frontmatter
+
+          return (
+            <div className="margin-bottom-xl" key={`newsletter-${id}`}>
+              <span className="color-gray-600 font-size-12-short">
+                {formatDate(date)}
+              </span>
+
+              <h2 className="font-size-20-medium margin-0">
+                <a href={permalink}>
+                  <Emoji name={emoji} />
+                  {title}
+                </a>
+              </h2>
+            </div>
+          )
+        })}
+      </Taper>
+    </Layout>
+  )
+}
 
 export const pageQuery = graphql`
   query {

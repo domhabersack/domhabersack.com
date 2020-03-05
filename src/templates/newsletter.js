@@ -7,45 +7,67 @@ import MailingListSignup from '../components/mailing-list-signup'
 import Taper from '../components/taper'
 import formatDate from '../utils/format-date'
 
-export default ({ data, location }) => (
-  <Layout
-    breadcrumbs={[
-      {
-        label: 'Newsletter',
-        url: '/newsletter'
-      }, {
-        label: 'Archive',
-        url: '/newsletter/archive'
-      }, {
-        label: data.markdownRemark.frontmatter.title
-      }
-    ]}
-  >
-    <Taper>
-      <h1>
-        <Emoji name={data.markdownRemark.frontmatter.emoji} />
+export default ({
+  data,
+  location
+}) => {
+  const {
+    fields,
+    frontmatter,
+    html
+  } = data.markdownRemark
 
-        {data.markdownRemark.frontmatter.title}
-      </h1>
+  const {
+    date
+  } = fields
 
-      <p className="color-gray-500 font-size-12-short margin-bottom-xl">
-        {formatDate(data.markdownRemark.fields.date)}
-      </p>
+  const {
+    emoji,
+    title
+  } = frontmatter
 
-      <div className="margin-bottom-xxl" dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }} />
+  return (
+    <Layout
+      breadcrumbs={[
+        {
+          label: 'Newsletter',
+          url: '/newsletter'
+        }, {
+          label: 'Archive',
+          url: '/newsletter/archive'
+        }, {
+          label: title
+        }
+      ]}
+    >
+      <Taper>
+        <h1>
+          <Emoji name={emoji} />
 
-      <MailingListSignup sourceUrl={location.href} />
-    </Taper>
-  </Layout>
-)
+          {title}
+        </h1>
+
+        <p className="color-gray-500 font-size-12-short margin-bottom-xl">
+          {formatDate(date)}
+        </p>
+
+        <div className="margin-bottom-xxl" dangerouslySetInnerHTML={{ __html: html }} />
+
+        <MailingListSignup sourceUrl={location.href} />
+      </Taper>
+    </Layout>
+  )
+}
 
 export const pageQuery = graphql`
   query($slug: String!) {
-    markdownRemark(fields: {
-      slug: {
-        eq: $slug
+    markdownRemark(
+      fields: {
+        slug: {
+          eq: $slug
+        }
       }
-    }) {
+    ) {
       fields {
         date
       }

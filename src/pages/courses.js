@@ -5,29 +5,33 @@ import CourseTeasers from '../components/course-teasers'
 import Layout from '../components/layout'
 import Taper from '../components/taper'
 
-export default ({ data }) => (
-  <Layout
-    breadcrumbs={[
-      {
-        label: 'Courses'
-      }
-    ]}
-  >
-    <Taper>
-      <h1>Courses</h1>
+export default ({ data }) => {
+  const courses = data.allMarkdownRemark.edges.map(({ node }) => node)
 
-      <p>
-        If you are a designer or developer and want to level up your skills, there’s a course in here for you. All of them are completely free.
-      </p>
+  return (
+    <Layout
+      breadcrumbs={[
+        {
+          label: 'Courses'
+        }
+      ]}
+    >
+      <Taper>
+        <h1>Courses</h1>
 
-      <p>
-        I am always working on new content. Sign up to any course or <a href="/newsletter">join my newsletter</a> to catch announcements of new ones.
-      </p>
-    </Taper>
+        <p>
+          If you are a designer or developer and want to level up your skills, there’s a course in here for you. All of them are completely free.
+        </p>
 
-    <CourseTeasers courses={data.allMarkdownRemark.edges.map(({ node }) => node)} />
-  </Layout>
-)
+        <p>
+          I am always working on new content. Sign up to any course or <a href="/newsletter">join my newsletter</a> to catch announcements of new ones.
+        </p>
+      </Taper>
+
+      <CourseTeasers courses={courses} />
+    </Layout>
+  )
+}
 
 export const pageQuery = graphql`
   query {

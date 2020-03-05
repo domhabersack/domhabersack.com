@@ -8,7 +8,10 @@ import Taper from './taper'
 
 const IS_IN_DEBUG_MODE = false
 
-export default ({ breadcrumbs, children }) => (
+export default ({
+  breadcrumbs,
+  children
+}) => (
   <>
     <Helmet htmlAttributes={IS_IN_DEBUG_MODE ? { 'class': 'debug' } : {}}>
       <link rel="stylesheet" href="https://use.typekit.net/gbp8hqr.css" />

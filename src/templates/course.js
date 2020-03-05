@@ -6,9 +6,10 @@ import Layout from '../components/layout'
 import Taper from '../components/taper'
 import Video from '../components/video'
 
-export default ({ data, location }) => {
-  console.log({ data, location })
-
+export default ({
+  data,
+  location
+}) => {
   const {
     frontmatter,
     html
@@ -47,7 +48,12 @@ export default ({ data, location }) => {
 
       {playlist && (
         <div className="grid grid-columns-1 grid-column-gap grid-row-gap-l xs:grid-columns-2 xs:grid-row-gap-xs m:grid-columns-3 m:grid-row-gap-m l:grid-row-gap-l">
-          {playlist.map(({ duration, title, vimeoId, youtubeId }, index) => (
+          {playlist.map(({
+            duration,
+            title,
+            vimeoId,
+            youtubeId
+          }, index) => (
             <div key={`video-${title}`}>
               <div>
                 <Video vimeoId={vimeoId} youtubeId={youtubeId} />
@@ -78,11 +84,13 @@ export default ({ data, location }) => {
 
 export const pageQuery = graphql`
   query($slug: String!) {
-    markdownRemark(fields: {
-      slug: {
-        eq: $slug
+    markdownRemark(
+      fields: {
+        slug: {
+          eq: $slug
+        }
       }
-    }) {
+    ) {
       fields {
         slug
       }
