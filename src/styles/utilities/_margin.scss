@@ -8,7 +8,8 @@ $_margin: (
     m:    2rem,
     l:    2.5rem,
     xl:   3rem,
-    xxl:  3.5rem
+    xxl:  3.5rem,
+    span: calc(-1 * var(--content-horizontal-padding))
   ),
   vertical: (
     '0':  0,
@@ -23,7 +24,7 @@ $_margin: (
   )
 );
 
-$sizes: ('0', 'auto', 'xxs', 'xs', 's', 'm', 'l', 'xl', 'xxl');
+$sizes: ('0', 'auto', 'xxs', 'xs', 's', 'm', 'l', 'xl', 'xxl', 'span');
 
 @function get-horizontal-margin($size) {
   @return map-get(map-get($_margin, horizontal), $size);
