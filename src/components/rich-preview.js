@@ -64,5 +64,5 @@ export default () => (
 {% endif %}
 
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:creator" content="@{{ site.profiles.twitter }}" />
+<meta name="twitter:creator" content="@domhabersack" />
 */

@@ -13,32 +13,32 @@ export default () => (
     </div>
 
     <div className="flex flex-wrap justify-center list-style-none margin-0 padding-0">
-      <a className="flex font-size-16 margin-horizontal-xs padding-vertical-xs" href="http://github.com/{{ site.profiles.github }}">
-        <img className="margin-right-xxs" src="/icons/github.svg" alt="{{ site.profiles.github }} on GitHub" />
+      <a className="flex font-size-16 margin-horizontal-xs padding-vertical-xs" href="https://github.com/domhabersack">
+        <img className="margin-right-xxs" src="/icons/github.svg" alt="domhabersack on GitHub" />
 
         <span>
           GitHub
         </span>
       </a>
 
-      <a className="flex font-size-16 margin-horizontal-xs padding-vertical-xs" href="http://twitter.com/{{ site.profiles.twitter }}">
-        <img className="margin-right-xxs" src="/icons/twitter.svg" alt="{{ site.profiles.twitter }} on Twitter" />
+      <a className="flex font-size-16 margin-horizontal-xs padding-vertical-xs" href="https://twitter.com/domhabersack">
+        <img className="margin-right-xxs" src="/icons/twitter.svg" alt="domhabersack on Twitter" />
 
         <span>
           Twitter
         </span>
       </a>
 
-      <a className="flex font-size-16 margin-horizontal-xs padding-vertical-xs" href="http://dribbble.com/{{ site.profiles.dribbble }}">
-        <img className="margin-right-xxs" src="/icons/dribbble.svg" alt="{{ site.profiles.dribbble }} on dribbble" />
+      <a className="flex font-size-16 margin-horizontal-xs padding-vertical-xs" href="https://dribbble.com/domhabersack">
+        <img className="margin-right-xxs" src="/icons/dribbble.svg" alt="domhabersack on dribbble" />
 
         <span>
           Dribbble
         </span>
       </a>
 
-      <a className="flex font-size-16 margin-horizontal-xs padding-vertical-xs" href="http://mastodon.social/{{ site.profiles.mastodonsocial }}">
-        <img className="margin-right-xxs" src="/icons/mastodon.svg" alt="{{ site.profiles.mastodonsocial }} on Mastodon" />
+      <a className="flex font-size-16 margin-horizontal-xs padding-vertical-xs" href="https://mastodon.social/@domhabersack">
+        <img className="margin-right-xxs" src="/icons/mastodon.svg" alt="@domhabersack on Mastodon" />
 
         <span>
           Mastodon
