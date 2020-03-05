@@ -4,6 +4,7 @@ import { graphql } from 'gatsby'
 import Emoji from '../../components/emoji'
 import Layout from '../../components/layout'
 import MetaTags from '../../components/meta-tags'
+import RichPreview from '../../components/rich-preview'
 import Taper from '../../components/taper'
 import formatDate from '../../utils/format-date'
 
@@ -23,6 +24,12 @@ export default ({ data }) => {
     >
       <MetaTags
         description="Read some of my previous newsletters. Sign up to get them delivered to your inbox."
+        title="Newsletter archive"
+      />
+
+      <RichPreview
+        description="Read some of my previous newsletters. Sign up to get them delivered to your inbox."
+        permalink="/newsletter/archive"
         title="Newsletter archive"
       />
 

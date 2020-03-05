@@ -4,6 +4,7 @@ import { graphql } from 'gatsby'
 import ConvertkitForm from '../components/convertkit-form'
 import Layout from '../components/layout'
 import MetaTags from '../components/meta-tags'
+import RichPreview from '../components/rich-preview'
 import Taper from '../components/taper'
 import Video from '../components/video'
 
@@ -12,9 +13,12 @@ export default ({
   location
 }) => {
   const {
+    fields,
     frontmatter,
     html
   } = data.markdownRemark
+
+  const { permalink } = fields
 
   const {
     cta,
@@ -36,6 +40,11 @@ export default ({
       ]}
     >
       <MetaTags
+        title={title}
+      />
+
+      <RichPreview
+        permalink={permalink}
         title={title}
       />
 
@@ -97,6 +106,7 @@ export const pageQuery = graphql`
       }
     ) {
       fields {
+        permalink
         slug
       }
       html

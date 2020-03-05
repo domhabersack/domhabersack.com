@@ -4,7 +4,9 @@ import { graphql } from 'gatsby'
 import Layout from '../components/layout'
 import MetaTags from '../components/meta-tags'
 import PostTeasers from '../components/post-teasers'
+import RichPreview from '../components/rich-preview'
 import Taper from '../components/taper'
+import slugify from '../utils/slugify'
 
 export default ({
   data,
@@ -25,6 +27,11 @@ export default ({
       ]}
     >
       <MetaTags
+        title={`Posts in “${category}”`}
+      />
+
+      <RichPreview
+        permalink={`/categories/${slugify(category)}`}
         title={`Posts in “${category}”`}
       />
 

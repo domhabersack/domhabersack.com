@@ -5,6 +5,7 @@ import Layout from '../components/layout'
 import MailingListSignup from '../components/mailing-list-signup'
 import MetaTags from '../components/meta-tags'
 import PostMeta from '../components/post-meta'
+import RichPreview from '../components/rich-preview'
 import Tag from '../components/tag'
 import Taper from '../components/taper'
 
@@ -20,7 +21,8 @@ export default ({
 
   const {
     date,
-    slug
+    slug,
+    permalink
   } = fields
 
   const {
@@ -45,6 +47,17 @@ export default ({
       <MetaTags
         description={excerpt}
         title={title}
+      />
+
+      <RichPreview
+        description={excerpt}
+        heroAlt={heroAlt}
+        imageUrl={`/assets/rich-reviews/${slug}.jpg`}
+        permalink={permalink}
+        publishedAt={date}
+        tags={categories}
+        title={title}
+        type="article"
       />
 
       <Taper>
@@ -101,6 +114,7 @@ export const pageQuery = graphql`
     ) {
       fields {
         date
+        permalink
         slug
       }
       html

@@ -5,6 +5,7 @@ import Emoji from '../components/emoji'
 import Layout from '../components/layout'
 import MailingListSignup from '../components/mailing-list-signup'
 import MetaTags from '../components/meta-tags'
+import RichPreview from '../components/rich-preview'
 import Taper from '../components/taper'
 import formatDate from '../utils/format-date'
 
@@ -19,7 +20,8 @@ export default ({
   } = data.markdownRemark
 
   const {
-    date
+    date,
+    permalink
   } = fields
 
   const {
@@ -44,6 +46,12 @@ export default ({
     >
       <MetaTags
         description={excerpt}
+        title={title}
+      />
+
+      <RichPreview
+        description={excerpt}
+        permalink={permalink}
         title={title}
       />
 
@@ -77,6 +85,7 @@ export const pageQuery = graphql`
     ) {
       fields {
         date
+        permalink
       }
       html
       frontmatter {

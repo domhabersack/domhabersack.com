@@ -3,13 +3,17 @@ import { graphql } from 'gatsby'
 
 import Layout from '../components/layout'
 import MetaTags from '../components/meta-tags'
+import RichPreview from '../components/rich-preview'
 import Taper from '../components/taper'
 
 export default ({ data }) => {
   const {
+    fields,
     frontmatter,
     html
   } = data.markdownRemark
+
+  const { permalink } = fields
 
   const {
     description,
@@ -26,6 +30,12 @@ export default ({ data }) => {
     >
       <MetaTags
         description={description}
+        title={title}
+      />
+
+      <RichPreview
+        description={description}
+        permalink={permalink}
         title={title}
       />
 
@@ -48,6 +58,7 @@ export const pageQuery = graphql`
       }
     ) {
       fields {
+        permalink
         slug
       }
       html

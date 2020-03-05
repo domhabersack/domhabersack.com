@@ -3,12 +3,19 @@ import React from 'react'
 import Layout from '../components/layout'
 import LandingPageBlock from '../components/landing-page-block'
 import MetaTags from '../components/meta-tags'
+import RichPreview from '../components/rich-preview'
 import Video from '../components/video'
 
 export default () => (
   <Layout>
     <MetaTags
       description="Level up your skills from basic to advanced with videos on HTML, CSS, JavaScript, and more."
+      title="Learn web development through courses tailor-made for beginners."
+    />
+
+    <RichPreview
+      description="Level up your skills from basic to advanced with videos on HTML, CSS, JavaScript, and more."
+      permalink=""
       title="Learn web development through courses tailor-made for beginners."
     />
 

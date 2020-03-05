@@ -4,6 +4,7 @@ import { graphql } from 'gatsby'
 import CourseTeasers from '../components/course-teasers'
 import Layout from '../components/layout'
 import MetaTags from '../components/meta-tags'
+import RichPreview from '../components/rich-preview'
 import Taper from '../components/taper'
 
 export default ({ data }) => {
@@ -18,6 +19,11 @@ export default ({ data }) => {
       ]}
     >
       <MetaTags
+        title="Courses"
+      />
+
+      <RichPreview
+        permalink="/courses"
         title="Courses"
       />
 

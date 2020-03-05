@@ -3,6 +3,7 @@ import React from 'react'
 import ConvertkitForm from '../components/convertkit-form'
 import Layout from '../components/layout'
 import MetaTags from '../components/meta-tags'
+import RichPreview from '../components/rich-preview'
 import Taper from '../components/taper'
 
 export default ({ location }) => {
@@ -23,6 +24,11 @@ export default ({ location }) => {
       ]}
     >
       <MetaTags
+        title="Newsletter"
+      />
+
+      <RichPreview
+        permalink="/newsletter"
         title="Newsletter"
       />
 
