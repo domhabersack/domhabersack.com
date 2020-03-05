@@ -1,6 +1,7 @@
 ---
-title: ":keyboard: A better keyboard layout for programming"
-excerpt: If you write and work mostly in English, you country’s default keyboard layout might not be ideal.
+title: "A better keyboard layout for programming"
+excerpt: "If you write and work mostly in English, you country’s default keyboard layout might not be ideal."
+emoji: ":keyboard:"
 ---
 When you buy a new computer, it comes equipped with your country’s keyboard layout by default. Most layouts are not ideal for programming, which many of us spend most of our day doing. I switched to the US layout ten years ago, and found it a lot more useful for my work. I would not buy another computer without it.
 

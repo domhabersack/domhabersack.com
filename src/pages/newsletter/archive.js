@@ -53,6 +53,7 @@ export default ({ data }) => {
               <h2 className="font-size-20-medium margin-0">
                 <a href={permalink}>
                   <Emoji name={emoji} />
+
                   {title}
                 </a>
               </h2>

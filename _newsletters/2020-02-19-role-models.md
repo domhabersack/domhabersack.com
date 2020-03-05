@@ -1,6 +1,7 @@
 ---
-title: ":heart_eyes: Role models"
-excerpt: If you have been working somewhere for a while, others are likely looking to you for guidance and leadership.
+title: "Role models"
+excerpt: "If you have been working somewhere for a while, others are likely looking to you for guidance and leadership."
+emoji: ":heart_eyes:"
 ---
 At work, we talked a lot about role models and who ours are recently. These people are usually very good at something, or even at many things. I linked to [the newsletters of a few people that inspire me](/newsletter/archive/start-building-an-audience-today/) a while ago. We aspire to be more like our role models, because they can get stuff done. What people rarely tell you is that you are probably also a role model to others without even knowing it.
 
