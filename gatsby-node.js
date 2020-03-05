@@ -230,9 +230,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
     console.log(`created page at ${permalink}`)
   })
-
-  console.log({ allCategories })
-
 }
 
 exports.onCreateNode = ({ actions, getNode, node }) => {

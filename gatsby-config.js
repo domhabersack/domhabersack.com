@@ -58,8 +58,37 @@ module.exports = {
           }
         ]
       }
+    }, {
+      resolve: `gatsby-plugin-sitemap`,
+      options: {
+        query: `{
+          site {
+            siteMetadata {
+              siteUrl
+            }
+          }
+          allSitePage(
+            sort: {
+              fields: path
+            }
+          ) {
+            edges {
+              node {
+                path
+              }
+            }
+          }
+        }`,
+        serialize: ({ allSitePage, site }) => {
+          const pages = allSitePage.edges.map(({ node }) => node)
+          const { siteUrl } = site.siteMetadata
+
+          return pages.map(({ path }) => ({
+            url: `${siteUrl}${path}`
+          }))
+        }
+      }
     },
     `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-feed`
   ]
 }
