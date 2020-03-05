@@ -1,7 +1,8 @@
 import React from 'react'
 
-import Layout from '../components/layout'
 import ConvertkitForm from '../components/convertkit-form'
+import Layout from '../components/layout'
+import MetaTags from '../components/meta-tags'
 import Taper from '../components/taper'
 
 export default ({ location }) => {
@@ -21,6 +22,10 @@ export default ({ location }) => {
         }
       ]}
     >
+      <MetaTags
+        title="Newsletter"
+      />
+
       <Taper>
         <h1>More tips, straight to your inbox</h1>
 

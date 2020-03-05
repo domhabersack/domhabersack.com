@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     description: ``,
     siteUrl: `https://islovely.co`,
-    title: ``
+    title: `islovely`
   },
   plugins: [
     {

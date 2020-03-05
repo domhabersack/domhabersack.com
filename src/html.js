@@ -10,16 +10,17 @@ export default ({
   postBodyComponents,
   preBodyComponents
 }) => (
-  <html {...htmlAttributes}>
+  <html lang="en-US" prefix="og: http://ogp.me/ns#" {...htmlAttributes}>
     <head>
       <meta charSet="utf-8" />
       <meta httpEquiv="x-ua-compatible" content="ie=edge" />
-      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
 
       <Favicons />
 
       {headComponents}
     </head>
+
     <body {...bodyAttributes}>
       {preBodyComponents}
 

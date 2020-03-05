@@ -3,6 +3,7 @@ import { graphql } from 'gatsby'
 
 import Layout from '../components/layout'
 import MailingListSignup from '../components/mailing-list-signup'
+import MetaTags from '../components/meta-tags'
 import PostMeta from '../components/post-meta'
 import Tag from '../components/tag'
 import Taper from '../components/taper'
@@ -24,6 +25,7 @@ export default ({
 
   const {
     categories,
+    excerpt,
     heroAlt,
     heroCaption,
     title
@@ -40,6 +42,11 @@ export default ({
         }
       ]}
     >
+      <MetaTags
+        description={excerpt}
+        title={title}
+      />
+
       <Taper>
         <h1>{title}</h1>
 
@@ -99,6 +106,7 @@ export const pageQuery = graphql`
       html
       frontmatter {
         categories
+        excerpt
         heroAlt
         heroCaption
         title

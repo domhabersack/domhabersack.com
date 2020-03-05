@@ -3,6 +3,7 @@ import { graphql } from 'gatsby'
 
 import CourseTeasers from '../components/course-teasers'
 import Layout from '../components/layout'
+import MetaTags from '../components/meta-tags'
 import Taper from '../components/taper'
 
 export default ({ data }) => {
@@ -16,6 +17,10 @@ export default ({ data }) => {
         }
       ]}
     >
+      <MetaTags
+        title="Courses"
+      />
+
       <Taper>
         <h1>Courses</h1>
 

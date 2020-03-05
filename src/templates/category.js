@@ -2,6 +2,7 @@ import React from 'react'
 import { graphql } from 'gatsby'
 
 import Layout from '../components/layout'
+import MetaTags from '../components/meta-tags'
 import PostTeasers from '../components/post-teasers'
 import Taper from '../components/taper'
 
@@ -23,6 +24,10 @@ export default ({
         }
       ]}
     >
+      <MetaTags
+        title={`Posts in “${category}”`}
+      />
+
       <Taper>
         <h1>Posts in “{category}”</h1>
       </Taper>

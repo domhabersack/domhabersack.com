@@ -2,10 +2,16 @@ import React from 'react'
 
 import Layout from '../components/layout'
 import LandingPageBlock from '../components/landing-page-block'
+import MetaTags from '../components/meta-tags'
 import Video from '../components/video'
 
 export default () => (
   <Layout>
+    <MetaTags
+      description="Level up your skills from basic to advanced with videos on HTML, CSS, JavaScript, and more."
+      title="Learn web development through courses tailor-made for beginners."
+    />
+
     <div className="align-items-center flex flex-column-reverse justify-between margin-bottom-xxl s:align-items-start s:flex-row">
       <div className="s:columns-8 m:columns-7 xl:columns-8">
         <h1 className="font-size-30-short xl:font-size-36-medium">
@@ -71,8 +77,3 @@ export default () => (
     </LandingPageBlock>
   </Layout>
 )
-
-// excerpt: I’ll help you clear up your messaging and focus your product so your customers will love you.
-
-  /*
-*/

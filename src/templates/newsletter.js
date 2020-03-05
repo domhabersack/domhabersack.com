@@ -4,6 +4,7 @@ import { graphql } from 'gatsby'
 import Emoji from '../components/emoji'
 import Layout from '../components/layout'
 import MailingListSignup from '../components/mailing-list-signup'
+import MetaTags from '../components/meta-tags'
 import Taper from '../components/taper'
 import formatDate from '../utils/format-date'
 
@@ -23,6 +24,7 @@ export default ({
 
   const {
     emoji,
+    excerpt,
     title
   } = frontmatter
 
@@ -40,6 +42,11 @@ export default ({
         }
       ]}
     >
+      <MetaTags
+        description={excerpt}
+        title={title}
+      />
+
       <Taper>
         <h1>
           <Emoji name={emoji} />
@@ -74,6 +81,7 @@ export const pageQuery = graphql`
       html
       frontmatter {
         emoji
+        excerpt
         title
       }
     }

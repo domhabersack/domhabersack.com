@@ -2,6 +2,7 @@ import React from 'react'
 import { graphql } from 'gatsby'
 
 import Layout from '../components/layout'
+import MetaTags from '../components/meta-tags'
 import Taper from '../components/taper'
 
 export default ({ data }) => {
@@ -15,6 +16,10 @@ export default ({ data }) => {
         }
       ]}
     >
+      <MetaTags
+        title="Projects"
+      />
+
       <Taper>
         <h1>Projects</h1>
 

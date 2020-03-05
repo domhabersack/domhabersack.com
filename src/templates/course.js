@@ -3,6 +3,7 @@ import { graphql } from 'gatsby'
 
 import ConvertkitForm from '../components/convertkit-form'
 import Layout from '../components/layout'
+import MetaTags from '../components/meta-tags'
 import Taper from '../components/taper'
 import Video from '../components/video'
 
@@ -34,6 +35,10 @@ export default ({
         }
       ]}
     >
+      <MetaTags
+        title={title}
+      />
+
       <Taper>
         <h1>
           {title}

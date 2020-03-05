@@ -2,6 +2,7 @@ import React from 'react'
 import { graphql } from 'gatsby'
 
 import Layout from '../components/layout'
+import MetaTags from '../components/meta-tags'
 import Taper from '../components/taper'
 
 export default ({ data }) => {
@@ -10,7 +11,10 @@ export default ({ data }) => {
     html
   } = data.markdownRemark
 
-  const { title } = frontmatter
+  const {
+    description,
+    title
+  } = frontmatter
 
   return (
     <Layout
@@ -20,6 +24,11 @@ export default ({ data }) => {
         }
       ]}
     >
+      <MetaTags
+        description={description}
+        title={title}
+      />
+
       <Taper>
         <h1>{title}</h1>
 
@@ -43,6 +52,7 @@ export const pageQuery = graphql`
       }
       html
       frontmatter {
+        description
         title
       }
     }

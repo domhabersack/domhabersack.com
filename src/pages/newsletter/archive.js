@@ -1,10 +1,9 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 
-// excerpt: Read some of my previous newsletters. Sign up to get them delivered to your inbox.
-
 import Emoji from '../../components/emoji'
 import Layout from '../../components/layout'
+import MetaTags from '../../components/meta-tags'
 import Taper from '../../components/taper'
 import formatDate from '../../utils/format-date'
 
@@ -22,6 +21,11 @@ export default ({ data }) => {
         }
       ]}
     >
+      <MetaTags
+        description="Read some of my previous newsletters. Sign up to get them delivered to your inbox."
+        title="Newsletter archive"
+      />
+
       <Taper>
         <h1>Newsletter archive</h1>
 
