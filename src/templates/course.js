@@ -61,7 +61,7 @@ export default ({
 
               <h4 className="font-size-16 font-weight-400">
                 <span className="color-gray-500">
-                  #{index}
+                  #{index + 1}
                 </span>
 
                 {' '}
