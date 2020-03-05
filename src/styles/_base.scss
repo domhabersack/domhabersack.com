@@ -70,7 +70,7 @@ body {
 button {
   @include _background-color(blue, 500);
   border: 0;
-  border-radius: 0.25em; /* 4px */
+  @include _border-radius(xxs);
   @include _color(gray, 100);
   cursor: pointer;
   @include _font-size(16, medium);

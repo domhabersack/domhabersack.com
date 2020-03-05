@@ -1,5 +1,7 @@
 import React from 'react'
 
+import Favicons from './components/favicons'
+
 export default ({
   body,
   bodyAttributes,
@@ -13,6 +15,9 @@ export default ({
       <meta charSet="utf-8" />
       <meta httpEquiv="x-ua-compatible" content="ie=edge" />
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+      <Favicons />
+
       {headComponents}
     </head>
     <body {...bodyAttributes}>
