@@ -40,7 +40,7 @@ export default ({ data }) => {
         </p>
 
         {newsletters.map(newsletter => (
-          <div className="margin-bottom-xl" key={`newsletter-${newsletter.id}`}>
+          <div className="margin-bottom-m" key={`newsletter-${newsletter.id}`}>
             <NewsletterTeaser newsletter={newsletter} />
           </div>
         ))}

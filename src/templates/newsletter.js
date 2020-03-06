@@ -62,11 +62,11 @@ export default ({
           {title}
         </h1>
 
-        <p className="color-gray-500 font-size-12-short margin-bottom-xl">
+        <p className="color-gray-500 font-size-12-short margin-bottom-s">
           {formatDate(date)}
         </p>
 
-        <div className="margin-bottom-xxl" dangerouslySetInnerHTML={{ __html: html }} />
+        <div className="margin-bottom-xl" dangerouslySetInnerHTML={{ __html: html }} />
 
         <MailingListSignup sourceUrl={location.href} />
       </Taper>

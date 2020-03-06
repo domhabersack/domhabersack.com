@@ -62,8 +62,8 @@ playlist:
     youtubeId: 9qLwmWO5UGA
     duration: '7:55'
 ---
-The functional programming language [Standard ML of New Jersey](https://www.smlnj.org) (SML/NJ) is popular in education. This course walks you through its features from basics to intermediate topics.
+The functional programming language [Standard ML of New Jersey](https://www.smlnj.org) (SML/NJ) is popular in higher education. This course walks you through its features from basics to intermediate topics.
 
-These videos are currently only available in German.
+These videos are currently only available in German. If you would like to watch them in English, tweet me at [@domhabersack](https://twitter.com/domhabersack) to let me know!
 
 Sign up to this course’s email list for **free bonus content** and updates on new and re-recorded videos.

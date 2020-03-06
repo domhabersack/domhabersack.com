@@ -22,6 +22,7 @@ export default ({
 
   const {
     cta,
+    excerpt,
     title,
     svForm,
     playlist,
@@ -40,10 +41,12 @@ export default ({
       ]}
     >
       <MetaTags
+        description={excerpt}
         title={title}
       />
 
       <RichPreview
+        description={excerpt}
         permalink={permalink}
         title={title}
       />
@@ -55,7 +58,7 @@ export default ({
 
         <div dangerouslySetInnerHTML={{ __html: html }} />
 
-        <div className="margin-bottom-xxl">
+        <div className="margin-bottom-xl">
           <ConvertkitForm svForm={svForm} uid={uid} cta={cta} sourceUrl={location.href} />
         </div>
       </Taper>
@@ -69,8 +72,8 @@ export default ({
             youtubeId
           }, index) => (
             <div key={`video-${title}`}>
-              <div>
-                <Video vimeoId={vimeoId} youtubeId={youtubeId} />
+              <div className="margin-bottom-xxs">
+                <Video title={title} vimeoId={vimeoId} youtubeId={youtubeId} />
               </div>
 
               <h4 className="font-size-16 font-weight-400">
@@ -112,6 +115,7 @@ export const pageQuery = graphql`
       html
       frontmatter {
         cta
+        excerpt
         playlist {
           duration
           title

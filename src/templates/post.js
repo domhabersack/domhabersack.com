@@ -28,6 +28,7 @@ export default ({
   const {
     categories,
     excerpt,
+    flash,
     heroAlt,
     heroCaption,
     title
@@ -63,7 +64,7 @@ export default ({
       <Taper>
         <h1>{title}</h1>
 
-        <div className="margin-bottom-l">
+        <div className="margin-bottom-m">
           <PostMeta date={date} />
         </div>
       </Taper>
@@ -79,16 +80,20 @@ export default ({
       </figure>
 
       <Taper>
-        <div className="break-words margin-bottom-xxl" dangerouslySetInnerHTML={{ __html: html }} />
+        {flash && (
+          <p className="background-color-green-100 border-color-green-200 border-radius-xs border-style-solid border-width-s font-size-14-medium margin-bottom-m padding-horizontal-s padding-vertical-s m:font-size-16-medium" dangerouslySetInnerHTML={{ __html: flash }} />
+        )}
 
-        <div className="flex margin-bottom-xxl">
+        <div className="break-words margin-bottom-xl" dangerouslySetInnerHTML={{ __html: html }} />
+
+        <div className="flex margin-bottom-xl">
           <p className="color-gray-700 font-size-12-medium margin-0 margin-bottom-xs margin-right-xxs padding-vertical-xs">
             Tags:
           </p>
 
           <div className="align-items-center flex flex-wrap">
             {categories.map(category => (
-              <div className="margin-bottom-xs margin-right-xxs" key={`category-${category}`}>
+              <div className="margin-bottom-xxs margin-right-xxs" key={`category-${category}`}>
                 <Tag tag={category} />
               </div>
             ))}
@@ -121,6 +126,7 @@ export const pageQuery = graphql`
       frontmatter {
         categories
         excerpt
+        flash
         heroAlt
         heroCaption
         title

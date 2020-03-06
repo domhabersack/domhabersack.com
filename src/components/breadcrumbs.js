@@ -1,7 +1,7 @@
 import React from 'react'
 
 export default ({ breadcrumbs }) => breadcrumbs ? (
-  <nav className="font-size-14-medium font-weight-500 margin-bottom-xl">
+  <nav className="font-size-14-medium font-weight-500 margin-bottom-m">
     {[
       {
         label: 'Home',

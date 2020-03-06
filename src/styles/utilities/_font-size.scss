@@ -117,11 +117,15 @@ $_line-lengths: ('default', 'short', 'medium', 'long');
   @each $line-length in $_line-lengths {
     @if ($line-length == 'default') {
       .font-size-#{$size} {
-        @include _font-size($size, $line-length);
+        @include _at-breakpoints {
+          @include _font-size($size, $line-length);
+        }
       }
     } @else {
       .font-size-#{$size}-#{$line-length} {
-        @include _font-size($size, $line-length);
+        @include _at-breakpoints {
+          @include _font-size($size, $line-length);
+        }
       }
     }
   }

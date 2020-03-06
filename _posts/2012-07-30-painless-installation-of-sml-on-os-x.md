@@ -4,6 +4,7 @@ categories: ["macOS", "Functional programming"]
 excerpt: Homebrew enables a hassle- and clutter-free installation of SML/NJ on your system.
 heroAlt: A neon sign saying “and breathe” that is covered by greenery.
 heroCaption: Using Homebrew, we can quickly set up a development environment for Standard ML on OS X.
+flash: "Are you learning SML/NJ in college? I recorded some free beginner videos that explain how it works. <a href='/courses/standard-ml-for-beginners'>Go to the course&nbsp;→</a>"
 ---
 Studying Computer Science of any kind, you will be asked to install a wide range of software you will use for one semester and are unlikely to ever need again afterwards.
 

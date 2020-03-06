@@ -21,7 +21,7 @@ export default ({ course }) => {
 
   return (
     <article className="background-color-white border-radius-xs box-shadow-s flex flex-column height-full">
-      <div className="flex-grow padding-horizontal-s padding-vertical-m">
+      <div className="flex-grow padding-horizontal-s padding-vertical-s">
         <h2 className="font-size-16-short margin-0 margin-bottom-xs">
           <a href={permalink}>
             {title}
@@ -33,7 +33,7 @@ export default ({ course }) => {
         </p>
       </div>
 
-      <footer className="course-teaser__footer background-color-gray-100 border-bottom-radius-xs color-gray-600 flex flex-wrap font-weight-400 padding-horizontal-s padding-vertical-m">
+      <footer className="course-teaser__footer background-color-gray-100 border-bottom-radius-xs color-gray-600 flex flex-wrap font-weight-400 padding-horizontal-s padding-vertical-s">
         {emails && (
           <span className="course-teaser__meta course-teaser__meta--emails">
             <strong>{emails}</strong> emails

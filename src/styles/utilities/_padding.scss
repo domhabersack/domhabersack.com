@@ -16,11 +16,11 @@ $_padding: (
     auto: auto,
     xxs:  0.3rem,
     xs:   0.6rem,
-    s:    0.9rem,
-    m:    1.2rem,
-    l:    1.8rem,
-    xl:   2.4rem,
-    xxl:  4.8rem
+    s:    1.2rem,
+    m:    2.4rem,
+    l:    4.8rem,
+    xl:   6.0rem,
+    xxl:  9.6rem
   )
 );
 
@@ -66,42 +66,56 @@ $sizes: ('0', 'auto', 'xxs', 'xs', 's', 'm', 'l', 'xl', 'xxl', 'span');
 
 @each $size in $sizes {
   .padding-#{$size} {
-    @include _padding($size);
+    @include _at-breakpoints {
+      @include _padding($size);
+    }
   }
 }
 
 @each $size in $sizes {
   .padding-top-#{$size} {
-    @include _padding-top($size);
+    @include _at-breakpoints {
+      @include _padding-top($size);
+    }
   }
 }
 
 @each $size in $sizes {
   .padding-right-#{$size} {
-    @include _padding-right($size);
+    @include _at-breakpoints {
+      @include _padding-right($size);
+    }
   }
 }
 
 @each $size in $sizes {
   .padding-bottom-#{$size} {
-    @include _padding-bottom($size);
+    @include _at-breakpoints {
+      @include _padding-bottom($size);
+    }
   }
 }
 
 @each $size in $sizes {
   .padding-left-#{$size} {
-    @include _padding-left($size);
+    @include _at-breakpoints {
+      @include _padding-left($size);
+    }
   }
 }
 
 @each $size in $sizes {
   .padding-vertical-#{$size} {
-    @include _padding-vertical($size);
+    @include _at-breakpoints {
+      @include _padding-vertical($size);
+    }
   }
 }
 
 @each $size in $sizes {
   .padding-horizontal-#{$size} {
-    @include _padding-horizontal($size);
+    @include _at-breakpoints {
+      @include _padding-horizontal($size);
+    }
   }
 }

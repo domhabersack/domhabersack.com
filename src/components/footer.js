@@ -1,19 +1,23 @@
 import React from 'react'
 
 export default () => (
-  <footer className="align-items-center color-gray-600 flex flex-column padding-vertical-xl">
-    <p className="font-size-16-short margin-0 margin-bottom-l">
+  <footer className="align-items-center color-gray-600 flex flex-column padding-vertical-m">
+    <p className="font-size-16-short margin-0 margin-bottom-s padding-vertical-xxs">
       &copy; Dom Habersack, 2020
     </p>
 
-    <div className="flex flex-wrap justify-center list-style-none margin-0 margin-bottom-m padding-0">
-      <a className="block font-size-16-medium" href="/legal-notice/">
+    <p className="flex flex-wrap font-size-16-medium justify-center list-style-none margin-0 margin-bottom-s padding-0">
+      <a className="block margin-horizontal-xxs padding-vertical-xxs" href="/legal-notice">
         Legal notice
       </a>
-    </div>
+
+      <a className="block margin-horizontal-xxs padding-vertical-xxs" href="/contact">
+        Contact
+      </a>
+    </p>
 
     <div className="flex flex-wrap justify-center list-style-none margin-0 padding-0">
-      <a className="flex font-size-16 margin-horizontal-xs padding-vertical-xs" href="https://github.com/domhabersack">
+      <a className="flex font-size-16 margin-horizontal-xs padding-vertical-xxs" href="https://github.com/domhabersack">
         <img className="margin-right-xxs" src="/icons/github.svg" alt="domhabersack on GitHub" />
 
         <span>
@@ -21,7 +25,7 @@ export default () => (
         </span>
       </a>
 
-      <a className="flex font-size-16 margin-horizontal-xs padding-vertical-xs" href="https://twitter.com/domhabersack">
+      <a className="flex font-size-16 margin-horizontal-xs padding-vertical-xxs" href="https://twitter.com/domhabersack">
         <img className="margin-right-xxs" src="/icons/twitter.svg" alt="domhabersack on Twitter" />
 
         <span>
@@ -29,7 +33,7 @@ export default () => (
         </span>
       </a>
 
-      <a className="flex font-size-16 margin-horizontal-xs padding-vertical-xs" href="https://dribbble.com/domhabersack">
+      <a className="flex font-size-16 margin-horizontal-xs padding-vertical-xxs" href="https://dribbble.com/domhabersack">
         <img className="margin-right-xxs" src="/icons/dribbble.svg" alt="domhabersack on dribbble" />
 
         <span>
@@ -37,7 +41,7 @@ export default () => (
         </span>
       </a>
 
-      <a className="flex font-size-16 margin-horizontal-xs padding-vertical-xs" href="https://mastodon.social/@domhabersack">
+      <a className="flex font-size-16 margin-horizontal-xs padding-vertical-xxs" href="https://mastodon.social/@domhabersack">
         <img className="margin-right-xxs" src="/icons/mastodon.svg" alt="@domhabersack on Mastodon" />
 
         <span>

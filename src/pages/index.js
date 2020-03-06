@@ -7,7 +7,7 @@ import RichPreview from '../components/rich-preview'
 import Video from '../components/video'
 
 const cta = (
-  <a className="align-items-center background-color-yellow-400 border-radius-xl box-shadow-s color-gray-900 inline-flex padding-m visited:color-gray-900" href="/courses">
+  <a className="align-items-center background-color-yellow-400 border-radius-xl box-shadow-s color-gray-900 inline-flex padding-horizontal-l padding-vertical-s visited:color-gray-900" href="/courses">
     <img alt="" className="margin-right-xxs" src="/assets/icons/desktop.svg" />
 
     <span className="font-size-16 font-weight-500">
@@ -119,8 +119,8 @@ export default () => (
       </p>
     </LandingPageBlock>
 
-    <div className="background-color-gray-200 box-shadow-s margin-bottom-xxl margin-horizontal-span padding-horizontal-span padding-vertical-l m:align-items-start m:flex m:justify-between m:padding-vertical-xl l:padding-vertical-xxl">
-      <img alt="Dom Habersack" className="block border-radius-round box-shadow-s columns-6 margin-bottom-m margin-horizontal-auto xs:columns-4 m:columns-3 m:margin-horizontal-0 l:columns-2" src="/assets/dom.jpg" />
+    <div className="background-color-gray-200 box-shadow-s margin-bottom-m margin-horizontal-span padding-horizontal-span padding-vertical-s xs:padding-vertical-m m:align-items-start m:flex m:justify-between">
+      <img alt="Dom Habersack" className="block border-radius-round box-shadow-s columns-6 margin-bottom-s margin-horizontal-auto xs:columns-4 m:columns-3 m:margin-horizontal-0 l:columns-2" src="/assets/dom.jpg" />
 
       <div className="m:columns-9 l:columns-10">
         <h2 class="margin-top-0">

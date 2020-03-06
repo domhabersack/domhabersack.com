@@ -47,10 +47,10 @@ pre[class*="language-"] {
   @include _border-radius(xs);
   @include _color(gray, 100);
   @include _margin(0);
-  @include _margin-bottom(xl);
+  @include _margin-bottom(m);
   @include _monospace;
   @include _padding-horizontal(xs);
-  @include _padding-vertical(m);
+  @include _padding-vertical(s);
   font-weight: 300;
   overflow-x: auto;
   position: relative;

@@ -60,24 +60,20 @@ export default ({ data, location }) => {
           You can find <a href="/newsletter/archive">all previous newsletters</a> in the archive. Get this bonus content before everybody else!
         </p>
 
-        <div className="margin-bottom-xxl">
+        <div className="margin-bottom-l">
           <ConvertkitForm svForm="1067424" uid="627637e2b6" sourceUrl={location.href} />
         </div>
 
         <h2>Featured newsletters</h2>
 
         {newsletters.map(newsletter => (
-          <div className="margin-bottom-xl" key={`newsletter-${newsletter.id}`}>
+          <div className="margin-bottom-m" key={`newsletter-${newsletter.id}`}>
             <NewsletterTeaser newsletter={newsletter} />
           </div>
         ))}
 
-        <a className="align-items-center background-color-yellow-400 border-radius-xl box-shadow-s color-gray-900 inline-flex padding-m visited:color-gray-900" href="/newsletter/archive">
-          <img alt="" className="margin-right-xxs" src="/assets/icons/newsletter.svg" />
-
-          <span className="font-size-16 font-weight-500">
-            See the full archive
-          </span>
+        <a className="font-size-16 font-weight-500" href="/newsletter/archive">
+          See the full archive →
         </a>
       </Taper>
     </Layout>
