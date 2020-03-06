@@ -33,29 +33,53 @@ export default ({ course }) => {
         </p>
       </div>
 
-      <footer className="course-teaser__footer background-color-gray-100 border-bottom-radius-xs color-gray-600 flex flex-wrap font-weight-400 padding-horizontal-s padding-vertical-s">
+      <footer className="background-color-gray-100 border-bottom-radius-xs color-gray-600 flex flex-wrap font-size-12-medium padding-horizontal-s padding-vertical-s">
         {emails && (
-          <span className="course-teaser__meta course-teaser__meta--emails">
-            <strong>{emails}</strong> emails
-          </span>
+          <div className="align-items-center inline-flex margin-right-s">
+            <img alt="" className="margin-right-xxs" src="/assets/icons/email-with-letter.svg" />
+
+            <span>
+              <strong>{emails}</strong>
+              {' '}
+              emails
+            </span>
+          </div>
         )}
 
         {videos && (
-          <span className="course-teaser__meta course-teaser__meta--videos">
-            <strong>{videos}</strong> videos
-          </span>
+          <div className="align-items-center inline-flex margin-right-s">
+            <img alt="" className="margin-right-xxs" src="/assets/icons/video.svg" />
+
+            <span>
+              <strong>{videos}</strong>
+              {' '}
+              videos
+            </span>
+          </div>
         )}
 
         {hours && (
-          <span className="course-teaser__meta course-teaser__meta--hours">
-            <strong>{hours}</strong> hours
-          </span>
+          <div className="align-items-center inline-flex margin-right-s">
+            <img alt="" className="margin-right-xxs" src="/assets/icons/clock.svg" />
+
+            <span>
+              <strong>{hours}</strong>
+              {' '}
+              hours
+            </span>
+          </div>
         )}
 
         {weeks && (
-          <span className="course-teaser__meta course-teaser__meta--weeks">
-            <strong>{weeks}</strong> weeks
-          </span>
+          <div className="align-items-center inline-flex margin-right-s">
+            <img alt="" className="margin-right-xxs" src="/assets/icons/calendar.svg" />
+
+            <span>
+              <strong>{weeks}</strong>
+              {' '}
+              weeks
+            </span>
+          </div>
         )}
       </footer>
     </article>

@@ -70,8 +70,8 @@ export const pageQuery = graphql`
             excerpt
             hours
             title
-            weeks
             videos
+            weeks
           }
         }
       }
