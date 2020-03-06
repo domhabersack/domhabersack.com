@@ -119,10 +119,10 @@ export default () => (
       </p>
     </LandingPageBlock>
 
-    <div className="align-items-start background-color-gray-200 box-shadow-s flex justify-between margin-bottom-xxl margin-horizontal-span padding-horizontal-span padding-vertical-l">
-      <img alt="Dom Habersack" className="border-radius-round box-shadow-s columns-4 xs:columns-3 m:columns-2" src="/assets/dom.jpg" />
+    <div className="align-items-start background-color-gray-200 box-shadow-s flex flex-column justify-between margin-bottom-xxl margin-horizontal-span padding-horizontal-span padding-vertical-l m:padding-vertical-xl l:padding-vertical-xxl">
+      <img alt="Dom Habersack" className="border-radius-round box-shadow-s columns-4 flex-no-grow xs:columns-3 m:columns-2" src="/assets/dom.jpg" />
 
-      <div className="columns-8 xs:columns-9 m:columns-10">
+      <div className="xs:columns-9 m:columns-10">
         <h2 class="margin-top-0">
           Hey, I am Dom. From today on, I am your favorite teacher.
         </h2>
