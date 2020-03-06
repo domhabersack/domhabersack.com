@@ -119,12 +119,12 @@ export default () => (
       </p>
     </LandingPageBlock>
 
-    <div className="align-items-start background-color-gray-200 box-shadow-s flex flex-column justify-between margin-bottom-xxl margin-horizontal-span padding-horizontal-span padding-vertical-l m:padding-vertical-xl l:padding-vertical-xxl">
-      <img alt="Dom Habersack" className="border-radius-round box-shadow-s columns-4 flex-no-grow xs:columns-3 m:columns-2" src="/assets/dom.jpg" />
+    <div className="background-color-gray-200 box-shadow-s margin-bottom-xxl margin-horizontal-span padding-horizontal-span padding-vertical-l m:align-items-start m:flex m:justify-between m:padding-vertical-xl l:padding-vertical-xxl">
+      <img alt="Dom Habersack" className="block border-radius-round box-shadow-s columns-6 margin-bottom-m margin-horizontal-auto xs:columns-4 m:columns-3 m:margin-horizontal-0 l:columns-2" src="/assets/dom.jpg" />
 
-      <div className="xs:columns-9 m:columns-10">
+      <div className="m:columns-9 l:columns-10">
         <h2 class="margin-top-0">
-          Hey, I am Dom. From today on, I am your favorite teacher.
+          Hey, I am Dom. I love helping others get better at what they do.
         </h2>
 
         <p>

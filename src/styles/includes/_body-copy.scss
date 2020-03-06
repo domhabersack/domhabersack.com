@@ -4,8 +4,4 @@
   @include _m {
     @include _font-size(18, medium);
   }
-
-  @include _xl {
-    @include _font-size(20, medium);
-  }
 }

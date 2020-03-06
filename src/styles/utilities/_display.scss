@@ -3,7 +3,9 @@
 }
 
 .flex {
-  display: flex;
+  @include _at-breakpoints {
+    display: flex;
+  }
 }
 
 .grid {
