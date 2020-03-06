@@ -62,11 +62,11 @@ export default () => (
     <div className="margin-bottom-xxl">
       <LandingPageBlock heading="More enjoyable and much clearer than reading documentation." imageUrl="/assets/flame/flame-books.png">
         <p>
-            Documentation can be a tough read. It throws a lot of new and unfamiliar terms at you and expects you to “get it”. Abstract explanations and variables called <code>foo</code> and <code>bar</code> make for a terrible learning experience.
+            Documentation can be hard to follow. It throws a lot of new and unfamiliar terms at you and expects you to “get it”. Abstract explanations and variables called <code>foo</code> and <code>bar</code> do not make concepts easy to understand.
         </p>
 
         <p>
-          Programming does not have to be hard, and we are going to make it understandable. We are walking you through what you need to know in a way that makes sense to you.
+          Programming does not have to be hard, and I am going to make it understandable. I will walk you through what you need to know in a way that makes sense to you.
         </p>
 
         <p>
@@ -85,7 +85,7 @@ export default () => (
 
     <LandingPageBlock heading="Learn how to build your idea yourself." imageUrl="/assets/flame/flame-design-science.png">
       <p>
-        Follow along with our examples and build them on your own.
+        Follow along with the examples and build them on your own.
       </p>
 
       <p>

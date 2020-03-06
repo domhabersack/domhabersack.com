@@ -3,10 +3,13 @@ import React from 'react'
 import ConvertkitForm from '../components/convertkit-form'
 import Layout from '../components/layout'
 import MetaTags from '../components/meta-tags'
+import NewsletterTeaser from '../components/newsletter-teaser'
 import RichPreview from '../components/rich-preview'
 import Taper from '../components/taper'
 
-export default ({ location }) => {
+export default ({ data, location }) => {
+  const newsletters = data.allMarkdownRemark.edges.map(({ node }) => node)
+
   const listItems = [
     'design and development tips you can use immediately',
     'free previews of my upcoming course materials',
@@ -57,8 +60,63 @@ export default ({ location }) => {
           You can find <a href="/newsletter/archive">all previous newsletters</a> in the archive. Get this bonus content before everybody else!
         </p>
 
-        <ConvertkitForm svForm="1067424" uid="627637e2b6" sourceUrl={location.href} />
+        <div className="margin-bottom-xxl">
+          <ConvertkitForm svForm="1067424" uid="627637e2b6" sourceUrl={location.href} />
+        </div>
+
+        <h2>Featured newsletters</h2>
+
+        {newsletters.map(newsletter => (
+          <div className="margin-bottom-xl" key={`newsletter-${newsletter.id}`}>
+            <NewsletterTeaser newsletter={newsletter} />
+          </div>
+        ))}
+
+        <a className="align-items-center background-color-yellow-400 border-radius-xl box-shadow-s color-gray-900 inline-flex padding-m visited:color-gray-900" href="/newsletter/archive">
+          <img alt="" className="margin-right-xxs" src="/assets/icons/newsletter.svg" />
+
+          <span className="font-size-16 font-weight-500">
+            See the full archive
+          </span>
+        </a>
       </Taper>
     </Layout>
   )
 }
+
+export const pageQuery = graphql`
+  query {
+    allMarkdownRemark(
+      filter: {
+        fields: {
+          type: {
+            eq: "newsletter"
+          }
+        },
+        frontmatter: {
+          isFeatured: {
+            eq: true
+          }
+        }
+      },
+      sort: {
+        fields: fields___date,
+        order: DESC
+      }
+    ) {
+      edges {
+        node {
+          id
+          fields {
+            date
+            permalink
+          }
+          frontmatter {
+            emoji
+            title
+          }
+        }
+      }
+    }
+  }
+`

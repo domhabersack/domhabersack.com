@@ -2,6 +2,7 @@
 title: "Negativity in retrospectives"
 excerpt: "Retrospectives that end after letting everybody complain are a waste of time."
 emoji: ":angry:"
+isFeatured: true
 ---
 I moderated most of our retrospectives in my last project, with varying success. In them, we revisit how the last iteration went and identify ways to make the next one even better. Through retrospectives, we work on constantly improving our process and teamwork.
 
