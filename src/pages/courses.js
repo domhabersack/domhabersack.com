@@ -39,7 +39,17 @@ export default ({ data }) => {
         </p>
       </Taper>
 
-      <CourseTeasers courses={courses} />
+      <div className="margin-bottom-xl">
+        <CourseTeasers courses={courses} />
+      </div>
+
+      <Taper>
+        <h2>Looking for workshops?</h2>
+
+        <p>
+          Happy to do on-site workshops with your team.
+        </p>
+      </Taper>
     </Layout>
   )
 }

@@ -24,6 +24,10 @@
   flex-grow: 1;
 }
 
+.flex-none {
+  flex: none;
+}
+
 .flex-no-grow {
   flex-grow: 0;
 }

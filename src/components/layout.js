@@ -23,20 +23,16 @@ export default ({
         <Header />
       </div>
 
-      <main className="l-default__main">
-        <div className="l-default__content">
-          <Taper>
-            <Breadcrumbs breadcrumbs={breadcrumbs} />
-          </Taper>
+      <main className="l-default__main flex-grow flex-no-shrink padding-bottom-xl padding-horizontal-span padding-top-l">
+        <Taper>
+          <Breadcrumbs breadcrumbs={breadcrumbs} />
+        </Taper>
 
-          {children}
-        </div>
+        {children}
       </main>
 
-      <div className="l-default__footer">
-        <div className="l-default__content">
-          <Footer />
-        </div>
+      <div className="background-color-gray-100 flex-none padding-horizontal-span">
+        <Footer />
       </div>
     </div>
   </>
