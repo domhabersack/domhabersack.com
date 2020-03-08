@@ -1,5 +1,9 @@
-.block {
+@mixin _block {
   display: block;
+}
+
+.block {
+  @include _block;
 }
 
 .flex {

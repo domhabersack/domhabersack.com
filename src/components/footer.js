@@ -7,12 +7,8 @@ export default () => (
     </p>
 
     <p className="flex flex-wrap font-size-16-medium justify-center list-style-none margin-0 margin-bottom-s padding-0">
-      <a className="block margin-horizontal-xxs padding-vertical-xxs" href="/legal-notice">
+      <a className="block padding-vertical-xxs" href="/legal-notice">
         Legal notice
-      </a>
-
-      <a className="block margin-horizontal-xxs padding-vertical-xxs" href="/contact">
-        Contact
       </a>
     </p>
 

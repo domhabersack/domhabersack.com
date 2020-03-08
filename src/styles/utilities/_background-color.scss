@@ -11,6 +11,12 @@
         }
       }
 
+      .disabled\:background-color-#{"" + $color}:disabled {
+        @include _at-breakpoints {
+          background-color: $value;
+        }
+      }
+
       .visited\:background-color-#{"" + $color}:visited {
         @include _at-breakpoints {
           background-color: $value;
@@ -18,6 +24,12 @@
       }
     } @else {
       .background-color-#{"" + $color}-#{$label} {
+        @include _at-breakpoints {
+          background-color: $value;
+        }
+      }
+
+      .disabled\:background-color-#{"" + $color}-#{$label}:disabled {
         @include _at-breakpoints {
           background-color: $value;
         }

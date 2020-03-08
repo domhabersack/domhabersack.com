@@ -5,6 +5,9 @@
   "version": "0.1.0",
   "author": "Dom Habersack <dom@islovely.co>",
   "dependencies": {
+    "@statickit/cli": "^0.8.0",
+    "@statickit/functions": "github:unstacked/statickit-functions#15fd3fee-201e-4560-8bd5-8f46c42e6969",
+    "@statickit/react": "^2.1.0",
     "gatsby": "2.19.7",
     "gatsby-plugin-postcss": "2.1.20",
     "gatsby-plugin-react-helmet": "3.1.22",
@@ -25,6 +28,7 @@
     "develop": "gatsby develop --host=0.0.0.0",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "start": "npm run develop",
+    "statickit:deploy": "statickit deploy",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"

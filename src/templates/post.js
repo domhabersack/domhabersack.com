@@ -1,6 +1,7 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 
+import Flash from '../components/flash'
 import Layout from '../components/layout'
 import MailingListSignup from '../components/mailing-list-signup'
 import MetaTags from '../components/meta-tags'
@@ -81,7 +82,11 @@ export default ({
 
       <Taper>
         {flash && (
-          <p className="background-color-green-100 border-color-green-200 border-radius-xs border-style-solid border-width-s font-size-14-medium margin-bottom-m padding-horizontal-s padding-vertical-s m:font-size-16-medium" dangerouslySetInnerHTML={{ __html: flash }} />
+          <div className="margin-bottom-m">
+            <Flash type="info">
+              {flash}
+            </Flash>
+          </div>
         )}
 
         <div className="break-words margin-bottom-xl" dangerouslySetInnerHTML={{ __html: html }} />

@@ -29,6 +29,10 @@ export default ({ data }) => {
 
       <Taper>
         <h1>Blog</h1>
+
+        <p>
+          TODO descrwiption
+        </p>
       </Taper>
 
       <PostTeasers posts={posts} />

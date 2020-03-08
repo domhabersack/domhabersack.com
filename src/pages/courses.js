@@ -31,6 +31,10 @@ export default ({ data }) => {
         <h1>Courses</h1>
 
         <p>
+            TODO: email and video courses
+        </p>
+
+        <p>
           If you are a designer or developer and want to level up your skills, there’s a course in here for you. All of them are completely free.
         </p>
 

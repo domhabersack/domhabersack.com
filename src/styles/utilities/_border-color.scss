@@ -9,8 +9,8 @@
         border-color: $value;
       }
 
-      .visited\:border-color-#{"" + $color} {
-        &:visited {
+      .focus\:border-color-#{"" + $color} {
+        &:focus {
           border-color: $value;
         }
       }
@@ -19,8 +19,8 @@
         border-color: $value;
       }
 
-      .visited\:border-color-#{"" + $color}-#{$label} {
-        &:visited {
+      .focus\:border-color-#{"" + $color}-#{$label} {
+        &:focus {
           border-color: $value;
         }
       }

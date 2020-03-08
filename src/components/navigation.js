@@ -21,9 +21,15 @@ export default () => (
         </a>
       </li>
 
-      <li>
+      <li className="margin-right-xs xs:margin-right-s">
         <a className="inline-block padding-vertical-xs" href="/about">
           About
+        </a>
+      </li>
+
+      <li>
+        <a className="inline-block padding-vertical-xs" href="/contact">
+          Contact
         </a>
       </li>
     </ul>

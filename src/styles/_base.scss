@@ -200,27 +200,6 @@ img {
   vertical-align: middle;
 }
 
-input[type="email"],
-input[type="text"] {
-  -webkit-appearance: none;
-  @include _background-color(white);
-  @include _border-color(gray, 300);
-  border-radius: 0.25em; /* 4px */
-  border-style: solid;
-  border-width: 0.0625em; /* 1px */
-  @include _color(gray, 700);
-  @include _font-size(16, medium);
-  font-weight: 400;
-  margin: 0;
-  padding: 11px 0.5625em; /* 11px 9px */
-}
-
-input[type="email"]:focus,
-input[type="text"]:focus {
-  @include _border-color(blue, 400);
-  outline: none;
-}
-
 p {
   @include body-copy;
 

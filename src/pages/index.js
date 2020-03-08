@@ -119,8 +119,8 @@ export default () => (
       </p>
     </LandingPageBlock>
 
-    <div className="background-color-gray-200 box-shadow-s margin-bottom-m margin-horizontal-span padding-horizontal-span padding-vertical-s xs:padding-vertical-m m:align-items-start m:flex m:justify-between">
-      <img alt="Dom Habersack" className="block border-radius-round box-shadow-s columns-6 margin-bottom-s margin-horizontal-auto xs:columns-4 m:columns-3 m:margin-horizontal-0 l:columns-2" src="/assets/dom.jpg" />
+    <div className="background-color-gray-200 box-shadow-s margin-bottom-m margin-horizontal-span padding-horizontal-span padding-vertical-l xs:padding-vertical-m m:align-items-start m:flex m:justify-between">
+      <img alt="Dom Habersack" className="block border-radius-round box-shadow-s columns-6 margin-bottom-m margin-horizontal-auto xs:columns-4 m:columns-3 m:margin-horizontal-0 l:columns-2" src="/assets/dom.jpg" />
 
       <div className="m:columns-9 l:columns-10">
         <h2 class="margin-top-0">

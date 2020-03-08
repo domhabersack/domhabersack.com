@@ -1,0 +1,25 @@
+{
+  "forms": {
+    "contact": {
+      "name": "Contact form",
+      "actions": [
+        {
+          "type": "email",
+          "to": "dom@islovely.co"
+        }
+      ],
+       "fields": {
+        "email": {
+          "prettyName": "Email address",
+          "required": true,
+          "type": "email"
+        },
+        "message": {
+          "prettyName": "Message",
+          "required": true,
+          "type": "text"
+        }
+      }
+    }
+  }
+}

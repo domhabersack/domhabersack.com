@@ -1,6 +1,7 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
 
+import Application from './application'
 import Breadcrumbs from './breadcrumbs'
 import Footer from './footer'
 import Header from './header'
@@ -12,7 +13,7 @@ export default ({
   breadcrumbs,
   children
 }) => (
-  <>
+  <Application>
     <Helmet htmlAttributes={IS_IN_DEBUG_MODE ? { 'class': 'debug' } : {}}>
       <link rel="stylesheet" href="https://use.typekit.net/gbp8hqr.css" />
       <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
@@ -35,5 +36,5 @@ export default ({
         <Footer />
       </div>
     </div>
-  </>
+  </Application>
 )

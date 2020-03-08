@@ -9,11 +9,19 @@
         color: $value;
       }
 
+      .disabled\:color-#{"" + $color}:disabled {
+        color: $value;
+      }
+
       .visited\:color-#{"" + $color}:visited {
         color: $value;
       }
     } @else {
       .color-#{"" + $color}-#{$label} {
+        color: $value;
+      }
+
+      .disabled\:color-#{"" + $color}-#{$label}:disabled {
         color: $value;
       }
 
