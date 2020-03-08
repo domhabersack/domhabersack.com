@@ -1,16 +1,56 @@
 $_border-width: (
-  0:  0,
-  s:  0.1rem,
-  m:  0.2rem,
-  l:  0.3rem
+  '0':  0,
+  's':  0.1rem,
+  'm':  0.2rem,
+  'l':  0.3rem
 );
 
 @mixin _border-width($size) {
   border-width: map-get($_border-width, $size);
 }
 
-@each $size in (0, s, m, l) {
+@mixin _border-top-width($size) {
+  border-top-width: map-get($_border-width, $size);
+}
+
+@mixin _border-right-width($size) {
+  border-right-width: map-get($_border-width, $size);
+}
+
+@mixin _border-bottom-width($size) {
+  border-bottom-width: map-get($_border-width, $size);
+}
+
+@mixin _border-left-width($size) {
+  border-left-width: map-get($_border-width, $size);
+}
+
+@each $size in ('0', 's', 'm', 'l') {
   .border-width-#{$size} {
     @include _border-width($size);
+  }
+}
+
+@each $size in ('0', 's', 'm', 'l') {
+  .border-top-width-#{$size} {
+    @include _border-top-width($size);
+  }
+}
+
+@each $size in ('0', 's', 'm', 'l') {
+  .border-right-width-#{$size} {
+    @include _border-right-width($size);
+  }
+}
+
+@each $size in ('0', 's', 'm', 'l') {
+  .border-bottom-width-#{$size} {
+    @include _border-bottom-width($size);
+  }
+}
+
+@each $size in ('0', 's', 'm', 'l') {
+  .border-left-width-#{$size} {
+    @include _border-left-width($size);
   }
 }

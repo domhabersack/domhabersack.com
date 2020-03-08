@@ -17,6 +17,12 @@
         }
       }
 
+      .hover\:background-color-#{"" + $color}:hover {
+        @include _at-breakpoints {
+          background-color: $value;
+        }
+      }
+
       .visited\:background-color-#{"" + $color}:visited {
         @include _at-breakpoints {
           background-color: $value;
@@ -30,6 +36,12 @@
       }
 
       .disabled\:background-color-#{"" + $color}-#{$label}:disabled {
+        @include _at-breakpoints {
+          background-color: $value;
+        }
+      }
+
+      .hover\:background-color-#{"" + $color}-#{$label}:hover {
         @include _at-breakpoints {
           background-color: $value;
         }

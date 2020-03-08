@@ -8,6 +8,10 @@
   }
 }
 
+.flex-basis {
+  flex-basis: 1px;
+}
+
 .flex-column {
   @include _at-breakpoints {
     flex-direction: column;

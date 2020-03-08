@@ -66,14 +66,16 @@ export default ({ data, location }) => {
 
         <h2>Featured newsletters</h2>
 
-        {newsletters.map(newsletter => (
-          <div className="margin-bottom-m" key={`newsletter-${newsletter.id}`}>
-            <NewsletterTeaser newsletter={newsletter} />
-          </div>
-        ))}
+        <div className="margin-bottom-l">
+          {newsletters.map(newsletter => (
+            <div className="margin-bottom-m" key={`newsletter-${newsletter.id}`}>
+              <NewsletterTeaser newsletter={newsletter} />
+            </div>
+          ))}
+        </div>
 
-        <a className="font-size-16 font-weight-500" href="/newsletter/archive">
-          See the full archive →
+        <a className="background-color-yellow-400 border-radius-xxs color-gray-900 inline-block font-size-14-short font-weight-500 padding-horizontal-m padding-vertical-s visited:color-gray-900" href="/newsletter/archive">
+          Read all newsletters →
         </a>
       </Taper>
     </Layout>

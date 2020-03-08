@@ -31,29 +31,17 @@ export default ({ data }) => {
         <h1>Courses</h1>
 
         <p>
-            TODO: email and video courses
+          I offer <strong>email- and video-courses</strong> for designers and developers of any skill level. Email-courses land in your inbox over a few weeks, video-courses are binge-ready now. They are all <strong>completely free</strong>.
         </p>
 
         <p>
-          If you are a designer or developer and want to level up your skills, there’s a course in here for you. All of them are completely free.
-        </p>
-
-        <p>
-          I am always working on new content. Sign up to any course or <a href="/newsletter">join my newsletter</a> to catch announcements of new ones.
+          I am always working on new content. Sign up to any course or <a href="/newsletter">join my newsletter</a> to catch announcements of upcoming material. If you want to learn about something in particular, tweet me at <a href="https://twitter.com/domhabersack">@domhabersack</a> and I’ll put it on my list!
         </p>
       </Taper>
 
       <div className="margin-bottom-xl">
         <CourseTeasers courses={courses} />
       </div>
-
-      <Taper>
-        <h2>Looking for workshops?</h2>
-
-        <p>
-          Happy to do on-site workshops with your team.
-        </p>
-      </Taper>
     </Layout>
   )
 }

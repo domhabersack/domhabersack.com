@@ -1,7 +1,9 @@
 import React from 'react'
 
+import Input from './input'
+
 export default ({
-  cta = 'Get me early access!',
+  cta,
   location,
   svForm,
   sourceUrl,
@@ -29,8 +31,8 @@ export default ({
         />
 
         <div className="convertkit-form__fields">
-          <input
-            className="convertkit-form__input"
+          <Input
+            className="border-right-radius-0 border-right-width-0 flex-basis flex-grow"
             name="email_address"
             placeholder="Enter your email"
             required
@@ -48,7 +50,7 @@ export default ({
             data-element="submit"
             className="convertkit-form__submit"
           >
-            {cta}
+            {cta || 'Get me early access!'}
           </button>
         </div>
       </form>

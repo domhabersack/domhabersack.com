@@ -7,7 +7,7 @@ import RichPreview from '../components/rich-preview'
 import Video from '../components/video'
 
 const cta = (
-  <a className="align-items-center background-color-yellow-400 border-radius-xl box-shadow-s color-gray-900 inline-flex padding-horizontal-l padding-vertical-s visited:color-gray-900" href="/courses">
+  <a className="align-items-center background-color-yellow-400 border-radius-xl box-shadow-xs color-gray-900 inline-flex padding-horizontal-l padding-vertical-s visited:color-gray-900" href="/courses">
     <img alt="" className="margin-right-xxs" src="/assets/icons/desktop.svg" />
 
     <span className="font-size-16 font-weight-500">
@@ -123,7 +123,7 @@ export default () => (
       <img alt="Dom Habersack" className="block border-radius-round box-shadow-s columns-6 margin-bottom-m margin-horizontal-auto xs:columns-4 m:columns-3 m:margin-horizontal-0 l:columns-2" src="/assets/dom.jpg" />
 
       <div className="m:columns-9 l:columns-10">
-        <h2 class="margin-top-0">
+        <h2 className="margin-top-0">
           Hey, I am Dom. I love helping others get better at what they do.
         </h2>
 

@@ -49,7 +49,7 @@ export default () => {
           </div>
 
           <ValidationError
-            className="block color-red-600 font-size-12-short font-weight-500 italic margin-vertical-xs"
+            className="block color-red-500 font-size-12-short font-weight-500 italic margin-vertical-xs"
             errors={errors}
             field="email"
             prefix="Email address"
@@ -69,7 +69,7 @@ export default () => {
           />
 
           <ValidationError
-            className="block color-red-600 font-size-12-short font-weight-500 italic margin-vertical-xs"
+            className="block color-red-500 font-size-12-short font-weight-500 italic margin-vertical-xs"
             errors={errors}
             field="message"
             prefix="Message"
