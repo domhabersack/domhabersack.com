@@ -1,10 +1,20 @@
 ---
 title: About
 ---
+My name is Dominik “Dom” Habersack. I love sharing what I know in any way possible. This is me with my dog Cooper:
+
+<figure>
+  <img src="/assets/cooper-and-dom.jpg" alt="Cooper and I">
+
+  <figcaption>
+    Cooper is an Elo, a not-yet-officially-recognized breed. You can follow him on Instagram at <a href="https://instagram.com/coopertheelo">@coopertheelo</a>.
+  </figcaption>
+</figure>
+
 I do my best work on the web, where I have been working with businesses on improving their products since 2009. With a focus on UI and UX, I work hard to make it easier for your customers to interact with you.
 
-My work is responsive and highly performant all the way through, putting your customers front and center. I share my knowledge through this site, guest lectures, screencasts, and at meetups.
+People come first in everything I do. I want to identify and solve problems people have in their daily work to make their lives a little better. When writing code, readability always beats clever code for me. Performant but obscure code is useless if other developers struggle to understand it. I have now turned my passion of helping others into [online courses](/courses).
 
 Oh, and I occasionally jump out of planes despite being crazy scared of heights.
 
-I am **available for project-based collaboration** and for **speaking at your event**. Contact me at <dom@islovely.co> if you have a project you need help with!
+I would be happy to **speak at your event** about how to communicate better, focus on the right tasks, and turn ideas into code. [Contact me](/contact) if that fits with your agenda!

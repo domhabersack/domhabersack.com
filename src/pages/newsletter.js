@@ -11,7 +11,7 @@ export default ({ data, location }) => {
   const newsletters = data.allMarkdownRemark.edges.map(({ node }) => node)
 
   const listItems = [
-    'design and development tips you can use immediately',
+    'tips on design and development you can use immediately',
     'free previews of my upcoming course materials',
     'discount codes for my courses and products',
     'announcements of events I am going to speak at',
@@ -42,14 +42,14 @@ export default ({ data, location }) => {
           In addition to what I share on this site, I send out a weekly newsletter with tips to help you work smarter. By signing up, you get access to:
         </p>
 
-        <ul className="list-style-none xs:columns-10 m:columns-8-of-10 l:columns-6-of-8">
+        <ul className="list-style-none margin-bottom-m padding-0 xs:columns-10 xs:margin-horizontal-auto m:columns-8-of-10 l:columns-6-of-8">
           {listItems.map(listItem => (
-            <li className="flex" key={`newsletter-benefit-${listItem}`}>
-              <div className="align-items-center border-color-blue-500 border-radius-round border-style-solid border-width-m flex-no-shrink height-24 inline-flex justify-center margin-right-xxs width-24 xs:height-27 xs:width-27 m:height-24 m:margin-top-xxs m:width-24 l:height-27 l:margin-right-xs l:width-27">
-                <img alt="" className="width-12 xs:width-15 m:width-12 l:width-15" src="/assets/icons/checkmark--filled.svg" />
+            <li className="flex margin-bottom-xs" key={`newsletter-benefit-${listItem}`}>
+              <div className="align-items-center border-color-blue-500 border-radius-round border-style-solid border-width-m flex-no-shrink height-24 inline-flex justify-center margin-right-xxs width-24 m:height-27 m:width-27">
+                <img alt="" className="width-12 m:width-15" src="/assets/icons/checkmark--filled.svg" />
               </div>
 
-              <span className="margin-bottom-xxs s:margin-bottom-xs">
+              <span className="font-size-16-medium m:font-size-18-medium">
                 {listItem}
               </span>
             </li>

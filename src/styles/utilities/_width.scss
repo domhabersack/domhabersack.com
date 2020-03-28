@@ -4,6 +4,7 @@ $_width: (
   '15':   1.5rem,
   '24':   2.4rem,
   '27':   2.7rem,
+  '120':  12.0rem,
   'full': 100%
 );
 
@@ -11,7 +12,7 @@ $_width: (
   width: map-get($_width, $size);
 }
 
-@each $size in ('0', '12', '15', '24', '27', 'full') {
+@each $size in ('0', '12', '15', '24', '27', '120', 'full') {
   .width-#{$size} {
     @include _at-breakpoints {
       @include _width($size);

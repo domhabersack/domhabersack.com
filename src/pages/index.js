@@ -1,5 +1,6 @@
 import React from 'react'
 
+import Emoji from '../components/emoji'
 import Layout from '../components/layout'
 import LandingPageBlock from '../components/landing-page-block'
 import MetaTags from '../components/meta-tags'
@@ -29,20 +30,20 @@ export default () => (
       title="Learn web development through courses tailor-made for beginners."
     />
 
-    <div className="align-items-center flex flex-column-reverse justify-between margin-bottom-xxl s:align-items-start s:flex-row">
+    <div className="align-items-center flex flex-column-reverse justify-between margin-bottom-xxl s:flex-row">
       <div className="s:columns-8 m:columns-7">
-        <h1 className="font-size-30-short xl:font-size-36-medium">
+        <h1 className="font-size-30-short margin-0 margin-bottom-s xl:font-size-36-medium">
           Learn web development through courses tailor-made for beginners.
         </h1>
 
-        <p>
+        <p className="margin-bottom-s">
           Level up your skills from basic to advanced with videos on HTML, CSS, JavaScript, and more.
         </p>
 
         {cta}
       </div>
 
-      <div className="columns-8 xs:columns-6 s:columns-4 m:columns-5">
+      <div className="columns-8 margin-bottom-s xs:columns-6 s:columns-4 m:columns-5">
         <img alt="" src="/assets/flame/flame-welcome.png" />
       </div>
     </div>
@@ -119,19 +120,21 @@ export default () => (
       </p>
     </LandingPageBlock>
 
-    <div className="background-color-gray-200 box-shadow-s margin-bottom-m margin-horizontal-span padding-horizontal-span padding-vertical-l xs:padding-vertical-m m:align-items-start m:flex m:justify-between">
-      <img alt="Dom Habersack" className="block border-radius-round box-shadow-s columns-6 margin-bottom-m margin-horizontal-auto xs:columns-4 m:columns-3 m:margin-horizontal-0 l:columns-2" src="/assets/dom.jpg" />
+    <div className="background-color-gray-200 border-radius-xs margin-bottom-m padding-horizontal-s padding-vertical-m xs:padding-vertical-m m:align-items-start m:flex m:justify-between">
+      <img alt="Dom Habersack" className="block border-radius-round box-shadow-s margin-bottom-m margin-horizontal-auto width-120 m:margin-left-0 m:margin-right-s" src="/assets/dom.jpg" />
 
-      <div className="m:columns-9 l:columns-10">
-        <h2 className="margin-top-0">
+      <div>
+        <h2 className="font-size-18-medium margin-top-0 l:font-size-20-medium">
+          <Emoji name=":wave:" />
+
           Hey, I am Dom. I love helping others get better at what they do.
         </h2>
 
-        <p>
-          I started learning HTML, CSS, and JavaScript on my own in seventh grade. I was so fascinated by it that I often scribbled what I thought was valid code on paper between periods. I have loved working on the web ever since. Don’t worry, I have left handwritten scribbles behind, and my code has gotten a lot better as well.
+        <p className="font-size-14-medium l:font-size-16-medium">
+          I started learning HTML, CSS, and JavaScript on my own in seventh grade. I was so fascinated by it that I often scribbled what I thought was valid code on paper between periods. I have loved working on the web ever since. My code has gotten a lot better since then, and is no longer confined to handwritten scribbles.
         </p>
 
-        <p>
+        <p className="font-size-14-medium l:font-size-16-medium margin-bottom-0">
           I started my professional career in development and now consulting over 15 years ago. My heart beats for teaching everything I know. Helping others get better at what they do is what motivates me every single day. Here is what some of them had to say about working with me:
         </p>
       </div>

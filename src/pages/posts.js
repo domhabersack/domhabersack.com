@@ -31,7 +31,7 @@ export default ({ data }) => {
         <h1>Blog</h1>
 
         <p>
-          TODO descrwiption
+          I write about design, development, and productivity. My <a href="/newsletter">newsletter</a> contains shorter pieces, which you can find in the <a href="/newsletter/archive">archive</a>.
         </p>
       </Taper>
 
