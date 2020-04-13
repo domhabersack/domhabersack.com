@@ -175,7 +175,6 @@ export const pageQuery = graphql`
         playlist {
           duration
           title
-          youtubeId
           vimeoId
         }
         svForm

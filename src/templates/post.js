@@ -89,7 +89,7 @@ export default ({
           </div>
         )}
 
-        <div className="break-words margin-bottom-xl" dangerouslySetInnerHTML={{ __html: html }} />
+        <div className="break-words margin-bottom-xl template--post__content" dangerouslySetInnerHTML={{ __html: html }} />
 
         <div className="flex margin-bottom-xl">
           <p className="color-gray-700 font-size-12-medium margin-0 margin-bottom-xs margin-right-xxs padding-vertical-xs">

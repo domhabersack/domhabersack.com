@@ -1,0 +1,11 @@
+.template--post__content {
+  li {
+    @include body-copy;
+  }
+
+  ul {
+    @include _background-color(red, 200);
+    @include _list-style(none);
+    @include _margin(0);
+  }
+}

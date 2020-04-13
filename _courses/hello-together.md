@@ -1,6 +1,6 @@
 ---
 title: Hello Together
-excerpt: This course clears up common mistranslations to help non-native speakers feel more comfortable speaking English.
+excerpt: This course explains common mistranslations and helps non-native speakers feel more comfortable speaking English.
 emails: 24
 weeks: 8
 svForm: 1242118

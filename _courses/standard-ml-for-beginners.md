@@ -23,44 +23,44 @@ playlist:
     vimeoId: 372955273
     duration: '41:04'
   - title: Auswertungsreihenfolge
-    youtubeId: xxCehEeT63A
-    duration: '46:53'
+    vimeoId: 381011249
+    duration: '46:52'
   - title: Lokale Variablen und Endrekursion
     vimeoId: 372956606
     duration: '39:30'
   - title: Pattern Matching und Verarbeitung von Listen
-    youtubeId: Gz7OXe5ueSA
-    duration: '53:27'
+    vimeoId: 377384073
+    duration: '53:26'
   - title: Benutzerdefinierte Datentypen
-    youtubeId: I-NZqrvQztM
+    vimeoId: 374341523
     duration: '1:03:47'
   - title: Sichtbarkeit
     vimeoId: 372043422
     duration: '24:05'
   - title: Currying und Funktionen höherer Ordnung
-    youtubeId: kMmad05B4DA
-    duration: '35:37'
+    vimeoId: 381012221
+    duration: '35:36'
   - title: Exceptions
-    youtubeId: p1iy4E15jF8
-    duration: '24:13'
+    vimeoId: 377387062
+    duration: '24:12'
   - title: Optionstypen
     vimeoId: 372958712
-    duration: '13:09'
+    duration: '13:08'
   - title: Verknüpfung von Funktionen
-    youtubeId: ySeArCl8T78
-    duration: '12:40'
+    vimeoId: 377387438
+    duration: '12:39'
   - title: Abstrakte Datentypen
-    youtubeId: QXhuHZVQr6o
-    duration: '12:26'
+    vimeoId: 377387737
+    duration: '12:25'
   - title: Strukturen und Signaturen
     vimeoId: 372044005
     duration: '22:05'
   - title: Referenzen
-    youtubeId: gtnhMpEGo_g
+    vimeoId: 374342725
     duration: '10:37'
   - title: Schleifen
-    youtubeId: 9qLwmWO5UGA
-    duration: '7:55'
+    vimeoId: 374342845
+    duration: '7:54'
 ---
 The functional programming language [Standard ML of New Jersey](https://www.smlnj.org) (SML/NJ) is popular in higher education. This course walks you through its features from basics to intermediate topics.
 

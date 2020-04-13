@@ -66,6 +66,7 @@ export const pageQuery = graphql`
           id
           fields {
             permalink
+            slug
           }
           frontmatter {
             emails

@@ -18,10 +18,10 @@ a:visited {
 }
 
 blockquote {
+  @include _columns(10);
   font-style: italic;
   margin: 2.4em auto;
   position: relative;
-  width: _columns(10);
 
   @include _s {
     margin-bottom: 3em;
@@ -29,13 +29,13 @@ blockquote {
   }
 
   @include _m {
-    width: _columns(8, 10);
+    @include _columns(8, 10);
   }
 
   @include _l {
+    @include _columns(9);
     margin-bottom: 3.6em;
     margin-top: 3.6em;
-    width: _columns(9);
   }
 }
 

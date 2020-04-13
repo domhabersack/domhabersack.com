@@ -7,7 +7,8 @@ export default ({ course }) => {
   } = course
 
   const {
-    permalink
+    permalink,
+    slug
   } = fields
 
   const {
@@ -19,8 +20,15 @@ export default ({ course }) => {
     weeks
   } = frontmatter
 
+
   return (
     <article className="background-color-white border-radius-xs box-shadow-s flex flex-column height-full">
+      <a className="background-color-gray-100 block intrinsic-ratio-16-by-9" href={permalink}>
+        <div className="align-items-center flex justify-center">
+          <img alt={title} className="height-full" src={`/assets/courses/${slug}.png`} />
+        </div>
+      </a>
+
       <div className="flex-grow padding-horizontal-s padding-vertical-s">
         <h2 className="font-size-16-short margin-0 margin-bottom-xs">
           <a href={permalink}>

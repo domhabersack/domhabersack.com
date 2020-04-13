@@ -131,7 +131,7 @@ export default () => (
         </h2>
 
         <p className="font-size-14-medium l:font-size-16-medium">
-          I started learning HTML, CSS, and JavaScript on my own in seventh grade. I was so fascinated by it that I often scribbled what I thought was valid code on paper between periods. I have loved working on the web ever since. My code has gotten a lot better since then, and is no longer confined to handwritten scribbles.
+          I started learning HTML, CSS, and JavaScript on my own in seventh grade. You could often see me scribble what I thought was valid code on paper between periods. My love for working on the web has grown ever since those early days.
         </p>
 
         <p className="font-size-14-medium l:font-size-16-medium margin-bottom-0">

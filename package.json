@@ -25,7 +25,7 @@
   },
   "scripts": {
     "build": "gatsby build",
-    "develop": "gatsby develop --host=0.0.0.0",
+    "develop": "gatsby develop --host=0.0.0.0 --port=8001",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "start": "npm run develop",
     "statickit:deploy": "statickit deploy",
