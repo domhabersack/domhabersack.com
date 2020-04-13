@@ -248,7 +248,7 @@ tbody td {
 }
 
 tbody th {
-  @include _color(gray, 300);
+  @include _background-color(gray, 300);
   text-align: left;
 }
 
