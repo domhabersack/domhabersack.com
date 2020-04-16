@@ -18,7 +18,10 @@ export default ({
     html
   } = data.markdownRemark
 
-  const { permalink } = fields
+  const {
+    permalink,
+    slug
+  } = fields
 
   const {
     cta,
@@ -109,6 +112,8 @@ export default ({
             </div>
           )}
         </aside>
+
+        <img alt={title} className="height-192" src={`/assets/courses/${slug}.png`} />
 
         <div dangerouslySetInnerHTML={{ __html: html }} />
 

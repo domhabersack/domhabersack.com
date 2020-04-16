@@ -55,7 +55,7 @@ export default () => (
         </p>
 
         <p>
-          If you already know enough of the basics to use a technology, I will show you how to unlock their full potential. Together, we will dive into their advanced features so you can work with them more efficiently. We will learn how to get the most out of everything you work with so you can get more work done both better and faster.
+          If you already know enough of the basics to use a technology, I will show you how to unlock their full potential. Together, we’ll dive into their advanced features so you can work with them more efficiently. We will learn how to get the most out of everything you work with so you can get more work done both better and faster.
         </p>
       </LandingPageBlock>
     </div>
@@ -63,7 +63,7 @@ export default () => (
     <div className="margin-bottom-xxl">
       <LandingPageBlock heading="More enjoyable and much clearer than reading documentation." imageUrl="/assets/flame/flame-books.png">
         <p>
-            Documentation can be hard to follow. It throws a lot of new and unfamiliar terms at you and expects you to “get it”. Abstract explanations and variables called <code>foo</code> and <code>bar</code> do not make concepts easy to understand.
+          Documentation can be hard to follow. It throws a lot of new and unfamiliar terms at you and expects you to “get it”. Its often abstract explanations makes it seem more complicated than it is.
         </p>
 
         <p>
@@ -77,20 +77,12 @@ export default () => (
         <div className="margin-bottom-m">
           <Video vimeoId="372044005" />
         </div>
-
-        <p>
-          The videos are
-        </p>
       </LandingPageBlock>
     </div>
 
     <LandingPageBlock heading="Learn how to build your idea yourself." imageUrl="/assets/flame/flame-design-science.png">
       <p>
-        Follow along with the examples and build them on your own.
-      </p>
-
-      <p>
-        Learn by building something yourself.
+        You learn best from building something you can create and change however you like. These courses give you the tools you need to bring your own ideas to life. Follow along with examples taken from real projects and adjust them to what <strong>you</strong> want to build.
       </p>
     </LandingPageBlock>
 
@@ -106,7 +98,7 @@ export default () => (
 
     <LandingPageBlock heading="Get your CV ready for the job you always wanted." imageUrl="/assets/flame/flame-upgrade.png">
       <p>
-        These courses help you with your current project or prepare you for your next job. They even work when you want to play around with it for fun. These courses prepare you for whatever is happening in your world.
+        You don’t have to miss out on job opportunities because you lack experience with a technology. Whether you want to get your first development job or find a new one, I want to help you close any gaps in your CV. My courses focus on skills companies look for in their candidates. We start with the basics and get you fluent in the technologies you need to get that dream job!
       </p>
     </LandingPageBlock>
 
@@ -135,7 +127,7 @@ export default () => (
         </p>
 
         <p className="font-size-14-medium l:font-size-16-medium margin-bottom-0">
-          I started my professional career in development and now consulting over 15 years ago. My heart beats for teaching everything I know. Helping others get better at what they do is what motivates me every single day. Here is what some of them had to say about working with me:
+          I started my professional career in development and now consulting over 15 years ago. My heart beats for teaching everything I know. Helping others get better at what they do is what motivates me every single day.
         </p>
       </div>
     </div>
