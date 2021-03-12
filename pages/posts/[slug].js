@@ -19,9 +19,9 @@ export default function Post({
   heroAlt,
   heroCaption,
   mdxSource,
-  title,
-  slug,
   permalink,
+  slug,
+  title,
 }) {
   const body = hydrateMDXSource(mdxSource)
 
