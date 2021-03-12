@@ -1,0 +1,24 @@
+---
+title: "Do Not Track, maybe"
+date: "2019-09-18"
+excerpt: "To opt out of tracking scripts on websites, you can set the “Do Not Track”-setting in your browser. Unfortunately, websites are not required to honor it."
+issue: 2
+heroAlt: "Footprints in the sand."
+heroCaption: "Where you see only one pair of footprints in the sand, I jumped like a kangaroo."
+author: dom-habersack
+related:
+  - gdpr-applies-to-you-as-well
+  - unexpected-usecases
+  - the-seinfeld-approach-to-content-creation
+---
+To opt out of tracking scripts on websites, you can set the [“Do Not Track”](https://www.eff.org/issues/do-not-track)-setting available in some browsers. Activating it adds a “please do not track me”-signal to all your HTTP-requests. Unfortunately, third parties are not required to honor that wish. They don’t _have_ to stop collecting data about you. Some might, many will not.
+
+Before GDPR went into effect, I removed Google Analytics from my portfolio. I do not currently know if people are reading my articles at all. When it comes to tracking, I would rather fly blind than invade my visitors’ privacy.
+
+I am now looking into basic server-side analytics, which seem much more privacy-friendly. By analyzing a server’s access logs, they can only tell me how many page views my articles have, but not who read them. Because everything happens on the server, tracking pixels or JavaScript-snippets are not necessary.
+
+As long as I can recognize trends, the behavior of individuals is completely irrelevant to me. You keep your privacy, I still get some usage statistics. I won’t get the same level of detail a Google Analytics would give me, which is fine. [Netlify](https://www.netlify.com), where I am currently hosting my site, is offering exactly the kind of analytics I am looking for. Their documentation sounds super promising: [Analytics by Netlify](https://www.netlify.com/docs/analytics/)
+
+This will still leave blind spots in my statistics, so I would like to compile a list of pros and cons of this approach. What are you using your analytics for that this will not give me?
+
+– Dom

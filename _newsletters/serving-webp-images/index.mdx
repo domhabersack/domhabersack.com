@@ -1,0 +1,41 @@
+---
+title: "Serving WebP images"
+date: "2020-04-15"
+excerpt: "Web servers can send different files to browsers based on headers in a request. Knowing this, we can send WebP-files only to browsers that support them."
+issue: 32
+heroAlt: "A printed picture served on a plate."
+heroCaption: "One coffee and one WebP, freshly served!"
+author: dom-habersack
+related:
+  - progressive-enhancement-with-at-supports
+  - running-a-static-site-saved-me-from-getting-hacked
+  - end-of-an-era
+---
+If you run a [Lighthouse Audit](https://developers.google.com/speed/pagespeed/insights/) on your website, it’ll probably ask you to “Serve images in next-gen formats”. While most pictures are JPEGs or PNGs, there are more space-efficient formats available. WebP-files are about 25% smaller, with a higher quality than their older counterparts.
+
+Google released WebP in 2010. A decade later, [caniuse](https://caniuse.com/#feat=webp) shows that most current browsers now support the format. Because IE11 and Safari still don’t, we cannot replace all our JPEGs with WebP today. Instead, we can send WebP to browsers that support it, while sending JPEGs to everybody else.
+
+The switch between the formats happens on the server when a browser requests an image. Browsers send an Accept-header with each request. This header tells us what responses that browser can process. If it understands WebP, it tells us through this header. IE11 and Safari do not have WebP in their list of accepted responses.
+
+We can use this header to send the requested picture in the appropriate format. One way to achieve this is by storing two versions of all images. For every `cat.jpeg`, we keep a `cat.jpeg.webp` right next to it. If a browser that supports WebP requests `cat.jpeg`, we send `cat.jpeg.webp` instead. If it does not support WebP, or `cat.jpeg.webp` is missing, we send the regular JPEG-version.
+
+The exact setup for this depends on what server you use. This is how you could do it in nginx:
+
+```nginx
+# set `$suffix` to `.webp` if the
+# Accept-header contains “webp”
+map $http_accept $suffix {
+  "~*webp" ".webp";
+}
+
+# if a `.jpeg`-file is requested, try
+# `.jpeg${suffix}` instead; if that does
+# not exist, return the `.jpeg`-file
+location ~* .jpeg$ {
+  try_files $uri$suffix $uri $uri/ =404;
+}
+```
+
+Yet again, progressive enhancement enables us to use a new feature today. If a browser does not support it, the previous functionality still works as always. Our visitors won’t even know the difference.
+
+– Dom

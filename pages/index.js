@@ -16,7 +16,7 @@ import RichPreview from '@/components/rich-preview'
 import Twitter from '@/icons/twitter-logo'
 import YouTube from '@/icons/youtube-logo'
 import { getAuthorBySlug } from '@/lib/api/authors'
-import { getFeaturedProject } from '@/lib/api/projects'
+import { getProjectBySlug } from '@/lib/api/projects'
 import { getLatestNewsletters } from '@/lib/api/newsletters'
 import { getLatestPosts } from '@/lib/api/posts'
 
@@ -270,7 +270,7 @@ export default function Index({
 
 export async function getStaticProps() {
   const dom = await getAuthorBySlug('dom-habersack')
-  const featuredProject = await getFeaturedProject()
+  const featuredProject = await getProjectBySlug('lovelicons')
   const latestNewsletters = await getLatestNewsletters({ limit: 4 })
   const latestPosts = await getLatestPosts({ limit: 4 })
 

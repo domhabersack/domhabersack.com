@@ -161,11 +161,11 @@ export async function getStaticProps({ params }) {
 }
 
 export async function getStaticPaths() {
-  const courses = await getAllCourses()
+  const allCourses = await getAllCourses()
 
   return {
     fallback: false,
-    paths: courses.map(({ slug }) => ({
+    paths: allCourses.map(({ slug }) => ({
       params: {
         slug,
       },
