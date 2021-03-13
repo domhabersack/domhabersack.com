@@ -7,7 +7,7 @@ import MetaTags from '@/components/meta-tags'
 import NewsletterTeaser from '@/components/newsletter-teaser'
 import RichPreview from '@/components/rich-preview'
 import PostMeta from '@/components/post-meta'
-import { getAllNewsletters, getNewsletterBySlug } from '@/lib/api/newsletters'
+import { getAllNewsletterSlugs, getNewsletterBySlug } from '@/lib/api/newsletters'
 import hydrateMDXSource from '@/lib/hydrate-mdx-source'
 
 export default function Newsletter({
@@ -105,12 +105,12 @@ export async function getStaticProps({ params }) {
   }
 }
 
-export async function getStaticPaths() {
-  const newsletters = await getAllNewsletters()
+export function getStaticPaths() {
+  const allNewsletterSlugs = getAllNewsletterSlugs()
 
   return {
     fallback: false,
-    paths: newsletters.map(({ slug }) => ({
+    paths: allNewsletterSlugs.map(slug => ({
       params: {
         slug,
       },

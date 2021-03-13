@@ -4,7 +4,7 @@ import Layout from '@/components/layout'
 import MetaTags from '@/components/meta-tags'
 import RichPreview from '@/components/rich-preview'
 import Tag from '@/components/tag'
-import { getAllFiretips, getFiretipBySlug } from '@/lib/api/firetips'
+import { getAllFiretipSlugs, getFiretipBySlug } from '@/lib/api/firetips'
 import hydrateMDXSource from '@/lib/hydrate-mdx-source'
 
 export default function Firetip({
@@ -63,12 +63,12 @@ export async function getStaticProps({ params }) {
   }
 }
 
-export async function getStaticPaths() {
-  const firetips = await getAllFiretips()
+export function getStaticPaths() {
+  const allFiretipSlugs = getAllFiretipSlugs()
 
   return {
     fallback: false,
-    paths: firetips.map(({ slug }) => ({
+    paths: allFiretipSlugs.map(slug => ({
       params: {
         slug,
       },

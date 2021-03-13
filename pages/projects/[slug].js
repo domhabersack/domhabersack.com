@@ -6,7 +6,7 @@ import LinkIcon from '@/icons/link'
 import MetaTags from '@/components/meta-tags'
 import RichPreview from '@/components/rich-preview'
 import Stack from '@/components/stack'
-import { getAllProjects, getProjectBySlug } from '@/lib/api/projects'
+import { getAllProjectSlugs, getProjectBySlug } from '@/lib/api/projects'
 import hydrateMDXSource from '@/lib/hydrate-mdx-source'
 
 export default function Project({
@@ -102,12 +102,12 @@ export async function getStaticProps({ params }) {
   }
 }
 
-export async function getStaticPaths() {
-  const allProjects = await getAllProjects()
+export function getStaticPaths() {
+  const allProjectSlugs = getAllProjectSlugs()
 
   return {
     fallback: false,
-    paths: allProjects.map(({ slug }) => ({
+    paths: allProjectSlugs.map(slug => ({
       params: {
         slug,
       },

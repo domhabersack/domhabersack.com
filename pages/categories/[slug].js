@@ -3,7 +3,7 @@ import Layout from '@/components/layout'
 import MetaTags from '@/components/meta-tags'
 import PostTeasers from '@/components/post-teasers'
 import RichPreview from '@/components/rich-preview'
-import { getAllCategories, getCategoryWithPostsBySlug } from '@/lib/api/post-categories'
+import { getAllCategorySlugs, getCategoryWithPostsBySlug } from '@/lib/api/post-categories'
 
 export default function Category({
   permalink,
@@ -48,11 +48,11 @@ export async function getStaticProps({ params }) {
 }
 
 export async function getStaticPaths() {
-  const categories = await getAllCategories()
+  const allCategorySlugs = await getAllCategorySlugs()
 
   return {
     fallback: false,
-    paths: categories.map(({ slug }) => ({
+    paths: allCategorySlugs.map(slug => ({
       params: {
         slug,
       },

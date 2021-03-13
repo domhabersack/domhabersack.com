@@ -7,7 +7,7 @@ import MetaTags from '@/components/meta-tags'
 import PostMeta from '@/components/post-meta'
 import RichPreview from '@/components/rich-preview'
 import Tag from '@/components/tag'
-import { getAllPosts, getPostBySlug } from '@/lib/api/posts'
+import { getAllPostSlugs, getPostBySlug } from '@/lib/api/posts'
 import hydrateMDXSource from '@/lib/hydrate-mdx-source'
 
 export default function Post({
@@ -100,12 +100,12 @@ export async function getStaticProps({ params }) {
   }
 }
 
-export async function getStaticPaths() {
-  const posts = await getAllPosts()
+export function getStaticPaths() {
+  const allPostSlugs = getAllPostSlugs()
 
   return {
     fallback: false,
-    paths: posts.map(({ slug }) => ({
+    paths: allPostSlugs.map(slug => ({
       params: {
         slug,
       },

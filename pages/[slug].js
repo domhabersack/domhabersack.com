@@ -1,7 +1,7 @@
 import Layout from '@/components/layout'
 import MetaTags from '@/components/meta-tags'
 import RichPreview from '@/components/rich-preview'
-import { getAllPages, getPageBySlug } from '@/lib/api/pages'
+import { getAllPageSlugs, getPageBySlug } from '@/lib/api/pages'
 import hydrateMDXSource from '@/lib/hydrate-mdx-source'
 
 export default function Page({
@@ -48,12 +48,12 @@ export async function getStaticProps({ params }) {
   }
 }
 
-export async function getStaticPaths() {
-  const pages = await getAllPages()
+export function getStaticPaths() {
+  const allPageSlugs = getAllPageSlugs()
 
   return {
     fallback: false,
-    paths: pages.map(({ slug }) => ({
+    paths: allPageSlugs.map(slug => ({
       params: {
         slug,
       },

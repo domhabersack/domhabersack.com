@@ -10,7 +10,7 @@ import MetaTags from '@/components/meta-tags'
 import RichPreview from '@/components/rich-preview'
 import Video from '@/components/video'
 import VideoIcon from '@/icons/video'
-import { getAllCourses, getCourseBySlug } from '@/lib/api/courses'
+import { getAllCourseSlugs, getCourseBySlug } from '@/lib/api/courses'
 import hydrateMDXSource from '@/lib/hydrate-mdx-source'
 
 export default function Course({
@@ -160,12 +160,12 @@ export async function getStaticProps({ params }) {
   }
 }
 
-export async function getStaticPaths() {
-  const allCourses = await getAllCourses()
+export function getStaticPaths() {
+  const allCourseSlugs = getAllCourseSlugs()
 
   return {
     fallback: false,
-    paths: allCourses.map(({ slug }) => ({
+    paths: allCourseSlugs.map(slug => ({
       params: {
         slug,
       },

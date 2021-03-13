@@ -4,7 +4,7 @@ import Firetip from '@/components/firetip'
 import Layout from '@/components/layout'
 import MetaTags from '@/components/meta-tags'
 import RichPreview from '@/components/rich-preview'
-import { getAllTags, getTagWithFiretipsBySlug } from '@/lib/api/firetip-tags'
+import { getAllTagSlugs, getTagWithFiretipsBySlug } from '@/lib/api/firetip-tags'
 
 export default function Tag({
   firetips,
@@ -56,11 +56,11 @@ export async function getStaticProps({ params }) {
 }
 
 export async function getStaticPaths() {
-  const tags = await getAllTags()
+  const allTagSlugs = await getAllTagSlugs()
 
   return {
     fallback: false,
-    paths: tags.map(({ slug }) => ({
+    paths: allTagSlugs.map(slug => ({
       params: {
         slug,
       },

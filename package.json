@@ -25,6 +25,7 @@
   },
   "scripts": {
     "build": "next build",
+    "build:debug": "next build --debug",
     "dev": "next dev",
     "start": "next start",
     "test": "jest",
