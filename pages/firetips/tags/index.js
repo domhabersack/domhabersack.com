@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Firetip from '@/components/firetip'
+import FiretipTeaser from '@/components/firetip-teaser'
 import Layout from '@/components/layout'
 import MetaTags from '@/components/meta-tags'
 import RichPreview from '@/components/rich-preview'
@@ -42,7 +42,7 @@ export default function Tags({
           <div className="grid gap-6">
             {tag.firetips.map(firetip => (
               <React.Fragment key={`firetip-${firetip.slug}`}>
-                <Firetip firetip={firetip} />
+                <FiretipTeaser firetip={firetip} />
               </React.Fragment>
             ))}
           </div>
