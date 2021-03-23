@@ -45,8 +45,8 @@ const SOCIAL_PROFILES = {
     href: 'https://mastodon.social/@domhabersack',
     Logo: Mastodon,
   },
-  'dom@islovely.co': {
-    href: 'mailto:dom@islovely.co',
+  'dom@domhabersack.com': {
+    href: 'mailto:dom@domhabersack.com',
     Logo: Email
   }
 }

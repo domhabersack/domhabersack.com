@@ -76,8 +76,8 @@ const SOCIAL_PROFILES = {
     href: 'https://linkedin.com/in/domhabersack',
     Logo: LinkedIn,
   },
-  'dom@islovely.co': {
-    href: 'mailto:dom@islovely.co',
+  'dom@domhabersack.com': {
+    href: 'mailto:dom@domhabersack.com',
     Logo: Email,
   },
 }
