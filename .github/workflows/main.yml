@@ -1,4 +1,4 @@
-name: Run tests
+name: Build and deploy
 
 on:
   push:
@@ -19,3 +19,26 @@ jobs:
         run: npm ci
       - name: Run tests
         run: npm run test
+      - name: Run build
+         run: npm run build
+       - name: Copy to host
+         uses: appleboy/scp-action@master
+         with:
+           host: ${{ secrets.HOST }}
+           port: ${{ secrets.PORT }}
+           username: ${{ secrets.USERNAME }}
+           key: ${{ secrets.KEY }}
+           passphrase: ${{ secrets.PASSPHRASE }}
+           source: "public/*"
+           target: ${{ secrets.PUBLIC_WWW }}
+           rm: true
+           strip_components: 1 # remove `public/` from path
+       - name: Update file ownership
+         uses: appleboy/ssh-action@master
+         with:
+           host: ${{ secrets.HOST }}
+           port: ${{ secrets.PORT }}
+           username: ${{ secrets.USERNAME }}
+           key: ${{ secrets.KEY }}
+           passphrase: ${{ secrets.PASSPHRASE }}
+           script: chown -R ${{ secrets.USERNAME }}:${{ secrets.USERGROUP }} ${{ secrets.PUBLIC_WWW }}
