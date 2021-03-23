@@ -4,7 +4,6 @@ import Figure from '@/components/figure'
 import Layout from '@/components/layout'
 import LinkIcon from '@/icons/link'
 import MetaTags from '@/components/meta-tags'
-import RichPreview from '@/components/rich-preview'
 import Stack from '@/components/stack'
 import { getAllProjectSlugs, getProjectBySlug } from '@/lib/api/projects'
 import hydrateMDXSource from '@/lib/hydrate-mdx-source'
@@ -36,11 +35,6 @@ export default function Project({
   return (
     <Layout breadcrumbs={breadcrumbs}>
       <MetaTags
-        description={excerpt}
-        title={title}
-      />
-
-      <RichPreview
         description={excerpt}
         imageSubpath={`projects/${slug}`}
         permalink={permalink}

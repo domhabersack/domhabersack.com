@@ -4,7 +4,6 @@ import Breakout from '@/components/breakout'
 import Layout from '@/components/layout'
 import MetaTags from '@/components/meta-tags'
 import PostTeasers from '@/components/post-teasers'
-import RichPreview from '@/components/rich-preview'
 import { getAllCategoriesWithPosts } from '@/lib/api/post-categories'
 
 export default function Categories({
@@ -18,9 +17,7 @@ export default function Categories({
 
   return (
     <Layout breadcrumbs={breadcrumbs}>
-      <MetaTags title="Categories" />
-
-      <RichPreview
+      <MetaTags
         permalink="/categories"
         title="Categories"
       />

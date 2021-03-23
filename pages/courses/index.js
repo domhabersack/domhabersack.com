@@ -4,7 +4,6 @@ import Breakout from '@/components/breakout'
 import CourseTeasers from '@/components/course-teasers'
 import Layout from '@/components/layout'
 import MetaTags from '@/components/meta-tags'
-import RichPreview from '@/components/rich-preview'
 import { getAllCourses } from '@/lib/api/courses'
 
 export default function Courses({
@@ -18,9 +17,7 @@ export default function Courses({
 
   return (
     <Layout breadcrumbs={breadcrumbs}>
-      <MetaTags title="Courses" />
-
-      <RichPreview
+      <MetaTags
         permalink="/courses"
         title="Courses"
       />

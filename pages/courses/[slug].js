@@ -7,7 +7,6 @@ import ConvertkitForm from '@/components/convertkit-form'
 import EmailWithLetterIcon from '@/icons/email-with-letter'
 import Layout from '@/components/layout'
 import MetaTags from '@/components/meta-tags'
-import RichPreview from '@/components/rich-preview'
 import Video from '@/components/video'
 import VideoIcon from '@/icons/video'
 import { getAllCourseSlugs, getCourseBySlug } from '@/lib/api/courses'
@@ -62,11 +61,6 @@ export default function Course({
   return (
     <Layout breadcrumbs={breadcrumbs}>
       <MetaTags
-        description={excerpt}
-        title={title}
-      />
-
-      <RichPreview
         description={excerpt}
         permalink={permalink}
         title={title}

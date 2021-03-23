@@ -2,7 +2,6 @@ import React from 'react'
 
 import Layout from '@/components/layout'
 import MetaTags from '@/components/meta-tags'
-import RichPreview from '@/components/rich-preview'
 import Tag from '@/components/tag'
 import { getAllFiretipSlugs, getFiretipBySlug } from '@/lib/api/firetips'
 import hydrateMDXSource from '@/lib/hydrate-mdx-source'
@@ -26,9 +25,7 @@ export default function Firetip({
 
   return (
     <Layout breadcrumbs={breadcrumbs}>
-      <MetaTags title={title} />
-
-      <RichPreview
+      <MetaTags
         imageSubpath="firetips"
         permalink={permalink}
         title={title}

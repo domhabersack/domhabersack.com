@@ -2,7 +2,6 @@ import Breakout from '@/components/breakout'
 import Layout from '@/components/layout'
 import MetaTags from '@/components/meta-tags'
 import PostTeasers from '@/components/post-teasers'
-import RichPreview from '@/components/rich-preview'
 import { getAllPosts } from '@/lib/api/posts'
 
 export default function Posts({
@@ -17,12 +16,7 @@ export default function Posts({
   return (
     <Layout breadcrumbs={breadcrumbs}>
       <MetaTags
-        title="Blog"
         description="I write about design, development, and productivity. My weekly newsletter contains shorter pieces. Read all previous issues in the archive."
-      />
-
-      <RichPreview
-        description="I write about design, development, and productivity."
         imageSubpath="pages/posts"
         permalink="/posts"
         title="Blog"

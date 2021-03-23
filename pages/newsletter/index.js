@@ -6,7 +6,6 @@ import ConvertkitForm from '@/components/convertkit-form'
 import Layout from '@/components/layout'
 import MetaTags from '@/components/meta-tags'
 import NewsletterTeaser from '@/components/newsletter-teaser'
-import RichPreview from '@/components/rich-preview'
 import { getFeaturedNewsletters } from '@/lib/api/newsletters'
 
 const BENEFITS = [
@@ -29,11 +28,6 @@ export default function Newsletter({
   return (
     <Layout breadcrumbs={breadcrumbs}>
       <MetaTags
-        description="Weekly tips on design, development, and working smarter."
-        title="Newsletter"
-      />
-
-      <RichPreview
         description="Weekly tips on design, development, and working smarter."
         imageSubpath="pages/newsletter"
         permalink="/newsletter"

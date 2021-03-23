@@ -5,7 +5,6 @@ import Figure from '@/components/figure'
 import Layout from '@/components/layout'
 import MetaTags from '@/components/meta-tags'
 import NewsletterTeaser from '@/components/newsletter-teaser'
-import RichPreview from '@/components/rich-preview'
 import PostMeta from '@/components/post-meta'
 import { getAllNewsletterSlugs, getNewsletterBySlug } from '@/lib/api/newsletters'
 import hydrateMDXSource from '@/lib/hydrate-mdx-source'
@@ -42,11 +41,6 @@ export default function Newsletter({
   return (
     <Layout breadcrumbs={breadcrumbs}>
       <MetaTags
-        description={excerpt}
-        title={title}
-      />
-
-      <RichPreview
         description={excerpt}
         imageSubpath={`newsletter/${slug}`}
         permalink={permalink}

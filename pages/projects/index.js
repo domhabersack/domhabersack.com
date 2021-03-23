@@ -2,7 +2,6 @@ import Breakout from '@/components/breakout'
 import Layout from '@/components/layout'
 import MetaTags from '@/components/meta-tags'
 import ProjectTeasers from '@/components/project-teasers'
-import RichPreview from '@/components/rich-preview'
 import { getAllProjects } from '@/lib/api/projects'
 
 export default function Projects({
@@ -17,11 +16,6 @@ export default function Projects({
   return (
     <Layout breadcrumbs={breadcrumbs}>
       <MetaTags
-        description="I am working on a few free and paid products, trying to earn an income with them over time."
-        title="Projects"
-      />
-
-      <RichPreview
         description="I am working on a few free and paid products, trying to earn an income with them over time."
         imageSubpath="pages/posts"
         permalink="/projects"

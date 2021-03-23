@@ -1,6 +1,5 @@
 import Layout from '@/components/layout'
 import MetaTags from '@/components/meta-tags'
-import RichPreview from '@/components/rich-preview'
 import { getAllPageSlugs, getPageBySlug } from '@/lib/api/pages'
 import hydrateMDXSource from '@/lib/hydrate-mdx-source'
 
@@ -21,11 +20,6 @@ export default function Page({
   return (
     <Layout breadcrumbs={breadcrumbs}>
       <MetaTags
-        description={description}
-        title={title}
-      />
-
-      <RichPreview
         description={description}
         permalink={permalink}
         title={title}

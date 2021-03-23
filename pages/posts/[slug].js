@@ -5,7 +5,6 @@ import Figure from '@/components/figure'
 import Layout from '@/components/layout'
 import MetaTags from '@/components/meta-tags'
 import PostMeta from '@/components/post-meta'
-import RichPreview from '@/components/rich-preview'
 import Tag from '@/components/tag'
 import { getAllPostSlugs, getPostBySlug } from '@/lib/api/posts'
 import hydrateMDXSource from '@/lib/hydrate-mdx-source'
@@ -37,11 +36,6 @@ export default function Post({
   return (
     <Layout breadcrumbs={breadcrumbs}>
       <MetaTags
-        description={excerpt}
-        title={title}
-      />
-
-      <RichPreview
         description={excerpt}
         heroAlt={heroAlt}
         imageSubpath={`posts/${slug}`}

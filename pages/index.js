@@ -12,7 +12,6 @@ import NewsletterSignup from '@/components/newsletter-signup'
 import NewsletterTeaser from '@/components/newsletter-teaser'
 import PostTeaser from '@/components/post-teaser'
 import ProjectTeaser from '@/components/project-teaser'
-import RichPreview from '@/components/rich-preview'
 import Twitter from '@/icons/twitter-logo'
 import YouTube from '@/icons/youtube-logo'
 import { getAuthorBySlug } from '@/lib/api/authors'
@@ -92,11 +91,6 @@ export default function Index({
   return (
     <Layout>
       <MetaTags
-        description="I am a software developer, IT consultant, and content creator with 12+ years of professional experience. Follow along as I build my company in public."
-        title="Dom Habersack · Content Creator & IndieHacker"
-      />
-
-      <RichPreview
         description="I am a software developer, IT consultant, and content creator with 12+ years of professional experience. Follow along as I build my company in public."
         imageSubpath="home"
         permalink=""

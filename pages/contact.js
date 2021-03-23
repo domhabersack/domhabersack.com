@@ -1,7 +1,6 @@
 import ContactForm from '@/components/contact-form'
 import Layout from '@/components/layout'
 import MetaTags from '@/components/meta-tags'
-import RichPreview from '@/components/rich-preview'
 
 export default function Contact() {
   const breadcrumbs = [
@@ -13,11 +12,6 @@ export default function Contact() {
   return (
     <Layout breadcrumbs={breadcrumbs}>
       <MetaTags
-        description="Get in touch if you have a project you need help with!"
-        title="Contact"
-      />
-
-      <RichPreview
         description="Get in touch if you have a project you need help with!"
         imageSubpath="pages/contact"
         permalink="/contact"

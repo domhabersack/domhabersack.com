@@ -2,7 +2,6 @@ import Breakout from '@/components/breakout'
 import Layout from '@/components/layout'
 import MetaTags from '@/components/meta-tags'
 import PostTeasers from '@/components/post-teasers'
-import RichPreview from '@/components/rich-preview'
 import { getAllCategorySlugs, getCategoryWithPostsBySlug } from '@/lib/api/post-categories'
 
 export default function Category({
@@ -21,9 +20,7 @@ export default function Category({
 
   return (
     <Layout breadcrumbs={breadcrumbs}>
-      <MetaTags title={`Posts in “${title}”`} />
-
-      <RichPreview
+      <MetaTags
         permalink={permalink}
         title={`Posts in “${title}”`}
       />

@@ -3,7 +3,6 @@ import React from 'react'
 import FiretipTeaser from '@/components/firetip-teaser'
 import Layout from '@/components/layout'
 import MetaTags from '@/components/meta-tags'
-import RichPreview from '@/components/rich-preview'
 import { getAllTagSlugs, getTagWithFiretipsBySlug } from '@/lib/api/firetip-tags'
 
 export default function Tag({
@@ -25,9 +24,7 @@ export default function Tag({
 
   return (
     <Layout breadcrumbs={breadcrumbs}>
-      <MetaTags title={`Fire tips tagged “${title}”`} />
-
-      <RichPreview
+      <MetaTags
         permalink={permalink}
         title={`Fire tips tagged “${title}”`}
       />
