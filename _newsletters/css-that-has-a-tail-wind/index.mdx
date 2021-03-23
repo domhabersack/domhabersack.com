@@ -1,0 +1,20 @@
+---
+title: "CSS that has a tail wind"
+date: "2019-11-27"
+excerpt: "In utility-first CSS, we do not limit ourselves to single classes. Instead, we use many small classes that each add small pieces of styling."
+issue: 12
+heroAlt: "A bird sitting on a branch."
+heroCaption: "It doesn’t look like much, but wait until you see it fly."
+author: dom-habersack
+related:
+  - the-easiest-way-to-build-a-dark-mode
+  - progressive-enhancement-with-at-supports
+  - javascript-sorts-arrays-weird
+---
+Whelp, hell has frozen over. For _years_, I have been vocal about my support for the BEM-approach to writing CSS. Following BEM, we give elements we want to style a single semantic class that describes what it does. The title of a blog post could be called `.blog__title`, its description `.blog__description`. Once you get past the ugly underscores, it’s a really solid approach. Recently, some interesting alternatives are gaining momentum.
+
+In utility-first CSS, we do almost the exact opposite of BEM. We do not limit ourselves to single classes. We don’t even keep styling-information out of our HTML. Instead, we use many small classes that each add small pieces of styling. Its classes have names like `.background-red`, `.margin-10`, and `.text-bold`. We style elements by adding many of these descriptive classes to them. [Tailwind CSS](https://tailwindcss.com) is a popular framework that does this really well.
+
+Utility-first CSS needs a lot of very small and similar classes. Next to `.background-red`, we could also need `.background-blue`, `.background-green`, and others. Writing many of those by hand is annoying. With Sass in our toolkit, we can auto-generate a lot of these classes. To really understand how it works, you might want to roll your own utility-first framework. My recent post on [writing utility-first CSS with Sass](/posts/writing-utility-first-css-with-sass/) helps you get started.
+
+– Dom

@@ -1,0 +1,150 @@
+---
+title: "Get more value from your git log"
+date: "2020-11-25"
+excerpt: "We can customize the look of our git log to get more value out of fewer lines. In this issue, I walk you through how we can build a prettier log step by step."
+issue: 64
+heroAlt: "An empty logbook"
+heroCaption: "Let’s put something useful in there."
+figures:
+  - "slice-1.png"
+  - "slice-2.png"
+  - "slice-3.png"
+  - "slice-4.png"
+  - "slice-5.png"
+  - "slice-6.png"
+author: dom-habersack
+related:
+  - the-global-gitignore
+  - the-main-branch
+  - i-published-my-first-video-tutorials
+---
+As command line cowboys, we often explore a project’s history through its git log. By default, this command shows little information that takes up a lot of space. It’s difficult to see what happened in a project over time like this.
+
+```bash
+$ git log
+```
+
+<Figure
+  alt="The default output of a git log."
+  caption="The default output of a git log."
+  height="552"
+  src={figures['slice-1']}
+  width="960"
+/>
+
+As most things in git, we can customize what a log looks like. Let’s design ourselves a better, prettier git log. Step by step, we’ll build towards this result.
+
+```bash
+$ git mylog
+```
+
+<Figure
+  alt="A more compact version of the git log that shows more commits and their branches in the same space."
+  caption="This shows us much more information in the exact same space."
+  height="552"
+  src={figures['slice-2']}
+  width="960"
+/>
+
+We’ll start by drawing our branches and using local times. The `--graph` option shows us when branches existed and where we merged them. The `--date` option removes the timezone information. When looking at a repository’s history, the exact timezone is rarely important.
+
+```bash
+$ git log --graph --date=local
+```
+
+<Figure
+  alt="The default log with lines for branches and without the timezone qualifiers."
+  caption="The default log with lines for branches and without the timezone qualifiers."
+  height="552"
+  src={figures['slice-3']}
+  width="960"
+/>
+
+There is still a lot of unnecessary information and too many empty lines here. We can customize the look of each commit with a template passed through the `--pretty` option. We can use some placeholders in there that give us different pieces of information.
+
+While the full hash helps us find a specific commit, the first few characters are usually enough. In our first commit template, we’ll use only the commit’s **short hash** (`%h`) and **ref names** like `HEAD` (`%d`).
+
+```bash
+$ git log --graph --local \
+--pretty=format:'%h%d'
+```
+
+<Figure
+  alt="A list of commits and their branches, with only their hashes and no other information shown."
+  caption="This is cleaner, but maybe too much so."
+  height="552"
+  src={figures['slice-4']}
+  width="960"
+/>
+
+We can now see a lot more commits in the same space, but don’t have any idea what happened in them. Let’s add the **authoring date** (`%ad`) of the commit and the **author’s name** (`%an`). We can use extra non-placeholder symbols like brackets to separate those values.
+
+```bash
+$ git log --graph --date=local \
+--pretty=format:'%h%d %ad [%an]'
+```
+
+<Figure
+  alt="The same log as before, now with date, time, and author of the commit."
+  caption="This gives us some more context."
+  height="552"
+  src={figures['slice-5']}
+  width="960"
+/>
+
+Finally, we need to add the **subject** (`%s`) of the commit. We’ll put it on a **new line** (`%n`) and add some space before it so it aligns with the time and date.
+
+```bash
+$ git log --graph --date=local \
+--pretty=format:'%h%d %ad [%an]%n        %s'
+```
+
+<Figure
+  alt="The same log as before, now with the commit subjects for all commits on a second line."
+  caption="This finally shows us helpful information, but it’s not very easy to parse yet."
+  height="552"
+  src={figures['slice-6']}
+  width="960"
+/>
+
+We can use `%Cred`, `%Cgreen`, and `%Cblue` to add some **color**. All text after one of these appears in that color. The coloration stops at the end of the line. We don’t have to do anything for the commit subject on the second line to keep its default color.
+
+```bash
+$ git log --graph --date=local \
+--pretty=format:'%Cred%h%d %Cgreen%ad %Cblue[%an]%n        %s'
+```
+
+<Figure
+  alt="The log from before, now colored."
+  caption="Color makes it easier to see differences between the types of information."
+  height="552"
+  src={figures['slice-2']}
+  width="960"
+/>
+
+And there you go! There are a bunch of other placeholders you could use. `%ae` is the **author’s email**, `%ar` a **relative time stamp** like “6 days ago”, and `%b` the full **body** of the commit. You can find [all placeholders in the git documentation](https://www.git-scm.com/docs/git-log#_pretty_formats) if you want to further customize your log.
+
+Of course, always typing the full command would be annoying. You can hide your custom log display behind an **alias** like so:
+
+```bash
+$ git config --global alias.mylog \
+"log --graph --date=local --pretty=format:'%Cred%h%d %Cgreen%ad %Cblue[%an]%n        %s'"
+```
+
+By doing that, you can always get to your log by typing `git mylog`:
+
+```bash
+$ git mylog
+```
+
+<Figure
+  alt="The final, colored output of our custom git alias."
+  caption="We don’t have to memorize the full command if we put it behind an alias."
+  height="552"
+  src={figures['slice-2']}
+  width="960"
+/>
+
+If you customized your git log, I’d love to see a screenshot!
+
+– Dom

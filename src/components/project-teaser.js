@@ -1,36 +1,35 @@
 import React from 'react'
-import Img from 'gatsby-image'
+import Image from 'next/image'
 
-import Card from './card'
-import CoinsIcon from '../icons/coins'
-import LinkIcon from '../icons/link'
-import Stack from './stack'
+import Card from '@/components/card'
+import CoinsIcon from '@/icons/coins'
+import LinkIcon from '@/icons/link'
+import Stack from '@/components/stack'
 
 export default function ProjectTeaser({
   project,
 }) {
   const {
-    frontmatter,
-    hero,
-    permalink,
-  } = project
-
-  const {
     excerpt,
+    hero,
     heroAlt,
+    permalink,
     revenue,
     stack,
     title,
     url,
-  } = frontmatter
+  } = project
 
   return (
     <Card>
       <article className="flex flex-col h-full">
         <a href={permalink}>
-          <Img
+          <Image
             alt={heroAlt}
-            fluid={hero.childImageSharp.fluid}
+            height="360"
+            layout="responsive"
+            src={hero}
+            width="640"
           />
         </a>
 

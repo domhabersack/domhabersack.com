@@ -1,23 +1,15 @@
-import fs from 'fs'
-import path from 'path'
+import { getAllFiles, getFileBySlug } from '@/lib/api-helpers'
 
-const DIRECTORY = path.join(process.cwd(), '_authors')
+const transform = ({
+  slug,
+}) => ({
+  avatar: `/api/authors/${slug}/images/${slug}.jpg`,
+})
 
-export function getAllAuthors() {
-  const directories = fs.readdirSync(DIRECTORY, {
-    withFileTypes: true,
-  }).filter(dirent => dirent.isDirectory())
-
-  const authors = directories.map(({
-    name,
-  }) => {
-    const json = JSON.parse(fs.readFileSync(path.join(DIRECTORY, `${name}/${name}.json`), 'utf8'))
-
-    return {
-      ...json,
-    }
-  })
+export async function getAllAuthors() {
+  return await getAllFiles('authors', transform)
 }
 
-export function getAuthor() {
+export async function getAuthorBySlug(slug) {
+  return await getFileBySlug('authors', slug, transform)
 }

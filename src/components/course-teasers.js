@@ -1,7 +1,7 @@
 import React from 'react'
 
-import CourseTeaser from './course-teaser'
-import Grid from './grid'
+import CourseTeaser from '@/components/course-teaser'
+import Grid from '@/components/grid'
 
 export default function CourseTeasers({
   courses,
@@ -9,7 +9,7 @@ export default function CourseTeasers({
   return (
     <Grid>
       {courses.map(course => (
-        <React.Fragment key={`course-teaser-${course.id}`}>
+        <React.Fragment key={`course-teaser-${course.slug}`}>
           <CourseTeaser course={course} />
         </React.Fragment>
       ))}

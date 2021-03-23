@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 
-import CookieConsentContext from '../contexts/cookie-consent'
-import UpdateCookieSettingsTrigger from './update-cookie-settings-trigger'
+import CookieConsentContext from '@/contexts/cookie-consent'
+import UpdateCookieSettingsTrigger from '@/components/update-cookie-settings-trigger'
 
 export default function RequiresCookieConsent({
   children,

@@ -1,8 +1,8 @@
 import React from 'react'
 
-import Breakout from './breakout'
-import Container from './container'
-import Sparkles from '../icons/sparkles'
+import Breakout from '@/components/breakout'
+import Container from '@/components/container'
+import Sparkles from '@/icons/sparkles'
 
 export default function Banner() {
   return (

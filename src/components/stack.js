@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Logo from './logo'
+import Logo from '@/components/logo'
 
 export default function Stack({
   stack,

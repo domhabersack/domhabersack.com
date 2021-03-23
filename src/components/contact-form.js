@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import { useForm, ValidationError } from '@formspree/react'
 
-import Flash from './flash'
-import RequiresCookieConsent from './requires-cookie-consent'
+import Flash from '@/components/flash'
+import RequiresCookieConsent from '@/components/requires-cookie-consent'
 
 export default function ContactForm() {
   const [{

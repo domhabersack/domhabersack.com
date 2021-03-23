@@ -1,0 +1,30 @@
+---
+title: "I finally understand “many small functions”"
+date: "2020-12-30"
+excerpt: "Writing many small functions instead of a few large ones is common wisdom. It took a book from the 90s for me to understand why that’s better."
+issue: 69
+heroAlt: "Assorted colorful miniature houses."
+heroCaption: "Having many of these is much better than having one large house."
+author: dom-habersack
+related:
+  - poor-man-s-debugging-but-cooler
+  - writing-code-for-others-to-read
+  - these-tips-are-fire
+---
+Hey! I am taking a few days off after the holidays to recharge. I want to quickly share an overdue realization I had before I go back to eating more leftover cookies.
+
+Writing many small functions instead of a few large ones is pretty common advice. Still, there are situations in which it does not seem to make sense to split up a function. Everything seems so tightly coupled that there is no easy or obvious way to divide it. It wasn’t until I read “Smalltalk Best Practice Patterns” that I understood why it is a good idea anyways.
+
+There are usually many ways to get to the same result. We often make a judgement call between cleverness and readability of a piece of code. While they achieve the same outcome, some approaches are faster than others.
+
+When we find a performance bottleneck in a large function, we don’t always know what to look for. Somewhere in its dozen or hundreds of lines, we could be doing something silly. Unless the issue is obvious, such a mistake is easy to miss. We first have to track the problem down, which could take a long time.
+
+Having many small functions makes it easier to optimize an application for speed. By testing the performance of small functions one by one, we can find the slow parts much quicker. Once we know what function is responsible, we can focus on improving only that part.
+
+If we compare functions to recipes, the lines in them are individual steps. To get faster at cooking a meal, we take the step that takes the longest and try to do it faster. Instead of wondering why it takes us two hours to make stew, we look at each step of the recipe. We could be slow at peeling onions or dicing potatoes. If we know which step takes a long time, we can work on doing that part faster. By getting faster at the slowest step, the entire recipe gets done faster.
+
+By splitting a large function into many small ones, we can look at each step and make that same optimization. It took me a long time to see that benefit. Now that it clicked, I cannot unsee it.
+
+This also showed me that helpful tips can come from anywhere. I have read and heard that advice so many times. It wasn’t until I read a book from 1996 on a programming language I don’t even use before I understood it. If you think you don’t have anything to share, share it anyways. You never know when something you wrote helps someone.
+
+– Dom

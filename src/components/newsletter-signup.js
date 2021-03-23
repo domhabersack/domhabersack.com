@@ -1,7 +1,7 @@
 import React from 'react'
 
-import ConvertkitForm from './convertkit-form'
-import UppercaseHeading from './uppercase-heading'
+import ConvertkitForm from '@/components/convertkit-form'
+import UppercaseHeading from '@/components/uppercase-heading'
 
 export default function NewsletterSignup() {
   return (

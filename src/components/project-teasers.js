@@ -1,7 +1,7 @@
 import React from 'react'
 
-import Grid from './grid'
-import ProjectTeaser from './project-teaser'
+import Grid from '@/components/grid'
+import ProjectTeaser from '@/components/project-teaser'
 
 export default function ProjectTeasers({
   projects,
@@ -9,7 +9,7 @@ export default function ProjectTeasers({
   return (
     <Grid>
       {projects.map(project => (
-        <React.Fragment key={`project-teaser-${project.id}`}>
+        <React.Fragment key={`project-teaser-${project.slug}`}>
           <ProjectTeaser project={project} />
         </React.Fragment>
       ))}

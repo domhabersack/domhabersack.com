@@ -1,7 +1,7 @@
 import React from 'react'
 
-import IslovelyLogo from './islovely-logo'
-import Navigation from './navigation'
+import IslovelyLogo from '@/components/islovely-logo'
+import Navigation from '@/components/navigation'
 
 export default function Header() {
   return (

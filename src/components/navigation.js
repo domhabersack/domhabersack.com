@@ -19,7 +19,7 @@ export default function Navigation() {
   }
 
   return (
-    <>
+    <React.Fragment>
       <nav aria-label="Global">
         <button
           aria-haspopup="true"
@@ -72,49 +72,22 @@ export default function Navigation() {
 
         <div className="hidden py-4 xs:block xs:space-x-4 sm:space-x-5">
           {Object.entries(LINKS).map(([name, href]) => (
-            <a
-              className="font-medium text-gray-700 hover:text-gray-900 hover:no-underline visited:text-gray-700 dark:text-gray-200 dark:hover:text-gray-50 dark:visited:text-gray-200"
-              href={href}
-              key={href}
-            >
-              {name}
-            </a>
+            <React.Fragment key={href}>
+              <a
+                className="font-medium text-gray-700 hover:text-gray-900 hover:no-underline visited:text-gray-700 dark:text-gray-200 dark:hover:text-gray-50 dark:visited:text-gray-200"
+                href={href}
+              >
+                {name}
+              </a>
+            </React.Fragment>
           ))}
         </div>
       </nav>
 
       {isMenuOpen && (
-        <div
-          className={`
-            absolute
-            p-2
-            top-0
-            transform
-            transition
-            origin-top-right
-            w-60
-            -right-4
-            xs:hidden
-          `}
-        >
-          <div
-            className={`
-              bg-white
-              overflow-hidden
-              rounded-lg
-              shadow-md
-              dark:bg-gray-900
-            `}
-          >
-            <div
-              className={`
-                flex
-                items-center
-                justify-end
-                pt-3
-                px-4
-              `}
-            >
+        <div className="absolute p-2 top-0 transform transition origin-top-right w-60 -right-4 xs:hidden">
+          <div className="bg-white overflow-hidden rounded-lg shadow-md dark:bg-gray-900">
+            <div className="flex items-center justify-end pt-3 px-4">
               <button
                 onClick={closeMenu}
                 type="button"
@@ -168,36 +141,20 @@ export default function Navigation() {
               role="menu"
             >
               {Object.entries(LINKS).map(([name, href]) => (
-                <a
-                  className={`
-                    block
-                    font-medium
-                    px-2
-                    py-2
-                    rounded-md
-                    text-gray-700
-                    focus:bg-gray-50
-                    hover:text-gray-900
-                    hover:bg-gray-50
-                    hover:no-underline
-                    visited:text-gray-700
-                    dark:text-gray-200
-                    dark:focus:bg-gray-800
-                    dark:hover:text-gray-50
-                    dark:hover:bg-gray-800
-                    dark:visited:text-gray-200
-                  `}
-                  href={href}
-                  key={href}
-                  role="menuitem"
-                >
-                  {name}
-                </a>
+                <React.Fragment key={href}>
+                  <a
+                    className="block font-medium px-2 py-2 rounded-md text-gray-700 focus:bg-gray-50 hover:text-gray-900 hover:bg-gray-50 hover:no-underline visited:text-gray-700 dark:text-gray-200 dark:focus:bg-gray-800 dark:hover:text-gray-50 dark:hover:bg-gray-800 dark:visited:text-gray-200"
+                    href={href}
+                    role="menuitem"
+                  >
+                    {name}
+                  </a>
+                </React.Fragment>
               ))}
             </div>
           </div>
         </div>
       )}
-    </>
+    </React.Fragment>
   )
 }

@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react'
-import { Helmet } from 'react-helmet'
+import Head from 'next/head'
 
-import CookieConsentContext from '../contexts/cookie-consent'
+import CookieConsentContext from '@/contexts/cookie-consent'
 
 export default function CookieConsent() {
   const { setIsCookieConsentGiven } = useContext(CookieConsentContext)
@@ -63,12 +63,12 @@ export default function CookieConsent() {
   }, [setIsCookieConsentGiven])
 
   return isCookieSolutionConfigured ? (
-    <Helmet>
+    <Head>
       <script
         async
         charSet="UTF-8"
         src="//cdn.iubenda.com/cs/iubenda_cs.js"
       />
-    </Helmet>
+    </Head>
   ) : null
 }

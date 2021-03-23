@@ -1,6 +1,6 @@
 import React from 'react'
 
-import RequiresCookieConsent from './requires-cookie-consent'
+import RequiresCookieConsent from '@/components/requires-cookie-consent'
 
 export default function Video({
   title,

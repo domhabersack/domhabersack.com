@@ -1,28 +1,24 @@
 import React from 'react'
 
-import Card from './card'
-import CalendarIcon from '../icons/calendar'
-import ClockIcon from '../icons/clock'
-import EmailWithLetterIcon from '../icons/email-with-letter'
-import VideoIcon from '../icons/video'
+import Card from '@/components/card'
+import CalendarIcon from '@/icons/calendar'
+import ClockIcon from '@/icons/clock'
+import EmailWithLetterIcon from '@/icons/email-with-letter'
+import VideoIcon from '@/icons/video'
 
 export default function CourseTeaser({
   course,
 }) {
   const {
-    frontmatter,
-    permalink,
-  } = course
-
-  const {
     emails,
     excerpt,
     highlightColor,
     hours,
+    permalink,
     title,
     videos,
     weeks,
-  } = frontmatter
+  } = course
 
   const meta = {
     emails: {

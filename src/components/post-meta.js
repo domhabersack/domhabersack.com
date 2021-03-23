@@ -1,20 +1,20 @@
 import React from 'react'
-import Img from 'gatsby-image'
+import Image from 'next/image'
 
-import formatDate from '../utils/format-date'
+import formatDate from '@/lib/format-date'
 
 export default function PostMeta({
   author,
-  avatarFluid,
+  avatar,
   date,
 }) {
   return (
     <div className="flex items-center space-x-2.5">
-      <Img
+      <Image
         alt={author}
         className="h-10 rounded-full w-10"
-        fluid={avatarFluid}
         height="40"
+        src={avatar}
         width="40"
       />
 

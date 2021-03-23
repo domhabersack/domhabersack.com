@@ -1,15 +1,15 @@
 import React from 'react'
-import { Helmet } from 'react-helmet'
+import Head from 'next/head'
 import { MDXProvider } from '@mdx-js/react'
 
-import Application from './application'
-import Banner from './banner'
-import Breadcrumbs from './breadcrumbs'
-import Breakout from './breakout'
-import BreakpointDebug from './breakpoint-debug'
-import Container from './container'
-import Footer from './footer'
-import Header from './header'
+import Application from '@/components/application'
+import Banner from '@/components/banner'
+import Breadcrumbs from '@/components/breadcrumbs'
+import Breakout from '@/components/breakout'
+import BreakpointDebug from '@/components/breakpoint-debug'
+import Container from '@/components/container'
+import Footer from '@/components/footer'
+import Header from '@/components/header'
 
 const IS_IN_DEBUG_MODE = false
 
@@ -20,7 +20,7 @@ export default function Layout ({
   return (
     <MDXProvider>
       <Application>
-        <Helmet />
+        <Head />
 
         <Banner />
 

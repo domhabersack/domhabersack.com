@@ -1,32 +1,30 @@
 import React from 'react'
-import Img from 'gatsby-image'
+import Image from 'next/image'
 
-import formatDate from '../utils/format-date'
+import formatDate from '@/lib/format-date'
 
 export default function NewsletterTeaser({
   newsletter,
 }) {
   const {
     date,
-    frontmatter,
-    hero,
-    permalink,
-  } = newsletter
-
-  const {
     excerpt,
+    hero,
     heroAlt,
     issue,
+    permalink,
     title,
-  } = frontmatter
+  } = newsletter
 
   return (
-    <div class="flex space-x-2.5">
+    <div className="flex space-x-2.5">
       <div className="flex-shrink-0 w-32 mt-0.5">
         <a href={permalink}>
-          <Img
+          <Image
             alt={heroAlt}
-            fluid={hero.childImageSharp.fluid}
+            height="72"
+            src={hero}
+            width="128"
           />
         </a>
       </div>

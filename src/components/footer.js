@@ -1,17 +1,16 @@
+import CodePen from '@/icons/codepen-logo'
+import Dribbble from '@/icons/dribbble-logo'
+import Email from '@/icons/email'
+import GitHub from '@/icons/github-logo'
+import LinkedIn from '@/icons/linkedin-logo'
+import Mastodon from '@/icons/mastodon-logo'
+import NewsletterSignup from '@/components/newsletter-signup'
+import Twitch from '@/icons/twitch-logo'
+import Twitter from '@/icons/twitter-logo'
+import UpdateCookieSettingsTrigger from '@/components/update-cookie-settings-trigger'
+import UppercaseHeading from '@/components/uppercase-heading'
+import YouTube from '@/icons/youtube-logo'
 import React from 'react'
-
-import CodePen from '../icons/codepen-logo'
-import Dribbble from '../icons/dribbble-logo'
-import Email from '../icons/email'
-import GitHub from '../icons/github-logo'
-import LinkedIn from '../icons/linkedin-logo'
-import Mastodon from '../icons/mastodon-logo'
-import NewsletterSignup from './newsletter-signup'
-import Twitch from '../icons/twitch-logo'
-import Twitter from '../icons/twitter-logo'
-import UpdateCookieSettingsTrigger from './update-cookie-settings-trigger'
-import UppercaseHeading from './uppercase-heading'
-import YouTube from '../icons/youtube-logo'
 
 const SOCIAL_PROFILES = {
   '@domhabersack on Twitter': {
@@ -52,9 +51,7 @@ const SOCIAL_PROFILES = {
   }
 }
 
-export default function Footer({
-  location,
-}) {
+export default function Footer() {
   return (
     <footer className="divide-y text-gray-500 dark:divide-gray-700 dark:text-gray-400">
       <div className="py-8 space-y-10 sm:flex sm:flex-row sm:justify-between sm:space-y-0">

@@ -1,17 +1,22 @@
 import React from 'react'
-import Img from 'gatsby-image'
+import Image from 'next/image'
 
 export default function Figure({
   alt,
   caption,
-  fluid,
+  height = '810',
+  src,
+  width = '1440',
   ...props
 }) {
   return (
     <figure {...props}>
-      <Img
+      <Image
         alt={alt}
-        fluid={fluid}
+        height={height}
+        layout="responsive"
+        src={src}
+        width={width}
       />
 
       {caption != null ? (

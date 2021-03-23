@@ -1,39 +1,34 @@
 import React from 'react'
-import Img from 'gatsby-image'
+import Image from 'next/image'
 
-import Card from './card'
-import PostMeta from './post-meta'
-import Tag from './tag'
-import slugify from '../utils/slugify'
+import Card from '@/components/card'
+import PostMeta from '@/components/post-meta'
+import Tag from '@/components/tag'
 
 export default function PostTeaser({
   post,
 }) {
   const {
-    date,
-    frontmatter,
-    hero,
-    permalink,
-  } = post
-
-  const {
     author,
     categories,
+    date,
     excerpt,
+    hero,
     heroAlt,
+    permalink,
     title,
-  } = frontmatter
-
-  const authorName = author.frontmatter.name
-  const avatarFluid = author.avatar.childImageSharp.fluid
+  } = post
 
   return (
     <Card>
       <article className="flex flex-col h-full">
         <a href={permalink}>
-          <Img
+          <Image
             alt={heroAlt}
-            fluid={hero.childImageSharp.fluid}
+            height="360"
+            layout="responsive"
+            src={hero}
+            width="640"
           />
         </a>
 
@@ -50,10 +45,10 @@ export default function PostTeaser({
 
           <div className="flex flex-wrap mb-1.5">
             {categories.map(category => (
-              <React.Fragment key={category}>
+              <React.Fragment key={`category-${category.slug}`}>
                 <div className="mb-1 mr-1.5">
-                  <Tag href={`/categories/${slugify(category)}`}>
-                    {category}
+                  <Tag href={category.permalink}>
+                    {category.title}
                   </Tag>
                 </div>
               </React.Fragment>
@@ -61,8 +56,8 @@ export default function PostTeaser({
           </div>
 
           <PostMeta
-            author={authorName}
-            avatarFluid={avatarFluid}
+            author={author.name}
+            avatar={author.avatar}
             date={date}
           />
         </div>
