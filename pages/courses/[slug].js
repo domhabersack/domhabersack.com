@@ -95,7 +95,6 @@ export default function Course({
         {isSignupPossible && (
           <ConvertkitForm
             cta={cta}
-            sourceUrl={permalink}
             svForm={svForm}
             uid={uid}
           />

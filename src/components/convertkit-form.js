@@ -6,7 +6,6 @@ import RequiresCookieConsent from '@/components/requires-cookie-consent'
 export default function ConvertkitForm({
   cta,
   svForm,
-  sourceUrl,
   uid,
 }) {
   return (
@@ -40,13 +39,6 @@ export default function ConvertkitForm({
               placeholder="Enter your email"
               required
               type="email"
-            />
-
-            <input
-              name="fields[source]"
-              required
-              type="hidden"
-              value={sourceUrl}
             />
 
             <button

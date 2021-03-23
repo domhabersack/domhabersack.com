@@ -1,13 +1,4 @@
-const images = require('remark-images')
-
-const withMDX = require('@next/mdx')({
-  extensions: /\.mdx?$/,
-  options: {
-    remarkPlugins: [
-      images,
-    ],
-  },
-})
+const withMDX = require('@next/mdx')()
 
 module.exports = withMDX({
   webpack(config) {

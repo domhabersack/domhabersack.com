@@ -66,7 +66,6 @@ export default function Newsletter({
         <Card>
           <div className="bg-gray-100 px-4 py-3 dark:bg-gray-900">
             <ConvertkitForm
-              sourceUrl="UNKNOWN"
               svForm="1067424"
               uid="627637e2b6"
             />
