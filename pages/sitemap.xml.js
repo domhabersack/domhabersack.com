@@ -1,5 +1,6 @@
 import React from 'react';
 
+import config from '@/config'
 import { getAllCourses } from '@/lib/api/courses';
 import { getAllFiretips } from '@/lib/api/firetips';
 import { getAllTags as getAllFiretipTags } from '@/lib/api/firetip-tags'
@@ -11,7 +12,7 @@ import { getAllProjects } from '@/lib/api/projects';
 
 const createSitemap = permalinks => `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  ${permalinks.map(permalink => `<url><loc>https://islovely.co${permalink}</loc></url>`).join('')}
+  ${permalinks.map(permalink => `<url><loc>${config.siteUrl}${permalink}</loc></url>`).join('')}
 </urlset>`
 
 const getPermalink = page => page.permalink

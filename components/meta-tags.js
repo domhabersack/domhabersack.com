@@ -1,6 +1,8 @@
 import React from 'react'
 import Head from 'next/head'
 
+import config from '@/config'
+
 export default function MetaTags({
   description,
   expiredAt,
@@ -13,19 +15,10 @@ export default function MetaTags({
   type,
   updatedAt,
 }) {
-  // const data = useStaticQuery(graphql`
-  //   query {
-  //     site {
-  //       siteMetadata {
-  //         title
-  //       }
-  //     }
-  //   }
-  // `)
-
-  // const siteTitle = data.site.siteMetadata.title
-  const siteTitle = 'islovely'
-  const siteUrl = 'https://islovely.co'
+  const {
+    siteUrl,
+    title: siteTitle,
+  } = config
 
   const isArticle = type === 'article'
 
