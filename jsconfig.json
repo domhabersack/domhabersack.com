@@ -2,11 +2,6 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@/contexts/*": ["src/contexts/*"],
-      "@/icons/*": ["components/icons/*"],
-      "@/components/*": ["components/*"],
-      "@/lib/*": ["lib/*"],
-      "@/logos/*": ["logos/*"],
       "@/*": ["src/*"],
     }
   }

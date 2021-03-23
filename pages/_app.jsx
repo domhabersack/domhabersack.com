@@ -1,9 +1,9 @@
 import React from 'react'
 import Head from 'next/head'
 
-import '../styles/global.css'
+import '@/styles/global.css'
 
-function MyApp({
+export default function App({
   Component,
   pageProps,
 }) {
@@ -17,5 +17,3 @@ function MyApp({
     </React.Fragment>
   )
 }
-
-export default MyApp

@@ -1,13 +1,12 @@
 import React, { useContext, useEffect, useState } from 'react'
 import Head from 'next/head'
 
-import CookieConsentContext from '../src/contexts/cookie-consent'
+import CookieConsentContext from '@/contexts/cookie-consent'
 
 export default function CookieConsent() {
   const { setIsCookieConsentGiven } = useContext(CookieConsentContext)
 
-  // TODO set default back to `false`
-  const [isCookieSolutionConfigured, setIsCookieSolutionConfigured] = useState(true)
+  const [isCookieSolutionConfigured, setIsCookieSolutionConfigured] = useState(false)
 
   useEffect(() => {
     window._iub = window._iub || []

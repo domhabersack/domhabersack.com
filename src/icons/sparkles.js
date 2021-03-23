@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function Sparkles(){
+export default function Sparkles() {
   return (
     <svg
       fill="currentColor"
