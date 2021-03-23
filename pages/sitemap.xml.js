@@ -1,4 +1,4 @@
-import React from 'react';
+import { renderToStaticMarkup } from "react-dom/server";
 
 import config from '@/config'
 import { getAllCourses } from '@/lib/api/courses';
@@ -10,47 +10,64 @@ import { getAllCategories as getAllPostCategories } from '@/lib/api/post-categor
 import { getAllPosts } from '@/lib/api/posts';
 import { getAllProjects } from '@/lib/api/projects';
 
-const createSitemap = permalinks => `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  ${permalinks.map(permalink => `<url><loc>${config.siteUrl}${permalink}</loc></url>`).join('')}
-</urlset>`
-
 const getPermalink = page => page.permalink
 
-export default class Sitemap extends React.Component {
-  static async getInitialProps({ res }) {
-    const firetips = (await getAllFiretips()).map(getPermalink)
-    const firetipTags = (await getAllFiretipTags()).map(getPermalink)
-    const pages = (await getAllPages()).map(getPermalink)
-    const posts = (await getAllPosts()).map(getPermalink)
-    const postCategories = (await getAllPostCategories()).map(getPermalink)
-    const newsletters = (await getAllNewsletters()).map(getPermalink)
-    const courses = (await getAllCourses()).map(getPermalink)
-    const projects = (await getAllProjects()).map(getPermalink)
+export default function SitemapIndex() {
+  return null
+}
 
-    const allPermalinks = [
-      ...pages,
-      '/',
-      '/categories',
-      ...postCategories,
-      '/contact',
-      '/courses',
-      ...courses,
-      '/firetips',
-      ...firetips,
-      '/firetips/tags',
-      ...firetipTags,
-      '/newsletter',
-      '/newsletter/archive',
-      ...newsletters,
-      '/posts',
-      ...posts,
-      '/projects',
-      ...projects,
-    ].sort()
+function Sitemap({
+  permalinks,
+}) {
+  return (
+    <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+      {permalinks.map(permalink => (
+        <url key={permalink}>
+          <loc>
+            {config.siteUrl}{permalink}
+          </loc>
+        </url>
+      ))}
+    </urlset>
+  )
+}
 
-    res.setHeader('Content-Type', 'text/xml')
-    res.write(createSitemap(allPermalinks))
-    res.end()
+export async function getServerSideProps({ res }) {
+  const firetips = (await getAllFiretips()).map(getPermalink)
+  const firetipTags = (await getAllFiretipTags()).map(getPermalink)
+  const pages = (await getAllPages()).map(getPermalink)
+  const posts = (await getAllPosts()).map(getPermalink)
+  const postCategories = (await getAllPostCategories()).map(getPermalink)
+  const newsletters = (await getAllNewsletters()).map(getPermalink)
+  const courses = (await getAllCourses()).map(getPermalink)
+  const projects = (await getAllProjects()).map(getPermalink)
+
+  const allPermalinks = [
+    ...pages,
+    '/',
+    '/categories',
+    ...postCategories,
+    '/contact',
+    '/courses',
+    ...courses,
+    '/firetips',
+    ...firetips,
+    '/firetips/tags',
+    ...firetipTags,
+    '/newsletter',
+    '/newsletter/archive',
+    ...newsletters,
+    '/posts',
+    ...posts,
+    '/projects',
+    ...projects,
+  ].sort()
+
+  res.setHeader('Content-Type', 'text/xml')
+  res.write(renderToStaticMarkup(<Sitemap permalinks={allPermalinks} />))
+  res.end()
+
+  return {
+    props: {},
   }
 }
