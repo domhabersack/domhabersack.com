@@ -29,7 +29,9 @@ Let’s assume we wanted to create a theme we could use for conferences. To keep
 <Figure
   alt="Mockup of a page that could be used for conferences"
   caption="Placeholders paint an unrealistic picture of what this could look like later."
+  height="800"
   src={figures['mockup-empty']}
+  width="640"
 />
 
 This empty layout looks modern and clean. Everything is in its place, and it has a bit of an Apple-y vibe to it. It breaks as soon as we add real, “ugly” data to it:
@@ -37,7 +39,9 @@ This empty layout looks modern and clean. Everything is in its place, and it has
 <Figure
   alt="The previous mockup with realistic data"
   caption="Our mockup breaks when we add realistic content to it."
+  height="800"
   src={figures['mockup-with-content']}
+  width="640"
 />
 
 While the first one looks fine, everything else is terrible. Text is overlapping, to the point where many details become unreadable and inaccessible. This design does not work with real data. Now that we know what the content will look like, we can move it around a little to avoid those problems:
@@ -45,7 +49,9 @@ While the first one looks fine, everything else is terrible. Text is overlapping
 <Figure
   alt="An iteration of the broken design"
   caption="We can now move elements around so our design no longer breaks."
+  height="800"
   src={figures['mockup-with-all-content-visible']}
+  width="640"
 />
 
 Only now that we use real data do we notice more flaws in our design. See how we show the same date on every card? Assuming this is about a multi-day conference, we can turn the date into a subheading. We still need the time of each talk, which we can now combine with the room attendees need to go to:
@@ -53,7 +59,9 @@ Only now that we use real data do we notice more flaws in our design. See how we
 <Figure
   alt="An improvement on the previous iteration"
   caption="We can only fix our design when we know what “real data” looks like."
+  height="800"
   src={figures['mockup-with-cleaned-up-content']}
+  width="640"
 />
 
 There is still more we could do. The point is that we can only tell what changes we need to make if we know what we want to achieve. Ugly data helps us see where our design could break and fix it.

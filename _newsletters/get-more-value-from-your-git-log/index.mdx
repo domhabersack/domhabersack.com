@@ -27,7 +27,9 @@ $ git log
 <Figure
   alt="The default output of a git log."
   caption="The default output of a git log."
+  height="552"
   src={figures['slice-1']}
+  width="960"
 />
 
 As most things in git, we can customize what a log looks like. Let’s design ourselves a better, prettier git log. Step by step, we’ll build towards this result.
@@ -39,7 +41,9 @@ $ git mylog
 <Figure
   alt="A more compact version of the git log that shows more commits and their branches in the same space."
   caption="This shows us much more information in the exact same space."
+  height="552"
   src={figures['slice-2']}
+  width="960"
 />
 
 We’ll start by drawing our branches and using local times. The `--graph` option shows us when branches existed and where we merged them. The `--date` option removes the timezone information. When looking at a repository’s history, the exact timezone is rarely important.
@@ -51,7 +55,9 @@ $ git log --graph --date=local
 <Figure
   alt="The default log with lines for branches and without the timezone qualifiers."
   caption="The default log with lines for branches and without the timezone qualifiers."
+  height="552"
   src={figures['slice-3']}
+  width="960"
 />
 
 There is still a lot of unnecessary information and too many empty lines here. We can customize the look of each commit with a template passed through the `--pretty` option. We can use some placeholders in there that give us different pieces of information.
@@ -66,7 +72,9 @@ $ git log --graph --local \
 <Figure
   alt="A list of commits and their branches, with only their hashes and no other information shown."
   caption="This is cleaner, but maybe too much so."
+  height="552"
   src={figures['slice-4']}
+  width="960"
 />
 
 We can now see a lot more commits in the same space, but don’t have any idea what happened in them. Let’s add the **authoring date** (`%ad`) of the commit and the **author’s name** (`%an`). We can use extra non-placeholder symbols like brackets to separate those values.
@@ -79,7 +87,9 @@ $ git log --graph --date=local \
 <Figure
   alt="The same log as before, now with date, time, and author of the commit."
   caption="This gives us some more context."
+  height="552"
   src={figures['slice-5']}
+  width="960"
 />
 
 Finally, we need to add the **subject** (`%s`) of the commit. We’ll put it on a **new line** (`%n`) and add some space before it so it aligns with the time and date.
@@ -92,7 +102,9 @@ $ git log --graph --date=local \
 <Figure
   alt="The same log as before, now with the commit subjects for all commits on a second line."
   caption="This finally shows us helpful information, but it’s not very easy to parse yet."
+  height="552"
   src={figures['slice-6']}
+  width="960"
 />
 
 We can use `%Cred`, `%Cgreen`, and `%Cblue` to add some **color**. All text after one of these appears in that color. The coloration stops at the end of the line. We don’t have to do anything for the commit subject on the second line to keep its default color.
@@ -105,7 +117,9 @@ $ git log --graph --date=local \
 <Figure
   alt="The log from before, now colored."
   caption="Color makes it easier to see differences between the types of information."
+  height="552"
   src={figures['slice-2']}
+  width="960"
 />
 
 And there you go! There are a bunch of other placeholders you could use. `%ae` is the **author’s email**, `%ar` a **relative time stamp** like “6 days ago”, and `%b` the full **body** of the commit. You can find [all placeholders in the git documentation](https://www.git-scm.com/docs/git-log#_pretty_formats) if you want to further customize your log.
@@ -126,7 +140,9 @@ $ git mylog
 <Figure
   alt="The final, colored output of our custom git alias."
   caption="We don’t have to memorize the full command if we put it behind an alias."
+  height="552"
   src={figures['slice-2']}
+  width="960"
 />
 
 If you customized your git log, I’d love to see a screenshot!

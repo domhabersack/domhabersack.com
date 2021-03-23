@@ -32,7 +32,9 @@ I draw all icons on a canvas of 24×24 pixels. The outer 2 pixels are a reserved
 <Figure
   alt="The demilitarized zone around the 20*20px safe zone."
   caption="Most icons don’t reach into the outer 2px of the 24×24 pixel canvas."
+  height="720"
   src={figures['icons-in-safe-zone']}
+  width="1280"
 />
 
 Sometimes, an icon needs that little extra bit of space to work well. If a detail would not work inside the safe zone, the icon can reach beyond it. Ideally, only a few minor details make it outside of the safe zone:
@@ -40,7 +42,9 @@ Sometimes, an icon needs that little extra bit of space to work well. If a detai
 <Figure
   alt="Only minor details appear in the outer 2px."
   caption="Only minor details appear in the outer 2px."
+  height="720"
   src={figures['icons-outside-of-safe-zone']}
+  width="1280"
 />
 
 It’s rare for icons to break out of the safe zone. I find it helpful to have that little bit of extra space when I need it, but I try to avoid it as much as I can.
@@ -52,7 +56,9 @@ A big part of what makes the icons look similar are the rounded corners. The edg
 <Figure
   alt="A set of four icons, with the top row featuring rounded corners and the icons in the bottom row having sharp corners."
   caption="The square tail of the piggy bank is a joke. I felt like I needed to point that out."
+  height="720"
   src={figures['rounded-vs-sharp']}
+  width="1280"
 />
 
 The difference between these two versions is minimal:
@@ -60,7 +66,9 @@ The difference between these two versions is minimal:
 <Figure
   alt="The different corners highlighted."
   caption="The only difference between the two versions is in the rounded corners."
+  height="720"
   src={figures['rounded-vs-sharp-highlight']}
+  width="1280"
 />
 
 Both of these styles are fine. The rounded corners help give the icons the softer tone I am going for.
@@ -70,7 +78,9 @@ Picking the right border radius goes a bit beyond that, even. Some icons I broug
 <Figure
   alt="Two corners shown at various sizes. The larger the size, the more obvious the rounded inner radius on the bottom row."
   caption="An inner border radius becomes more obvious at larger sizes."
+  height="720"
   src={figures['inner-border-radius']}
+  width="1280"
 />
 
 It’s all about consistency. If only a few icons round the inside of a corner, they look out of place. As I’m writing this issue, I’m noticing that some icons _still_ have the inner radius. I will remove those before the set launches.
@@ -82,7 +92,9 @@ The biggest shortcut to fitting new icons into the set is to remix parts of exis
 <Figure
   alt="The computer and webcam share the same stand."
   caption="That’s either a really tiny monitor or a giant webcam."
+  height="720"
   src={figures['computer-and-webcam']}
+  width="1280"
 />
 
 The email and credit card share the same body:
@@ -90,7 +102,9 @@ The email and credit card share the same body:
 <Figure
   alt="The letter and credit card icons share the same body."
   caption="Those are some of the few icons with 2px border radii as well."
+  height="720"
   src={figures['letter-and-credit-card']}
+  width="1280"
 />
 
 The feet of the ghost are from the waves icon:
@@ -98,7 +112,9 @@ The feet of the ghost are from the waves icon:
 <Figure
   alt="The feet of the ghost are from the waves icon."
   caption="As if the ocean wasn’t scary enough already."
+  height="720"
   src={figures['ghost-and-waves']}
+  width="1280"
 />
 
 Many circles intentionally have the exact same size:
@@ -106,7 +122,9 @@ Many circles intentionally have the exact same size:
 <Figure
   alt="Many circles intentionally have the exact same size."
   caption="Coincidence? Honestly yeah, probably with this one."
+  height="720"
   src={figures['rings']}
+  width="1280"
 />
 
 None of these constraints are absolutely necessary to create a set. They help define the initial direction of an icon. The more similarities there are, the more the icons look like they belong together. If you combine icons from different sets, these differences make them feel inconsistent.

@@ -117,11 +117,11 @@
   }
 
   h2 {
-    @apply text-xl font-bold mb-3 mt-6 sm:text-2xl lg:text-3xl lg:mb-6 lg:mt-12;
+    @apply text-xl font-bold mb-3 mt-6 sm:text-2xl lg:text-3xl lg:mb-4 lg:mt-12;
   }
 
   h3 {
-    @apply text-base font-bold mb-1.5 mt-6 sm:text-xl lg:text-2xl lg:mb-12;
+    @apply text-base font-bold mb-1.5 mt-6 sm:text-xl lg:text-2xl lg:mb-2;
   }
 
   h4 {
