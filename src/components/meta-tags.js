@@ -55,7 +55,6 @@ export default function MetaTags({
           {updatedAt && (<meta property="article:modified_time" content={updatedAt} />)}
         </React.Fragment>
       )}
-
     </Head>
   )
 }
