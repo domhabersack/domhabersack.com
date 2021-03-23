@@ -18,10 +18,4 @@ module.exports = withMDX({
 
     return config
   },
-
-
-
-  images: {
-    domains: ['www.fillmurray.com'],
-  },
 })
