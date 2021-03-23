@@ -1,4 +1,4 @@
-import formatDate from '@/lib/format-date'
+import formatDate from './format-date'
 
 describe('formatDate', () => {
   it('tests', () => {
