@@ -13,7 +13,7 @@ export default function Contact() {
     <Layout breadcrumbs={breadcrumbs}>
       <MetaTags
         description="Get in touch if you have a project you need help with!"
-        imageSubpath="pages/contact"
+        ogImage="/api/pages/contact/og-image.jpg"
         permalink="/contact"
         title="Contact"
       />
@@ -23,7 +23,7 @@ export default function Contact() {
       </h1>
 
       <p>
-        Use this form to get in touch or reach me directly at <a href="mailto:dom@islovely.co">dom@islovely.co</a>. I will get back to you as soon as I can.
+        Use this form to get in touch or reach me directly at <a href="mailto:dom@domhabersack.com">dom@domhabersack.com</a>. I will get back to you as soon as I can.
       </p>
 
       <ContactForm />

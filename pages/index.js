@@ -76,8 +76,8 @@ const SOCIAL_PROFILES = {
     href: 'https://linkedin.com/in/domhabersack',
     Logo: LinkedIn,
   },
-  'dom@islovely.co': {
-    href: 'mailto:dom@islovely.co',
+  'dom@domhabersack.com': {
+    href: 'mailto:dom@domhabersack.com',
     Logo: Email,
   },
 }
@@ -92,7 +92,7 @@ export default function Index({
     <Layout>
       <MetaTags
         description="I am a software developer, IT consultant, and content creator with 12+ years of professional experience. Follow along as I build my company in public."
-        imageSubpath="home"
+        ogImage="/api/pages/index/og-image.jpg"
         permalink=""
         title="Dom Habersack · Content Creator & IndieHacker"
       />

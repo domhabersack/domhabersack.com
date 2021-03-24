@@ -7,7 +7,7 @@ export default function MetaTags({
   description,
   expiredAt,
   heroAlt,
-  imageSubpath = 'default',
+  ogImage = '/og-image.jpg',
   permalink,
   publishedAt,
   tags,
@@ -35,7 +35,7 @@ export default function MetaTags({
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:creator" content="@domhabersack" />
 
-      <meta property="og:image" content={`${siteUrl}/assets/rich-previews/${imageSubpath}.jpg`} />
+      <meta property="og:image" content={`${siteUrl}${ogImage}`} />
       <meta property="og:image:height" content="314" />
       <meta property="og:image:type" content="image/jpeg" />
       <meta property="og:image:width" content="600" />

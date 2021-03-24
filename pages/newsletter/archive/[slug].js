@@ -18,9 +18,9 @@ export default function Newsletter({
   heroAlt,
   heroCaption,
   mdxSource,
+  ogImage,
   permalink,
   related,
-  slug,
   title,
 }) {
   const body = hydrateMDXSource(mdxSource)
@@ -43,7 +43,7 @@ export default function Newsletter({
     <Layout breadcrumbs={breadcrumbs}>
       <MetaTags
         description={excerpt}
-        imageSubpath={`newsletter/${slug}`}
+        ogImage={ogImage}
         permalink={permalink}
         publishedAt={date}
         title={title}

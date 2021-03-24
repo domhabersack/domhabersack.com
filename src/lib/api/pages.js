@@ -3,6 +3,7 @@ import { getAllFiles, getFileBySlug, getSlugs } from '@/lib/api-helpers'
 const transform = ({
   slug,
 }) => ({
+  ogImage: `/api/pages/${slug}/og-image.jpg`,
   permalink: `/${slug}`,
 })
 

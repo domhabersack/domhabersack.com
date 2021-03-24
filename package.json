@@ -1,9 +1,9 @@
 {
-  "name": "islovely.co",
+  "name": "domhabersack.com",
   "private": true,
-  "description": "Personal portfolio",
-  "version": "0.1.0",
-  "author": "Dom Habersack <dom@islovely.co>",
+  "description": "Personal portfolio of Dom Habersack",
+  "version": "2.0.0",
+  "author": "Dom Habersack <dom@domhabersack.com>",
   "dependencies": {
     "@formspree/react": "2.2.3",
     "@mdx-js/loader": "1.6.22",

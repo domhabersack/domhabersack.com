@@ -1,4 +1,4 @@
-Sitemap: https://islovely.co/sitemap.xml
+Sitemap: https://domhabersack.com/sitemap.xml
 
 User-agent: *
 Allow: /

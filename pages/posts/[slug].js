@@ -19,8 +19,8 @@ export default function Post({
   heroAlt,
   heroCaption,
   mdxSource,
+  ogImage,
   permalink,
-  slug,
   title,
 }) {
   const body = hydrateMDXSource(mdxSource)
@@ -39,7 +39,7 @@ export default function Post({
       <MetaTags
         description={excerpt}
         heroAlt={heroAlt}
-        imageSubpath={`posts/${slug}`}
+        ogImage={ogImage}
         permalink={permalink}
         publishedAt={date}
         tags={categories}
