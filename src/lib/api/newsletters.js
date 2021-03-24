@@ -13,13 +13,13 @@ const transform = async ({
   const related = await Promise.all(frontmatter.related.map(slug => getFileBySlug('newsletters', slug, ({
     slug,
   }) => ({
-    hero: `/api/newsletters/${slug}/images/hero.jpg`,
+    hero: `/api/newsletters/${slug}/hero.jpg`,
     permalink: `/newsletter/archive/${slug}`,
   }))))
 
   return {
     author,
-    hero: `/api/newsletters/${slug}/images/hero.jpg`,
+    hero: `/api/newsletters/${slug}/hero.jpg`,
     permalink: `/newsletter/archive/${slug}`,
     related,
   }

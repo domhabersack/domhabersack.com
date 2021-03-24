@@ -13,7 +13,7 @@ const transform = async ({
   return {
     author,
     categories,
-    hero: `/api/posts/${slug}/images/hero.jpg`,
+    hero: `/api/posts/${slug}/hero.jpg`,
     permalink: `/posts/${slug}`,
   }
 }

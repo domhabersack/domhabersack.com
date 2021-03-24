@@ -3,7 +3,7 @@ import { getAllFiles, getFileBySlug, getSlugs } from '@/lib/api-helpers'
 const transform = ({
   slug,
 }) => ({
-  hero: `/api/projects/${slug}/images/hero.png`,
+  hero: `/api/projects/${slug}/hero.png`,
   permalink: `/projects/${slug}`,
 })
 

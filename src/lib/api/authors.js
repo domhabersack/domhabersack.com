@@ -3,7 +3,7 @@ import { getAllFiles, getFileBySlug } from '@/lib/api-helpers'
 const transform = ({
   slug,
 }) => ({
-  avatar: `/api/authors/${slug}/images/${slug}.jpg`,
+  avatar: `/api/authors/${slug}/${slug}.jpg`,
 })
 
 export async function getAllAuthors() {

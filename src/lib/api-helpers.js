@@ -42,7 +42,7 @@ export async function getFileBySlug(type, slug, transform = () => {}) {
 
     return ({
       ...obj,
-      [attachmentName]: `/api/${type}/${slug}/attachments/${attachment}`,
+      [attachmentName]: `/api/${type}/${slug}/${attachment}`,
     })
   }, {}) ?? null
 
@@ -51,7 +51,7 @@ export async function getFileBySlug(type, slug, transform = () => {}) {
 
     return ({
       ...obj,
-      [figureName]: `/api/${type}/${slug}/images/${figure}`,
+      [figureName]: `/api/${type}/${slug}/${figure}`,
     })
   }, {}) ?? null
 
