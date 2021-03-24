@@ -1,14 +1,14 @@
-import { renderToStaticMarkup } from "react-dom/server";
+import { renderToStaticMarkup } from 'react-dom/server'
 
 import config from '@/config'
-import { getAllCourses } from '@/lib/api/courses';
-import { getAllFiretips } from '@/lib/api/firetips';
+import { getAllCourses } from '@/lib/api/courses'
+import { getAllFiretips } from '@/lib/api/firetips'
 import { getAllTags as getAllFiretipTags } from '@/lib/api/firetip-tags'
-import { getAllNewsletters } from '@/lib/api/newsletters';
-import { getAllPages } from '@/lib/api/pages';
-import { getAllCategories as getAllPostCategories } from '@/lib/api/post-categories';
-import { getAllPosts } from '@/lib/api/posts';
-import { getAllProjects } from '@/lib/api/projects';
+import { getAllNewsletters } from '@/lib/api/newsletters'
+import { getAllPages } from '@/lib/api/pages'
+import { getAllCategories as getAllPostCategories } from '@/lib/api/post-categories'
+import { getAllPosts } from '@/lib/api/posts'
+import { getAllProjects } from '@/lib/api/projects'
 
 const getPermalink = page => page.permalink
 

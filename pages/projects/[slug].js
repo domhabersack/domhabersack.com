@@ -6,6 +6,7 @@ import LinkIcon from '@/icons/link'
 import MetaTags from '@/components/meta-tags'
 import Stack from '@/components/stack'
 import { getAllProjectSlugs, getProjectBySlug } from '@/lib/api/projects'
+import getMDXSource from '@/lib/get-mdx-source'
 import hydrateMDXSource from '@/lib/hydrate-mdx-source'
 
 export default function Project({
@@ -91,8 +92,16 @@ export default function Project({
 export async function getStaticProps({ params }) {
   const project = await getProjectBySlug(params.slug)
 
+  const mdxSource = await getMDXSource(project.content, {
+    attachments: project.attachments,
+    figures: project.figures,
+  })
+
   return {
-    props: project,
+    props: {
+      ...project,
+      mdxSource,
+    }
   }
 }
 

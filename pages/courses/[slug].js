@@ -10,6 +10,7 @@ import MetaTags from '@/components/meta-tags'
 import Video from '@/components/video'
 import VideoIcon from '@/icons/video'
 import { getAllCourseSlugs, getCourseBySlug } from '@/lib/api/courses'
+import getMDXSource from '@/lib/get-mdx-source'
 import hydrateMDXSource from '@/lib/hydrate-mdx-source'
 
 export default function Course({
@@ -148,8 +149,16 @@ export default function Course({
 export async function getStaticProps({ params }) {
   const course = await getCourseBySlug(params.slug)
 
+  const mdxSource = await getMDXSource(course.content, {
+    attachments: course.attachments,
+    figures: course.figures,
+  })
+
   return {
-    props: course,
+    props: {
+      ...course,
+      mdxSource,
+    }
   }
 }
 

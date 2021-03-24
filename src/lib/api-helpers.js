@@ -2,8 +2,6 @@ import fs from 'fs'
 import matter from 'gray-matter'
 import path from 'path'
 
-import getMDXSource from '@/lib/get-mdx-source'
-
 export async function getAllFiles(type, transform = () => {}) {
   return getSlugs(type).reduce(async (previousPromise, slug) => {
     const allFiles = await previousPromise
@@ -55,11 +53,6 @@ export async function getFileBySlug(type, slug, transform = () => {}) {
     })
   }, {}) ?? null
 
-  const mdxSource = await getMDXSource(content, {
-    attachments,
-    figures,
-  })
-
   const transformed = (await transform({
     frontmatter,
     slug,
@@ -68,7 +61,9 @@ export async function getFileBySlug(type, slug, transform = () => {}) {
   return {
     ...frontmatter,
     ...transformed,
-    mdxSource,
+    attachments,
+    content,
+    figures,
     slug,
   }
 }

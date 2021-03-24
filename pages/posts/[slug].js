@@ -7,6 +7,7 @@ import MetaTags from '@/components/meta-tags'
 import PostMeta from '@/components/post-meta'
 import Tag from '@/components/tag'
 import { getAllPostSlugs, getPostBySlug } from '@/lib/api/posts'
+import getMDXSource from '@/lib/get-mdx-source'
 import hydrateMDXSource from '@/lib/hydrate-mdx-source'
 
 export default function Post({
@@ -89,8 +90,16 @@ export default function Post({
 export async function getStaticProps({ params }) {
   const post = await getPostBySlug(params.slug)
 
+  const mdxSource = await getMDXSource(post.content, {
+    attachments: post.attachments,
+    figures: post.figures,
+  })
+
   return {
-    props: post,
+    props: {
+      ...post,
+      mdxSource,
+    }
   }
 }
 

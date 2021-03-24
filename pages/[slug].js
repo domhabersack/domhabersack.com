@@ -1,6 +1,7 @@
 import Layout from '@/components/layout'
 import MetaTags from '@/components/meta-tags'
 import { getAllPageSlugs, getPageBySlug } from '@/lib/api/pages'
+import getMDXSource from '@/lib/get-mdx-source'
 import hydrateMDXSource from '@/lib/hydrate-mdx-source'
 
 export default function Page({
@@ -37,8 +38,16 @@ export default function Page({
 export async function getStaticProps({ params }) {
   const page = await getPageBySlug(params.slug)
 
+  const mdxSource = await getMDXSource(page.content, {
+    attachments: page.attachments,
+    figures: page.figures,
+  })
+
   return {
-    props: page,
+    props: {
+      ...page,
+      mdxSource,
+    }
   }
 }
 

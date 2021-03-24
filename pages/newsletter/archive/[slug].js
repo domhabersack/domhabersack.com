@@ -7,6 +7,7 @@ import MetaTags from '@/components/meta-tags'
 import NewsletterTeaser from '@/components/newsletter-teaser'
 import PostMeta from '@/components/post-meta'
 import { getAllNewsletterSlugs, getNewsletterBySlug } from '@/lib/api/newsletters'
+import getMDXSource from '@/lib/get-mdx-source'
 import hydrateMDXSource from '@/lib/hydrate-mdx-source'
 
 export default function Newsletter({
@@ -94,8 +95,16 @@ export default function Newsletter({
 export async function getStaticProps({ params }) {
   const newsletter = await getNewsletterBySlug(params.slug)
 
+  const mdxSource = await getMDXSource(newsletter.content, {
+    attachments: newsletter.attachments,
+    figures: newsletter.figures,
+  })
+
   return {
-    props: newsletter,
+    props: {
+      ...newsletter,
+      mdxSource,
+    }
   }
 }
 

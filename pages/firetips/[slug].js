@@ -4,6 +4,7 @@ import Layout from '@/components/layout'
 import MetaTags from '@/components/meta-tags'
 import Tag from '@/components/tag'
 import { getAllFiretipSlugs, getFiretipBySlug } from '@/lib/api/firetips'
+import getMDXSource from '@/lib/get-mdx-source'
 import hydrateMDXSource from '@/lib/hydrate-mdx-source'
 
 export default function Firetip({
@@ -55,8 +56,16 @@ export default function Firetip({
 export async function getStaticProps({ params }) {
   const firetip = await getFiretipBySlug(params.slug)
 
+  const mdxSource = await getMDXSource(firetip.content, {
+    attachments: firetip.attachments,
+    figures: firetip.figures,
+  })
+
   return {
-    props: firetip,
+    props: {
+      ...firetip,
+      mdxSource,
+    }
   }
 }
 
