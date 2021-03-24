@@ -1,3 +1,8 @@
 {
+  "functions": {
+    "pages/api/[type]/[slug]/[name].js": {
+      "includeFiles": "_posts/**"
+    }
+  },
   "trailingSlash": false
 }
