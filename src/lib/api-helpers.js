@@ -6,7 +6,14 @@ export async function getAllFiles(type, transform = () => {}) {
   return getSlugs(type).reduce(async (previousPromise, slug) => {
     const allFiles = await previousPromise
 
-    const file = fs.readFileSync(path.join(process.cwd(), `_${type}/${slug}/index.mdx`), 'utf8')
+    const filePath = path.join(process.cwd(), `_${type}/${slug}/index.mdx`)
+
+    // skip if directory does not contain an `index.mdx`
+    if (!fs.existsSync(filePath)) {
+      return allFiles
+    }
+
+    const file = fs.readFileSync(filePath, 'utf8')
 
     const {
       data: frontmatter,

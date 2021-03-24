@@ -29,7 +29,7 @@ export default function Newsletter({
     <Layout breadcrumbs={breadcrumbs}>
       <MetaTags
         description="Weekly tips on design, development, and working smarter."
-        imageSubpath="pages/newsletter"
+        ogImage="/api/pages/newsletter/og-image.jpg"
         permalink="/newsletter"
         title="Newsletter"
       />

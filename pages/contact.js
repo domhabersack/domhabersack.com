@@ -13,7 +13,7 @@ export default function Contact() {
     <Layout breadcrumbs={breadcrumbs}>
       <MetaTags
         description="Get in touch if you have a project you need help with!"
-        imageSubpath="pages/contact"
+        ogImage="/api/pages/contact/og-image.jpg"
         permalink="/contact"
         title="Contact"
       />

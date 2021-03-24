@@ -27,7 +27,7 @@ export default function Firetip({
   return (
     <Layout breadcrumbs={breadcrumbs}>
       <MetaTags
-        imageSubpath="firetips"
+        ogImage="/api/pages/firetips/og-image.jpg"
         permalink={permalink}
         title={title}
       />
