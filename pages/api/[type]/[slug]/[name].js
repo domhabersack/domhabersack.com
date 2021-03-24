@@ -40,14 +40,14 @@ export default function handler(req, res) {
     res.status(404)
   }
 
-  const path = path.join(process.cwd(), `_${type}`, slug, name)
-  const extension = path.extname(path)
+  const filePath = path.join(process.cwd(), `_${type}`, slug, name)
+  const extension = path.extname(filePath)
 
   if (!ALLOWED_EXTENSIONS.includes(extension)) {
     res.status(404)
   }
 
-  const file = fs.readFileSync(path)
+  const file = fs.readFileSync(filePath)
 
   res.setHeader('Content-Type', CONTENT_TYPE_BY_EXTENSION[extension])
   res.end(file)
