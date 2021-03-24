@@ -1,7 +1,7 @@
 {
   "functions": {
     "pages/api/[type]/[slug]/[name]": {
-      "excludeFiles": "_(authors|courses|firetips|newsletters|pages|posts|projects)/**"
+      "excludeFiles": "**/*.jpg"
     }
   },
   "trailingSlash": false
