@@ -36,18 +36,30 @@ export default function handler(req, res) {
     },
   } = req
 
+  console.log(`GET FILE AT ${type}/${slug}/${name}`)
+  console.log({ ALLOWED_TYPES, ALLOWED_EXTENSIONS, CONTENT_TYPE_BY_EXTENSION })
+
   if (!ALLOWED_TYPES.includes(type)) {
     res.status(404)
   }
 
   const path = join(process.cwd(), `_${type}`, slug, name)
+
+  console.log({ path })
+
   const extension = extname(path)
+
+  console.log({ extension })
 
   if (!ALLOWED_EXTENSIONS.includes(extension)) {
     res.status(404)
   }
 
+  console.log('READY TO READ FILE')
+
   const file = readFileSync(path)
+
+  console.log('READ FILE')
 
   res.setHeader('Content-Type', CONTENT_TYPE_BY_EXTENSION[extension])
   res.end(file)
