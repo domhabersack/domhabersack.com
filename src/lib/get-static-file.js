@@ -1,20 +1,6 @@
 import { existsSync, readFileSync } from 'fs'
 import path from 'path'
 
-const ALLOWED_TYPES = [
-  'authors',
-  'newsletters',
-  'pages',
-  'posts',
-  'projects',
-]
-
-const ALLOWED_EXTENSIONS = [
-  '.jpg',
-  '.pdf',
-  '.png',
-]
-
 const CONTENT_TYPE_BY_EXTENSION = {
   '.jpg': 'image/jpeg',
   '.pdf': 'application/pdf',
@@ -30,20 +16,10 @@ export default function getStaticFile({
   const extension = path.extname(filePath)
   const contentType = CONTENT_TYPE_BY_EXTENSION[extension]
 
-  // const isTypeAllowed = ALLOWED_TYPES.includes(type)
   // const doesFileExist = existsSync(filePath)
-  // const isExtensionAllowed = ALLOWED_EXTENSIONS.includes(extension)
   //
   // if (!doesFileExist) {
   //   throw `File does not exist`
-  // }
-  //
-  // if (!isTypeAllowed) {
-  //   throw `Type “${type}” not allowed`
-  // }
-  //
-  // if (!isExtensionAllowed) {
-  //   throw `Extension “${extension}” not allowed`
   // }
 
   const file = readFileSync(filePath)
