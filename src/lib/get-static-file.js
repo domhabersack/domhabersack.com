@@ -26,25 +26,26 @@ export default function getStaticFile({
   slug,
   type,
 }) {
-  const filePath = path.join(process.cwd(), `_${type}`, slug, name)
+  // const filePath = path.join(process.cwd(), `_${type}`, slug, name)
+  const filePath = path.join(process.cwd(), `_authors`, 'dom-habersack', 'dom-habersack.jpg')
   const extension = path.extname(filePath)
   const contentType = CONTENT_TYPE_BY_EXTENSION[extension]
 
-  const isTypeAllowed = ALLOWED_TYPES.includes(type)
-  const doesFileExist = existsSync(filePath)
-  const isExtensionAllowed = ALLOWED_EXTENSIONS.includes(extension)
-
-  if (!doesFileExist) {
-    throw `File does not exist`
-  }
-
-  if (!isTypeAllowed) {
-    throw `Type “${type}” not allowed`
-  }
-
-  if (!isExtensionAllowed) {
-    throw `Extension “${extension}” not allowed`
-  }
+  // const isTypeAllowed = ALLOWED_TYPES.includes(type)
+  // const doesFileExist = existsSync(filePath)
+  // const isExtensionAllowed = ALLOWED_EXTENSIONS.includes(extension)
+  //
+  // if (!doesFileExist) {
+  //   throw `File does not exist`
+  // }
+  //
+  // if (!isTypeAllowed) {
+  //   throw `Type “${type}” not allowed`
+  // }
+  //
+  // if (!isExtensionAllowed) {
+  //   throw `Extension “${extension}” not allowed`
+  // }
 
   const file = readFileSync(filePath)
 
