@@ -1,4 +1,4 @@
-const fs = require('fs')
+const fs = require('fs').promises
 const path = require('path')
 
 const ALLOWED_TYPES = [
@@ -27,7 +27,7 @@ export const config = {
   },
 }
 
-export default function handler(req, res) {
+export default async function handler(req, res) {
   const {
     query: {
       name,
@@ -47,7 +47,7 @@ export default function handler(req, res) {
     res.status(404)
   }
 
-  const file = fs.readFileSync(filePath)
+  const file = await fs.readFile(filePath)
 
   res.setHeader('Content-Type', CONTENT_TYPE_BY_EXTENSION[extension])
   res.end(file)
