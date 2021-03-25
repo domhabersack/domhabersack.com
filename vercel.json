@@ -1,7 +1,7 @@
 {
   "functions": {
-    "api/**/*.js": {
-      "excludeFiles": "_{authors,courses,firetips,newsletters,pages,posts,projects}/**/*.{jpg,pdf,png}"
+    "pages/api/**/*.js": {
+      "excludeFiles": "**/*.{jpg,pdf,png}"
     }
   },
   "trailingSlash": false
