@@ -17,7 +17,7 @@ export default function Projects({
     <Layout breadcrumbs={breadcrumbs}>
       <MetaTags
         description="I am working on a few free and paid products, trying to earn an income with them over time."
-        ogImage="/api/pages/posts/og-image.jpg"
+        imageSubpath="pages/posts"
         permalink="/projects"
         title="Projects"
       />

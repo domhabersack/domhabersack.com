@@ -17,7 +17,7 @@ export default function Posts({
     <Layout breadcrumbs={breadcrumbs}>
       <MetaTags
         description="I write about design, development, and productivity. My weekly newsletter contains shorter pieces. Read all previous issues in the archive."
-        ogImage="/api/pages/posts/og-image.jpg"
+        imageSubpath="pages/posts"
         permalink="/posts"
         title="Blog"
       />

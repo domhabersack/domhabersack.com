@@ -15,9 +15,9 @@ export default function Project({
   heroAlt,
   heroCaption,
   mdxSource,
-  ogImage,
   permalink,
   revenue,
+  slug,
   stack,
   title,
   url,
@@ -37,7 +37,7 @@ export default function Project({
     <Layout breadcrumbs={breadcrumbs}>
       <MetaTags
         description={excerpt}
-        ogImage={ogImage}
+        imageSubpath={`projects/${slug}`}
         permalink={permalink}
         title={title}
       />

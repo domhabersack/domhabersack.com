@@ -71,8 +71,5 @@ export async function getFileBySlug(type, slug, transform = () => {}) {
 export function getSlugs(type) {
   return fs.readdirSync(path.join(process.cwd(), `_${type}`), {
     withFileTypes: true,
-  }).filter(dirent => dirent.isDirectory()).map(({ name }) => name).filter(slug => {
-    // keep only if directory contains an `index.mdx`
-    return fs.existsSync(path.join(process.cwd(), `_${type}/${slug}/index.mdx`))
-  })
+  }).filter(dirent => dirent.isDirectory()).map(({ name }) => name)
 }

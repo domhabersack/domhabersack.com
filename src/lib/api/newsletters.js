@@ -20,7 +20,6 @@ const transform = async ({
   return {
     author,
     hero: `/api/newsletters/${slug}/hero.jpg`,
-    ogImage: `/api/newsletters/${slug}/og-image.jpg`,
     permalink: `/newsletter/archive/${slug}`,
     related,
   }

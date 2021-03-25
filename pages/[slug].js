@@ -7,7 +7,6 @@ import hydrateMDXSource from '@/lib/hydrate-mdx-source'
 export default function Page({
   description,
   mdxSource,
-  ogImage,
   permalink,
   title,
 }) {
@@ -23,7 +22,6 @@ export default function Page({
     <Layout breadcrumbs={breadcrumbs}>
       <MetaTags
         description={description}
-        ogImage={ogImage}
         permalink={permalink}
         title={title}
       />
