@@ -14,7 +14,7 @@ const transform = async ({
     author,
     categories,
     hero: `/api/posts/${slug}/hero.jpg`,
-    ogImage: `/og-images/posts/${slug}/og-image.jpg`,
+    ogImage: `/api/posts/${slug}/og-image.jpg`,
     permalink: `/posts/${slug}`,
   }
 }

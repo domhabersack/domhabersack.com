@@ -92,7 +92,7 @@ export default function Index({
     <Layout>
       <MetaTags
         description="I am a software developer, IT consultant, and content creator with 12+ years of professional experience. Follow along as I build my company in public."
-        ogImage="/og-images/pages/index/og-image.jpg"
+        ogImage="/api/pages/index/og-image.jpg"
         permalink=""
         title="Dom Habersack · Content Creator & IndieHacker"
       />

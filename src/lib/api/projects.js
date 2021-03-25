@@ -4,7 +4,7 @@ const transform = ({
   slug,
 }) => ({
   hero: `/api/projects/${slug}/hero.png`,
-  ogImage: `/og-images/projects/${slug}/og-image.jpg`,
+  ogImage: `/api/projects/${slug}/og-image.jpg`,
   permalink: `/projects/${slug}`,
 })
 
