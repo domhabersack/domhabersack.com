@@ -1,6 +1,6 @@
 {
   "functions": {
-    "pages/api/**/*.js": {
+    "pages/**/*.js": {
       "excludeFiles": "_{authors,courses,firetips,newsletters,pages,posts,projects}/**/*.{jpg,pdf,png}"
     }
   },
