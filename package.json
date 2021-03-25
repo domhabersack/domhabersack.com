@@ -2,7 +2,7 @@
   "name": "domhabersack.com",
   "private": true,
   "description": "Personal portfolio of Dom Habersack",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "author": "Dom Habersack <dom@domhabersack.com>",
   "dependencies": {
     "@formspree/react": "2.2.3",
