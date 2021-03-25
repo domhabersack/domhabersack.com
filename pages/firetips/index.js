@@ -21,7 +21,7 @@ export default function Firetips({
     <Layout breadcrumbs={breadcrumbs}>
       <MetaTags
         description="Snack-sized snippets that help you write better HTML, CSS, and JavaScript."
-        ogImage="/api/pages/firetips/og-image.jpg"
+        ogImage="/og-images/pages/firetips/og-image.jpg"
         permalink="/firetips"
         title="Fire tips"
       />
