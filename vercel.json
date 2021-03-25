@@ -1,5 +1,5 @@
 {
-  "function": {
+  "functions": {
     "pages/api/**.*.js": {
       "excludeFiles": "**/*.{jpg,pdf,png}"
     }
