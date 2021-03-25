@@ -1,7 +1,7 @@
 {
   "functions": {
     "pages/api/**.*.js": {
-      "excludeFiles": "**/*.{jpg,pdf,png}"
+      "excludeFiles": "_newsletters/**/*"
     }
   },
   "trailingSlash": false
