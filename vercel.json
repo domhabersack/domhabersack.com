@@ -1,6 +1,6 @@
 {
   "functions": {
-    "pages/api/[type]/[slug]/[name]": {
+    "pages/api/**/*.js": {
       "excludeFiles": "**/*.jpg"
     }
   },
