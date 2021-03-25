@@ -1,5 +1,5 @@
 import { existsSync, readFileSync } from 'fs'
-import { extname, join } from 'path'
+import path from 'path'
 
 const ALLOWED_TYPES = [
   'authors',
@@ -26,8 +26,8 @@ export default function getStaticFile({
   slug,
   type,
 }) {
-  const filePath = join(process.cwd(), `_${type}`, slug, name)
-  const extension = extname(filePath)
+  const filePath = path.join(process.cwd(), `_${type}`, slug, name)
+  const extension = path.extname(filePath)
   const contentType = CONTENT_TYPE_BY_EXTENSION[extension]
 
   const isTypeAllowed = ALLOWED_TYPES.includes(type)
