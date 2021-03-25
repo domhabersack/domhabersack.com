@@ -1,5 +1,5 @@
-import { readFileSync } from 'fs'
-import { join, extname } from 'path'
+import fs from 'fs'
+import path from 'path'
 
 const ALLOWED_TYPES = [
   'authors',
@@ -40,14 +40,14 @@ export default function handler(req, res) {
     res.status(404)
   }
 
-  const path = join(process.cwd(), `_${type}`, slug, name)
-  const extension = extname(path)
+  const filePath = path.join(process.cwd(), `_${type}`, slug, name)
+  const extension = path.extname(filePath)
 
   if (!ALLOWED_EXTENSIONS.includes(extension)) {
     res.status(404)
   }
 
-  const file = readFileSync(path)
+  const file = fs.readFileSync(filePath)
 
   res.setHeader('Content-Type', CONTENT_TYPE_BY_EXTENSION[extension])
   res.end(file)
