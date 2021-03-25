@@ -26,8 +26,7 @@ export default function getStaticFile({
   slug,
   type,
 }) {
-  // const filePath = path.join(process.cwd(), `_${type}`, slug, name)
-  const filePath = path.join(process.cwd(), `_authors`, 'dom-habersack', 'dom-habersack.jpg')
+  const filePath = path.join(process.cwd(), `_${type}`, slug, name)
   const extension = path.extname(filePath)
   const contentType = CONTENT_TYPE_BY_EXTENSION[extension]
 
