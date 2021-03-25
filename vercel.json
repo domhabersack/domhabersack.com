@@ -1,8 +1,3 @@
 {
-  "functions": {
-    "pages/api/**/*.js": {
-      "excludeFiles": "**/*.{jpg,pdf,png}"
-    }
-  },
   "trailingSlash": false
 }
