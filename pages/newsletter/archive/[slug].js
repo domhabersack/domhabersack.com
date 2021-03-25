@@ -21,7 +21,6 @@ export default function Newsletter({
   ogImage,
   permalink,
   related,
-  slug,
   title,
 }) {
   const body = hydrateMDXSource(mdxSource)

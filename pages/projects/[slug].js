@@ -18,7 +18,6 @@ export default function Project({
   ogImage,
   permalink,
   revenue,
-  slug,
   stack,
   title,
   url,
