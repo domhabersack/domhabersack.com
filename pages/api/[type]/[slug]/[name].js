@@ -1,5 +1,6 @@
-const { readFile } = require('fs').promises
-const { join, extname } = require('path')
+import getExtensionFromPath from '@/lib/get-extension-from-path'
+import getPathToFile from '@/lib/get-path-to-file'
+import readFile from '@/lib/read-file'
 
 const ALLOWED_TYPES = [
   'authors',
@@ -40,14 +41,14 @@ export default async function handler(req, res) {
     res.status(404)
   }
 
-  const filePath = join(process.cwd(), `_${type}`, slug, name)
-  const extension = extname(filePath)
+  const filePath = getPathToFile(`_${type}/${slug}/${name}`)
+  const extension = getExtensionFromPath(filePath)
 
   if (!ALLOWED_EXTENSIONS.includes(extension)) {
     res.status(404)
   }
 
-  const file = await readFile(filePath)
+  const file = readFile(filePath)
 
   res.setHeader('Content-Type', CONTENT_TYPE_BY_EXTENSION[extension])
   res.end(file)
