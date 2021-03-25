@@ -14,4 +14,8 @@ export default function SiteLogo() {
       />
     </svg>
   )
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 9c6af66... Resolve merge conflicts
