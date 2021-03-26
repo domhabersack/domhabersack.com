@@ -1,0 +1,69 @@
+---
+title: "How to flush Open Graph previews on social networks"
+date: "2021-03-24"
+excerpt: "Sites like Twitter and LinkedIn cache the preview image that appear when sharing links. We can clear that cache to have them pick up new versions faster."
+issue: 81
+heroAlt: "A button on a lamp post that says “Push to reset the world”."
+heroCaption: "Sometimes, you gotta hit that button."
+figures:
+  - "rich-previews-before-and-after.png"
+  - "validator-result.png"
+author: dom-habersack
+related:
+  - protect-your-seo-when-crossposting
+  - running-a-static-site-saved-me-from-getting-hacked
+---
+When sharing links to websites, sometimes apps and websites show a preview of the page we’re linking to. They use information set through specific meta tags set on our pages to build these previews.
+
+The meta tags have to follow the Open Graph protocol. All that really means for us is that we need to use a set of predefined values when setting properties. To set a preview’s title for example, we have to set an `og:title` like this:
+
+```html
+<meta property="og:title" content="My cool site" />
+```
+
+There are a few other attributes, like `og:description` or `og:url`. You can find a full list of available properties in the Open Graph protocol on [ogp.me](https://ogp.me).
+
+One of these attributes is `og:image`, which we can set to link to a preview image. Sites like Twitter and LinkedIn use these images as the rich preview they show when sharing a link.
+
+```html
+<meta property="og:image" content="https://islovely.co/rich-preview.jpg" />
+```
+
+Custom preview images are a good place for some more personalization. I recently updated mine from all-over-the-place to decent-looking:
+
+<Figure
+  alt="Social preview images in a before and after version."
+  caption="The new versions are more uniform and show the same level of information."
+  height="902"
+  src={figures['rich-previews-before-and-after']}
+  width="1152"
+/>
+
+Most social networks and tools cache these previews for a few days. After pushing the new versions, I would have had to wait for a while for them to magically appear. When fixing errors in them, waiting for the previews to change isn’t good enough.
+
+Luckily, we can speed this process up significantly. With tools provided by the sites, we can flush the caches to update the previews immediately.
+
+There is no central place we can do this through. When we want to force-update our previews, we have to do that on each platform. These are the tools we can use for this:
+
+- Twitter:  
+[cards-dev.twitter.com/validator](https://cards-dev.twitter.com/validator)
+- LinkedIn:  
+[linkedin.com/post-inspector](https://www.linkedin.com/post-inspector/)
+- Facebook:  
+[developers.facebook.com/tools/debug](https://developers.facebook.com/tools/debug/)
+
+When running a URL through these tools, we see what they would show when someone shares that link:
+
+<Figure
+  alt="Twitter’s card validator showing the rich preview of my website."
+  caption="I ran this site through the validator A LOT before I was happy with the result."
+  height="960"
+  src={figures['validator-result']}
+  width="1152"
+/>
+
+This will be the preview they use until the cache clears automatically or we have them flush it again. When you’re playing with your preview images, you can repeat this process as many times as you need.
+
+Next time you’re wondering why your new preview image isn’t showing up, head to these sites and flush all the caches.
+
+– Dom
