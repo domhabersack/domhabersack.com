@@ -219,7 +219,7 @@ export default function Index({
           </p>
         </div>
 
-        <div>
+        <div className="hidden">
           <h2 className="mb-0.5">
             Metrics (last 28 days)
           </h2>
