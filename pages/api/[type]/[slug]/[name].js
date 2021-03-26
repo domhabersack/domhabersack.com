@@ -36,19 +36,20 @@ export default function handler(req, res) {
     },
   } = req
 
-  if (!ALLOWED_TYPES.includes(type)) {
-    res.status(404)
-  }
-
   const filePath = path.join(process.cwd(), `_${type}`, slug, name)
   const extension = path.extname(filePath)
 
-  if (!ALLOWED_EXTENSIONS.includes(extension)) {
+  const doesFileExist = fs.existsSync(filePath)
+  const isExtensionAllowed = ALLOWED_EXTENSIONS.includes(extension)
+  const isTypeAllowed = ALLOWED_TYPES.includes(type)
+
+  if (doesFileExist && isExtensionAllowed && isTypeAllowed) {
+    const file = fs.readFileSync(filePath)
+
+    res.setHeader('Content-Type', CONTENT_TYPE_BY_EXTENSION[extension])
+    res.end(file)
+  } else {
     res.status(404)
+    res.end()
   }
-
-  const file = fs.readFileSync(filePath)
-
-  res.setHeader('Content-Type', CONTENT_TYPE_BY_EXTENSION[extension])
-  res.end(file)
 }
