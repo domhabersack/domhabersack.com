@@ -9,7 +9,7 @@ export default function Favicons() {
       />
 
       <link
-        color="#f45a5a"
+        color="#3B82F6"
         href="/mask-icon.svg"
         rel="mask-icon"
       />
