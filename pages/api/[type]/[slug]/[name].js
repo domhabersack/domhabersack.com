@@ -1,4 +1,25 @@
-import getStaticFile from '@/lib/get-static-file'
+import fs from 'fs'
+import path from 'path'
+
+const ALLOWED_TYPES = [
+  'authors',
+  'newsletters',
+  'pages',
+  'posts',
+  'projects',
+]
+
+const ALLOWED_EXTENSIONS = [
+  '.jpg',
+  '.pdf',
+  '.png',
+]
+
+const CONTENT_TYPE_BY_EXTENSION = {
+  '.jpg': 'image/jpeg',
+  '.pdf': 'application/pdf',
+  '.png': 'image/png',
+}
 
 export const config = {
   api: {
@@ -15,20 +36,20 @@ export default function handler(req, res) {
     },
   } = req
 
-  try {
-    const {
-      contentType,
-      file,
-    } = getStaticFile({
-      name,
-      slug,
-      type,
-    })
+  const filePath = path.join(process.cwd(), `_${type}`, slug, name)
+  const extension = path.extname(filePath)
 
-    res.setHeader('Content-Type', contentType)
+  const doesFileExist = fs.existsSync(filePath)
+  const isExtensionAllowed = ALLOWED_EXTENSIONS.includes(extension)
+  const isTypeAllowed = ALLOWED_TYPES.includes(type)
+
+  if (doesFileExist && isExtensionAllowed && isTypeAllowed) {
+    const file = fs.readFileSync(filePath)
+
+    res.setHeader('Content-Type', CONTENT_TYPE_BY_EXTENSION[extension])
     res.end(file)
-  } catch (error) {
+  } else {
     res.status(404)
-    res.end(error)
+    res.end()
   }
 }
