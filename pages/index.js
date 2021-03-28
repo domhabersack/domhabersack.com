@@ -2,11 +2,12 @@ import React from 'react'
 import Image from 'next/image'
 
 import Card from '@/components/card'
-import Email from '@/icons/email'
+import Email from '@/icons-fill/email'
 import Layout from '@/components/layout'
 import LinkedIn from '@/icons/linkedin-logo'
 import MetaTags from '@/components/meta-tags'
 import Metrics from '@/components/metrics'
+import Milestones from '@/components/milestones'
 import MyStack from '@/components/my-stack'
 import NewsletterSignup from '@/components/newsletter-signup'
 import NewsletterTeaser from '@/components/newsletter-teaser'
@@ -14,6 +15,7 @@ import PostTeaser from '@/components/post-teaser'
 import ProjectTeaser from '@/components/project-teaser'
 import Twitter from '@/icons/twitter-logo'
 import YouTube from '@/icons/youtube-logo'
+import { getAllMilestones } from '@/lib/api/milestones'
 import { getAuthorBySlug } from '@/lib/api/authors'
 import { getProjectBySlug } from '@/lib/api/projects'
 import { getLatestNewsletters } from '@/lib/api/newsletters'
@@ -85,6 +87,7 @@ const SOCIAL_PROFILES = {
 export default function Index({
   avatar,
   featuredProject,
+  milestones,
   newsletters,
   posts,
 }) {
@@ -145,6 +148,18 @@ export default function Index({
               </div>
             </Card>
           </div>
+        </div>
+
+        <div>
+          <h2>
+            Milestone feed
+          </h2>
+
+          <p className="mb-8">
+            I am learning how to run a company and make money on the internet. This feed shows some of my progress.
+          </p>
+
+          <Milestones milestones={milestones} />
         </div>
 
         <div>
@@ -267,11 +282,13 @@ export async function getStaticProps() {
   const featuredProject = await getProjectBySlug('lovelicons')
   const latestNewsletters = await getLatestNewsletters({ limit: 4 })
   const latestPosts = await getLatestPosts({ limit: 4 })
+  const milestones = await getAllMilestones()
 
   return {
     props: {
       avatar: dom.avatar,
       featuredProject,
+      milestones,
       newsletters: latestNewsletters,
       posts: latestPosts,
     }

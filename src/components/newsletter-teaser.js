@@ -38,11 +38,11 @@ export default function NewsletterTeaser({
           {formatDate(date)}
         </footer>
 
-        <h2 className="leading-snug m-0 mb-1 text-base">
+        <h3 className="leading-snug m-0 mb-1 text-base">
           <a href={permalink}>
             {title}
           </a>
-        </h2>
+        </h3>
 
         <p className="m-0 text-sm">
           {excerpt}

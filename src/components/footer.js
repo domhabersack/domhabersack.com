@@ -1,6 +1,6 @@
 import CodePen from '@/icons/codepen-logo'
 import Dribbble from '@/icons/dribbble-logo'
-import Email from '@/icons/email'
+import Email from '@/icons-fill/email'
 import GitHub from '@/icons/github-logo'
 import LinkedIn from '@/icons/linkedin-logo'
 import Mastodon from '@/icons/mastodon-logo'
