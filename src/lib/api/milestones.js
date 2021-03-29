@@ -1,10 +1,22 @@
 import { getAllFiles, getFileBySlug } from '@/lib/api-helpers'
 
-const transform = ({
+const transform = async ({
+  frontmatter,
   slug,
-}) => ({
-  date: slug,
-})
+}) => {
+  const { embedded } = frontmatter
+
+  const newsletter = embedded?.newsletter ? (await getFileBySlug('newsletters', embedded.newsletter, ({ slug }) => ({
+    permalink: `/newsletter/archive/${slug}`,
+  }))) : null
+
+  return {
+    date: slug,
+    embedded: {
+      newsletter,
+    },
+  }
+}
 
 export async function getAllMilestones() {
   return (
