@@ -280,7 +280,7 @@ export default function Index({
 export async function getStaticProps() {
   const dom = await getAuthorBySlug('dom-habersack')
   const featuredProject = await getProjectBySlug('lovelicons')
-  const latestNewsletters = await getLatestNewsletters({ limit: 4 })
+  const latestNewsletters = await getLatestNewsletters({ limit: 6 })
   const latestPosts = await getLatestPosts({ limit: 4 })
   const milestones = await getAllMilestones()
 
