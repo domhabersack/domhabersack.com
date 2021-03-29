@@ -29,7 +29,7 @@ export default function Milestone({
 
   return (
     <div className="flex items-start space-x-2.5">
-      <div className="bg-yellow-300 p-2 rounded-full">
+      <div className="bg-yellow-300 p-2 rounded-full dark:bg-yellow-400">
         <div className="h-6 text-gray-700 w-6">
           {Icon}
         </div>

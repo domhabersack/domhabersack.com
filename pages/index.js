@@ -152,7 +152,7 @@ export default function Index({
 
         <div>
           <h2>
-            Milestone feed
+            Milestone log
           </h2>
 
           <p className="mb-8">
