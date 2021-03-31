@@ -10,16 +10,13 @@ import getMDXSource from '@/lib/get-mdx-source'
 import hydrateMDXSource from '@/lib/hydrate-mdx-source'
 
 export default function Course({
-  emails,
+  createdAt,
   excerpt,
-  hours,
   lessons,
   mdxSource,
+  ogImage,
   permalink,
-  playlist,
   title,
-  videos,
-  weeks,
 }) {
   const body = hydrateMDXSource(mdxSource)
 
@@ -36,7 +33,9 @@ export default function Course({
     <Layout breadcrumbs={breadcrumbs}>
       <MetaTags
         description={excerpt}
+        ogImage={ogImage}
         permalink={permalink}
+        publishedAt={createdAt}
         title={title}
       />
 
