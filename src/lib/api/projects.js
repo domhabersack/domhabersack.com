@@ -11,7 +11,7 @@ const transform = ({
 export async function getAllProjects() {
   return (
     await getAllFiles('projects', transform)
-  ).sort((a, b) => new Date(b.date) - new Date(a.date))
+  ).sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))
 }
 
 export function getAllProjectSlugs() {

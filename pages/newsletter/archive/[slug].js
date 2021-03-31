@@ -12,7 +12,7 @@ import hydrateMDXSource from '@/lib/hydrate-mdx-source'
 
 export default function Newsletter({
   author,
-  date,
+  createdAt,
   excerpt,
   hero,
   heroAlt,
@@ -45,7 +45,7 @@ export default function Newsletter({
         description={excerpt}
         ogImage={ogImage}
         permalink={permalink}
-        publishedAt={date}
+        publishedAt={createdAt}
         title={title}
         type="article"
       />
@@ -58,7 +58,7 @@ export default function Newsletter({
         <PostMeta
           author={author.name}
           avatar={author.avatar}
-          date={date}
+          createdAt={createdAt}
         />
       </div>
 

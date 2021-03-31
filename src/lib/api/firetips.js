@@ -16,7 +16,7 @@ const transform = async ({
 export async function getAllFiretips() {
   return (
     await getAllFiles('firetips', transform)
-  ).sort((a, b) => new Date(b.date) - new Date(a.date))
+  ).sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))
 }
 
 export function getAllFiretipSlugs() {

@@ -13,7 +13,7 @@ import hydrateMDXSource from '@/lib/hydrate-mdx-source'
 export default function Post({
   author,
   categories,
-  date,
+  createdAt,
   excerpt,
   hero,
   heroAlt,
@@ -41,7 +41,7 @@ export default function Post({
         heroAlt={heroAlt}
         ogImage={ogImage}
         permalink={permalink}
-        publishedAt={date}
+        publishedAt={createdAt}
         tags={categories}
         title={title}
         type="article"
@@ -55,7 +55,7 @@ export default function Post({
         <PostMeta
           author={author.name}
           avatar={author.avatar}
-          date={date}
+          createdAt={createdAt}
         />
       </div>
 

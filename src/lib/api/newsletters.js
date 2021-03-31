@@ -29,7 +29,7 @@ const transform = async ({
 export async function getAllNewsletters() {
   return (
     await getAllFiles('newsletters', transform)
-  ).sort((a, b) => new Date(b.date) - new Date(a.date))
+  ).sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))
 }
 
 export function getAllNewsletterSlugs() {

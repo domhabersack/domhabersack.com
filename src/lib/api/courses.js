@@ -19,7 +19,7 @@ export async function getAllCourses() {
       ...course,
       lessons: lessonSlugs,
     }
-  }).sort((a, b) => new Date(b.date) - new Date(a.date))
+  }).sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))
 }
 
 export function getAllCourseSlugs() {

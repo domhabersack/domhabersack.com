@@ -7,7 +7,7 @@ export default function NewsletterTeaser({
   newsletter,
 }) {
   const {
-    date,
+    createdAt,
     excerpt,
     hero,
     heroAlt,
@@ -35,7 +35,7 @@ export default function NewsletterTeaser({
             #{issue}
           </strong>
 
-          {formatDate(date)}
+          {formatDate(createdAt)}
         </footer>
 
         <h3 className="leading-snug m-0 mb-1 text-base">

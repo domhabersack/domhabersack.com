@@ -11,7 +11,7 @@ export default function PostTeaser({
   const {
     author,
     categories,
-    date,
+    createdAt,
     excerpt,
     hero,
     heroAlt,
@@ -58,7 +58,7 @@ export default function PostTeaser({
           <PostMeta
             author={author.name}
             avatar={author.avatar}
-            date={date}
+            createdAt={createdAt}
           />
         </div>
       </article>

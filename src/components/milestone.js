@@ -22,7 +22,7 @@ export default function Milestone({
   milestone,
 }) {
   const {
-    date,
+    createdAt,
     embedded,
     excerpt,
     icon,
@@ -48,7 +48,7 @@ export default function Milestone({
           </h3>
 
           <span className="text-gray-500 text-xs dark:text-gray-400">
-            {formatDate(date)}
+            {formatDate(createdAt)}
           </span>
         </header>
 

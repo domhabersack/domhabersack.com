@@ -11,7 +11,7 @@ const transform = async ({
   }))) : null
 
   return {
-    date: slug,
+    createdAt: slug,
     embedded: {
       newsletter,
     },
@@ -21,7 +21,7 @@ const transform = async ({
 export async function getAllMilestones() {
   return (
     await getAllFiles('milestones', transform)
-  ).sort((a, b) => new Date(b.date) - new Date(a.date))
+  ).sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))
 }
 
 export async function getMilestoneBySlug() {

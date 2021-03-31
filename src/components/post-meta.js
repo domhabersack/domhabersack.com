@@ -6,7 +6,7 @@ import formatDate from '@/lib/format-date'
 export default function PostMeta({
   author,
   avatar,
-  date,
+  createdAt,
 }) {
   return (
     <div className="flex items-center space-x-2.5">
@@ -24,7 +24,7 @@ export default function PostMeta({
         </span>
 
         <span className="text-gray-500 dark:text-gray-400">
-          {formatDate(date)}
+          {formatDate(createdAt)}
         </span>
       </div>
     </div>

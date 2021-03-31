@@ -7,7 +7,7 @@ export default function Lessons({
   return (
     <div className="space-y-6">
       {lessons.map((lesson, i) => (
-        <div className="relative">
+        <div className="relative" key={`lesson-${lesson.slug}`}>
           <div className="flex space-x-2.5">
             {lesson.id === currentLessonId ? (
               <div className="bg-blue-400 flex flex-shrink-0 h-8 items-center justify-center rounded-full text-blue-100 w-8 dark:bg-red-500 dark:text-red-100">
