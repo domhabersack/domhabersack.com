@@ -1,15 +1,25 @@
 import { getAllFiles, getFileBySlug, getSlugs } from '@/lib/api-helpers'
+import { getAllLessonsByCourseSlug } from '@/lib/api/course-lessons'
 
 const transform = ({
   slug,
 }) => ({
+  hero: `/api/courses/${slug}/hero.jpg`,
+  ogImage: `/api/courses/${slug}/og-image.jpg`,
   permalink: `/courses/${slug}`,
 })
 
 export async function getAllCourses() {
-  return (
-    await getAllFiles('courses', transform)
-  ).sort((a, b) => new Date(b.date) - new Date(a.date))
+  const courses = await getAllFiles('courses', transform)
+
+  return courses.map(course => {
+    const lessonSlugs = getSlugs(`courses/${course.slug}/lessons`)
+
+    return {
+      ...course,
+      lessons: lessonSlugs,
+    }
+  }).sort((a, b) => new Date(b.date) - new Date(a.date))
 }
 
 export function getAllCourseSlugs() {
@@ -17,5 +27,17 @@ export function getAllCourseSlugs() {
 }
 
 export async function getCourseBySlug(slug) {
-  return await getFileBySlug('courses', slug, transform)
+  const course = await getFileBySlug('courses', slug, transform)
+
+  const lessonSlugs = getSlugs(`courses/${slug}/lessons`)
+  const lessons = (await Promise.all(lessonSlugs.map(lessonSlug => getFileBySlug(`courses/${slug}/lessons`, lessonSlug, ({
+    slug: lessonSlug,
+  }) => ({
+    permalink: `/courses/${slug}/${lessonSlug}`,
+  }))))).sort((a, b) => a.id - b.id)
+
+  return {
+    ...course,
+    lessons,
+  }
 }

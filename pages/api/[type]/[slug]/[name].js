@@ -3,6 +3,7 @@ import path from 'path'
 
 const ALLOWED_TYPES = [
   'authors',
+  'courses',
   'newsletters',
   'pages',
   'posts',
