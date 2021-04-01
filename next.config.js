@@ -9,4 +9,14 @@ module.exports = withMDX({
 
     return config
   },
+
+  async redirects() {
+    return [
+      {
+        source: '/newsletter/archive/:slug',
+        destination: '/newsletter/:slug',
+        permanent: true,
+      },
+    ]
+  },
 })

@@ -14,14 +14,14 @@ const transform = async ({
     slug,
   }) => ({
     hero: `/api/newsletters/${slug}/hero.jpg`,
-    permalink: `/newsletter/archive/${slug}`,
+    permalink: `/newsletter/${slug}`,
   }))))
 
   return {
     author,
     hero: `/api/newsletters/${slug}/hero.jpg`,
     ogImage: `/api/newsletters/${slug}/og-image.jpg`,
-    permalink: `/newsletter/archive/${slug}`,
+    permalink: `/newsletter/${slug}`,
     related,
   }
 }

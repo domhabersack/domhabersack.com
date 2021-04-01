@@ -30,9 +30,6 @@ export default function Newsletter({
       label: 'Newsletter',
       url: '/newsletter',
     }, {
-      label: 'Archive',
-      url: '/newsletter/archive',
-    }, {
       label: title,
     },
   ]
@@ -79,13 +76,19 @@ export default function Newsletter({
             Continue reading
           </h2>
 
-          <div className="grid gap-12 grid-cols-1">
+          <div className="grid gap-12 grid-cols-1 mb-8">
             {related.map(newsletter => (
               <React.Fragment key={`newsletter-${newsletter.slug}`}>
                 <NewsletterTeaser newsletter={newsletter} />
               </React.Fragment>
             ))}
           </div>
+
+          <p>
+            <a href="/newsletter/archive">
+              Read all issues &rarr;
+            </a>
+          </p>
         </div>
       )}
     </Layout>
