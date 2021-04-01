@@ -2,6 +2,7 @@ import { renderToStaticMarkup } from 'react-dom/server'
 
 import config from '@/config'
 import { getAllCourses } from '@/lib/api/courses'
+import { getAllLessonsByCourseSlug } from '@/lib/api/course-lessons'
 import { getAllFiretips } from '@/lib/api/firetips'
 import { getAllTags as getAllFiretipTags } from '@/lib/api/firetip-tags'
 import { getAllNewsletters } from '@/lib/api/newsletters'
@@ -33,34 +34,38 @@ function Sitemap({
 }
 
 export async function getServerSideProps({ res }) {
-  const firetips = (await getAllFiretips()).map(getPermalink)
-  const firetipTags = (await getAllFiretipTags()).map(getPermalink)
-  const pages = (await getAllPages()).map(getPermalink)
-  const posts = (await getAllPosts()).map(getPermalink)
-  const postCategories = (await getAllPostCategories()).map(getPermalink)
-  const newsletters = (await getAllNewsletters()).map(getPermalink)
-  const courses = (await getAllCourses()).map(getPermalink)
-  const projects = (await getAllProjects()).map(getPermalink)
+  const firetipsPermalinks = (await getAllFiretips()).map(getPermalink)
+  const firetipTagsPermalinks = (await getAllFiretipTags()).map(getPermalink)
+  const pagesPermalinks = (await getAllPages()).map(getPermalink)
+  const postsPermalinks = (await getAllPosts()).map(getPermalink)
+  const postCategoriesPermalinks = (await getAllPostCategories()).map(getPermalink)
+  const newslettersPermalinks = (await getAllNewsletters()).map(getPermalink)
+  const projectsPermalinks = (await getAllProjects()).map(getPermalink)
+
+  const courses = await getAllCourses()
+  const coursesPermalinks = courses.map(getPermalink)
+  const coursesLessonsPermalinks = (await Promise.all(courses.map(({ slug }) => getAllLessonsByCourseSlug(slug)))).flat(1).map(getPermalink)
 
   const allPermalinks = [
-    ...pages,
+    ...pagesPermalinks,
     '/',
     '/categories',
-    ...postCategories,
+    ...postCategoriesPermalinks,
     '/contact',
     '/courses',
-    ...courses,
+    ...coursesPermalinks,
+    ...coursesLessonsPermalinks,
     '/firetips',
-    ...firetips,
+    ...firetipsPermalinks,
     '/firetips/tags',
-    ...firetipTags,
+    ...firetipTagsPermalinks,
     '/newsletter',
     '/newsletter/archive',
-    ...newsletters,
+    ...newslettersPermalinks,
     '/posts',
-    ...posts,
+    ...postsPermalinks,
     '/projects',
-    ...projects,
+    ...projectsPermalinks,
   ].sort()
 
   res.setHeader('Content-Type', 'text/xml')
