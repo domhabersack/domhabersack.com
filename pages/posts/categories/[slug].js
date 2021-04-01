@@ -11,8 +11,11 @@ export default function Category({
 }) {
   const breadcrumbs = [
     {
+      label: 'Blog',
+      url: '/posts',
+    }, {
       label: 'Categories',
-      url: '/categories'
+      url: '/posts/categories',
     }, {
       label: title,
     }

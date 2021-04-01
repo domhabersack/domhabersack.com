@@ -13,6 +13,10 @@ module.exports = withMDX({
   async redirects() {
     return [
       {
+        source: '/categories/:slug',
+        destination: '/posts/categories/:slug',
+        permanent: true,
+      }, {
         source: '/newsletter/archive/:slug',
         destination: '/newsletter/:slug',
         permanent: true,

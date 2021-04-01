@@ -11,7 +11,7 @@ export async function getAllCategories() {
     const slug = slugify(category)
 
     return {
-      permalink: `/categories/${slug}`,
+      permalink: `/posts/categories/${slug}`,
       slug,
       title: category,
     }

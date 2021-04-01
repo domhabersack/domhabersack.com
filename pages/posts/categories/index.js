@@ -11,6 +11,9 @@ export default function Categories({
 }) {
   const breadcrumbs = [
     {
+      label: 'Blog',
+      url: '/posts',
+    }, {
       label: 'Categories'
     }
   ]
@@ -18,7 +21,7 @@ export default function Categories({
   return (
     <Layout breadcrumbs={breadcrumbs}>
       <MetaTags
-        permalink="/categories"
+        permalink="/posts/categories"
         title="Categories"
       />
 

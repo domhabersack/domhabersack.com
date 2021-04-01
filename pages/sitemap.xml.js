@@ -48,7 +48,6 @@ export async function getServerSideProps({ res }) {
 
   const allPermalinks = [
     '/',
-    '/categories',
     '/contact',
     '/courses',
     '/firetips',
@@ -56,6 +55,7 @@ export async function getServerSideProps({ res }) {
     '/newsletter',
     '/newsletter/archive',
     '/posts',
+    '/posts/categories',
     '/projects',
 
     ...coursesPermalinks,
