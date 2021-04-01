@@ -47,24 +47,25 @@ export async function getServerSideProps({ res }) {
   const coursesLessonsPermalinks = (await Promise.all(courses.map(({ slug }) => getAllLessonsByCourseSlug(slug)))).flat(1).map(getPermalink)
 
   const allPermalinks = [
-    ...pagesPermalinks,
     '/',
     '/categories',
-    ...postCategoriesPermalinks,
     '/contact',
     '/courses',
-    ...coursesPermalinks,
-    ...coursesLessonsPermalinks,
     '/firetips',
-    ...firetipsPermalinks,
     '/firetips/tags',
-    ...firetipTagsPermalinks,
     '/newsletter',
     '/newsletter/archive',
-    ...newslettersPermalinks,
     '/posts',
-    ...postsPermalinks,
     '/projects',
+
+    ...coursesPermalinks,
+    ...coursesLessonsPermalinks,
+    ...firetipsPermalinks,
+    ...firetipTagsPermalinks,
+    ...newslettersPermalinks,
+    ...pagesPermalinks,
+    ...postsPermalinks,
+    ...postCategoriesPermalinks,
     ...projectsPermalinks,
   ].sort()
 
