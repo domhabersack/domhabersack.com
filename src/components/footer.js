@@ -63,35 +63,35 @@ export default function Footer() {
 
             <div className="flex flex-col items-start mb-2 space-y-1.5 text-sm">
               <a
-                className="block"
+                className="block py-1"
                 href="/about"
               >
                 About
               </a>
 
               <a
-                className="block"
+                className="block py-1"
                 href="/posts"
               >
                 Blog
               </a>
 
               <a
-                className="block"
+                className="block py-1"
                 href="/firetips"
               >
                 Fire tips
               </a>
 
               <a
-                className="block"
+                className="block py-1"
                 href="/projects"
               >
                 Projects
               </a>
 
               <a
-                className="block"
+                className="block py-1"
                 href="/contact"
               >
                 Contact
@@ -104,23 +104,23 @@ export default function Footer() {
               Legal
             </UppercaseHeading>
 
-            <div className="flex flex-col items-start mb-2 space-y-1.5 text-sm">
+            <div className="flex flex-col items-start mb-3 space-y-1.5 text-sm">
               <a
-                className="block"
+                className="block py-1"
                 href="/legal-notice"
               >
                 Legal Notice
               </a>
 
               <a
-                className="block iubenda-embed iubenda-nostyle no-brand"
+                className="block py-1 iubenda-embed iubenda-nostyle no-brand"
                 href="https://www.iubenda.com/privacy-policy/31487586"
               >
                 Privacy Policy
               </a>
 
               <a
-                className="block iubenda-embed iubenda-nostyle no-brand"
+                className="block py-1 iubenda-embed iubenda-nostyle no-brand"
                 href="https://www.iubenda.com/privacy-policy/31487586/cookie-policy"
               >
                 Cookie Policy
