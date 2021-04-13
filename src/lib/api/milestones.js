@@ -10,10 +10,15 @@ const transform = async ({
     permalink: `/newsletter/${slug}`,
   }))) : null
 
+  const project = embedded?.project ? (await getFileBySlug('projects', embedded.project, ({ slug }) => ({
+    permalink: `/projects/${slug}`,
+  }))) : null
+
   return {
     createdAt: slug,
     embedded: {
       newsletter,
+      project,
     },
   }
 }

@@ -2,6 +2,7 @@ import formatDate from '@/lib/format-date'
 import Calendar from '@/icons/calendar'
 import Card from '@/components/card'
 import Email from '@/icons/email'
+import Lightbulb from '@/icons/lightbulb-on'
 import Coins from '@/icons/coins'
 import EmailWithLetter from '@/icons/email-with-letter'
 import Rocket from '@/icons/rocket'
@@ -13,8 +14,9 @@ const ICONS = {
   'calendar': <Calendar />,
   'coins': <Coins />,
   'email': <Email />,
-  'rocket': <Rocket />,
+  'lightbulb': <Lightbulb />,
   'newsletter': <EmailWithLetter />,
+  'rocket': <Rocket />,
   'sparkles': <Sparkles />,
   'smartphone': <Smartphone />,
   'stack': <Stack />,
@@ -33,7 +35,10 @@ export default function Milestone({
 
   const Icon = ICONS[icon]
 
-  const { newsletter } = embedded
+  const {
+    newsletter,
+    project,
+  } = embedded
 
   return (
     <div className="flex items-start space-x-2.5">
@@ -70,6 +75,24 @@ export default function Milestone({
 
                 <p className="m-0 text-sm">
                   {newsletter.excerpt}
+                </p>
+              </div>
+            </Card>
+          </div>
+        )}
+
+        {project && (
+          <div className="mt-3">
+            <Card>
+              <div className="px-4 py-3">
+                <h4 className="font-bold mb-0.5 text-sm">
+                  <a href={project.permalink}>
+                    {project.title}
+                  </a>
+                </h4>
+
+                <p className="m-0 text-sm">
+                  {project.excerpt}
                 </p>
               </div>
             </Card>
