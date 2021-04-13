@@ -2,21 +2,21 @@ import React from 'react'
 
 import Breakout from '@/components/breakout'
 import Container from '@/components/container'
-import Sparkles from '@/icons/sparkles'
+import LogosearchLogo from '@/icons/logosearch-logo'
 
 export default function Banner() {
   return (
-    <div className="bg-yellow-300 py-3">
+    <div className="bg-green-700 py-3">
       <Container>
         <Breakout>
-          <div className="flex flex-wrap font-medium items-center justify-center space-x-2.5 text-gray-900">
+          <div className="flex flex-wrap font-medium items-center justify-center space-x-2.5 text-gray-50">
             <div className="flex items-center">
-              <div className="flex-shrink-0 h-6 mr-1 text-gray-800 w-6">
-                <Sparkles />
+              <div className="flex-shrink-0 h-6 mr-1 text-green-50 w-6">
+                <LogosearchLogo />
               </div>
 
               <p className="m-0 text-sm">
-                Get 200+ icons, free for personal use: <a href="https://lovelicons.com">lovelicons.com</a>
+                A directory of brand guidelines: <a className="text-white underline visited:text-white" href="https://logosearch.link">logosearch.link</a>
               </p>
             </div>
           </div>
