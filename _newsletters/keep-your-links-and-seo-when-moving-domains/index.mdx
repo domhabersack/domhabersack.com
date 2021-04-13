@@ -1,0 +1,35 @@
+---
+title: "Keep your links and SEO when moving domains"
+createdAt: "2021-03-31"
+excerpt: "When changing from one domain name to another, we can use redirects to keep all existing links in place and avoid a dip in search engine rankings."
+issue: 82
+heroAlt: "A yellow cable car crossing between two mountains."
+heroCaption: "Let’s take everything with us from one side to the other."
+author: dom-habersack
+related:
+  - how-to-flush-open-graph-previews-on-social-networks
+  - evolution-not-revolution
+---
+Since 2012, everything I did on the internet happened under the brand name of _islovely_. My website, email, and projects all had to be “lovely” in some form. Building a reputation for a brand instead of myself started to feel impersonal.
+
+I retired that brand last week. From now on, everything I do personally runs under my own name and the new domain [domhabersack.com](https://domhabersack.com).
+
+Switching domains can be dangerous business. Closing one domain and starting over from scratch would be a bad idea. Every link to the old domain would stop working immediately. Google wouldn’t know the site moved, so the new domain would have no SEO reputation at all. It would be impossible for the new site to pick up where the old one left off.
+
+A single 301 redirect can prevent all that chaos.
+
+Instead of letting all requests to the old domain end in nothingness, we have to direct them to the new location. If you try to go to [islovely.co/newsletter](https://islovely.co/newsletter), I have to send you to [domhabersack.com/newsletter](https://domhabersack.com/newsletter) instead.
+
+An HTTP status code beginning with 3xx signals a redirect. If we want to bring back the original version some time later, we’d have to declare the redirect as “temporary”. That’s what the status code `307 Temporary Redirect` is for. Because I am not going to use the old domain anymore, my change is permanent. I want all links to my old domain to point to my new domain forever. The status code for this situation is `301 Moved Permanently`.
+
+Where you set this redirect depends on your environment. When you’re using Apache, redirects go into your `.htaccess` file. Some hosting providers offer a way to set redirects in a dashboard instead.
+
+If you’re moving domains, make sure you’re redirecting **everything** at once. Luckily, you don’t have to redirect every single page individually. I would have to set over 250 redirects if that were the case, which would be painful. In this situation, a single 301 redirect is all it takes to keep existing links in place.
+
+If you’re using the [Google Webmaster Tools](http://google.com/webmasters/tools), you can tell them about a “Change of Address” in your old domain’s settings. With that, you can inform them of what domain name your site is moving to. Without this hint, they’d pick up on individual 301s over time without having the full picture. By telling them that everything moved, you’re making the transition easier.
+
+If you do these two things, your SEO will pick up again soon after the change. Google used to penalize redirects when calculating a page’s rank, but stopped doing so in 2016. Redirects no longer decrease a page’s PageRank. You don’t want to change domains every other week, but you don’t have to stick to one domain name forever.
+
+Unless you can change all existing links on the internet, you’ll have to keep the 301 redirect in place forever. Even if you’re not using it for anything else, you’ll have to keep the original domain name so the redirect stays active.
+
+– Dom

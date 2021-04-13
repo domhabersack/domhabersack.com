@@ -4,6 +4,7 @@ import Card from '@/components/card'
 import Email from '@/icons/email'
 import Coins from '@/icons/coins'
 import EmailWithLetter from '@/icons/email-with-letter'
+import Rocket from '@/icons/rocket'
 import Smartphone from '@/icons/smartphone'
 import Sparkles from '@/icons/sparkles'
 import Stack from '@/icons/stack'
@@ -12,6 +13,7 @@ const ICONS = {
   'calendar': <Calendar />,
   'coins': <Coins />,
   'email': <Email />,
+  'rocket': <Rocket />,
   'newsletter': <EmailWithLetter />,
   'sparkles': <Sparkles />,
   'smartphone': <Smartphone />,
