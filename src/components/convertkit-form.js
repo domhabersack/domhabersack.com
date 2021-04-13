@@ -1,6 +1,7 @@
-import React from 'react'
 import Head from 'next/head'
 
+import Button from '@/components/button'
+import Input from '@/components/input'
 import RequiresCookieConsent from '@/components/requires-cookie-consent'
 
 export default function ConvertkitForm({
@@ -33,20 +34,20 @@ export default function ConvertkitForm({
           />
 
           <div className="flex items-start space-x-2.5">
-            <input
-              className="border-0 flex-grow px-2.5 py-2 rounded text-sm w-0 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 dark:bg-black dark:border-gray-700 dark:focus:border-blue-600 dark:focus:ring-blue-500"
-              name="email_address"
-              placeholder="Enter your email"
-              required
-              type="email"
-            />
+            <div className="flex-grow">
+              <Input
+                name="email_address"
+                placeholder="Enter your email"
+                required
+                type="email"
+              />
+            </div>
 
-            <button
-              className="bg-blue-500 text-gray-50 focus:ring-indigo-200 hover:bg-blue-600 dark:bg-red-600 dark:hover:bg-red-600 dark:focus:ring-blue-500"
+            <Button
               data-element="submit"
             >
               {cta || 'Get me early access!'}
-            </button>
+            </Button>
           </div>
         </form>
 

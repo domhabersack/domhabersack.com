@@ -1,8 +1,11 @@
 import React, { useState } from 'react'
 import { useForm, ValidationError } from '@formspree/react'
 
+import Button from '@/components/button'
 import Flash from '@/components/flash'
+import Input from '@/components/input'
 import RequiresCookieConsent from '@/components/requires-cookie-consent'
+import Textarea from '@/components/textarea'
 
 export default function ContactForm() {
   const [{
@@ -42,8 +45,7 @@ export default function ContactForm() {
           </label>
 
           <div className="sm:w-8/12 md:w-3/5 xl:w-6/12">
-            <input
-              className="border-gray-300 px-2.5 py-3 rounded focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 dark:bg-black dark:border-gray-700 dark:focus:border-blue-600 dark:focus:ring-blue-500"
+            <Input
               id="email"
               name="email"
               placeholder="your.best@email.com"
@@ -64,8 +66,7 @@ export default function ContactForm() {
             Message
           </label>
 
-          <textarea
-            className="block border-gray-300 m-0 px-2.5 py-3 rounded w-full focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 dark:bg-black dark:border-gray-700 dark:focus:border-blue-600 dark:focus:ring-blue-500"
+          <Textarea
             id="message"
             name="message"
             placeholder="What do you want to say?"
@@ -100,12 +101,12 @@ export default function ContactForm() {
           </label>
         </div>
 
-        <button
+        <Button
           disabled={!canSubmit}
           type="submit"
         >
           Send your message
-        </button>
+        </Button>
       </form>
     </RequiresCookieConsent>
   )

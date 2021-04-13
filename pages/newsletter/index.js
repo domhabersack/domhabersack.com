@@ -58,19 +58,15 @@ export default function Newsletter({
         ))}
       </ul>
 
-      <p>
+      <p className="mb-6">
         You can find <a href="/newsletter/archive">all previous newsletters</a> in the archive. Get this bonus content before everybody else!
       </p>
 
       <div className="mb-12">
-        <Card>
-          <div className="bg-gray-100 px-4 py-3 dark:bg-gray-900">
-            <ConvertkitForm
-              svForm="1067424"
-              uid="627637e2b6"
-            />
-          </div>
-        </Card>
+        <ConvertkitForm
+          svForm="1067424"
+          uid="627637e2b6"
+        />
       </div>
 
       <h2>
