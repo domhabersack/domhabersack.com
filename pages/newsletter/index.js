@@ -1,8 +1,7 @@
 import React from 'react'
 
-import Card from '@/components/card'
 import CircledCheckmark from '@/icons/circled-checkmark'
-import ConvertkitForm from '@/components/convertkit-form'
+import NewsletterSignupForm from '@/components/newsletter-signup-form'
 import Layout from '@/components/layout'
 import MetaTags from '@/components/meta-tags'
 import NewsletterTeaser from '@/components/newsletter-teaser'
@@ -63,10 +62,7 @@ export default function Newsletter({
       </p>
 
       <div className="mb-12">
-        <ConvertkitForm
-          svForm="1067424"
-          uid="627637e2b6"
-        />
+        <NewsletterSignupForm />
       </div>
 
       <h2>
