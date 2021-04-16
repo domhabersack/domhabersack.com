@@ -1,6 +1,6 @@
 import React from 'react'
 
-import ConvertkitForm from '@/components/convertkit-form'
+import NewsletterSignupForm from '@/components/newsletter-signup-form'
 import UppercaseHeading from '@/components/uppercase-heading'
 
 export default function NewsletterSignup() {
@@ -14,11 +14,7 @@ export default function NewsletterSignup() {
         Get weekly progress updates, tips, product previews, and more straight to your inbox. Read previous issues in the <a href="/newsletter/archive">archive</a>.
       </p>
 
-      <ConvertkitForm
-        cta="Subscribe"
-        svForm="1018607"
-        uid="f55882552b"
-      />
+      <NewsletterSignupForm />
     </React.Fragment>
   )
 }
