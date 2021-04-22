@@ -1,26 +1,23 @@
 ---
 title: "Making parameters required"
 createdAt: "2020-08-22"
+updatedAt: "2021-04-21"
 tags: ["JavaScript"]
 ---
 Functions in JavaScript don’t have “required” parameters. We can emulate them by setting a function that throws an error as a parameter’s default value. This assigned function call only happens if we omit the parameter, making it required.
 
 ```js
-// calling this function always throws an error
-const throwIfMissing = parameter => {
-  throw new Error(`Parameter '${parameter}' needs to be defined.`)
-}
+// This function takes a parameter, but it can also be called without one.
+const askAbout = thing => `What’s your favorite ${thing}?`
 
-// if we don’t pass a `thing`, that function will be called as the default
-const askAboutFavorite = (thing = throwIfMissing('thing')) => {
-  console.log(`What is your favorite ${thing}?`)
-}
+askAbout('color')  // ⇒ "What’s your favorite color?"
+askAbout()         // ⇒ "What’s your favorite undefined?" ← we don’t want this
 
-// not passing anything, or passing `undefined`, causes the error to happen
-askAboutFavorite()           // Error: "Parameter 'thing' needs to be defined."
-askAboutFavorite(undefined)  // Error: "Parameter 'thing' needs to be defined."
+// We can pass a function as the parameter’s default value that always throws an
+// error. It only gets called when we don’t pass a value for that parameter.
+const throwIfMissing = () => { throw new Error(`Missing parameter!`) }
+const askAbout = (thing = throwIfMissing()) => `What’s your favorite ${thing}?`
 
-// passing any defined value is fine
-askAboutFavorite(null)       // "What is your favorite null?"
-askAboutFavorite('color')    // "What is your favorite color?"
+askAbout('color')  // ⇒ "What’s your favorite color?"
+askAbout()         // Error: Missing parameter! ← we want this
 ```

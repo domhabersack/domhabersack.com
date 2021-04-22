@@ -1,6 +1,7 @@
 import formatDate from '@/lib/format-date'
 import Calendar from '@/icons/calendar'
 import Card from '@/components/card'
+import Cards from '@/icons/cards'
 import Email from '@/icons/email'
 import Lightbulb from '@/icons/lightbulb-on'
 import Coins from '@/icons/coins'
@@ -12,6 +13,7 @@ import Stack from '@/icons/stack'
 
 const ICONS = {
   'calendar': <Calendar />,
+  'cards': <Cards />,
   'coins': <Coins />,
   'email': <Email />,
   'lightbulb': <Lightbulb />,
