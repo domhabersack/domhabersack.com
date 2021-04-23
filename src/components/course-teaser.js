@@ -45,16 +45,12 @@ export default function CourseTeaser({
           </p>
         </div>
 
-        <footer className="bg-gray-100 flex flex-wrap px-4 py-3 space-x-5 text-gray-600 text-xs dark:bg-black dark:text-gray-300">
-            <div className="flex items-center space-x-1">
-              <div className="h-6 w-6 dark:text-gray-400">
-                <BookIcon />
-              </div>
+        <footer className="bg-gray-100 flex items-center px-4 py-3 space-x-1 text-gray-600 text-xs dark:bg-black dark:text-gray-300">
+          <BookIcon className="h-6 w-6 dark:text-gray-400" />
 
-              <span>
-                <strong>{lessons.length}</strong> lessons
-              </span>
-            </div>
+          <span>
+            <strong>{lessons.length}</strong> lessons
+          </span>
         </footer>
       </article>
     </Card>

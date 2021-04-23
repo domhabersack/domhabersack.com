@@ -9,9 +9,7 @@ export default function Stack({
     <div className="flex flex-wrap space-x-1.5">
       {stack.map(tool => (
         <React.Fragment key={`tool-${tool}`}>
-          <div className="h-6 w-6">
-            <Logo name={tool} />
-          </div>
+          <Logo className="h-6 w-6" name={tool} />
         </React.Fragment>
       ))}
     </div>

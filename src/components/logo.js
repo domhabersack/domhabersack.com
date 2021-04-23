@@ -3,6 +3,7 @@ import React from 'react'
 import getLogoForName from '@/lib/get-logo-for-name'
 
 export default function Logo({
+  className,
   name,
 }) {
   const {
@@ -16,6 +17,7 @@ export default function Logo({
       {Regular && (
         <Regular
           alt={name}
+          className={className}
           title={name}
         />
       )}
@@ -23,7 +25,7 @@ export default function Logo({
       {Light && (
         <Light
           alt={name}
-          className="hidden dark:block"
+          className={`${className ?? ''} hidden dark:block`}
           title={name}
         />
       )}
@@ -31,7 +33,7 @@ export default function Logo({
       {Dark && (
         <Dark
           alt={name}
-          className="block dark:hidden"
+          className={`${className ?? ''} block dark:hidden`}
           title={name}
         />
       )}

@@ -1,3 +1,5 @@
+import React from 'react'
+
 import CodePen from '@/icons/codepen-logo'
 import Dribbble from '@/icons/dribbble-logo'
 import Email from '@/icons-fill/email'
@@ -9,7 +11,6 @@ import Twitch from '@/icons/twitch-logo'
 import Twitter from '@/icons/twitter-logo'
 import UppercaseHeading from '@/components/uppercase-heading'
 import YouTube from '@/icons/youtube-logo'
-import React from 'react'
 
 const SOCIAL_PROFILES = {
   '@domhabersack on Twitter': {
@@ -46,7 +47,7 @@ const SOCIAL_PROFILES = {
   },
   'dom@domhabersack.com': {
     href: 'mailto:dom@domhabersack.com',
-    Logo: Email
+    Logo: Email,
   }
 }
 
@@ -61,38 +62,23 @@ export default function Footer() {
             </UppercaseHeading>
 
             <div className="flex flex-col items-start mb-2 space-y-1.5 text-sm">
-              <a
-                className="block py-1"
-                href="/about"
-              >
+              <a className="block py-1" href="/about">
                 About
               </a>
 
-              <a
-                className="block py-1"
-                href="/posts"
-              >
+              <a className="block py-1" href="/posts">
                 Blog
               </a>
 
-              <a
-                className="block py-1"
-                href="/firetips"
-              >
+              <a className="block py-1" href="/firetips">
                 Fire tips
               </a>
 
-              <a
-                className="block py-1"
-                href="/projects"
-              >
+              <a className="block py-1" href="/projects">
                 Projects
               </a>
 
-              <a
-                className="block py-1"
-                href="/contact"
-              >
+              <a className="block py-1" href="/contact">
                 Contact
               </a>
             </div>
@@ -104,24 +90,15 @@ export default function Footer() {
             </UppercaseHeading>
 
             <div className="flex flex-col items-start mb-3 space-y-1.5 text-sm">
-              <a
-                className="block py-1"
-                href="/legal-notice"
-              >
+              <a className="block py-1" href="/legal-notice">
                 Legal Notice
               </a>
 
-              <a
-                className="block py-1 iubenda-embed iubenda-nostyle no-brand"
-                href="https://www.iubenda.com/privacy-policy/31487586"
-              >
+              <a className="block py-1 iubenda-embed iubenda-nostyle no-brand" href="https://www.iubenda.com/privacy-policy/31487586">
                 Privacy Policy
               </a>
 
-              <a
-                className="block py-1 iubenda-embed iubenda-nostyle no-brand"
-                href="https://www.iubenda.com/privacy-policy/31487586/cookie-policy"
-              >
+              <a className="block py-1 iubenda-embed iubenda-nostyle no-brand" href="https://www.iubenda.com/privacy-policy/31487586/cookie-policy">
                 Cookie Policy
               </a>
             </div>

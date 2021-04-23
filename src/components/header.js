@@ -1,5 +1,3 @@
-import React from 'react'
-
 import SiteLogo from '@/components/site-logo'
 import Navigation from '@/components/navigation'
 

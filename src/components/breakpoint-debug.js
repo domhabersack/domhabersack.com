@@ -1,5 +1,3 @@
-import React from 'react'
-
 export default function BreakpointDebug() {
   return (
     <div className="bottom-0 rounded-tl-md bg-pink-500 fixed py-1.5 px-2.5 right-0 text-xs text-white">

@@ -1,5 +1,3 @@
-import React from 'react'
-
 export default function Flash({
   children,
   type,
@@ -17,18 +15,7 @@ export default function Flash({
   }[type] || 'border-gray-300 dark:border-gray-800');
 
   return (
-    <p
-      className={`
-        ${backgroundColor}
-        ${borderColor}
-        border
-        mb-6
-        px-4
-        py-3
-        rounded-lg
-        text-sm
-      `}
-    >
+    <p className={`${backgroundColor} ${borderColor} border mb-6 px-4 py-3 rounded-lg text-sm`}>
       {children}
     </p>
   )
