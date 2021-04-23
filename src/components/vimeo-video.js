@@ -9,7 +9,7 @@ export default function VimeoVideo({
 }) {
   return (
     <a className="aspect-ratio-16/9 block relative" href={`https://vimeo.com/video/${id}`} title={`”${title}” on Vimeo`}>
-      <Image layout="fill" src={thumbnail} />
+      <Image className="filter blur-sm" layout="fill" src={thumbnail} />
 
       <div className="flex items-center justify-center">
         <div className="bg-white flex font-medium items-center px-3.5 py-2 rounded-md shadow-sm space-x-1.5 text-sm text-blue-600">
