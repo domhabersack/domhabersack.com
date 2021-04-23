@@ -5,7 +5,6 @@
   "version": "2.0.1",
   "author": "Dom Habersack <dom@domhabersack.com>",
   "dependencies": {
-    "@formspree/react": "2.2.3",
     "@mdx-js/loader": "1.6.22",
     "@next/mdx": "10.1.2",
     "@tailwindcss/forms": "0.3.2",
