@@ -1,5 +1,3 @@
-import React from 'react'
-
 export default function Fullbleed({
   className,
   children,
@@ -11,11 +9,8 @@ export default function Fullbleed({
       </div>
 
       <div
-        className={`absolute bottom-0 top-0 w-screen z-0 ${className ?? ''}`}
-        style={{
-          left: '50%',
-          marginLeft: '-50vw',
-        }}
+        className={`absolute bottom-0 left-1/2 top-0 w-screen z-0 ${className ?? ''}`}
+        style={{ marginLeft: '-50vw' }}
       />
     </div>
   )

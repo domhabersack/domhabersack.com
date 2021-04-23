@@ -28,9 +28,7 @@ export default function MyStack() {
     <div className="flex flex-wrap justify-center">
       {STACK.map(tool => (
         <React.Fragment key={`tool-${tool}`}>
-          <div className="h-9 m-2 w-9">
-            <Logo name={tool} />
-          </div>
+          <Logo className="h-9 m-2 w-9" name={tool} />
         </React.Fragment>
       ))}
     </div>
