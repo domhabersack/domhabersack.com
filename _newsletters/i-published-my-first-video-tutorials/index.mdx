@@ -6,6 +6,9 @@ issue: 65
 heroAlt: "A screenshot taken from one of my YouTube tutorials."
 heroCaption: "YouTube is good at taking these thumbnails. I might need a green screen."
 author: dom-habersack
+figures:
+  - "Yzmj7-Wy95M.jpg"
+  - "zqx19b1lOhc.jpg"
 related:
   - get-more-value-from-your-git-log
   - join-me-for-hacktoberfest
@@ -19,14 +22,16 @@ I finally recorded and uploaded some of my own videos to YouTube. Instead of com
 
 In this video, I walk you through how you can change what a git log looks like in your terminal step by step. We can customize it to show more helpful information in a way that is easier to parse.
 
-<Video youtubeId="zqx19b1lOhc" />
+<div className="mb-6">
+  <YouTubeVideo id="zqx19b1lOhc" thumbnail={figures['zqx19b1lOhc']} title="Get more value from your git log" />
+</div>
 
 ## Progressive enhancement in CSS with @supports
 
 With `@supports`, we can start using new features before all browsers support them. We give a basic version to all browsers and enhance it in browsers that support those features. The video shows how this works with the new CSS rule `backdrop-filter`.
 
-<div className="mb-24">
-  <Video youtubeId="Yzmj7-Wy95M" />
+<div className="mb-12">
+  <YouTubeVideo id="Yzmj7-Wy95M" thumbnail={figures['Yzmj7-Wy95M']} title="Progressive Enhancement with @supports" />
 </div>
 
 If you check them out, let me know what you like or don’t like about them. I’ll start uploading more videos soon. Any pointers you have for me early on would save me a lot of trouble. If there’s anything you want me to talk about, reply to this email and I’ll make a video on it soon!
