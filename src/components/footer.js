@@ -7,7 +7,6 @@ import Mastodon from '@/icons/mastodon-logo'
 import NewsletterSignup from '@/components/newsletter-signup'
 import Twitch from '@/icons/twitch-logo'
 import Twitter from '@/icons/twitter-logo'
-import UpdateCookieSettingsTrigger from '@/components/update-cookie-settings-trigger'
 import UppercaseHeading from '@/components/uppercase-heading'
 import YouTube from '@/icons/youtube-logo'
 import React from 'react'
@@ -126,8 +125,6 @@ export default function Footer() {
                 Cookie Policy
               </a>
             </div>
-
-            <UpdateCookieSettingsTrigger />
           </div>
         </div>
 

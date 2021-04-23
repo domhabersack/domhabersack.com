@@ -2,7 +2,6 @@ import React from 'react'
 import Head from 'next/head'
 import { MDXProvider } from '@mdx-js/react'
 
-import Application from '@/components/application'
 import Banner from '@/components/banner'
 import Breadcrumbs from '@/components/breadcrumbs'
 import Breakout from '@/components/breakout'
@@ -19,41 +18,39 @@ export default function Layout ({
 }) {
   return (
     <MDXProvider>
-      <Application>
-        <Head />
+      <Head />
 
-        <Banner />
+      <Banner />
 
-        <div className="flex flex-col min-h-screen">
-          <div className="mb-6">
-            <Container>
-              <Breakout>
-                <Header />
-              </Breakout>
-            </Container>
-          </div>
-
-          <main className="flex-grow mb-24">
-            <Container>
-              <Breadcrumbs breadcrumbs={breadcrumbs} />
-
-              {children}
-            </Container>
-          </main>
-
-          <div className="bg-gray-100 dark:bg-gray-900">
-            <Container>
-              <Breakout>
-                <Footer />
-              </Breakout>
-            </Container>
-          </div>
+      <div className="flex flex-col min-h-screen">
+        <div className="mb-6">
+          <Container>
+            <Breakout>
+              <Header />
+            </Breakout>
+          </Container>
         </div>
 
-        {IS_IN_DEBUG_MODE && (
-          <BreakpointDebug />
-        )}
-      </Application>
+        <main className="flex-grow mb-24">
+          <Container>
+            <Breadcrumbs breadcrumbs={breadcrumbs} />
+
+            {children}
+          </Container>
+        </main>
+
+        <div className="bg-gray-100 dark:bg-gray-900">
+          <Container>
+            <Breakout>
+              <Footer />
+            </Breakout>
+          </Container>
+        </div>
+      </div>
+
+      {IS_IN_DEBUG_MODE && (
+        <BreakpointDebug />
+      )}
     </MDXProvider>
   )
 }
