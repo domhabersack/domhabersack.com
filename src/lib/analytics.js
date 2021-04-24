@@ -1,5 +1,3 @@
-export function triggerEvent() {
-  return function(eventName, options) {
-    return window.plausible?.(eventName, options)
-  }
+export function triggerEvent(eventName, options) {
+  return window.plausible?.(eventName, options)
 }
