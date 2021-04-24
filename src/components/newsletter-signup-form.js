@@ -90,7 +90,7 @@ export default function NewsletterSignupForm() {
         )}
       </form>
 
-      <p className="italic m-0 text-gray-500 text-xs dark:text-gray-400">
+      <p className="italic m-0 text-gray-600 text-xs dark:text-gray-300">
         I respect your email privacy. Unsubscribe anytime.
       </p>
     </>

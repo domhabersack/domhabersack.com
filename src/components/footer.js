@@ -53,7 +53,7 @@ const SOCIAL_PROFILES = {
 
 export default function Footer() {
   return (
-    <footer className="divide-y text-gray-500 dark:divide-gray-700 dark:text-gray-400">
+    <footer className="divide-y text-gray-600 dark:divide-gray-700 dark:text-gray-300">
       <div className="py-8 space-y-10 sm:flex sm:flex-row sm:justify-between sm:space-y-0">
         <div className="flex sm:space-x-5 md:space-x-8 lg:space-x-16">
           <div className="w-1/2 sm:w-auto">
