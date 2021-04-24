@@ -3,6 +3,7 @@ import { useState } from 'react'
 import Button from '@/components/button'
 import Input from '@/components/input'
 import LoadingIndicator from '@/icons-mini/loading-indicator'
+import { triggerEvent } from '@/lib/analytics'
 
 export default function NewsletterSignupForm() {
   const [email, setEmail] = useState('')
@@ -37,8 +38,10 @@ export default function NewsletterSignupForm() {
     if (response.ok) {
       setEmail('')
       setSuccess(true)
+      triggerEvent('Newsletter signup')
     } else {
       setFailure(true)
+      triggerEvent('Newsletter signup failed')
     }
   }
 
