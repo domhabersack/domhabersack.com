@@ -6,7 +6,6 @@ import Email from '@/icons-fill/email'
 import Layout from '@/components/layout'
 import LinkedIn from '@/icons/linkedin-logo'
 import MetaTags from '@/components/meta-tags'
-import Metrics from '@/components/metrics'
 import Milestones from '@/components/milestones'
 import MyStack from '@/components/my-stack'
 import NewsletterSignup from '@/components/newsletter-signup'
@@ -20,50 +19,6 @@ import { getAuthorBySlug } from '@/lib/api/authors'
 import { getProjectBySlug } from '@/lib/api/projects'
 import { getLatestNewsletters } from '@/lib/api/newsletters'
 import { getLatestPosts } from '@/lib/api/posts'
-
-const METRICS_AUDIENCE = [
-  {
-    label: 'Twitter followers',
-    value: 951,
-    change: +93,
-  }, {
-    label: 'Newsletter subscribers',
-    value: 16,
-    change: +3,
-  }, {
-    label: 'YouTube subscribers',
-    value: 47,
-    change: +4,
-  },
-]
-
-const METRICS_FINANCES = [
-  {
-    label: 'US$ revenue',
-    value: 0,
-    change: +0,
-  }, {
-    label: 'US$ MRR',
-    value: 0,
-    change: +0,
-  },
-]
-
-const METRICS_CONTENT = [
-  {
-    label: 'Blog posts',
-    value: 26,
-    change: +0
-  }, {
-    label: 'Weekly newsletters',
-    value: 77,
-    change: +4
-  }, {
-    label: 'Videos published',
-    value: 5,
-    change: +0
-  },
-]
 
 const SOCIAL_PROFILES = {
   '@domhabersack on Twitter': {
@@ -233,45 +188,6 @@ export default function Index({
             </a>
           </p>
         </div>
-
-        <div className="hidden">
-          <h2 className="mb-0.5">
-            Metrics (last 28 days)
-          </h2>
-
-          <p className="italic m-0 mb-3 text-gray-500 text-xs dark:text-gray-400 lg:mb-6">
-            Updated: February 26, 2021
-          </p>
-
-          <p>
-            As part of building in public, I share my numbers openly. If there’s anything else you’d like me to include here, tweet me at <a href="https://twitter.com/domhabersack">@domhabersack</a>.
-          </p>
-
-          <Card>
-            <div className="divide-y dark:divide-gray-700">
-              <div className="p-4">
-                <Metrics
-                  label="Finances"
-                  metrics={METRICS_FINANCES}
-                />
-              </div>
-
-              <div className="p-4">
-                <Metrics
-                  label="Content"
-                  metrics={METRICS_CONTENT}
-                />
-              </div>
-
-              <div className="p-4">
-                <Metrics
-                  label="Audience"
-                  metrics={METRICS_AUDIENCE}
-                />
-              </div>
-            </div>
-          </Card>
-        </div>
       </div>
     </Layout>
   )
@@ -280,7 +196,7 @@ export default function Index({
 export async function getStaticProps() {
   const dom = await getAuthorBySlug('dom-habersack')
   const featuredProject = await getProjectBySlug('lovelicons')
-  const latestNewsletters = await getLatestNewsletters({ limit: 6 })
+  const latestNewsletters = await getLatestNewsletters({ limit: 4 })
   const latestPosts = await getLatestPosts({ limit: 4 })
   const milestones = await getAllMilestones()
 
