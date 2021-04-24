@@ -12,7 +12,7 @@ export default function App({
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-        <script async defer data-domain="domhabersack.com" src="https://plausible.io/js/plausible.js"></script>
+        <script async defer data-domain="domhabersack.com" src="https://stats.domhabersack.com/js/index.js"></script>
       </Head>
 
       <Component {...pageProps} />
