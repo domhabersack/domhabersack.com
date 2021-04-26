@@ -12,7 +12,7 @@ export default function App({
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-        <script async defer data-domain="domhabersack.com" src="https://stats.domhabersack.com/js/index.js" />
+        <script async defer data-domain="domhabersack.com" src="https://stats.domhabersack.com/js/index.outbound-links.js" />
         <script dangerouslySetInnerHTML={{
           __html: 'window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }'
         }} />
