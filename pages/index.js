@@ -71,7 +71,11 @@ export default function Index({
               </h1>
 
               <p>
-                I am a software developer, content creator, and IndieHacker with over 12 years of professional experience. I am currently learning how to make money online. Follow along as I build my company in public.
+                I am a software developer, content creator, and IndieHacker with over 12 years of professional experience.
+              </p>
+
+              <p>
+                I am currently learning how to make money online. Follow along as I build my company in public.
               </p>
 
               <div className="flex space-x-2.5">
