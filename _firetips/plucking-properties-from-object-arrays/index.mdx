@@ -1,9 +1,10 @@
 ---
 title: "Plucking properties from object arrays"
 createdAt: "2020-07-18"
+updatedAt: "2021-04-25"
 tags: ["JavaScript", "readability"]
 ---
-One of the more common uses for `Array.prototype.map()` is extracting properties from objects. Instead of using individual arrow functions, we can create a reusable function that does the plucking for us.
+One of the more common tasks when mapping over arrays in JavaScript is extracting properties from objects. Instead of using individual arrow functions, we can create a reusable helper function that does the plucking for us.
 
 ```js
 const countries = [
