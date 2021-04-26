@@ -1,13 +1,11 @@
 import React from 'react'
-
-import Tag from '@/components/tag'
+import { Tag } from '@yieldui/react'
 
 export default function FiretipTeaser({
   firetip,
 }) {
   const {
     permalink,
-    slug,
     tags,
     title
   } = firetip

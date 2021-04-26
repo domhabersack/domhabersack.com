@@ -1,11 +1,11 @@
 import React from 'react'
+import { Tag } from '@yieldui/react'
 
 import Breakout from '@/components/breakout'
 import Figure from '@/components/figure'
 import Layout from '@/components/layout'
 import MetaTags from '@/components/meta-tags'
 import PostMeta from '@/components/post-meta'
-import Tag from '@/components/tag'
 import { getAllPostSlugs, getPostBySlug } from '@/lib/api/posts'
 import getMDXSource from '@/lib/get-mdx-source'
 import hydrateMDXSource from '@/lib/hydrate-mdx-source'

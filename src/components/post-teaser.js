@@ -1,9 +1,9 @@
 import React from 'react'
 import Image from 'next/image'
+import { Tag } from '@yieldui/react'
 
 import Card from '@/components/card'
 import PostMeta from '@/components/post-meta'
-import Tag from '@/components/tag'
 
 export default function PostTeaser({
   post,

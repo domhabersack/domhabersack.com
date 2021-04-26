@@ -1,6 +1,7 @@
+import { Card } from '@yieldui/react'
+
 import formatDate from '@/lib/format-date'
 import Calendar from '@/icons/calendar'
-import Card from '@/components/card'
 import Cards from '@/icons/cards'
 import Email from '@/icons/email'
 import Lightbulb from '@/icons/lightbulb-on'
@@ -68,17 +69,15 @@ export default function Milestone({
         {newsletter && (
           <div className="mt-3">
             <Card>
-              <div className="px-4 py-3">
-                <h4 className="font-bold mb-0.5 text-sm">
-                  <a href={newsletter.permalink}>
-                    {newsletter.title}
-                  </a>
-                </h4>
+              <h4 className="font-bold mb-0.5 text-sm">
+                <a href={newsletter.permalink}>
+                  {newsletter.title}
+                </a>
+              </h4>
 
-                <p className="m-0 text-sm">
-                  {newsletter.excerpt}
-                </p>
-              </div>
+              <p className="m-0 text-sm">
+                {newsletter.excerpt}
+              </p>
             </Card>
           </div>
         )}
@@ -86,17 +85,15 @@ export default function Milestone({
         {project && (
           <div className="mt-3">
             <Card>
-              <div className="px-4 py-3">
-                <h4 className="font-bold mb-0.5 text-sm">
-                  <a href={project.permalink}>
-                    {project.title}
-                  </a>
-                </h4>
+              <h4 className="font-bold mb-0.5 text-sm">
+                <a href={project.permalink}>
+                  {project.title}
+                </a>
+              </h4>
 
-                <p className="m-0 text-sm">
-                  {project.excerpt}
-                </p>
-              </div>
+              <p className="m-0 text-sm">
+                {project.excerpt}
+              </p>
             </Card>
           </div>
         )}

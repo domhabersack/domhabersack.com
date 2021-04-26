@@ -1,9 +1,9 @@
 import React from 'react'
+import { Tag } from '@yieldui/react'
 
 import FiretipTeaser from '@/components/firetip-teaser'
 import Layout from '@/components/layout'
 import MetaTags from '@/components/meta-tags'
-import Tag from '@/components/tag'
 import { getAllFiretips } from '@/lib/api/firetips'
 import { getAllTagsWithFiretips } from '@/lib/api/firetip-tags'
 

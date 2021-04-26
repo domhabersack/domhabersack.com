@@ -1,8 +1,8 @@
 import React from 'react'
+import { Tag } from '@yieldui/react'
 
 import Layout from '@/components/layout'
 import MetaTags from '@/components/meta-tags'
-import Tag from '@/components/tag'
 import { getAllFiretipSlugs, getFiretipBySlug } from '@/lib/api/firetips'
 import getMDXSource from '@/lib/get-mdx-source'
 import hydrateMDXSource from '@/lib/hydrate-mdx-source'
