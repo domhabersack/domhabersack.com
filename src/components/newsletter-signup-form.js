@@ -1,6 +1,6 @@
 import { useState } from 'react'
+import { Button } from '@yieldui/react'
 
-import Button from '@/components/button'
 import Input from '@/components/input'
 import LoadingIndicator from '@/icons-mini/loading-indicator'
 import { triggerEvent } from '@/lib/analytics'
