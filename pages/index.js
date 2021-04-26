@@ -9,7 +9,6 @@ import MetaTags from '@/components/meta-tags'
 import Milestones from '@/components/milestones'
 import MyStack from '@/components/my-stack'
 import NewsletterSignup from '@/components/newsletter-signup'
-import NewsletterTeaser from '@/components/newsletter-teaser'
 import PostTeaser from '@/components/post-teaser'
 import ProjectTeaser from '@/components/project-teaser'
 import Twitter from '@/icons/twitter-logo'
@@ -17,7 +16,6 @@ import YouTube from '@/icons/youtube-logo'
 import { getAllMilestones } from '@/lib/api/milestones'
 import { getAuthorBySlug } from '@/lib/api/authors'
 import { getProjectBySlug } from '@/lib/api/projects'
-import { getLatestNewsletters } from '@/lib/api/newsletters'
 import { getLatestPosts } from '@/lib/api/posts'
 
 const SOCIAL_PROFILES = {
@@ -43,7 +41,6 @@ export default function Index({
   avatar,
   featuredProject,
   milestones,
-  newsletters,
   posts,
 }) {
   return (
@@ -151,26 +148,6 @@ export default function Index({
 
         <div>
           <h2>
-            Latest newsletter issues
-          </h2>
-
-          <div className="grid gap-12 grid-cols-1 mb-8">
-            {newsletters.map(newsletter => (
-              <React.Fragment key={`newsletter-${newsletter.slug}`}>
-                <NewsletterTeaser newsletter={newsletter} />
-              </React.Fragment>
-            ))}
-          </div>
-
-          <p>
-            <a href="/newsletter/archive">
-              Read all issues &rarr;
-            </a>
-          </p>
-        </div>
-
-        <div>
-          <h2>
             Latest blog posts
           </h2>
 
@@ -196,7 +173,6 @@ export default function Index({
 export async function getStaticProps() {
   const dom = await getAuthorBySlug('dom-habersack')
   const featuredProject = await getProjectBySlug('lovelicons')
-  const latestNewsletters = await getLatestNewsletters({ limit: 4 })
   const latestPosts = await getLatestPosts({ limit: 4 })
   const milestones = await getAllMilestones()
 
@@ -205,7 +181,6 @@ export async function getStaticProps() {
       avatar: dom.avatar,
       featuredProject,
       milestones,
-      newsletters: latestNewsletters,
       posts: latestPosts,
     }
   }

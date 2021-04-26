@@ -5,7 +5,7 @@ import NewsletterSignupForm from '@/components/newsletter-signup-form'
 import Layout from '@/components/layout'
 import MetaTags from '@/components/meta-tags'
 import NewsletterTeaser from '@/components/newsletter-teaser'
-import { getFeaturedNewsletters } from '@/lib/api/newsletters'
+import { getLatestNewsletters } from '@/lib/api/newsletters'
 
 const BENEFITS = [
   'tips on design and development you can use immediately',
@@ -16,7 +16,7 @@ const BENEFITS = [
 ]
 
 export default function Newsletter({
-  featuredNewsletters,
+  latestNewsletters,
 }) {
   const breadcrumbs = [
     {
@@ -66,11 +66,11 @@ export default function Newsletter({
       </div>
 
       <h2>
-        Featured newsletters
+        Latest issues
       </h2>
 
       <div className="grid gap-12 grid-cols-1 mb-8">
-        {featuredNewsletters.map(newsletter => (
+        {latestNewsletters.map(newsletter => (
           <React.Fragment key={`newsletter-${newsletter.slug}`}>
             <NewsletterTeaser newsletter={newsletter} />
           </React.Fragment>
@@ -85,11 +85,11 @@ export default function Newsletter({
 }
 
 export async function getStaticProps() {
-  const featuredNewsletters = await getFeaturedNewsletters()
+  const latestNewsletters = await getLatestNewsletters({ limit: 6 })
 
   return {
     props: {
-      featuredNewsletters,
+      latestNewsletters,
     },
   }
 }
