@@ -1,5 +1,3 @@
-import React from 'react'
-
 import Layout from '@/components/layout'
 import MetaTags from '@/components/meta-tags'
 import NewsletterTeaser from '@/components/newsletter-teaser'
@@ -35,9 +33,7 @@ export default function Archive({
 
       <div className="grid gap-12 grid-cols-1">
         {newsletters.map(newsletter => (
-          <React.Fragment key={`newsletter-${newsletter.slug}`}>
-            <NewsletterTeaser newsletter={newsletter} />
-          </React.Fragment>
+          <NewsletterTeaser key={`newsletter-${newsletter.slug}`} newsletter={newsletter} />
         ))}
       </div>
     </Layout>

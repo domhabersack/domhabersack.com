@@ -1,8 +1,6 @@
-import React from 'react'
-
 export default function Favicons() {
   return (
-    <React.Fragment>
+    <>
       <link
         href="/apple-touch-icon.png"
         rel="apple-touch-icon"
@@ -18,6 +16,6 @@ export default function Favicons() {
         href="/favicon.ico"
         rel="shortcut icon"
       />
-    </React.Fragment>
+    </>
   )
 }

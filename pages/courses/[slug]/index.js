@@ -1,6 +1,3 @@
-import React from 'react'
-
-import Breakout from '@/components/breakout'
 import BookIcon from '@/icons/book'
 import Layout from '@/components/layout'
 import Lessons from '@/components/lessons'

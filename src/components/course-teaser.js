@@ -1,4 +1,3 @@
-import React from 'react'
 import Image from 'next/image'
 
 import Card from '@/components/card'
@@ -8,16 +7,11 @@ export default function CourseTeaser({
   course,
 }) {
   const {
-    emails,
     excerpt,
     hero,
-    highlightColor,
-    hours,
     lessons,
     permalink,
     title,
-    videos,
-    weeks,
   } = course
 
   return (

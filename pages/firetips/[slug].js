@@ -1,4 +1,3 @@
-import React from 'react'
 import { Tag } from '@yieldui/react'
 
 import Layout from '@/components/layout'
@@ -40,13 +39,11 @@ export default function Firetip({
 
       <div className="flex flex-wrap">
         {tags.map(tag => (
-          <React.Fragment key={`tag-${tag.slug}`}>
-            <div className="mb-3 mr-2.5">
-              <Tag href={tag.permalink}>
-                {tag.title}
-              </Tag>
-            </div>
-          </React.Fragment>
+          <div className="mb-3 mr-2.5" key={`tag-${tag.slug}`}>
+            <Tag href={tag.permalink}>
+              {tag.title}
+            </Tag>
+          </div>
         ))}
       </div>
     </Layout>

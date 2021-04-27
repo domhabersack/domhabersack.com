@@ -1,5 +1,3 @@
-import React from 'react'
-
 import CodePen from '@/icons/codepen-logo'
 import Dribbble from '@/icons/dribbble-logo'
 import Email from '@/icons-fill/email'
@@ -120,15 +118,14 @@ export default function Footer() {
             href,
             Logo
           }]) => (
-            <React.Fragment key={title}>
-              <a
-                className="block h-6 w-6 text-gray-600 dark:text-gray-300"
-                href={href}
-                title={title}
-              >
-                <Logo />
-              </a>
-            </React.Fragment>
+            <a
+              className="block h-6 w-6 text-gray-600 dark:text-gray-300"
+              href={href}
+              key={title}
+              title={title}
+            >
+              <Logo />
+            </a>
           ))}
         </div>
       </div>

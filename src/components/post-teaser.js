@@ -1,4 +1,3 @@
-import React from 'react'
 import Image from 'next/image'
 import { Tag } from '@yieldui/react'
 
@@ -45,13 +44,11 @@ export default function PostTeaser({
 
           <div className="flex flex-wrap mb-1.5">
             {categories.map(category => (
-              <React.Fragment key={`category-${category.slug}`}>
-                <div className="mb-1 mr-1.5">
-                  <Tag href={category.permalink}>
-                    {category.title}
-                  </Tag>
-                </div>
-              </React.Fragment>
+              <div className="mb-1 mr-1.5" key={`category-${category.slug}`}>
+                <Tag href={category.permalink}>
+                  {category.title}
+                </Tag>
+              </div>
             ))}
           </div>
 

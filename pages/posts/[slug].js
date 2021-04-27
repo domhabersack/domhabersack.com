@@ -1,4 +1,3 @@
-import React from 'react'
 import { Tag } from '@yieldui/react'
 
 import Breakout from '@/components/breakout'
@@ -74,13 +73,11 @@ export default function Post({
 
       <div className="flex flex-wrap">
         {categories.map(category => (
-          <React.Fragment key={`category-${category.slug}`}>
-            <div className="mb-1 mr-1.5">
-              <Tag href={category.permalink}>
-                {category.title}
-              </Tag>
-            </div>
-          </React.Fragment>
+          <div className="mb-1 mr-1.5" key={`category-${category.slug}`}>
+            <Tag href={category.permalink}>
+              {category.title}
+            </Tag>
+          </div>
         ))}
       </div>
     </Layout>
