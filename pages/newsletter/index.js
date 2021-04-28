@@ -41,12 +41,10 @@ export default function Newsletter({
 
       <ul className="list-none my-6 p-0 space-y-3">
         {BENEFITS.map(listItem => (
-          <li className="flex m-0" key={`newsletter-benefit-${listItem}`}>
-            <div className="flex-shrink-0 h-6 mr-1 text-green-300 w-6 dark:text-green-500">
-              <CircledCheckmark />
-            </div>
+          <li className="flex m-0 text-base" key={`newsletter-benefit-${listItem}`}>
+            <CircledCheckmark className="flex-shrink-0 h-6 mr-1 text-green-300 w-6 dark:text-green-500" />
 
-            <span className="text-base">
+            <span>
               {listItem}
             </span>
           </li>

@@ -1,3 +1,11 @@
+function getClassNamesForTrend(trend) {
+  if (trend > 0) {
+    return 'bg-green-200 text-green-700 dark:bg-green-600 dark:text-gray-50
+  }
+
+  return 'bg-red-200 text-red-700 dark:bg-red-600 dark:text-gray-50'
+}
+
 export default function Metrics({
   label,
   metrics,
@@ -15,6 +23,7 @@ export default function Metrics({
           value,
         }) => {
           const trend = change ? Number.parseFloat(value / (value - change) * 100 - 100).toFixed(0) : 0
+          const classNames = getClassNamesForTrend(trend)
 
           return (
             <div className="flex flex-col" key={label}>
@@ -23,18 +32,7 @@ export default function Metrics({
                   {value}
                 </p>
 
-                <span
-                  className={`
-                    ${trend > 0 ? 'bg-green-200 dark:bg-green-600' : 'bg-red-200 dark:bg-red-600'}
-                    font-medium
-                    inline-block
-                    px-2
-                    py-0.5
-                    rounded-full
-                    ${trend > 0 ? 'text-green-700 dark:text-gray-50' : 'text-red-700 dark:text-gray-50'}
-                    text-xs
-                  `}
-                >
+                <span className={`font-medium inline-block px-2 py-0.5 rounded-full text-xs ${classNames}`}>
                   {trend >= 0 && '+'}{trend}%
                 </span>
               </div>

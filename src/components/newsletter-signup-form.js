@@ -60,18 +60,16 @@ export default function NewsletterSignupForm() {
             />
           </div>
 
-          <div className="flex flex-col w-240">
+          <div className="flex flex-col w-28">
             <Button disabled={loading} type="submit">
               <div className="relative">
                 {loading && (
                   <div className="absolute flex inset-0 items-center justify-center text-gray-50">
-                    <div className="animate-spin w-4 h-4">
-                      <LoadingIndicator />
-                    </div>
+                    <LoadingIndicator className="animate-spin w-4 h-4" />
                   </div>
                 )}
 
-                <span className={`${loading && 'invisible'}`}>
+                <span className={`${loading ? 'invisible' : ''}`}>
                   Subscribe
                 </span>
               </div>
