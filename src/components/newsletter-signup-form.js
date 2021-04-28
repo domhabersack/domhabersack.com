@@ -60,7 +60,7 @@ export default function NewsletterSignupForm() {
             />
           </div>
 
-          <div className="flex flex-col w-28">
+          <div className="flex flex-col flex-shrink-0 w-28">
             <Button disabled={loading} type="submit">
               <div className="relative">
                 {loading && (
