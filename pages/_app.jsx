@@ -1,4 +1,3 @@
-import React from 'react'
 import Head from 'next/head'
 
 import '@/styles/global.css'
@@ -8,7 +7,7 @@ export default function App({
   pageProps,
 }) {
   return (
-    <React.Fragment>
+    <>
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
@@ -19,6 +18,6 @@ export default function App({
       </Head>
 
       <Component {...pageProps} />
-    </React.Fragment>
+    </>
   )
 }

@@ -1,5 +1,3 @@
-import React from 'react'
-
 import Breakout from '@/components/breakout'
 import Figure from '@/components/figure'
 import Layout from '@/components/layout'
@@ -78,9 +76,7 @@ export default function Newsletter({
 
           <div className="grid gap-12 grid-cols-1 mb-8">
             {related.map(newsletter => (
-              <React.Fragment key={`newsletter-${newsletter.slug}`}>
-                <NewsletterTeaser newsletter={newsletter} />
-              </React.Fragment>
+              <NewsletterTeaser key={`newsletter-${newsletter.slug}`} newsletter={newsletter} />
             ))}
           </div>
 

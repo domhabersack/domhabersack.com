@@ -1,5 +1,3 @@
-import React from 'react'
-
 import Breakout from '@/components/breakout'
 import CourseTeasers from '@/components/course-teasers'
 import Layout from '@/components/layout'

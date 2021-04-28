@@ -1,5 +1,3 @@
-import React from 'react'
-
 import CircledCheckmark from '@/icons/circled-checkmark'
 import NewsletterSignupForm from '@/components/newsletter-signup-form'
 import Layout from '@/components/layout'
@@ -43,17 +41,13 @@ export default function Newsletter({
 
       <ul className="list-none my-6 p-0 space-y-3">
         {BENEFITS.map(listItem => (
-          <React.Fragment key={`newsletter-benefit-${listItem}`}>
-            <li className="flex m-0">
-              <div className="flex-shrink-0 h-6 mr-1 text-green-300 w-6 dark:text-green-500">
-                <CircledCheckmark />
-              </div>
+          <li className="flex m-0 text-base" key={`newsletter-benefit-${listItem}`}>
+            <CircledCheckmark className="flex-shrink-0 h-6 mr-1 text-green-300 w-6 dark:text-green-500" />
 
-              <span className="text-base">
-                {listItem}
-              </span>
-            </li>
-          </React.Fragment>
+            <span>
+              {listItem}
+            </span>
+          </li>
         ))}
       </ul>
 
@@ -71,9 +65,7 @@ export default function Newsletter({
 
       <div className="grid gap-12 grid-cols-1 mb-8">
         {latestNewsletters.map(newsletter => (
-          <React.Fragment key={`newsletter-${newsletter.slug}`}>
-            <NewsletterTeaser newsletter={newsletter} />
-          </React.Fragment>
+          <NewsletterTeaser key={`newsletter-${newsletter.slug}`} newsletter={newsletter} />
         ))}
       </div>
 

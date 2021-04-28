@@ -1,11 +1,9 @@
-import React from 'react'
-
 import NewsletterSignupForm from '@/components/newsletter-signup-form'
 import UppercaseHeading from '@/components/uppercase-heading'
 
 export default function NewsletterSignup() {
   return (
-    <React.Fragment>
+    <>
       <UppercaseHeading>
         Subscribe to my newsletter
       </UppercaseHeading>
@@ -15,6 +13,6 @@ export default function NewsletterSignup() {
       </p>
 
       <NewsletterSignupForm />
-    </React.Fragment>
+    </>
   )
 }

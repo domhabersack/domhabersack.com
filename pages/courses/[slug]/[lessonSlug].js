@@ -1,5 +1,3 @@
-import React from 'react'
-
 import Layout from '@/components/layout'
 import Lessons from '@/components/lessons'
 import MetaTags from '@/components/meta-tags'
@@ -47,7 +45,7 @@ export default function CourseLesson({
       </div>
 
       {course.lessons && (
-        <React.Fragment>
+        <>
           <h2 className="text-xl">
             All lessons in this course
           </h2>
@@ -56,7 +54,7 @@ export default function CourseLesson({
             currentLessonId={id}
             lessons={course.lessons}
           />
-        </React.Fragment>
+        </>
       )}
     </Layout>
   )

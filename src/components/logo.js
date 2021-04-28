@@ -1,5 +1,3 @@
-import React from 'react'
-
 import getLogoForName from '@/lib/get-logo-for-name'
 
 export default function Logo({
@@ -13,7 +11,7 @@ export default function Logo({
   } = getLogoForName(name)
 
   return (
-    <React.Fragment>
+    <>
       {Regular && (
         <Regular
           alt={name}
@@ -37,6 +35,6 @@ export default function Logo({
           title={name}
         />
       )}
-    </React.Fragment>
+    </>
   )
 }

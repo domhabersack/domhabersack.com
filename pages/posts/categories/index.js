@@ -1,5 +1,3 @@
-import React from 'react'
-
 import Breakout from '@/components/breakout'
 import Layout from '@/components/layout'
 import MetaTags from '@/components/meta-tags'
@@ -30,7 +28,7 @@ export default function Categories({
       </h1>
 
       {categories.map(category => (
-        <React.Fragment key={`category-${category.slug}`}>
+        <div key={`category-${category.slug}`}>
           <h2>
             {category.title} &times; {category.posts.length}
           </h2>
@@ -38,7 +36,7 @@ export default function Categories({
           <Breakout>
             <PostTeasers posts={category.posts} />
           </Breakout>
-        </React.Fragment>
+        </div>
       ))}
     </Layout>
   )

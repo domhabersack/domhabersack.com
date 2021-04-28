@@ -1,4 +1,3 @@
-import React from 'react'
 import Image from 'next/image'
 
 import Card from '@/components/card'
@@ -83,15 +82,14 @@ export default function Index({
                   href,
                   Logo
                 }]) => (
-                  <React.Fragment key={title}>
-                    <a
-                      className="block h-6 w-6 text-gray-600 dark:text-gray-300"
-                      href={href}
-                      title={title}
-                    >
-                      <Logo />
-                    </a>
-                  </React.Fragment>
+                  <a
+                    className="block h-6 w-6 text-gray-600 dark:text-gray-300"
+                    href={href}
+                    key={title}
+                    title={title}
+                  >
+                    <Logo />
+                  </a>
                 ))}
               </div>
             </div>
@@ -157,9 +155,7 @@ export default function Index({
 
           <div className="grid gap-8 grid-cols-1 mb-8 sm:gap-4 sm:grid-cols-2">
             {posts.map(post => (
-              <React.Fragment key={`post-teaser-${post.slug}`}>
-                <PostTeaser post={post} />
-              </React.Fragment>
+              <PostTeaser key={`post-teaser-${post.slug}`} post={post} />
             ))}
           </div>
 

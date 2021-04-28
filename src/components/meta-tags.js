@@ -1,4 +1,3 @@
-import React from 'react'
 import Head from 'next/head'
 
 import config from '@/config'
@@ -53,12 +52,12 @@ export default function MetaTags({
       {type && (<meta property="og:type" content={type} />)}
 
       {isArticle && (
-        <React.Fragment>
+        <>
           {expiredAt && (<meta property="article:expiration_time" content={expiredAt} />)}
           {publishedAt && (<meta property="article:published_time" content={publishedAt} />)}
           {tags?.map(tag => (<meta property="article:tag" content={tag.title} key={`tag-${tag.slug}`} />))}
           {updatedAt && (<meta property="article:modified_time" content={updatedAt} />)}
-        </React.Fragment>
+        </>
       )}
     </Head>
   )

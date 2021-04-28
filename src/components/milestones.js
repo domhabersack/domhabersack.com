@@ -10,8 +10,7 @@ export default function Milestones({
           <Milestone milestone={milestone} />
 
           {((i + 1) < milestones.length) && (
-            <div className="absolute bg-gray-200 -bottom-10 left-5 -m-px rounded-full top-12 w-0.5 dark:bg-gray-700">
-            </div>
+            <div className="absolute bg-gray-200 -bottom-10 left-5 -m-px rounded-full top-12 w-0.5 dark:bg-gray-700" />
           )}
         </div>
       ))}

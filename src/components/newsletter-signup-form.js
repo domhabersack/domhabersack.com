@@ -1,7 +1,6 @@
 import { useState } from 'react'
+import { Button, Input } from '@yieldui/react'
 
-import Button from '@/components/button'
-import Input from '@/components/input'
 import LoadingIndicator from '@/icons-mini/loading-indicator'
 import { triggerEvent } from '@/lib/analytics'
 
@@ -55,26 +54,27 @@ export default function NewsletterSignupForm() {
               onChange={onChangeEmail}
               placeholder="Enter your email"
               required
+              size="small"
               type="email"
               value={email}
             />
           </div>
 
-          <Button className="w-24" disabled={loading} type="submit">
-            <div className="relative">
-              {loading && (
-                <div className="absolute flex inset-0 items-center justify-center text-gray-50">
-                  <div className="animate-spin w-4 h-4">
-                    <LoadingIndicator />
+          <div className="flex flex-col flex-shrink-0 w-28">
+            <Button disabled={loading} type="submit">
+              <div className="relative">
+                {loading && (
+                  <div className="absolute flex inset-0 items-center justify-center text-gray-50">
+                    <LoadingIndicator className="animate-spin w-4 h-4" />
                   </div>
-                </div>
-              )}
+                )}
 
-              <span className={`${loading && 'invisible'}`}>
-                Subscribe
-              </span>
-            </div>
-          </Button>
+                <span className={`${loading ? 'invisible' : ''}`}>
+                  Subscribe
+                </span>
+              </div>
+            </Button>
+          </div>
         </div>
 
         {failure && (

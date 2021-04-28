@@ -1,4 +1,4 @@
-import React from 'react'
+import { Fragment } from 'react'
 
 export default function Breadcrumbs({
   breadcrumbs,
@@ -19,7 +19,7 @@ export default function Breadcrumbs({
         label,
         url
       }) => url ? (
-        <React.Fragment key={`breadcrumb-${label}`}>
+        <Fragment key={`breadcrumb-${label}`}>
           <a
             className="inline-block"
             href={url}
@@ -30,13 +30,11 @@ export default function Breadcrumbs({
           <span className="mx-1 text-gray-500 dark:text-gray-400">
             &raquo;
           </span>
-        </React.Fragment>
+        </Fragment>
       ) : (
-        <React.Fragment key={`breadcrumb-${label}`}>
-          <span className="text-gray-400 dark:text-gray-300">
-            {label}
-          </span>
-        </React.Fragment>
+        <span className="text-gray-400 dark:text-gray-300" key={`breadcrumb-${label}`}>
+          {label}
+        </span>
       ))}
     </nav>
   )

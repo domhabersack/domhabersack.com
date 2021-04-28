@@ -1,11 +1,10 @@
-import React from 'react'
+import { Tag } from '@yieldui/react'
 
 import Breakout from '@/components/breakout'
 import Figure from '@/components/figure'
 import Layout from '@/components/layout'
 import MetaTags from '@/components/meta-tags'
 import PostMeta from '@/components/post-meta'
-import Tag from '@/components/tag'
 import { getAllPostSlugs, getPostBySlug } from '@/lib/api/posts'
 import getMDXSource from '@/lib/get-mdx-source'
 import hydrateMDXSource from '@/lib/hydrate-mdx-source'
@@ -74,13 +73,11 @@ export default function Post({
 
       <div className="flex flex-wrap">
         {categories.map(category => (
-          <React.Fragment key={`category-${category.slug}`}>
-            <div className="mb-1 mr-1.5">
-              <Tag href={category.permalink}>
-                {category.title}
-              </Tag>
-            </div>
-          </React.Fragment>
+          <div className="mb-1 mr-1.5" key={`category-${category.slug}`}>
+            <Tag href={category.permalink}>
+              {category.title}
+            </Tag>
+          </div>
         ))}
       </div>
     </Layout>

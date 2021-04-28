@@ -1,5 +1,3 @@
-import React from 'react'
-
 import Logo from '@/components/logo'
 
 const STACK = [
@@ -27,9 +25,7 @@ export default function MyStack() {
   return (
     <div className="flex flex-wrap justify-center">
       {STACK.map(tool => (
-        <React.Fragment key={`tool-${tool}`}>
-          <Logo className="h-9 m-2 w-9" name={tool} />
-        </React.Fragment>
+        <Logo className="h-9 m-2 w-9" key={`tool-${tool}`} name={tool} />
       ))}
     </div>
   )

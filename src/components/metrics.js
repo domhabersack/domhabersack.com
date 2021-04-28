@@ -1,11 +1,17 @@
-import React from 'react'
+function getClassNamesForTrend(trend) {
+  if (trend > 0) {
+    return 'bg-green-200 text-green-700 dark:bg-green-600 dark:text-gray-50
+  }
+
+  return 'bg-red-200 text-red-700 dark:bg-red-600 dark:text-gray-50'
+}
 
 export default function Metrics({
   label,
   metrics,
 }) {
   return (
-    <React.Fragment>
+    <>
       <h3 className="m-0 mb-1 font-bold text-sm uppercase">
         {label}
       </h3>
@@ -17,39 +23,27 @@ export default function Metrics({
           value,
         }) => {
           const trend = change ? Number.parseFloat(value / (value - change) * 100 - 100).toFixed(0) : 0
+          const classNames = getClassNamesForTrend(trend)
 
           return (
-            <React.Fragment key={label}>
-              <div className="flex flex-col">
-                <div className="flex items-center space-x-2.5">
-                  <p className="font-bold m-0 text-3xl text-gray-900 dark:text-gray-100">
-                    {value}
-                  </p>
+            <div className="flex flex-col" key={label}>
+              <div className="flex items-center space-x-2.5">
+                <p className="font-bold m-0 text-3xl text-gray-900 dark:text-gray-100">
+                  {value}
+                </p>
 
-                  <span
-                    className={`
-                      ${trend > 0 ? 'bg-green-200 dark:bg-green-600' : 'bg-red-200 dark:bg-red-600'}
-                      font-medium
-                      inline-block
-                      px-2
-                      py-0.5
-                      rounded-full
-                      ${trend > 0 ? 'text-green-700 dark:text-gray-50' : 'text-red-700 dark:text-gray-50'}
-                      text-xs
-                    `}
-                  >
-                    {trend >= 0 && '+'}{trend}%
-                  </span>
-                </div>
-
-                <h4 className="font-medium m-0 text-gray-600 text-sm dark:text-gray-300">
-                  {label}
-                </h4>
+                <span className={`font-medium inline-block px-2 py-0.5 rounded-full text-xs ${classNames}`}>
+                  {trend >= 0 && '+'}{trend}%
+                </span>
               </div>
-            </React.Fragment>
+
+              <h4 className="font-medium m-0 text-gray-600 text-sm dark:text-gray-300">
+                {label}
+              </h4>
+            </div>
           )
         })}
       </div>
-    </React.Fragment>
+    </>
   )
 }
