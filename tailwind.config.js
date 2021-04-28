@@ -4,6 +4,7 @@ module.exports = {
   purge: [
     './pages/**/*.js',
     './src/**/*.js',
+    './node_modules/@yieldui/react/dist/**/*.js',
   ],
   darkMode: 'media',
   theme: {
