@@ -1,6 +1,6 @@
 import Image from 'next/image'
+import { Card } from '@yieldui/react'
 
-import Card from '@/components/card'
 import BookIcon from '@/icons/book'
 
 export default function CourseTeaser({

@@ -69,15 +69,17 @@ export default function Milestone({
         {newsletter && (
           <div className="mt-3">
             <Card>
-              <h4 className="font-bold mb-0.5 text-sm">
-                <a href={newsletter.permalink}>
-                  {newsletter.title}
-                </a>
-              </h4>
+              <div className="px-4 py-3">
+                <h4 className="font-bold mb-0.5 text-sm">
+                  <a href={newsletter.permalink}>
+                    {newsletter.title}
+                  </a>
+                </h4>
 
-              <p className="m-0 text-sm">
-                {newsletter.excerpt}
-              </p>
+                <p className="m-0 text-sm">
+                  {newsletter.excerpt}
+                </p>
+              </div>
             </Card>
           </div>
         )}
@@ -85,15 +87,17 @@ export default function Milestone({
         {project && (
           <div className="mt-3">
             <Card>
-              <h4 className="font-bold mb-0.5 text-sm">
-                <a href={project.permalink}>
-                  {project.title}
-                </a>
-              </h4>
+              <div className="px-4 py-3">
+                <h4 className="font-bold mb-0.5 text-sm">
+                  <a href={project.permalink}>
+                    {project.title}
+                  </a>
+                </h4>
 
-              <p className="m-0 text-sm">
-                {project.excerpt}
-              </p>
+                <p className="m-0 text-sm">
+                  {project.excerpt}
+                </p>
+              </div>
             </Card>
           </div>
         )}

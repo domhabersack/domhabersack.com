@@ -1,6 +1,6 @@
 import Image from 'next/image'
+import { Card } from '@yieldui/react'
 
-import Card from '@/components/card'
 import Email from '@/icons-fill/email'
 import Layout from '@/components/layout'
 import LinkedIn from '@/icons/linkedin-logo'

@@ -1,6 +1,6 @@
 import Image from 'next/image'
+import { Card } from '@yieldui/react'
 
-import Card from '@/components/card'
 import CoinsIcon from '@/icons/coins'
 import LinkIcon from '@/icons/link'
 import Stack from '@/components/stack'
