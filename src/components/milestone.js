@@ -1,28 +1,19 @@
 import { Card } from '@yieldui/react'
 
+import Icon from '@/components/icon'
 import formatDate from '@/lib/format-date'
-import Calendar from '@/icons/calendar'
-import Cards from '@/icons/cards'
-import Email from '@/icons/email'
-import Lightbulb from '@/icons/lightbulb-on'
-import Coins from '@/icons/coins'
-import EmailWithLetter from '@/icons/email-with-letter'
-import Rocket from '@/icons/rocket'
-import Smartphone from '@/icons/smartphone'
-import Sparkles from '@/icons/sparkles'
-import Stack from '@/icons/stack'
 
 const ICONS = {
-  'calendar': <Calendar />,
-  'cards': <Cards />,
-  'coins': <Coins />,
-  'email': <Email />,
-  'lightbulb': <Lightbulb />,
-  'newsletter': <EmailWithLetter />,
-  'rocket': <Rocket />,
-  'sparkles': <Sparkles />,
-  'smartphone': <Smartphone />,
-  'stack': <Stack />,
+  'calendar': <Icon type="calendar" />,
+  'cards': <Icon type="cards" />,
+  'coins': <Icon type="coins" />,
+  'email': <Icon type="email" />,
+  'lightbulb': <Icon type="lightbulb-on" />,
+  'newsletter': <Icon type="email-with-letter" />,
+  'rocket': <Icon type="rocket" />,
+  'sparkles': <Icon type="sparkles" />,
+  'smartphone': <Icon type="smartphone" />,
+  'stack': <Icon type="stack" />,
 }
 
 export default function Milestone({

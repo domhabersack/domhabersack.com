@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import { Card } from '@yieldui/react'
 
-import BookIcon from '@/icons/book'
+import Icon from '@/components/icon'
 
 export default function CourseTeaser({
   course,
@@ -40,7 +40,7 @@ export default function CourseTeaser({
         </div>
 
         <footer className="bg-gray-100 flex items-center px-4 py-3 space-x-1 text-gray-600 text-xs dark:bg-black dark:text-gray-300">
-          <BookIcon className="h-6 w-6 dark:text-gray-400" />
+          <Icon className="h-6 w-6 dark:text-gray-400" type="book" />
 
           <span>
             <strong>{lessons.length}</strong> lessons

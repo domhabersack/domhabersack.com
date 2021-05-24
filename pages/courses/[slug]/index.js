@@ -1,4 +1,4 @@
-import BookIcon from '@/icons/book'
+import Icon from '@/components/icon'
 import Layout from '@/components/layout'
 import Lessons from '@/components/lessons'
 import MetaTags from '@/components/meta-tags'
@@ -43,9 +43,7 @@ export default function Course({
 
         <aside className="bg-gray-100 flex flex-wrap mb-6 px-4 py-3 space-x-5 rounded-lg shadow-sm text-gray-600 text-xs dark:bg-black dark:text-gray-300">
           <div className="flex items-center space-x-1">
-            <div className="h-6 w-6 dark:text-gray-400">
-              <BookIcon />
-            </div>
+            <Icon className="h-6 w-6 dark:text-gray-400" type="book" />
 
             <span>
               <strong>{lessons.length}</strong> lessons

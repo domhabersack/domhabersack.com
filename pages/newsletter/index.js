@@ -1,7 +1,7 @@
-import CircledCheckmark from '@/icons/circled-checkmark'
-import NewsletterSignupForm from '@/components/newsletter-signup-form'
+import Icon from '@/components/icon'
 import Layout from '@/components/layout'
 import MetaTags from '@/components/meta-tags'
+import NewsletterSignupForm from '@/components/newsletter-signup-form'
 import NewsletterTeaser from '@/components/newsletter-teaser'
 import { getLatestNewsletters } from '@/lib/api/newsletters'
 
@@ -41,8 +41,10 @@ export default function Newsletter({
 
       <ul className="list-none my-6 p-0 space-y-3">
         {BENEFITS.map(listItem => (
-          <li className="flex m-0 text-base" key={`newsletter-benefit-${listItem}`}>
-            <CircledCheckmark className="flex-shrink-0 h-6 mr-1 text-green-300 w-6 dark:text-green-500" />
+          <li className="flex m-0 space-x-1.5 text-base" key={`newsletter-benefit-${listItem}`}>
+            <div className="bg-green-300 flex flex-shrink-0 h-6 items-center justify-center rounded-full w-6 dark:bg-green-400">
+              <Icon className="h-4 text-green-800 w-4 dark:text-green-900" type="tick" small />
+            </div>
 
             <span>
               {listItem}

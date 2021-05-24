@@ -1,8 +1,7 @@
 import Image from 'next/image'
 import { Card } from '@yieldui/react'
 
-import CoinsIcon from '@/icons/coins'
-import LinkIcon from '@/icons/link'
+import Icon from '@/components/icon'
 import Stack from '@/components/stack'
 
 export default function ProjectTeaser({
@@ -48,9 +47,7 @@ export default function ProjectTeaser({
 
         <footer className="bg-gray-100 flex flex-wrap justify-between px-4 py-3 text-gray-600 text-xs dark:bg-black dark:text-gray-300">
           <div className="flex items-center space-x-1">
-            <div className="h-6 w-6 dark:text-gray-400">
-              <CoinsIcon />
-            </div>
+            <Icon className="h-6 w-6 dark:text-gray-400" type="coins" />
 
             <span>
               Revenue: <strong>${revenue}</strong>/month
@@ -61,9 +58,7 @@ export default function ProjectTeaser({
             className="flex items-center"
             href={url}
           >
-            <div className="h-6 w-6">
-              <LinkIcon />
-            </div>
+            <Icon className="h-6 w-6" type="link" />
 
             <span>
               Website

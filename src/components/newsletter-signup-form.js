@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Button, Input } from '@yieldui/react'
 
-import LoadingIndicator from '@/icons-mini/loading-indicator'
+import Icon from '@/components/icon'
 import { triggerEvent } from '@/lib/analytics'
 
 export default function NewsletterSignupForm() {
@@ -65,7 +65,7 @@ export default function NewsletterSignupForm() {
               <div className="relative">
                 {loading && (
                   <div className="absolute flex inset-0 items-center justify-center text-gray-50">
-                    <LoadingIndicator className="animate-spin w-4 h-4" />
+                    <Icon className="animate-spin w-4 h-4" type="loading-indicator" small />
                   </div>
                 )}
 

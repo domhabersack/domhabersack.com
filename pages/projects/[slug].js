@@ -1,8 +1,7 @@
 import Breakout from '@/components/breakout'
-import CoinsIcon from '@/icons/coins'
+import Icon from '@/components/icon'
 import Figure from '@/components/figure'
 import Layout from '@/components/layout'
-import LinkIcon from '@/icons/link'
 import MetaTags from '@/components/meta-tags'
 import Stack from '@/components/stack'
 import { getAllProjectSlugs, getProjectBySlug } from '@/lib/api/projects'
@@ -48,9 +47,7 @@ export default function Project({
 
       <aside className="bg-gray-100 flex flex-wrap justify-between mb-6 px-4 py-3 rounded-lg shadow-sm text-gray-600 text-xs dark:bg-black dark:text-gray-300">
         <div className="flex items-center space-x-1">
-          <div className="h-6 w-6 dark:text-gray-400">
-            <CoinsIcon />
-          </div>
+          <Icon className="h-6 w-6 dark:text-gray-400" type="coins" />
 
           <span>
             Revenue: <strong>${revenue}</strong>/month
@@ -61,9 +58,7 @@ export default function Project({
           className="flex items-center"
           href={url}
         >
-          <div className="h-6 w-6">
-            <LinkIcon />
-          </div>
+          <Icon className="h-6 w-6" type="link" />
 
           <span>
             Website

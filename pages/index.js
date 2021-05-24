@@ -1,17 +1,14 @@
 import Image from 'next/image'
 import { Card } from '@yieldui/react'
 
-import Email from '@/icons-fill/email'
+import Icon from '@/components/icon'
 import Layout from '@/components/layout'
-import LinkedIn from '@/icons/linkedin-logo'
 import MetaTags from '@/components/meta-tags'
 import Milestones from '@/components/milestones'
 import MyStack from '@/components/my-stack'
 import NewsletterSignup from '@/components/newsletter-signup'
 import PostTeaser from '@/components/post-teaser'
 import ProjectTeaser from '@/components/project-teaser'
-import Twitter from '@/icons/twitter-logo'
-import YouTube from '@/icons/youtube-logo'
 import { getAllMilestones } from '@/lib/api/milestones'
 import { getAuthorBySlug } from '@/lib/api/authors'
 import { getProjectBySlug } from '@/lib/api/projects'
@@ -20,20 +17,21 @@ import { getLatestPosts } from '@/lib/api/posts'
 const SOCIAL_PROFILES = {
   '@domhabersack on Twitter': {
     href: 'https://twitter.com/domhabersack',
-    Logo: Twitter,
+    icon: 'twitter-logo',
   },
   'Dom Habersack on YouTube': {
     href: 'https://youtube.com/channel/UCi_V66TGKpeSHV_4DYCFbjw',
-    Logo: YouTube,
+    icon: 'youtube-logo',
   },
   'Dom Habersack on LinkedIn': {
     href: 'https://linkedin.com/in/domhabersack',
-    Logo: LinkedIn,
+    icon: 'linkedin-logo',
   },
   'dom@domhabersack.com': {
     href: 'mailto:dom@domhabersack.com',
-    Logo: Email,
-  },
+    icon: 'email',
+    isIconSolid: true,
+  }
 }
 
 export default function Index({
@@ -80,15 +78,16 @@ export default function Index({
               <div className="flex space-x-2.5">
                 {Object.entries(SOCIAL_PROFILES).map(([title, {
                   href,
-                  Logo
+                  icon,
+                  isIconSolid,
                 }]) => (
                   <a
-                    className="block h-6 w-6 text-gray-600 dark:text-gray-300"
+                    className="block text-gray-600 dark:text-gray-300"
                     href={href}
                     key={title}
                     title={title}
                   >
-                    <Logo />
+                    <Icon className="h-6 w-6" type={icon} solid={isIconSolid} />
                   </a>
                 ))}
               </div>

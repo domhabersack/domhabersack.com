@@ -1,51 +1,44 @@
-import CodePen from '@/icons/codepen-logo'
-import Dribbble from '@/icons/dribbble-logo'
-import Email from '@/icons-fill/email'
-import GitHub from '@/icons/github-logo'
-import LinkedIn from '@/icons/linkedin-logo'
-import Mastodon from '@/icons/mastodon-logo'
+import Icon from '@/components/icon'
 import NewsletterSignup from '@/components/newsletter-signup'
-import Twitch from '@/icons/twitch-logo'
-import Twitter from '@/icons/twitter-logo'
 import UppercaseHeading from '@/components/uppercase-heading'
-import YouTube from '@/icons/youtube-logo'
 
 const SOCIAL_PROFILES = {
   '@domhabersack on Twitter': {
     href: 'https://twitter.com/domhabersack',
-    Logo: Twitter,
+    icon: 'twitter-logo',
   },
   'Dom Habersack on YouTube': {
     href: 'https://youtube.com/channel/UCi_V66TGKpeSHV_4DYCFbjw',
-    Logo: YouTube,
+    icon: 'youtube-logo',
   },
   'domhabersack on Twitch': {
     href: 'https://twitch.tv/domhabersack',
-    Logo: Twitch,
+    icon: 'twitch-logo',
   },
   'domhabersack on GitHub': {
     href: 'https://github.com/domhabersack',
-    Logo: GitHub,
+    icon: 'github-logo',
   },
   'domhabersack on CodePen': {
     href: 'https://codepen.io/domhabersack',
-    Logo: CodePen,
+    icon: 'codepen-logo',
   },
   'Dom Habersack on LinkedIn': {
     href: 'https://linkedin.com/in/domhabersack',
-    Logo: LinkedIn,
+    icon: 'linkedin-logo',
   },
   'domhabersack on dribbble': {
     href: 'https://dribbble.com/domhabersack',
-    Logo: Dribbble,
+    icon: 'dribbble-logo',
   },
   '@domhabersack on mastodon.social': {
     href: 'https://mastodon.social/@domhabersack',
-    Logo: Mastodon,
+    icon: 'mastodon-logo',
   },
   'dom@domhabersack.com': {
     href: 'mailto:dom@domhabersack.com',
-    Logo: Email,
+    icon: 'email',
+    isIconSolid: true,
   }
 }
 
@@ -116,15 +109,16 @@ export default function Footer() {
         <div className="flex space-x-2.5">
           {Object.entries(SOCIAL_PROFILES).map(([title, {
             href,
-            Logo
+            icon,
+            isIconSolid,
           }]) => (
             <a
-              className="block h-6 w-6 text-gray-600 dark:text-gray-300"
+              className="block text-gray-600 dark:text-gray-300"
               href={href}
               key={title}
               title={title}
             >
-              <Logo />
+              <Icon className="h-6 w-6" type={icon} solid={isIconSolid} />
             </a>
           ))}
         </div>
