@@ -17,7 +17,7 @@ export default function VimeoVideo({
             Watch on Vimeo
           </span>
 
-          <Icon className="h-4 w-4" type="external-link" small />
+          <Icon className="h-4 w-4" type="external-link" size="small" />
         </div>
       </div>
     </a>

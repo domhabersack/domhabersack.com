@@ -43,7 +43,7 @@ export default function Newsletter({
         {BENEFITS.map(listItem => (
           <li className="flex m-0 space-x-1.5 text-base" key={`newsletter-benefit-${listItem}`}>
             <div className="bg-green-300 flex flex-shrink-0 h-6 items-center justify-center rounded-full w-6 dark:bg-green-400">
-              <Icon className="h-4 text-green-800 w-4 dark:text-green-900" type="tick" small />
+              <Icon className="h-4 text-green-800 w-4 dark:text-green-900" type="tick" size="small" />
             </div>
 
             <span>

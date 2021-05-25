@@ -1,24 +1,30 @@
-import getIconPath from '@/lib/get-icon-path'
+import { useState, useEffect } from 'react'
 
 export default function Icon({
-  small = false,
-  solid = false,
+  size = 'medium',
+  style = 'outline',
   type,
   ...props
 }) {
-  const size = small ? 16 : 24
+  const [path, setPath] = useState(null)
+  const [viewBox, setViewBox] = useState(null)
 
-  let identifier = type
-  if (solid) identifier += '--solid'
-  if (small) identifier += '--small'
+  useEffect(async () => {
+    const result = await fetch(`/api/icons?name=${type}&size=${size}&style=${style}`)
 
-  const path = getIconPath(identifier)
+    if (result.ok) {
+      const json = await result.json()
+
+      setPath(json.path)
+      setViewBox(json.viewBox)
+    }
+  }, [])
 
   return (
     <svg
       height="100%"
       version="1.1"
-      viewBox={`0 0 ${size} ${size}`}
+      viewBox={viewBox}
       width="100%"
       xmlns="http://www.w3.org/2000/svg"
       xmlnsXlink="http://www.w3.org/1999/xlink"
@@ -27,7 +33,6 @@ export default function Icon({
       <path
         d={path}
         fill="currentColor"
-        fillRule="evenodd"
       />
     </svg>
   )

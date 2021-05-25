@@ -118,7 +118,7 @@ export default function Footer() {
               key={title}
               title={title}
             >
-              <Icon className="h-6 w-6" type={icon} solid={isIconSolid} />
+              <Icon className="h-6 w-6" type={icon} style={isIconSolid ? 'solid' : 'outline'} />
             </a>
           ))}
         </div>

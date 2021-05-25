@@ -65,7 +65,7 @@ export default function NewsletterSignupForm() {
               <div className="relative">
                 {loading && (
                   <div className="absolute flex inset-0 items-center justify-center text-gray-50">
-                    <Icon className="animate-spin w-4 h-4" type="loading-indicator" small />
+                    <Icon className="animate-spin w-4 h-4" type="loading-indicator" size="small" />
                   </div>
                 )}
 
