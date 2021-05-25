@@ -30,7 +30,7 @@ const SOCIAL_PROFILES = {
   'dom@domhabersack.com': {
     href: 'mailto:dom@domhabersack.com',
     icon: 'email',
-    isIconSolid: true,
+    iconStyle: 'solid',
   }
 }
 
@@ -79,7 +79,7 @@ export default function Index({
                 {Object.entries(SOCIAL_PROFILES).map(([title, {
                   href,
                   icon,
-                  isIconSolid,
+                  iconStyle,
                 }]) => (
                   <a
                     className="block text-gray-600 dark:text-gray-300"
@@ -87,7 +87,7 @@ export default function Index({
                     key={title}
                     title={title}
                   >
-                    <Icon className="h-6 w-6" type={icon} style={isIconSolid ? 'solid' : 'outline'} />
+                    <Icon className="h-6 w-6" type={icon} style={iconStyle} />
                   </a>
                 ))}
               </div>

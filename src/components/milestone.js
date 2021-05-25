@@ -3,19 +3,6 @@ import { Card } from '@yieldui/react'
 import Icon from '@/components/icon'
 import formatDate from '@/lib/format-date'
 
-const ICONS = {
-  'calendar': <Icon type="calendar" />,
-  'cards': <Icon type="cards" />,
-  'coins': <Icon type="coins" />,
-  'email': <Icon type="email" />,
-  'lightbulb': <Icon type="lightbulb-on" />,
-  'newsletter': <Icon type="email-with-letter" />,
-  'rocket': <Icon type="rocket" />,
-  'sparkles': <Icon type="sparkles" />,
-  'smartphone': <Icon type="smartphone" />,
-  'stack': <Icon type="stack" />,
-}
-
 export default function Milestone({
   milestone,
 }) {
@@ -27,8 +14,6 @@ export default function Milestone({
     title,
   } = milestone
 
-  const Icon = ICONS[icon]
-
   const {
     newsletter,
     project,
@@ -37,9 +22,7 @@ export default function Milestone({
   return (
     <div className="flex items-start space-x-2.5">
       <div className="bg-yellow-300 p-2 rounded-full dark:bg-yellow-400">
-        <div className="h-6 text-gray-700 w-6">
-          {Icon}
-        </div>
+        <Icon className="h-6 text-gray-700 w-6" type={icon} />
       </div>
 
       <div className="flex-1">
