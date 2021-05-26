@@ -1,10 +1,12 @@
+import { MDXRemote } from 'next-mdx-remote'
+
 import Icon from '@/components/icon'
 import Layout from '@/components/layout'
 import Lessons from '@/components/lessons'
+import MDXComponents from '@/components/mdx-components'
 import MetaTags from '@/components/meta-tags'
 import { getAllCourseSlugs, getCourseBySlug } from '@/lib/api/courses'
 import getMDXSource from '@/lib/get-mdx-source'
-import hydrateMDXSource from '@/lib/hydrate-mdx-source'
 
 export default function Course({
   createdAt,
@@ -15,8 +17,6 @@ export default function Course({
   permalink,
   title,
 }) {
-  const body = hydrateMDXSource(mdxSource)
-
   const breadcrumbs = [
     {
       label: 'Courses',
@@ -51,7 +51,7 @@ export default function Course({
           </div>
         </aside>
 
-        {body}
+        <MDXRemote {...mdxSource} components={MDXComponents} />
       </div>
 
       {lessons && (

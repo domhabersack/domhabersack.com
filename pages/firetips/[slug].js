@@ -1,10 +1,11 @@
+import { MDXRemote } from 'next-mdx-remote'
 import { Tag } from '@yieldui/react'
 
 import Layout from '@/components/layout'
+import MDXComponents from '@/components/mdx-components'
 import MetaTags from '@/components/meta-tags'
 import { getAllFiretipSlugs, getFiretipBySlug } from '@/lib/api/firetips'
 import getMDXSource from '@/lib/get-mdx-source'
-import hydrateMDXSource from '@/lib/hydrate-mdx-source'
 
 export default function Firetip({
   mdxSource,
@@ -12,8 +13,6 @@ export default function Firetip({
   tags,
   title,
 }) {
-  const body = hydrateMDXSource(mdxSource)
-
   const breadcrumbs = [
     {
       label: 'Fire tips',
@@ -35,7 +34,7 @@ export default function Firetip({
         {title}
       </h1>
 
-      {body}
+      <MDXRemote {...mdxSource} components={MDXComponents} />
 
       <div className="flex flex-wrap">
         {tags.map(tag => (

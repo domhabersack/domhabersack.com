@@ -1,10 +1,12 @@
+import { MDXRemote } from 'next-mdx-remote'
+
 import Layout from '@/components/layout'
+import MDXComponents from '@/components/mdx-components'
 import MetaTags from '@/components/meta-tags'
 import NewsletterTeaser from '@/components/newsletter-teaser'
 import PostMeta from '@/components/post-meta'
 import { getAllNewsletterSlugs, getNewsletterBySlug } from '@/lib/api/newsletters'
 import getMDXSource from '@/lib/get-mdx-source'
-import hydrateMDXSource from '@/lib/hydrate-mdx-source'
 
 export default function Newsletter({
   author,
@@ -16,8 +18,6 @@ export default function Newsletter({
   related,
   title,
 }) {
-  const body = hydrateMDXSource(mdxSource)
-
   const breadcrumbs = [
     {
       label: 'Newsletter',
@@ -52,7 +52,7 @@ export default function Newsletter({
         />
       </div>
 
-      {body}
+      <MDXRemote {...mdxSource} components={MDXComponents} />
 
       {hasRelatedIssues && (
         <div className="mt-24">

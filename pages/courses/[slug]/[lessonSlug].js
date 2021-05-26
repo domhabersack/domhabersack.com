@@ -1,10 +1,12 @@
+import { MDXRemote } from 'next-mdx-remote'
+
 import Layout from '@/components/layout'
 import Lessons from '@/components/lessons'
+import MDXComponents from '@/components/mdx-components'
 import MetaTags from '@/components/meta-tags'
 import { getAllCourseSlugs, getCourseBySlug } from '@/lib/api/courses'
 import { getLessonBySlugs, getAllLessonSlugsByCourseSlug } from '@/lib/api/course-lessons'
 import getMDXSource from '@/lib/get-mdx-source'
-import hydrateMDXSource from '@/lib/hydrate-mdx-source'
 
 export default function CourseLesson({
   course,
@@ -14,8 +16,6 @@ export default function CourseLesson({
   permalink,
   title,
 }) {
-  const body = hydrateMDXSource(mdxSource)
-
   const breadcrumbs = [
     {
       label: 'Courses',
@@ -41,7 +41,7 @@ export default function CourseLesson({
       </h1>
 
       <div className="mb-16">
-        {body}
+        <MDXRemote {...mdxSource} components={MDXComponents} />
       </div>
 
       {course.lessons && (

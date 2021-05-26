@@ -1,13 +1,14 @@
+import { MDXRemote } from 'next-mdx-remote'
 import { Tag } from '@yieldui/react'
 
 import Breakout from '@/components/breakout'
 import Figure from '@/components/figure'
 import Layout from '@/components/layout'
+import MDXComponents from '@/components/mdx-components'
 import MetaTags from '@/components/meta-tags'
 import PostMeta from '@/components/post-meta'
 import { getAllPostSlugs, getPostBySlug } from '@/lib/api/posts'
 import getMDXSource from '@/lib/get-mdx-source'
-import hydrateMDXSource from '@/lib/hydrate-mdx-source'
 
 export default function Post({
   author,
@@ -22,8 +23,6 @@ export default function Post({
   permalink,
   title,
 }) {
-  const body = hydrateMDXSource(mdxSource)
-
   const breadcrumbs = [
     {
       label: 'Blog',
@@ -68,7 +67,7 @@ export default function Post({
       </Breakout>
 
       <div className="break-words mb-8">
-        {body}
+        <MDXRemote {...mdxSource} components={MDXComponents} />
       </div>
 
       <div className="flex flex-wrap">

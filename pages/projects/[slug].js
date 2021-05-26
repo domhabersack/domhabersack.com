@@ -1,12 +1,14 @@
+import { MDXRemote } from 'next-mdx-remote'
+
 import Breakout from '@/components/breakout'
 import Icon from '@/components/icon'
 import Figure from '@/components/figure'
 import Layout from '@/components/layout'
+import MDXComponents from '@/components/mdx-components'
 import MetaTags from '@/components/meta-tags'
 import Stack from '@/components/stack'
 import { getAllProjectSlugs, getProjectBySlug } from '@/lib/api/projects'
 import getMDXSource from '@/lib/get-mdx-source'
-import hydrateMDXSource from '@/lib/hydrate-mdx-source'
 
 export default function Project({
   excerpt,
@@ -21,8 +23,6 @@ export default function Project({
   title,
   url,
 }) {
-  const body = hydrateMDXSource(mdxSource)
-
   const breadcrumbs = [
     {
       label: 'Projects',
@@ -75,7 +75,7 @@ export default function Project({
         />
       </Breakout>
 
-      {body}
+      <MDXRemote {...mdxSource} components={MDXComponents} />
 
       <div className="mt-8">
         <Stack stack={stack} />
