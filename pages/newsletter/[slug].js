@@ -1,5 +1,3 @@
-import Breakout from '@/components/breakout'
-import Figure from '@/components/figure'
 import Layout from '@/components/layout'
 import MetaTags from '@/components/meta-tags'
 import NewsletterTeaser from '@/components/newsletter-teaser'
@@ -12,9 +10,6 @@ export default function Newsletter({
   author,
   createdAt,
   excerpt,
-  hero,
-  heroAlt,
-  heroCaption,
   mdxSource,
   ogImage,
   permalink,
@@ -56,15 +51,6 @@ export default function Newsletter({
           createdAt={createdAt}
         />
       </div>
-
-      <Breakout>
-        <Figure
-          alt={heroAlt}
-          caption={heroCaption}
-          className="m-0 mb-6"
-          src={hero}
-        />
-      </Breakout>
 
       {body}
 
