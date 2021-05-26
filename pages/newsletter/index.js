@@ -6,11 +6,10 @@ import NewsletterTeaser from '@/components/newsletter-teaser'
 import { getLatestNewsletters } from '@/lib/api/newsletters'
 
 const BENEFITS = [
+  'progress updates as I build my company in public',
   'tips on design and development you can use immediately',
-  'free previews of my upcoming course materials',
+  'previews of my upcoming course materials',
   'discount codes for my courses and products',
-  'announcements of events I am going to speak at',
-  'access to video recordings of past speaking gigs'
 ]
 
 export default function Newsletter({
@@ -25,18 +24,18 @@ export default function Newsletter({
   return (
     <Layout breadcrumbs={breadcrumbs}>
       <MetaTags
-        description="Weekly tips on design, development, and working smarter."
+        description="I share progress updates on my journey and tips on design, development, and working smarter."
         imageSubpath="pages/newsletter"
         permalink="/newsletter"
         title="Newsletter"
       />
 
       <h1>
-        More tips, straight to your inbox
+        Updates and tips, straight to your inbox
       </h1>
 
       <p>
-        In addition to what I share on this site, I send out a weekly newsletter with tips to help you work smarter. By signing up, you get access to:
+        In addition to what I share on this site, I occasionally send out updates and tips that help you work smarter. By signing up, you get access to:
       </p>
 
       <ul className="list-none my-6 p-0 space-y-3">

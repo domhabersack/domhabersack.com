@@ -9,7 +9,7 @@ export default function NewsletterSignup() {
       </UppercaseHeading>
 
       <p className="mb-2.5 text-gray-600 text-sm dark:text-gray-300">
-        Get weekly progress updates, tips, product previews, and more straight to your inbox. Read previous issues in the <a href="/newsletter/archive">archive</a>.
+        Get progress updates, tips, product previews, and more straight to your inbox. Read previous issues in the <a href="/newsletter/archive">archive</a>.
       </p>
 
       <NewsletterSignupForm />
