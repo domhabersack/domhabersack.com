@@ -1,0 +1,153 @@
+---
+title: "Turning simple shapes into complex shapes"
+createdAt: "2021-05-19"
+excerpt: "SVGs are math that looks unnecessarily complicated. Let me walk you through how to build a complex icon from a few circles and lines."
+issue: 89
+heroAlt: "A lot of colorful post-its on a wall."
+heroCaption: "What says “retrospective” better than a bunch of colorful post-its?"
+author: dom-habersack
+figures:
+  - "step-1.png"
+  - "step-2.png"
+  - "step-3.png"
+  - "step-4.png"
+  - "step-5.png"
+  - "step-6.png"
+  - "step-7.png"
+  - "step-8.png"
+  - "step-9.png"
+  - "step-10.png"
+related:
+  - introducing-lovelicons
+---
+As I’m drawing more icons for [my icon set](https://lovelicons.com), I want to share some tips on how you can learn to do the same. I never considered myself much of an artist. The icons are coming out much nicer and cuter than I thought I’d be capable of. It doesn’t take a lot of experience if you know how to use a few tricks.
+
+Most of the icons I draw are made up of simple shapes. Let me walk you through the steps that lead up to a “stack of coins” icon.
+
+**Step 1: Draw a 24×24px canvas.**
+
+<Figure
+  alt="A 24*24px canvas."
+  caption="A 24*24px canvas."
+  height="720"
+  src={figures['step-1']}
+  width="1280"
+/>
+
+I draw all icons on a canvas of the same size. Limiting the available space helps me keep them at the same level of detail.
+
+**Step 2: Make the outer 2px a “safe area”.**
+
+<Figure
+  alt="Guides showing the outer 2px around the edges."
+  caption="Guides showing the outer 2px around the edges."
+  height="720"
+  src={figures['step-2']}
+  width="1280"
+/>
+
+For most icons, I avoid drawing on the outer 2px along the edges. That gives the icons some padding, and me some extra space in case an icon needs it. If one doesn’t work in the inner area alone, it can bleed into the safe area a little. The icon we’re drawing here fits into the inner area.
+
+**Step 3: Draw two 8×4px ellipses.**
+
+<Figure
+  alt="The first two ellipses on the canvas."
+  caption="The first two ellipses on the canvas."
+  height="720"
+  src={figures['step-3']}
+  width="1280"
+/>
+
+We start at the base of the stacks with two ellipses. Let’s leave some space between them horizontally.
+
+**Step 4: Cut off the top halves of the ellipses.**
+
+<Figure
+  alt="The ellipses with their top halves cut off."
+  caption="The ellipses with their top halves cut off."
+  height="720"
+  src={figures['step-4']}
+  width="1280"
+/>
+
+Because the coins at the bottom will be covered by others stacked on top of them, we cut off the parts we can’t see.
+
+**Step 5: Duplicate the half-ellipses a few times.**
+
+<Figure
+  alt="A few copies of the half-ellipses stacked."
+  caption="A few copies of the half-ellipses stacked."
+  height="720"
+  src={figures['step-5']}
+  width="1280"
+/>
+
+We add layers to the stacks by duplicating these half-ellipses a few times. By using different amounts of copies, we give the stacks different heights.
+
+**Step 6: Add two full 8×4px ellipses to the top of the stacks.**
+
+<Figure
+  alt="The stacks are topped off with a full ellipse each."
+  caption="The stacks are topped off with a full ellipse each."
+  height="720"
+  src={figures['step-6']}
+  width="1280"
+/>
+
+Because the top two coins are fully visible, be add two complete 8×4px ellipses at the top.
+
+**Step 7: Draw four vertical lines along the edges of the stacks.**
+
+<Figure
+  alt="Two vertical edges for each stack."
+  caption="Two vertical edges for each stack."
+  height="720"
+  src={figures['step-7']}
+  width="1280"
+/>
+
+By adding edges to the stacks, the individual lines start looking like stacks of coins.
+
+**Step 8: Cut out an 8×8px circle in the center between the stacks.**
+
+<Figure
+  alt="A circular spot cut out of the stacks."
+  caption="A circular spot cut out of the stacks."
+  height="720"
+  src={figures['step-8']}
+  width="1280"
+/>
+
+Next, we need to cut out an 8×8px circle in the center between the two stacks. That’s where we want to put a single sideways facing coin. If we didn’t cut out this part, the stacks would be visible through that coin.
+
+**Step 9: Draw an 8×8px circle in the spot we just cut out.**
+
+<Figure
+  alt="A coin in place of the empty spot we cut out before."
+  caption="A coin in place of the empty spot we cut out before."
+  height="720"
+  src={figures['step-9']}
+  width="1280"
+/>
+
+With the space for it empty, we can now add the sideways facing coin in that middle spot.
+
+**Step 10: That’s it, you’re done!**
+
+<Figure
+  alt="The finished result."
+  caption="The finished result."
+  height="720"
+  src={figures['step-10']}
+  width="1280"
+/>
+
+There are no more steps, our stacks of coins are complete.
+
+We turned with a few ellipses, four lines, and a circle into stacks of coins. I found that once you know what to look for, it becomes a lot easier to see how icons are created.
+
+The rest of my icons follow very similar rules. That speeds up the process of creating new icons and helps them follow a consistent style. The set is still not complete yet, but it’s constantly growing!
+
+If you want to get into drawing icons and want to know the steps behind some of the others, hit me up! I’d be happy to create walkthroughs like this for a few more icons.
+
+– Dom
