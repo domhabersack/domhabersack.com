@@ -1,8 +1,10 @@
+import { MDXRemote } from 'next-mdx-remote'
+
 import Layout from '@/components/layout'
+import MDXComponents from '@/components/mdx-components'
 import MetaTags from '@/components/meta-tags'
 import { getAllPageSlugs, getPageBySlug } from '@/lib/api/pages'
 import getMDXSource from '@/lib/get-mdx-source'
-import hydrateMDXSource from '@/lib/hydrate-mdx-source'
 
 export default function Page({
   description,
@@ -10,8 +12,6 @@ export default function Page({
   permalink,
   title,
 }) {
-  const body = hydrateMDXSource(mdxSource)
-
   const breadcrumbs = [
     {
       label: title
@@ -30,7 +30,7 @@ export default function Page({
         {title}
       </h1>
 
-      {body}
+      <MDXRemote {...mdxSource} components={MDXComponents} />
     </Layout>
   )
 }

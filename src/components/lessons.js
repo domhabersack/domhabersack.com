@@ -1,4 +1,4 @@
-import ArrowRight from '@/icons-mini/arrow-right'
+import Icon from '@/components/icon'
 
 export default function Lessons({
   currentLessonId = -Infinity,
@@ -11,7 +11,7 @@ export default function Lessons({
           <div className="flex space-x-2.5">
             {lesson.id === currentLessonId ? (
               <div className="bg-blue-500 flex flex-shrink-0 h-8 items-center justify-center rounded-full text-white w-8 dark:bg-red-500 dark:text-red-100">
-                <ArrowRight className="h-4 w-4" />
+                <Icon className="h-4 w-4" type="arrow-right" />
               </div>
             ) : (
               <div className="bg-gray-200 flex flex-shrink-0 font-bold h-8 items-center justify-center rounded-full text-gray-400 text-xs w-8 dark:bg-gray-600 dark:text-gray-300">

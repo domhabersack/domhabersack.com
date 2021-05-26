@@ -1,11 +1,8 @@
 import prism from 'remark-prism'
-import renderToString from 'next-mdx-remote/render-to-string'
-
-import MDXComponents from '@/components/mdx-components'
+import { serialize } from 'next-mdx-remote/serialize'
 
 export default async function getMDXSource(content, scope) {
-  return await renderToString(content, {
-    components: MDXComponents,
+  return await serialize(content, {
     mdxOptions: {
       remarkPlugins: [prism],
     },

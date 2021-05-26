@@ -1,6 +1,6 @@
 import Image from 'next/image'
 
-import ExternalLinkIcon from '@/icons-mini/external-link'
+import Icon from '@/components/icon'
 
 export default function VimeoVideo({
   id,
@@ -17,9 +17,7 @@ export default function VimeoVideo({
             Watch on Vimeo
           </span>
 
-          <div className="h-4 w-4">
-            <ExternalLinkIcon />
-          </div>
+          <Icon className="h-4 w-4" type="external-link" size="small" />
         </div>
       </div>
     </a>

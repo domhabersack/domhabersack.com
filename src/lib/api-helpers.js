@@ -16,7 +16,7 @@ export async function getAllFiles(type, transform = () => {}) {
       frontmatter,
       slug,
     })) ?? {}
-  
+
     allFiles.push({
       ...frontmatter,
       ...transformed,

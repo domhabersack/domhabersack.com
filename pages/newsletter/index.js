@@ -1,16 +1,15 @@
-import CircledCheckmark from '@/icons/circled-checkmark'
-import NewsletterSignupForm from '@/components/newsletter-signup-form'
+import Icon from '@/components/icon'
 import Layout from '@/components/layout'
 import MetaTags from '@/components/meta-tags'
+import NewsletterSignupForm from '@/components/newsletter-signup-form'
 import NewsletterTeaser from '@/components/newsletter-teaser'
 import { getLatestNewsletters } from '@/lib/api/newsletters'
 
 const BENEFITS = [
+  'progress updates as I build my company in public',
   'tips on design and development you can use immediately',
-  'free previews of my upcoming course materials',
+  'previews of my upcoming course materials',
   'discount codes for my courses and products',
-  'announcements of events I am going to speak at',
-  'access to video recordings of past speaking gigs'
 ]
 
 export default function Newsletter({
@@ -25,24 +24,26 @@ export default function Newsletter({
   return (
     <Layout breadcrumbs={breadcrumbs}>
       <MetaTags
-        description="Weekly tips on design, development, and working smarter."
+        description="I share progress updates on my journey and tips on design, development, and working smarter."
         imageSubpath="pages/newsletter"
         permalink="/newsletter"
         title="Newsletter"
       />
 
       <h1>
-        More tips, straight to your inbox
+        Updates and tips, straight to your inbox
       </h1>
 
       <p>
-        In addition to what I share on this site, I send out a weekly newsletter with tips to help you work smarter. By signing up, you get access to:
+        In addition to what I share on this site, I occasionally send out updates and tips that help you work smarter. By signing up, you get access to:
       </p>
 
       <ul className="list-none my-6 p-0 space-y-3">
         {BENEFITS.map(listItem => (
-          <li className="flex m-0 text-base" key={`newsletter-benefit-${listItem}`}>
-            <CircledCheckmark className="flex-shrink-0 h-6 mr-1 text-green-300 w-6 dark:text-green-500" />
+          <li className="flex m-0 space-x-1.5 text-base" key={`newsletter-benefit-${listItem}`}>
+            <div className="bg-green-300 flex flex-shrink-0 h-6 items-center justify-center rounded-full w-6 dark:bg-green-400">
+              <Icon className="h-4 text-green-800 w-4 dark:text-green-900" type="tick" size="small" />
+            </div>
 
             <span>
               {listItem}
