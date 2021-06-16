@@ -20,7 +20,7 @@ const SOCIAL_PROFILES = {
     icon: 'twitter-logo',
   },
   'Dom Habersack on YouTube': {
-    href: 'https://youtube.com/channel/UCi_V66TGKpeSHV_4DYCFbjw',
+    href: 'https://youtube.com/channel/UCaAuE1af4GpzXcQ1Fx-diMQ',
     icon: 'youtube-logo',
   },
   'Dom Habersack on LinkedIn': {
