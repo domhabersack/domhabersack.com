@@ -31,7 +31,7 @@ export default function Archive({
         These are some of my previous newsletters. <a href="/newsletter">Sign up</a> if you want to get them delivered straight to your inbox.
       </p>
 
-      <div className="grid gap-12 grid-cols-1">
+      <div className="grid gap-20 grid-cols-1">
         {newsletters.map(newsletter => (
           <NewsletterTeaser key={`newsletter-${newsletter.slug}`} newsletter={newsletter} />
         ))}

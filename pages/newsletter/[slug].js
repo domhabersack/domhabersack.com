@@ -60,7 +60,7 @@ export default function Newsletter({
             Continue reading
           </h2>
 
-          <div className="grid gap-12 grid-cols-1 mb-8">
+          <div className="grid gap-20 grid-cols-1 mb-8">
             {related.map(newsletter => (
               <NewsletterTeaser key={`newsletter-${newsletter.slug}`} newsletter={newsletter} />
             ))}

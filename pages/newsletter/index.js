@@ -64,7 +64,7 @@ export default function Newsletter({
         Latest issues
       </h2>
 
-      <div className="grid gap-12 grid-cols-1 mb-8">
+      <div className="grid gap-20 grid-cols-1 mb-8">
         {latestNewsletters.map(newsletter => (
           <NewsletterTeaser key={`newsletter-${newsletter.slug}`} newsletter={newsletter} />
         ))}

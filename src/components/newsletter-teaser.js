@@ -6,30 +6,29 @@ export default function NewsletterTeaser({
   const {
     createdAt,
     excerpt,
-    issue,
     permalink,
     title,
   } = newsletter
 
   return (
-    <div>
-      <footer className="mb-0.5 text-gray-500 text-xs dark:text-gray-400">
-        <strong className="font-medium mr-1">
-          #{issue}
-        </strong>
-
+    <div className="space-y-2">
+      <footer className="text-gray-500 text-sm dark:text-gray-400">
         {formatDate(createdAt)}
       </footer>
 
-      <h3 className="leading-snug m-0 mb-1 text-base">
-        <a href={permalink}>
+      <h3 className="font-medium m-0 text-lg">
+        <a className="text-gray-900 visited:text-gray-900" href={permalink}>
           {title}
         </a>
       </h3>
 
-      <p className="m-0 text-sm">
+      <p className="m-0 text-base text-gray-500">
         {excerpt}
       </p>
+
+      <a className="inline-block font-medium text-blue-600 visited:text-blue-600" href={permalink}>
+        Read full article
+      </a>
     </div>
   )
 }
