@@ -1,6 +1,10 @@
 const withMDX = require('@next/mdx')()
 
 module.exports = withMDX({
+  images: {
+    disableStaticImages: true,
+  },
+
   webpack(config) {
     config.module.rules.push({
       test: /\.svg$/,
