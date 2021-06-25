@@ -31,7 +31,7 @@ export default function Page({
         {title}
       </PageTitle>
 
-      <div className="prose prose-blue dark:prose-dark">
+      <div className="break-words prose prose-blue dark:prose-dark">
         <MDXRemote {...mdxSource} components={MDXComponents} />
       </div>
     </Layout>

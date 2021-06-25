@@ -60,7 +60,7 @@ export default function Post({
         />
       </div>
 
-      <div className="prose prose-blue dark:prose-dark">
+      <div className="break-words prose prose-blue dark:prose-dark">
         <MDXRemote {...mdxSource} components={MDXComponents} />
       </div>
     </Layout>

@@ -28,11 +28,13 @@ export default function Archive({
         Newsletter archive
       </PageTitle>
 
-      <p className="mb-12">
+      <p className="max-w-xl mb-8 text-gray-500 text-xl dark:text-gray-400">
         These are some of my previous newsletters. <a href="/newsletter">Sign up</a> if you want to get them delivered straight to your inbox.
       </p>
 
-      <ArticleTeasers articles={newsletters} />
+      <div className="max-w-md">
+        <ArticleTeasers articles={newsletters} />
+      </div>
     </Layout>
   )
 }

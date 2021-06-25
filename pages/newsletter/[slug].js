@@ -53,13 +53,13 @@ export default function Newsletter({
         />
       </div>
 
-      <div className="prose prose-blue dark:prose-dark">
+      <div className="break-words prose prose-blue dark:prose-dark">
         <MDXRemote {...mdxSource} components={MDXComponents} />
       </div>
 
       {hasRelatedIssues && (
         <div className="mt-24">
-          <h2 className="mb-3 text-xl">
+          <h2 className="font-bold mb-4 text-gray-900 text-xl dark:text-gray-50">
             Continue reading
           </h2>
 
@@ -68,7 +68,7 @@ export default function Newsletter({
           </div>
 
           <p>
-            <a href="/newsletter/archive">
+            <a className="text-gray-800 dark:text-gray-100" href="/newsletter/archive">
               Read all issues &rarr;
             </a>
           </p>

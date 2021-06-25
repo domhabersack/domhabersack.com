@@ -52,7 +52,7 @@ export default function Project({
         src={hero}
       />
 
-      <div className="mb-4 prose prose-blue dark:prose-dark">
+      <div className="break-words mb-4 prose prose-blue dark:prose-dark">
         <MDXRemote {...mdxSource} components={MDXComponents} />
       </div>
 

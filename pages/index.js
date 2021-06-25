@@ -108,21 +108,23 @@ export default function Index({
         </div>
       </Section>
 
-      <Section
-        label="Projects"
-        title="Explore some of my previous work."
-        description="Pictures speak louder than words. Good thing I have both! Explore the case studies of my previous projects."
-      >
-        <div className="mb-8">
-          <ProjectTeaser project={featuredProject} />
-        </div>
+      <div className="hidden">
+        <Section
+          label="Projects"
+          title="Explore some of my previous work."
+          description="Pictures speak louder than words. Good thing I have both! Explore the case studies of my previous projects."
+        >
+          <div className="mb-8">
+            <ProjectTeaser project={featuredProject} />
+          </div>
 
-        <p>
-          <a className="text-gray-800 dark:text-gray-100" href="/projects">
-            See all projects &rarr;
-          </a>
-        </p>
-      </Section>
+          <p>
+            <a className="text-gray-800 dark:text-gray-100" href="/projects">
+              See all projects &rarr;
+            </a>
+          </p>
+        </Section>
+      </div>
 
       <Section
         label="From the blog"

@@ -41,7 +41,7 @@ export default function Course({
         {title}
       </PageTitle>
 
-      <div className="mb-8 prose prose-blue dark:prose-dark">
+      <div className="break-words mb-8 prose prose-blue dark:prose-dark">
         <MDXRemote {...mdxSource} components={MDXComponents} />
       </div>
 
