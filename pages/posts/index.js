@@ -26,7 +26,7 @@ export default function Posts({
         Blog
       </PageTitle>
 
-      <p className="max-w-xl mb-8 text-gray-500 text-xl">
+      <p className="max-w-xl mb-8 text-gray-500 text-xl dark:text-gray-400">
         I write about all things tech and business. My articles cover design, development, productivity, and more.
       </p>
 

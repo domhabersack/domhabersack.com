@@ -31,7 +31,9 @@ export default function Page({
         {title}
       </PageTitle>
 
-      <MDXRemote {...mdxSource} components={MDXComponents} />
+      <div className="prose prose-blue dark:prose-dark">
+        <MDXRemote {...mdxSource} components={MDXComponents} />
+      </div>
     </Layout>
   )
 }

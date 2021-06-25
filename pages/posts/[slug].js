@@ -44,7 +44,15 @@ export default function Post({
         {title}
       </PageTitle>
 
-      <div className="mb-6">
+      <div className="flex flex-wrap mb-4 space-x-1.5">
+        {tags.map(tag => (
+          <Tag key={tag}>
+            {tag}
+          </Tag>
+        ))}
+      </div>
+
+      <div className="mb-8">
         <PostMeta
           author={author.name}
           avatar={author.avatar}
@@ -52,16 +60,8 @@ export default function Post({
         />
       </div>
 
-      <div className="break-words mb-8">
+      <div className="prose prose-blue dark:prose-dark">
         <MDXRemote {...mdxSource} components={MDXComponents} />
-      </div>
-
-      <div className="flex flex-wrap space-x-1.5">
-        {tags.map(tag => (
-          <Tag key={tag}>
-            {tag}
-          </Tag>
-        ))}
       </div>
     </Layout>
   )

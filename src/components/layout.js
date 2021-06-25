@@ -39,7 +39,7 @@ export default function Layout ({
           </Container>
         </main>
 
-        <div className="bg-gray-100 dark:bg-gray-900">
+        <div className="bg-gray-100 dark:bg-gray-800">
           <Container>
             <Footer />
           </Container>

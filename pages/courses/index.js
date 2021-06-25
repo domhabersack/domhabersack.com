@@ -20,19 +20,13 @@ export default function Courses({
         title="Courses"
       />
 
-      <div className="mb-12">
-        <PageTitle>
-          Courses
-        </PageTitle>
+      <PageTitle>
+        Courses
+      </PageTitle>
 
-        <p>
-          I offer <strong>email- and video-courses</strong> for designers and developers of any skill level. Email-courses land in your inbox over a few weeks, video-courses are binge-ready now. They are all <strong>completely free</strong>.
-        </p>
-
-        <p>
-          I am always working on new content. Sign up to any course or <a href="/newsletter">join my newsletter</a> to catch announcements of upcoming material. If you want to learn about something in particular, tweet me at <a href="https://twitter.com/domhabersack">@domhabersack</a> and I’ll put it on my list!
-        </p>
-      </div>
+      <p className="max-w-xl mb-8 text-gray-500 text-xl dark:text-gray-400">
+        I offer <strong>email- and video-courses</strong> for designers and developers of any skill level. They are all <strong>completely free</strong>.
+      </p>
 
       <CourseTeasers courses={courses} />
     </Layout>

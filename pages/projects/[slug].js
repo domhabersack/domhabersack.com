@@ -52,11 +52,11 @@ export default function Project({
         src={hero}
       />
 
-      <div className="mb-4">
+      <div className="mb-4 prose prose-blue dark:prose-dark">
         <MDXRemote {...mdxSource} components={MDXComponents} />
       </div>
 
-      <a className="inline-flex font-medium items-center space-x-1.5 text-blue-600 visited:text-blue-600" href={url}>
+      <a className="inline-flex font-medium items-center space-x-1.5 text-blue-600 dark:text-blue-500" href={url}>
         <span>
           Visit {prettifyUrl(url)}
         </span>

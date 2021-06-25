@@ -19,13 +19,13 @@ export default function ArticleTeaser({
         {formatDate(createdAt)}
       </footer>
 
-      <h3 className="font-medium text-lg">
-        <a className="text-gray-900 visited:text-gray-900" href={permalink}>
+      <h3 className="font-medium text-gray-900 text-lg dark:text-gray-50">
+        <a href={permalink}>
           {title}
         </a>
       </h3>
 
-      <p className="text-base text-gray-500">
+      <p className="text-base text-gray-500 dark:text-gray-400">
         {excerpt}
       </p>
 
@@ -39,7 +39,7 @@ export default function ArticleTeaser({
         </div>
       )}
 
-      <a className="inline-block font-medium text-blue-600 visited:text-blue-600" href={permalink}>
+      <a className="inline-block font-medium text-blue-600 dark:text-blue-500" href={permalink}>
         Read full article
       </a>
     </article>

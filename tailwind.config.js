@@ -12,6 +12,48 @@ module.exports = {
       colors: {
         cyan: colors.cyan,
       },
+      typography: theme => ({
+        DEFAULT: {
+          css: {
+            color: theme('colors.gray.600'),
+          },
+        },
+        dark: {
+          css: {
+            color: theme('colors.gray.300'),
+            '[class~="lead"]': {
+              color: theme('colors.gray.300'),
+            },
+            a: {
+              color: theme('colors.blue.500'),
+            },
+            blockquote: {
+              color: theme('colors.gray.50'),
+            },
+            code: {
+              color: theme('colors.gray.400'),
+            },
+            'a code': {
+              color: theme('colors.blue.300'),
+            },
+            h2: {
+              color: theme('colors.gray.50'),
+            },
+            h3: {
+              color: theme('colors.gray.50'),
+            },
+            h4: {
+              color: theme('colors.gray.50'),
+            },
+            'ol > li::before': {
+              color: theme('colors.gray.400'),
+            },
+            strong: {
+              color: theme('colors.gray.50'),
+            },
+          },
+        },
+      }),
     },
     fontFamily: {
       mono: [
@@ -59,9 +101,11 @@ module.exports = {
       display: ['dark'],
       opacity: ['disabled'],
       textColor: ['disabled', 'visited'],
+      typography: ['dark'],
     },
   },
   plugins: [
     require('@tailwindcss/forms'),
+    require('@tailwindcss/typography'),
   ],
 }

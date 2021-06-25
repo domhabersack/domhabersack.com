@@ -31,11 +31,11 @@ export default function Milestone({
             {formatDate(createdAt)}
           </span>
 
-          <h3 className="font-medium m-0 text-lg">
+          <h3 className="font-medium m-0 text-gray-900 text-lg dark:text-gray-50">
             {title}
           </h3>
 
-          <p className="m-0 text-base text-gray-500">
+          <p className="text-base text-gray-500 dark:text-gray-400">
             {excerpt}
           </p>
         </div>
@@ -44,17 +44,17 @@ export default function Milestone({
           <div className="mt-4">
             <Card>
               <div className="px-4 py-3 space-y-2">
-                <h4 className="font-medium text-base">
-                  <a className="text-gray-900 visited:text-gray-900" href={newsletter.permalink}>
+                <h4 className="font-medium text-base text-gray-900 dark:text-gray-50">
+                  <a href={newsletter.permalink}>
                     {newsletter.title}
                   </a>
                 </h4>
 
-                <p className="m-0 text-gray-500 text-sm">
+                <p className="text-gray-500 text-sm dark:text-gray-400">
                   {newsletter.excerpt}
                 </p>
 
-                <a className="font-medium inline-block text-blue-600 text-sm visited:text-blue-600" href={newsletter.permalink}>
+                <a className="font-medium inline-block text-blue-600 text-sm dark:text-blue-500" href={newsletter.permalink}>
                   Read full article
                 </a>
               </div>
@@ -66,17 +66,17 @@ export default function Milestone({
           <div className="mt-4">
             <Card>
               <div className="px-4 py-3 space-y-2">
-                <h4 className="font-medium text-base">
-                  <a className="text-gray-900 visited:text-gray-900" href={project.permalink}>
+                <h4 className="font-medium text-base text-gray-900 dark:text-gray-50">
+                  <a href={project.permalink}>
                     {project.title}
                   </a>
                 </h4>
 
-                <p className="m-0 text-gray-500 text-sm">
+                <p className="text-gray-500 text-sm dark:text-gray-400">
                   {project.excerpt}
                 </p>
 
-                <a className="font-medium inline-block text-blue-600 text-sm visited:text-blue-600" href={project.permalink}>
+                <a className="font-medium inline-block text-blue-600 text-sm dark:text-blue-500" href={project.permalink}>
                   Read case study
                 </a>
               </div>

@@ -17,7 +17,7 @@ export default function Breadcrumbs({
       }) => url ? (
         <Fragment key={label}>
           <a
-            className="inline-block"
+            className="inline-block text-gray-800 dark:text-gray-100"
             href={url}
           >
             {label}

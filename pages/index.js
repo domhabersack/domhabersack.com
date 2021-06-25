@@ -54,7 +54,7 @@ export default function Index({
         title="Hey, I’m Dom!"
         description="I am a software developer, content creator, and IndieHacker with over 12 years of professional experience."
       >
-        <div className="flex items-center max-w-xl space-x-10">
+        <div className="flex flex-col items-center max-w-xl space-y-10 sm:flex-row sm:space-x-10 sm:space-y-0">
           <img
             alt="Dom Habersack"
             className="h-56 rounded-full w-56"
@@ -64,7 +64,7 @@ export default function Index({
           />
 
           <div className="space-y-4">
-            <p>
+            <p className="text-gray-600 dark:text-gray-300">
               As a consultant, I help companies get their projects off the ground and their teams moving forward. Let’s talk if you’re looking for support!
             </p>
 
@@ -90,7 +90,7 @@ export default function Index({
 
       <Section
         label="Milestone log"
-        title="Watch me build in public"
+        title="Watch me build in public."
         description="I am learning how to run a company and make money on the internet. This feed shows some of my progress."
       >
         <div className="max-w-md">
@@ -110,7 +110,7 @@ export default function Index({
 
       <Section
         label="Projects"
-        title="Check out some of my previous work."
+        title="Explore some of my previous work."
         description="Pictures speak louder than words. Good thing I have both! Explore the case studies of my previous projects."
       >
         <div className="mb-8">
@@ -118,7 +118,7 @@ export default function Index({
         </div>
 
         <p>
-          <a href="/projects">
+          <a className="text-gray-800 dark:text-gray-100" href="/projects">
             See all projects &rarr;
           </a>
         </p>
@@ -126,14 +126,14 @@ export default function Index({
 
       <Section
         label="From the blog"
-        title="Latest blog posts"
+        title="Check out my articles."
       >
         <div className="max-w-md">
           <ArticleTeasers articles={posts} />
         </div>
 
         <p>
-          <a href="/posts">
+          <a className="text-gray-800 dark:text-gray-100" href="/posts">
             Read all posts &rarr;
           </a>
         </p>

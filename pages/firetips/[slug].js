@@ -4,6 +4,7 @@ import { Tag } from '@yieldui/react'
 import Layout from '@/components/layout'
 import MDXComponents from '@/components/mdx-components'
 import MetaTags from '@/components/meta-tags'
+import PageTitle from '@/components/page-title'
 import { getAllFiretipSlugs, getFiretipBySlug } from '@/lib/api/firetips'
 import getMDXSource from '@/lib/get-mdx-source'
 
@@ -30,15 +31,17 @@ export default function Firetip({
         title={title}
       />
 
-      <h1>
+      <PageTitle>
         {title}
-      </h1>
+      </PageTitle>
 
-      <MDXRemote {...mdxSource} components={MDXComponents} />
+      <div className="prose prose-blue dark:prose-dark">
+        <MDXRemote {...mdxSource} components={MDXComponents} />
+      </div>
 
       <div className="flex flex-wrap">
         {tags.map(tag => (
-          <div className="mb-3 mr-2.5" key={`tag-${tag.slug}`}>
+          <div className="mb-3 mr-2.5" key={tag.slug}>
             <Tag href={tag.permalink}>
               {tag.title}
             </Tag>
