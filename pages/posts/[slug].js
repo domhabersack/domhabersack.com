@@ -55,13 +55,11 @@ export default function Post({
         <MDXRemote {...mdxSource} components={MDXComponents} />
       </div>
 
-      <div className="flex flex-wrap">
+      <div className="flex flex-wrap space-x-1.5">
         {tags.map(tag => (
-          <div className="mb-1 mr-1.5" key={tag.slug}>
-            <Tag href={tag.permalink}>
-              {tag.title}
-            </Tag>
-          </div>
+          <Tag key={tag}>
+            {tag}
+          </Tag>
         ))}
       </div>
     </Layout>

@@ -32,8 +32,8 @@ export default function ArticleTeaser({
       {tags && (
         <div className="flex flex-wrap space-x-1.5">
           {tags.map(tag => (
-            <Tag href={tag.permalink} key={tag.slug}>
-              {tag.title}
+            <Tag key={tag}>
+              {tag}
             </Tag>
           ))}
         </div>
