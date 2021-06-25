@@ -2,7 +2,7 @@ import Icon from '@/components/icon'
 import Layout from '@/components/layout'
 import MetaTags from '@/components/meta-tags'
 import NewsletterSignupForm from '@/components/newsletter-signup-form'
-import NewsletterTeaser from '@/components/newsletter-teaser'
+import ArticleTeasers from '@/components/article-teasers'
 import { getLatestNewsletters } from '@/lib/api/newsletters'
 
 const BENEFITS = [
@@ -64,11 +64,7 @@ export default function Newsletter({
         Latest issues
       </h2>
 
-      <div className="grid gap-20 grid-cols-1 mb-8">
-        {latestNewsletters.map(newsletter => (
-          <NewsletterTeaser key={`newsletter-${newsletter.slug}`} newsletter={newsletter} />
-        ))}
-      </div>
+      <ArticleTeasers articles={latestNewsletters} />
 
       <a href="/newsletter/archive">
         Read all issues &rarr;

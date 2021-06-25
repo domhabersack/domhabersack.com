@@ -79,6 +79,7 @@
          url('/fonts/source-code-pro/normal-italic.ttf') format('truetype');
   }
 
+/*
   a {
     @apply no-underline text-blue-600 focus:outline-none focus:ring focus:ring-indigo-200 focus:ring-opacity-50 hover:underline visited:text-blue-600 dark:text-red-500 dark:focus:ring-blue-500 dark:visited:text-red-500;
   }
@@ -199,6 +200,7 @@
   ul:empty {
     @apply hidden;
   }
+*/
 }
 
 @layer utilities {

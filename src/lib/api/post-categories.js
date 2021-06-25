@@ -3,7 +3,7 @@ import { getAllPosts } from '@/lib/api/posts'
 import slugify from '@/lib/slugify'
 
 export async function getAllCategories() {
-  const categories = (await getAllFiles('posts')).map(({ categories }) => categories).flat(1)
+  const categories = (await getAllFiles('posts')).map(({ tags }) => tags).flat(1)
 
   const uniqueCategories = [...new Set(categories)]
 
@@ -24,7 +24,7 @@ export async function getAllCategoriesWithPosts() {
 
   return allCategories.map(category => {
     const posts = allPosts
-      .filter(post => post.categories.map(({ slug }) => slug)
+      .filter(post => post.tags.map(({ slug }) => slug)
       .includes(category.slug))
 
     return {

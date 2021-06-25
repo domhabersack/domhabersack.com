@@ -1,7 +1,7 @@
 import Breakout from '@/components/breakout'
 import Layout from '@/components/layout'
 import MetaTags from '@/components/meta-tags'
-import PostTeasers from '@/components/post-teasers'
+import ArticleTeasers from '@/components/article-teasers'
 import { getAllPosts } from '@/lib/api/posts'
 
 export default function Posts({
@@ -33,7 +33,7 @@ export default function Posts({
       </div>
 
       <Breakout>
-        <PostTeasers posts={posts} />
+        <ArticleTeasers articles={posts} />
       </Breakout>
     </Layout>
   )

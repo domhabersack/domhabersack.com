@@ -1,8 +1,6 @@
 import { MDXRemote } from 'next-mdx-remote'
 import { Tag } from '@yieldui/react'
 
-import Breakout from '@/components/breakout'
-import Figure from '@/components/figure'
 import Layout from '@/components/layout'
 import MDXComponents from '@/components/mdx-components'
 import MetaTags from '@/components/meta-tags'
@@ -12,12 +10,9 @@ import getMDXSource from '@/lib/get-mdx-source'
 
 export default function Post({
   author,
-  categories,
+  tags,
   createdAt,
   excerpt,
-  hero,
-  heroAlt,
-  heroCaption,
   mdxSource,
   ogImage,
   permalink,
@@ -36,11 +31,10 @@ export default function Post({
     <Layout breadcrumbs={breadcrumbs}>
       <MetaTags
         description={excerpt}
-        heroAlt={heroAlt}
         ogImage={ogImage}
         permalink={permalink}
         publishedAt={createdAt}
-        tags={categories}
+        tags={tags}
         title={title}
         type="article"
       />
@@ -57,24 +51,15 @@ export default function Post({
         />
       </div>
 
-      <Breakout>
-        <Figure
-          alt={heroAlt}
-          caption={heroCaption}
-          className="m-0 mb-6"
-          src={hero}
-        />
-      </Breakout>
-
       <div className="break-words mb-8">
         <MDXRemote {...mdxSource} components={MDXComponents} />
       </div>
 
       <div className="flex flex-wrap">
-        {categories.map(category => (
-          <div className="mb-1 mr-1.5" key={`category-${category.slug}`}>
-            <Tag href={category.permalink}>
-              {category.title}
+        {tags.map(tag => (
+          <div className="mb-1 mr-1.5" key={tag.slug}>
+            <Tag href={tag.permalink}>
+              {tag.title}
             </Tag>
           </div>
         ))}
