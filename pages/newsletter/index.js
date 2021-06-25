@@ -1,8 +1,9 @@
+import ArticleTeasers from '@/components/article-teasers'
 import Icon from '@/components/icon'
 import Layout from '@/components/layout'
 import MetaTags from '@/components/meta-tags'
 import NewsletterSignupForm from '@/components/newsletter-signup-form'
-import ArticleTeasers from '@/components/article-teasers'
+import PageTitle from '@/components/page-title'
 import { getLatestNewsletters } from '@/lib/api/newsletters'
 
 const BENEFITS = [
@@ -30,9 +31,9 @@ export default function Newsletter({
         title="Newsletter"
       />
 
-      <h1>
+      <PageTitle>
         Updates and tips, straight to your inbox
-      </h1>
+      </PageTitle>
 
       <p>
         In addition to what I share on this site, I occasionally send out updates and tips that help you work smarter. By signing up, you get access to:
@@ -64,7 +65,9 @@ export default function Newsletter({
         Latest issues
       </h2>
 
-      <ArticleTeasers articles={latestNewsletters} />
+      <div className="max-w-md">
+        <ArticleTeasers articles={latestNewsletters} />
+      </div>
 
       <a href="/newsletter/archive">
         Read all issues &rarr;

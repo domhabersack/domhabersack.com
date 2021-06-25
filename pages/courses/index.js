@@ -1,7 +1,7 @@
-import Breakout from '@/components/breakout'
 import CourseTeasers from '@/components/course-teasers'
 import Layout from '@/components/layout'
 import MetaTags from '@/components/meta-tags'
+import PageTitle from '@/components/page-title'
 import { getAllCourses } from '@/lib/api/courses'
 
 export default function Courses({
@@ -21,9 +21,9 @@ export default function Courses({
       />
 
       <div className="mb-12">
-        <h1>
+        <PageTitle>
           Courses
-        </h1>
+        </PageTitle>
 
         <p>
           I offer <strong>email- and video-courses</strong> for designers and developers of any skill level. Email-courses land in your inbox over a few weeks, video-courses are binge-ready now. They are all <strong>completely free</strong>.
@@ -34,9 +34,7 @@ export default function Courses({
         </p>
       </div>
 
-      <Breakout>
-        <CourseTeasers courses={courses} />
-      </Breakout>
+      <CourseTeasers courses={courses} />
     </Layout>
   )
 }

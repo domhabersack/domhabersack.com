@@ -1,6 +1,7 @@
+import ArticleTeasers from '@/components/article-teasers'
 import Layout from '@/components/layout'
 import MetaTags from '@/components/meta-tags'
-import NewsletterTeaser from '@/components/newsletter-teaser'
+import PageTitle from '@/components/page-title'
 import { getAllNewsletters } from '@/lib/api/newsletters'
 
 export default function Archive({
@@ -23,19 +24,15 @@ export default function Archive({
         title="Newsletter archive"
       />
 
-      <h1>
+      <PageTitle>
         Newsletter archive
-      </h1>
+      </PageTitle>
 
       <p className="mb-12">
         These are some of my previous newsletters. <a href="/newsletter">Sign up</a> if you want to get them delivered straight to your inbox.
       </p>
 
-      <div className="grid gap-20 grid-cols-1">
-        {newsletters.map(newsletter => (
-          <NewsletterTeaser key={`newsletter-${newsletter.slug}`} newsletter={newsletter} />
-        ))}
-      </div>
+      <ArticleTeasers articles={newsletters} />
     </Layout>
   )
 }

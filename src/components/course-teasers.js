@@ -7,7 +7,7 @@ export default function CourseTeasers({
   return (
     <Grid>
       {courses.map(course => (
-        <CourseTeaser course={course} key={`course-teaser-${course.slug}`} />
+        <CourseTeaser course={course} key={course.slug} />
       ))}
     </Grid>
   )

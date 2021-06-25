@@ -1,9 +1,10 @@
 import { MDXRemote } from 'next-mdx-remote'
 
+import ArticleTeasers from '@/components/article-teasers'
 import Layout from '@/components/layout'
 import MDXComponents from '@/components/mdx-components'
 import MetaTags from '@/components/meta-tags'
-import ArticleTeasers from '@/components/article-teasers'
+import PageTitle from '@/components/page-title'
 import PostMeta from '@/components/post-meta'
 import { getAllNewsletterSlugs, getNewsletterBySlug } from '@/lib/api/newsletters'
 import getMDXSource from '@/lib/get-mdx-source'
@@ -40,9 +41,9 @@ export default function Newsletter({
         type="article"
       />
 
-      <h1>
+      <PageTitle>
         {title}
-      </h1>
+      </PageTitle>
 
       <div className="mb-6">
         <PostMeta

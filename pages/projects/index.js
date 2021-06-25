@@ -1,6 +1,6 @@
-import Breakout from '@/components/breakout'
 import Layout from '@/components/layout'
 import MetaTags from '@/components/meta-tags'
+import PageTitle from '@/components/page-title'
 import ProjectTeasers from '@/components/project-teasers'
 import { getAllProjects } from '@/lib/api/projects'
 
@@ -22,19 +22,15 @@ export default function Projects({
         title="Projects"
       />
 
-      <div className="mb-8">
-        <h1>
-          Projects
-        </h1>
+      <PageTitle>
+        Projects
+      </PageTitle>
 
-        <p>
-          I am working on a few free and paid products, trying to earn an income with them over time. This catalog will expand as I add new experiments and try new venues.
-        </p>
-      </div>
+      <p className="max-w-xl mb-8 text-gray-500 text-xl">
+        I am working on a few free and paid products, trying to earn an income with them over time. This catalog will expand as I add new experiments and try new venues.
+      </p>
 
-      <Breakout>
-        <ProjectTeasers projects={projects} />
-      </Breakout>
+      <ProjectTeasers projects={projects} />
     </Layout>
   )
 }

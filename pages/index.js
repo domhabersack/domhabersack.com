@@ -54,7 +54,7 @@ export default function Index({
         title="Hey, I’m Dom!"
         description="I am a software developer, content creator, and IndieHacker with over 12 years of professional experience."
       >
-        <div className="flex items-center space-x-10">
+        <div className="flex items-center max-w-xl space-x-10">
           <img
             alt="Dom Habersack"
             className="h-56 rounded-full w-56"
@@ -93,7 +93,9 @@ export default function Index({
         title="Watch me build in public"
         description="I am learning how to run a company and make money on the internet. This feed shows some of my progress."
       >
-        <Milestones milestones={milestones} />
+        <div className="max-w-md">
+          <Milestones milestones={milestones} />
+        </div>
       </Section>
 
       <Section
@@ -101,18 +103,16 @@ export default function Index({
         title="What I use to get the job done."
         description="These are the tools and technologies I use to build projects, both for myself and my clients. I add new tools to this list all the time."
       >
-        <MyStack />
+        <div className="max-w-md">
+          <MyStack />
+        </div>
       </Section>
 
-      <Section>
-        <h2>
-          Featured project
-        </h2>
-
-        <p>
-          As my first attempt to sell something online, I am turning some of my icons into a product. Many of them will be free for personal use. Commercial use will require a paid license, which also unlocks additional features.
-        </p>
-
+      <Section
+        label="Projects"
+        title="Check out some of my previous work."
+        description="Pictures speak louder than words. Good thing I have both! Explore the case studies of my previous projects."
+      >
         <div className="mb-8">
           <ProjectTeaser project={featuredProject} />
         </div>
@@ -128,7 +128,9 @@ export default function Index({
         label="From the blog"
         title="Latest blog posts"
       >
-        <ArticleTeasers articles={posts} />
+        <div className="max-w-md">
+          <ArticleTeasers articles={posts} />
+        </div>
 
         <p>
           <a href="/posts">

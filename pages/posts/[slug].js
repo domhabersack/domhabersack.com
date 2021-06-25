@@ -4,6 +4,7 @@ import { Tag } from '@yieldui/react'
 import Layout from '@/components/layout'
 import MDXComponents from '@/components/mdx-components'
 import MetaTags from '@/components/meta-tags'
+import PageTitle from '@/components/page-title'
 import PostMeta from '@/components/post-meta'
 import { getAllPostSlugs, getPostBySlug } from '@/lib/api/posts'
 import getMDXSource from '@/lib/get-mdx-source'
@@ -39,9 +40,9 @@ export default function Post({
         type="article"
       />
 
-      <h1>
+      <PageTitle>
         {title}
-      </h1>
+      </PageTitle>
 
       <div className="mb-6">
         <PostMeta

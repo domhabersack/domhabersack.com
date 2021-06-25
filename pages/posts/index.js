@@ -1,7 +1,7 @@
-import Breakout from '@/components/breakout'
+import ArticleTeasers from '@/components/article-teasers'
 import Layout from '@/components/layout'
 import MetaTags from '@/components/meta-tags'
-import ArticleTeasers from '@/components/article-teasers'
+import PageTitle from '@/components/page-title'
 import { getAllPosts } from '@/lib/api/posts'
 
 export default function Posts({
@@ -22,19 +22,17 @@ export default function Posts({
         title="Blog"
       />
 
-      <div className="mb-8">
-        <h1>
-          Blog
-        </h1>
+      <PageTitle>
+        Blog
+      </PageTitle>
 
-        <p>
-          I write about design, development, and productivity. My <a href="/newsletter">weekly newsletter</a> contains many more and usually shorter pieces. Read all previous issues in the <a href="/newsletter/archive">archive</a>.
-        </p>
-      </div>
+      <p className="max-w-xl mb-8 text-gray-500 text-xl">
+        I write about all things tech and business. My articles cover design, development, productivity, and more.
+      </p>
 
-      <Breakout>
+      <div className="max-w-md">
         <ArticleTeasers articles={posts} />
-      </Breakout>
+      </div>
     </Layout>
   )
 }

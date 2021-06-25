@@ -3,6 +3,7 @@ import { MDXRemote } from 'next-mdx-remote'
 import Layout from '@/components/layout'
 import MDXComponents from '@/components/mdx-components'
 import MetaTags from '@/components/meta-tags'
+import PageTitle from '@/components/page-title'
 import { getAllPageSlugs, getPageBySlug } from '@/lib/api/pages'
 import getMDXSource from '@/lib/get-mdx-source'
 
@@ -26,9 +27,9 @@ export default function Page({
         title={title}
       />
 
-      <h1>
+      <PageTitle>
         {title}
-      </h1>
+      </PageTitle>
 
       <MDXRemote {...mdxSource} components={MDXComponents} />
     </Layout>

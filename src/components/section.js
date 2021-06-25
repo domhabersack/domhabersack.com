@@ -5,8 +5,8 @@ export default function Section({
   title,
 }) {
   return (
-    <div className="py-24">
-      <header className="mb-10 text-center">
+    <div className="flex flex-col items-center py-24">
+      <header className="max-w-xl mb-10 text-center">
         <h2 className="block font-semibold mb-2 text-base text-blue-600 uppercase">
           {label}
         </h2>
@@ -20,7 +20,9 @@ export default function Section({
         </p>
       </header>
 
-      {children}
+      <div>
+        {children}
+      </div>
     </div>
   )
 }
