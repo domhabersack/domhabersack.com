@@ -1,5 +1,4 @@
 import Image from 'next/image'
-import { Card } from '@yieldui/react'
 
 import Icon from '@/components/icon'
 import Layout from '@/components/layout'
@@ -55,7 +54,7 @@ export default function Index({
         description="I am a software developer, content creator, and IndieHacker with over 12 years of professional experience."
       >
         <div className="flex flex-col items-center max-w-xl space-y-10 sm:flex-row sm:space-x-10 sm:space-y-0">
-          <img
+          <Image
             alt="Dom Habersack"
             className="h-56 rounded-full w-56"
             height="224"

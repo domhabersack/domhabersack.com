@@ -1,8 +1,5 @@
 import Image from 'next/image'
 
-import Icon from '@/components/icon'
-import Stack from '@/components/stack'
-
 export default function ProjectTeaser({
   project,
 }) {
@@ -17,7 +14,7 @@ export default function ProjectTeaser({
   return (
     <article className="space-y-2">
       <a href={permalink}>
-        <img
+        <Image
           alt={heroAlt}
           height="360"
           layout="responsive"
