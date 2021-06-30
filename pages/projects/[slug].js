@@ -1,14 +1,15 @@
 import { MDXRemote } from 'next-mdx-remote'
 
-import Breakout from '@/components/breakout'
 import Icon from '@/components/icon'
 import Figure from '@/components/figure'
 import Layout from '@/components/layout'
 import MDXComponents from '@/components/mdx-components'
 import MetaTags from '@/components/meta-tags'
+import PageTitle from '@/components/page-title'
 import Stack from '@/components/stack'
 import { getAllProjectSlugs, getProjectBySlug } from '@/lib/api/projects'
 import getMDXSource from '@/lib/get-mdx-source'
+import prettifyUrl from '@/lib/prettify-url'
 
 export default function Project({
   excerpt,
@@ -18,7 +19,6 @@ export default function Project({
   mdxSource,
   ogImage,
   permalink,
-  revenue,
   stack,
   title,
   url,
@@ -41,43 +41,30 @@ export default function Project({
         title={title}
       />
 
-      <h1>
+      <PageTitle>
         {title}
-      </h1>
+      </PageTitle>
 
-      <aside className="bg-gray-100 flex flex-wrap justify-between mb-6 px-4 py-3 rounded-lg shadow-sm text-gray-600 text-xs dark:bg-black dark:text-gray-300">
-        <div className="flex items-center space-x-1">
-          <Icon className="h-6 w-6 dark:text-gray-400" type="coins" />
+      <Figure
+        alt={heroAlt}
+        caption={heroCaption}
+        className="m-0 mb-6"
+        src={hero}
+      />
 
-          <span>
-            Revenue: <strong>${revenue}</strong>/month
-          </span>
-        </div>
+      <div className="break-words mb-4 prose prose-blue dark:prose-dark">
+        <MDXRemote {...mdxSource} components={MDXComponents} />
+      </div>
 
-        <a
-          className="flex items-center"
-          href={url}
-        >
-          <Icon className="h-6 w-6" type="link" />
+      <a className="inline-flex font-medium items-center space-x-1.5 text-blue-600 dark:text-blue-500" href={url}>
+        <span>
+          Visit {prettifyUrl(url)}
+        </span>
 
-          <span>
-            Website
-          </span>
-        </a>
-      </aside>
+        <Icon className="w-4 h-4" type="external-link" size="small" />
+      </a>
 
-      <Breakout>
-        <Figure
-          alt={heroAlt}
-          caption={heroCaption}
-          className="m-0 mb-6"
-          src={hero}
-        />
-      </Breakout>
-
-      <MDXRemote {...mdxSource} components={MDXComponents} />
-
-      <div className="mt-8">
+      <div className="mt-4">
         <Stack stack={stack} />
       </div>
     </Layout>

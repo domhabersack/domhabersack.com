@@ -5,6 +5,7 @@ import Layout from '@/components/layout'
 import Lessons from '@/components/lessons'
 import MDXComponents from '@/components/mdx-components'
 import MetaTags from '@/components/meta-tags'
+import PageTitle from '@/components/page-title'
 import { getAllCourseSlugs, getCourseBySlug } from '@/lib/api/courses'
 import getMDXSource from '@/lib/get-mdx-source'
 
@@ -36,21 +37,11 @@ export default function Course({
         title={title}
       />
 
-      <div className="mb-12">
-        <h1>
-          {title}
-        </h1>
+      <PageTitle>
+        {title}
+      </PageTitle>
 
-        <aside className="bg-gray-100 flex flex-wrap mb-6 px-4 py-3 space-x-5 rounded-lg shadow-sm text-gray-600 text-xs dark:bg-black dark:text-gray-300">
-          <div className="flex items-center space-x-1">
-            <Icon className="h-6 w-6 dark:text-gray-400" type="book" />
-
-            <span>
-              <strong>{lessons.length}</strong> lessons
-            </span>
-          </div>
-        </aside>
-
+      <div className="break-words mb-8 prose prose-blue dark:prose-dark">
         <MDXRemote {...mdxSource} components={MDXComponents} />
       </div>
 

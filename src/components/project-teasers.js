@@ -7,7 +7,7 @@ export default function ProjectTeasers({
   return (
     <Grid>
       {projects.map(project => (
-        <ProjectTeaser key={`project-teaser-${project.slug}`} project={project} />
+        <ProjectTeaser key={project.slug} project={project} />
       ))}
     </Grid>
   )

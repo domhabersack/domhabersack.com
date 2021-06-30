@@ -7,7 +7,6 @@ import { getAllFiretips } from '@/lib/api/firetips'
 import { getAllTags as getAllFiretipTags } from '@/lib/api/firetip-tags'
 import { getAllNewsletters } from '@/lib/api/newsletters'
 import { getAllPages } from '@/lib/api/pages'
-import { getAllCategories as getAllPostCategories } from '@/lib/api/post-categories'
 import { getAllPosts } from '@/lib/api/posts'
 import { getAllProjects } from '@/lib/api/projects'
 
@@ -38,7 +37,6 @@ export async function getServerSideProps({ res }) {
   const firetipTagsPermalinks = (await getAllFiretipTags()).map(getPermalink)
   const pagesPermalinks = (await getAllPages()).map(getPermalink)
   const postsPermalinks = (await getAllPosts()).map(getPermalink)
-  const postCategoriesPermalinks = (await getAllPostCategories()).map(getPermalink)
   const newslettersPermalinks = (await getAllNewsletters()).map(getPermalink)
   const projectsPermalinks = (await getAllProjects()).map(getPermalink)
 
@@ -55,7 +53,6 @@ export async function getServerSideProps({ res }) {
     '/newsletter',
     '/newsletter/archive',
     '/posts',
-    '/posts/categories',
     '/projects',
 
     ...coursesPermalinks,
@@ -65,7 +62,6 @@ export async function getServerSideProps({ res }) {
     ...newslettersPermalinks,
     ...pagesPermalinks,
     ...postsPermalinks,
-    ...postCategoriesPermalinks,
     ...projectsPermalinks,
   ].sort()
 

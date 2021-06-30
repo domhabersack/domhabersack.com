@@ -5,7 +5,6 @@ import config from '@/config'
 export default function MetaTags({
   description,
   expiredAt,
-  heroAlt,
   imageSubpath = 'default',
   ogImage,
   permalink,
@@ -48,7 +47,6 @@ export default function MetaTags({
       <meta property="og:url" content={`${siteUrl}${permalink}`} />
 
       {description && (<meta property="og:description" content={description} />)}
-      {heroAlt && (<meta property="og:image:alt" content={heroAlt} />)}
       {type && (<meta property="og:type" content={type} />)}
 
       {isArticle && (

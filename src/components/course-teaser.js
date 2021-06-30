@@ -1,7 +1,4 @@
 import Image from 'next/image'
-import { Card } from '@yieldui/react'
-
-import Icon from '@/components/icon'
 
 export default function CourseTeaser({
   course,
@@ -9,44 +6,35 @@ export default function CourseTeaser({
   const {
     excerpt,
     hero,
-    lessons,
     permalink,
     title,
   } = course
 
   return (
-    <Card>
-      <article className="flex flex-col h-full">
+    <article className="space-y-2">
+      <a href={permalink}>
+        <Image
+          alt={title}
+          height="360"
+          layout="responsive"
+          src={hero}
+          width="640"
+        />
+      </a>
+
+      <h2 className="font-medium text-gray-900 text-lg dark:text-gray-50">
         <a href={permalink}>
-          <Image
-            alt={title}
-            height="360"
-            layout="responsive"
-            src={hero}
-            width="640"
-          />
+          {title}
         </a>
+      </h2>
 
-        <div className="flex-grow px-4 py-3">
-          <h2 className="leading-snug m-0 mb-1.5 text-base">
-            <a href={permalink}>
-              {title}
-            </a>
-          </h2>
+      <p className="text-base text-gray-500 dark:text-gray-400">
+        {excerpt}
+      </p>
 
-          <p className="m-0 text-sm">
-            {excerpt}
-          </p>
-        </div>
-
-        <footer className="bg-gray-100 flex items-center px-4 py-3 space-x-1 text-gray-600 text-xs dark:bg-black dark:text-gray-300">
-          <Icon className="h-6 w-6 dark:text-gray-400" type="book" />
-
-          <span>
-            <strong>{lessons.length}</strong> lessons
-          </span>
-        </footer>
-      </article>
-    </Card>
+      <a className="inline-block font-medium text-blue-600 dark:text-blue-500" href={permalink}>
+        Take the course
+      </a>
+    </article>
   )
 }

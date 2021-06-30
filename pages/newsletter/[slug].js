@@ -1,9 +1,10 @@
 import { MDXRemote } from 'next-mdx-remote'
 
+import ArticleTeasers from '@/components/article-teasers'
 import Layout from '@/components/layout'
 import MDXComponents from '@/components/mdx-components'
 import MetaTags from '@/components/meta-tags'
-import NewsletterTeaser from '@/components/newsletter-teaser'
+import PageTitle from '@/components/page-title'
 import PostMeta from '@/components/post-meta'
 import { getAllNewsletterSlugs, getNewsletterBySlug } from '@/lib/api/newsletters'
 import getMDXSource from '@/lib/get-mdx-source'
@@ -40,9 +41,9 @@ export default function Newsletter({
         type="article"
       />
 
-      <h1>
+      <PageTitle>
         {title}
-      </h1>
+      </PageTitle>
 
       <div className="mb-6">
         <PostMeta
@@ -52,22 +53,22 @@ export default function Newsletter({
         />
       </div>
 
-      <MDXRemote {...mdxSource} components={MDXComponents} />
+      <div className="break-words prose prose-blue dark:prose-dark">
+        <MDXRemote {...mdxSource} components={MDXComponents} />
+      </div>
 
       {hasRelatedIssues && (
         <div className="mt-24">
-          <h2 className="m-0 mb-3 text-xl">
+          <h2 className="font-bold mb-4 text-gray-900 text-xl dark:text-gray-50">
             Continue reading
           </h2>
 
-          <div className="grid gap-12 grid-cols-1 mb-8">
-            {related.map(newsletter => (
-              <NewsletterTeaser key={`newsletter-${newsletter.slug}`} newsletter={newsletter} />
-            ))}
+          <div className="mb-8">
+            <ArticleTeasers articles={related} />
           </div>
 
           <p>
-            <a href="/newsletter/archive">
+            <a className="text-gray-800 dark:text-gray-100" href="/newsletter/archive">
               Read all issues &rarr;
             </a>
           </p>

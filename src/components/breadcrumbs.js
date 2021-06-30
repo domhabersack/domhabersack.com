@@ -3,12 +3,8 @@ import { Fragment } from 'react'
 export default function Breadcrumbs({
   breadcrumbs,
 }) {
-  if (!breadcrumbs) {
-    return null
-  }
-
   return (
-    <nav className="font-medium text-sm w-full">
+    <nav className="font-medium text-sm">
       {[
         {
           label: 'Home',
@@ -19,9 +15,9 @@ export default function Breadcrumbs({
         label,
         url
       }) => url ? (
-        <Fragment key={`breadcrumb-${label}`}>
+        <Fragment key={label}>
           <a
-            className="inline-block"
+            className="inline-block text-gray-800 dark:text-gray-100"
             href={url}
           >
             {label}
@@ -32,7 +28,7 @@ export default function Breadcrumbs({
           </span>
         </Fragment>
       ) : (
-        <span className="text-gray-400 dark:text-gray-300" key={`breadcrumb-${label}`}>
+        <span className="text-gray-500 dark:text-gray-400" key={label}>
           {label}
         </span>
       ))}

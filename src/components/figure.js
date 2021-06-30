@@ -19,7 +19,7 @@ export default function Figure({
       />
 
       {caption != null ? (
-        <figcaption>
+        <figcaption className="italic mt-1.5 text-center text-gray-500 text-xs dark:text-gray-400">
           {caption}
         </figcaption>
       ) : null}

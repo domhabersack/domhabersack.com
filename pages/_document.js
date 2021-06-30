@@ -17,7 +17,7 @@ export default class MyDocument extends Document {
           <Favicons />
         </Head>
 
-        <body className="bg-gray-50 text-gray-600 dark:bg-gray-800 dark:text-gray-300">
+        <body className="bg-gray-50 text-pink-500 dark:bg-gray-900 dark:text-gray-300">
           <Main />
 
           <script
