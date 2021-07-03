@@ -1,8 +1,14 @@
 import { getAllFiles, getFileBySlug, getSlugs } from '@/lib/api-helpers'
 
 const transform = ({
+  frontmatter,
   slug,
 }) => ({
+  breadcrumbs: [
+    {
+      label: frontmatter.title,
+    }
+  ],
   permalink: `/${slug}`,
 })
 

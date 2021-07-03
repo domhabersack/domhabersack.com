@@ -10,6 +10,7 @@ import { getLessonBySlugs, getAllLessonSlugsByCourseSlug } from '@/lib/api/cours
 import getMDXSource from '@/lib/get-mdx-source'
 
 export default function CourseLesson({
+  breadcrumbs,
   course,
   excerpt,
   id,
@@ -17,18 +18,6 @@ export default function CourseLesson({
   permalink,
   title,
 }) {
-  const breadcrumbs = [
-    {
-      label: 'Courses',
-      url: '/courses',
-    }, {
-      label: course.title,
-      url: course.permalink,
-    }, {
-      label: title,
-    }
-  ]
-
   return (
     <Layout breadcrumbs={breadcrumbs}>
       <MetaTags
@@ -41,7 +30,7 @@ export default function CourseLesson({
         {title}
       </PageTitle>
 
-      <div className="break-words mb-8 prose prose-blue dark:prose-dark">
+      <div className="break-words prose prose-blue dark:prose-dark">
         <MDXRemote {...mdxSource} components={MDXComponents} />
       </div>
 
@@ -89,8 +78,8 @@ export async function getStaticPaths() {
 
       return allLessonSlugs.map(lessonSlug => ({
         params: {
-          slug,
           lessonSlug,
+          slug,
         },
       }))
     }).flat(1),

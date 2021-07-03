@@ -13,6 +13,8 @@ export default function ArticleTeaser({
     title,
   } = article
 
+  const hasTags = tags != null
+
   return (
     <article className="space-y-2">
       <footer className="text-gray-500 text-sm dark:text-gray-400">
@@ -29,7 +31,7 @@ export default function ArticleTeaser({
         {excerpt}
       </p>
 
-      {tags && (
+      {hasTags && (
         <div className="flex flex-wrap space-x-1.5">
           {tags.map(tag => (
             <Tag key={tag}>

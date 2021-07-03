@@ -25,7 +25,7 @@ export default function Courses({
       </PageTitle>
 
       <p className="max-w-xl mb-8 text-gray-500 text-xl dark:text-gray-400">
-        I offer <strong>email- and video-courses</strong> for designers and developers of any skill level. They are all <strong>completely free</strong>.
+        I offer email- and video-courses for designers and developers of any skill level. They are all completely free.
       </p>
 
       <CourseTeasers courses={courses} />

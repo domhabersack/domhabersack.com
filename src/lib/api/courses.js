@@ -2,11 +2,19 @@ import { getAllFiles, getFileBySlug, getSlugs } from '@/lib/api-helpers'
 import { getAllLessonsByCourseSlug } from '@/lib/api/course-lessons'
 
 const transform = ({
+  frontmatter,
   slug,
 }) => ({
-  hero: `/api/courses/${slug}/hero.jpg`,
-  ogImage: `/api/courses/${slug}/og-image.jpg`,
-  permalink: `/courses/${slug}`,
+  breadcrumbs: [
+    {
+      label: 'Courses',
+      url: '/courses',
+    }, {
+      label: frontmatter.title,
+    },
+  ],
+  ogImage: `/og-image/${slug}.jpg`,
+  permalink: `/${slug}`,
 })
 
 export async function getAllCourses() {
@@ -33,7 +41,7 @@ export async function getCourseBySlug(slug) {
   const lessons = (await Promise.all(lessonSlugs.map(lessonSlug => getFileBySlug(`courses/${slug}/lessons`, lessonSlug, ({
     slug: lessonSlug,
   }) => ({
-    permalink: `/courses/${slug}/${lessonSlug}`,
+    permalink: `/${slug}/${lessonSlug}`,
   }))))).sort((a, b) => a.id - b.id)
 
   return {

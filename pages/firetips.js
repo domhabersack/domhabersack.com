@@ -1,15 +1,11 @@
-import { Tag } from '@yieldui/react'
-
 import FiretipTeaser from '@/components/firetip-teaser'
 import Layout from '@/components/layout'
 import MetaTags from '@/components/meta-tags'
 import PageTitle from '@/components/page-title'
 import { getAllFiretips } from '@/lib/api/firetips'
-import { getAllTagsWithFiretips } from '@/lib/api/firetip-tags'
 
 export default function Firetips({
   firetips,
-  tags,
 }) {
   const breadcrumbs = [
     {
@@ -30,16 +26,6 @@ export default function Firetips({
         Fire tips
       </PageTitle>
 
-      <div className="flex flex-wrap mb-6">
-        {tags.map(tag => (
-          <div className="flex items-center mb-1.5 mr-2.5" key={tag.slug}>
-            <Tag href={tag.permalink}>
-              {tag.title}
-            </Tag>&nbsp;<span className="text-gray-500 text-xs dark:text-gray-400">&times; {tag.firetips.length}</span>
-          </div>
-        ))}
-      </div>
-
       <div className="grid gap-10">
         {firetips.map(firetip => (
           <FiretipTeaser firetip={firetip} key={firetip.slug} />
@@ -51,12 +37,10 @@ export default function Firetips({
 
 export async function getStaticProps() {
   const firetips = await getAllFiretips()
-  const tags = await getAllTagsWithFiretips()
 
   return {
     props: {
       firetips,
-      tags,
     },
   }
 }

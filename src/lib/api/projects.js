@@ -1,11 +1,20 @@
 import { getAllFiles, getFileBySlug, getSlugs } from '@/lib/api-helpers'
 
 const transform = ({
+  frontmatter,
   slug,
 }) => ({
+  breadcrumbs: [
+    {
+      label: 'Projects',
+      url: '/projects',
+    }, {
+      label: frontmatter.title,
+    },
+  ],
   hero: `/api/projects/${slug}/hero.png`,
-  ogImage: `/api/projects/${slug}/og-image.jpg`,
-  permalink: `/projects/${slug}`,
+  ogImage: `/og-image/${slug}.jpg`,
+  permalink: `/${slug}`,
 })
 
 export async function getAllProjects() {

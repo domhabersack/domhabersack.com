@@ -5,23 +5,12 @@ export default function CourseTeaser({
 }) {
   const {
     excerpt,
-    hero,
     permalink,
     title,
   } = course
 
   return (
     <article className="space-y-2">
-      <a href={permalink}>
-        <Image
-          alt={title}
-          height="360"
-          layout="responsive"
-          src={hero}
-          width="640"
-        />
-      </a>
-
       <h2 className="font-medium text-gray-900 text-lg dark:text-gray-50">
         <a href={permalink}>
           {title}

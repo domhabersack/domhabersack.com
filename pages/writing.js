@@ -2,28 +2,28 @@ import ArticleTeasers from '@/components/article-teasers'
 import Layout from '@/components/layout'
 import MetaTags from '@/components/meta-tags'
 import PageTitle from '@/components/page-title'
-import { getAllPosts } from '@/lib/api/posts'
+import { getAllArticles } from '@/lib/api/articles'
 
 export default function Posts({
-  posts,
+  articles,
 }) {
   const breadcrumbs = [
     {
-      label: 'Blog'
-    }
+      label: 'Writing',
+    },
   ]
 
   return (
     <Layout breadcrumbs={breadcrumbs}>
       <MetaTags
-        description="I write about design, development, and productivity. My weekly newsletter contains shorter pieces. Read all previous issues in the archive."
-        imageSubpath="pages/posts"
-        permalink="/posts"
-        title="Blog"
+        description="I write about all things tech and business. My articles cover design, development, productivity, and more."
+        imageSubpath="pages/writing"
+        permalink="/writing"
+        title="Writing"
       />
 
       <PageTitle>
-        Blog
+        Writing
       </PageTitle>
 
       <p className="max-w-xl mb-8 text-gray-500 text-xl dark:text-gray-400">
@@ -31,18 +31,18 @@ export default function Posts({
       </p>
 
       <div className="max-w-md">
-        <ArticleTeasers articles={posts} />
+        <ArticleTeasers articles={articles} />
       </div>
     </Layout>
   )
 }
 
 export async function getStaticProps() {
-  const posts = await getAllPosts()
+  const articles = await getAllArticles()
 
   return {
     props: {
-      posts,
+      articles,
     },
   }
 }

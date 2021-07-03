@@ -28,3 +28,11 @@ module.exports = withMDX({
     ]
   },
 })
+
+// JUMP /posts
+// MOVE /posts/:slug
+// JUMP /newsletter
+// MOVE /newsletter/:slug
+// GONE /newsletter/archive
+// GONE /firetips/tags
+// GONE /firetips/tags/:slug

@@ -3,8 +3,7 @@ import { useState } from 'react'
 const LINKS = {
   'Home': '/',
   'Projects': '/projects',
-  'Blog': '/posts',
-  'Newsletter': '/newsletter',
+  'Writing': '/writing',
 }
 
 export default function Navigation() {
