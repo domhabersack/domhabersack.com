@@ -4,7 +4,6 @@ import config from '@/config'
 import { getAllCourses } from '@/lib/api/courses'
 import { getAllLessonsByCourseSlug } from '@/lib/api/course-lessons'
 import { getAllFiretips } from '@/lib/api/firetips'
-import { getAllTags as getAllFiretipTags } from '@/lib/api/firetip-tags'
 import { getAllNewsletters } from '@/lib/api/newsletters'
 import { getAllPages } from '@/lib/api/pages'
 import { getAllPosts } from '@/lib/api/posts'
@@ -34,7 +33,6 @@ function Sitemap({
 
 export async function getServerSideProps({ res }) {
   const firetipsPermalinks = (await getAllFiretips()).map(getPermalink)
-  const firetipTagsPermalinks = (await getAllFiretipTags()).map(getPermalink)
   const pagesPermalinks = (await getAllPages()).map(getPermalink)
   const postsPermalinks = (await getAllPosts()).map(getPermalink)
   const newslettersPermalinks = (await getAllNewsletters()).map(getPermalink)
@@ -46,19 +44,14 @@ export async function getServerSideProps({ res }) {
 
   const allPermalinks = [
     '/',
-    '/contact',
     '/courses',
     '/firetips',
-    '/firetips/tags',
-    '/newsletter',
-    '/newsletter/archive',
-    '/posts',
     '/projects',
+    '/writing',
 
     ...coursesPermalinks,
     ...coursesLessonsPermalinks,
     ...firetipsPermalinks,
-    ...firetipTagsPermalinks,
     ...newslettersPermalinks,
     ...pagesPermalinks,
     ...postsPermalinks,
