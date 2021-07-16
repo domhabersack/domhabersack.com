@@ -7,11 +7,11 @@ const transform = async ({
   const { embedded } = frontmatter
 
   const newsletter = embedded?.newsletter ? (await getFileBySlug('newsletters', embedded.newsletter, ({ slug }) => ({
-    permalink: `/newsletter/${slug}`,
+    permalink: `/${slug}`,
   }))) : null
 
   const project = embedded?.project ? (await getFileBySlug('projects', embedded.project, ({ slug }) => ({
-    permalink: `/projects/${slug}`,
+    permalink: `/${slug}`,
   }))) : null
 
   return {
