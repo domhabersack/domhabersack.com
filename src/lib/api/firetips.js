@@ -1,4 +1,5 @@
 import { getAllFiles, getFileBySlug, getSlugs } from '@/lib/api-helpers'
+import getOgImageForPath from '@/lib/get-og-image-for-path'
 
 const transform = async ({
   frontmatter,
@@ -13,6 +14,7 @@ const transform = async ({
         label: frontmatter.title,
       },
     ],
+    ogImage: getOgImageForPath(slug),
     permalink: `/${slug}`,
   }
 }

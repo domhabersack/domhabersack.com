@@ -1,7 +1,7 @@
 import ArticleTeasers from '@/components/article-teasers'
+import H1 from '@/components/h1'
 import Layout from '@/components/layout'
 import MetaTags from '@/components/meta-tags'
-import PageTitle from '@/components/page-title'
 import { getAllArticles } from '@/lib/api/articles'
 
 export default function Posts({
@@ -17,14 +17,14 @@ export default function Posts({
     <Layout breadcrumbs={breadcrumbs}>
       <MetaTags
         description="I write about all things tech and business. My articles cover design, development, productivity, and more."
-        imageSubpath="pages/writing"
+        ogImage="/og-image/writing.png"
         permalink="/writing"
         title="Writing"
       />
 
-      <PageTitle>
+      <H1>
         Writing
-      </PageTitle>
+      </H1>
 
       <p className="max-w-xl mb-8 text-gray-500 text-xl dark:text-gray-400">
         I write about all things tech and business. My articles cover design, development, productivity, and more.

@@ -6,7 +6,7 @@ const transform = async ({
 }) => {
   const { embedded } = frontmatter
 
-  const newsletter = embedded?.newsletter ? (await getFileBySlug('newsletters', embedded.newsletter, ({ slug }) => ({
+  const article = embedded?.article ? (await getFileBySlug('articles', embedded.article, ({ slug }) => ({
     permalink: `/${slug}`,
   }))) : null
 
@@ -17,7 +17,7 @@ const transform = async ({
   return {
     createdAt: slug,
     embedded: {
-      newsletter,
+      article,
       project,
     },
   }

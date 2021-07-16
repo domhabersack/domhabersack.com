@@ -1,11 +1,13 @@
 import { getAllFiles, getFileBySlug, getSlugs } from '@/lib/api-helpers'
 import { getAuthorBySlug } from '@/lib/api/authors'
+import getOgImageForPath from '@/lib/get-og-image-for-path'
 
 const transform = async ({
   frontmatter,
   slug,
 }) => {
   const author = await getAuthorBySlug(frontmatter.author)
+  const ogImage = getOgImageForPath(slug)
 
   // We’re not passing the transform-parameter to this call to avoid an infinite loop here where each newsletter object
   // circularly depends on all other newsletter objects existing first. For the given use case, having one additional
@@ -26,7 +28,7 @@ const transform = async ({
         label: frontmatter.title,
       },
     ],
-    ogImage: `/og-image/${slug}.jpg`,
+    ogImage,
     ogType: 'article',
     permalink: `/${slug}`,
     related,

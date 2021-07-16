@@ -1,4 +1,5 @@
 import { getAllFiles, getFileBySlug, getSlugs } from '@/lib/api-helpers'
+import getOgImageForPath from '@/lib/get-og-image-for-path'
 
 const transform = ({
   frontmatter,
@@ -13,7 +14,7 @@ const transform = ({
     },
   ],
   hero: `/api/projects/${slug}/hero.png`,
-  ogImage: `/og-image/${slug}.jpg`,
+  ogImage: getOgImageForPath(slug),
   permalink: `/${slug}`,
 })
 

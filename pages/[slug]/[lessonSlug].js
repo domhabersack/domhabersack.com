@@ -1,10 +1,10 @@
 import { MDXRemote } from 'next-mdx-remote'
 
+import H1 from '@/components/h1'
 import Layout from '@/components/layout'
 import Lessons from '@/components/lessons'
 import MDXComponents from '@/components/mdx-components'
 import MetaTags from '@/components/meta-tags'
-import PageTitle from '@/components/page-title'
 import { getAllCourseSlugs, getCourseBySlug } from '@/lib/api/courses'
 import { getLessonBySlugs, getAllLessonSlugsByCourseSlug } from '@/lib/api/course-lessons'
 import getMDXSource from '@/lib/get-mdx-source'
@@ -15,6 +15,7 @@ export default function CourseLesson({
   excerpt,
   id,
   mdxSource,
+  ogImage,
   permalink,
   title,
 }) {
@@ -22,13 +23,14 @@ export default function CourseLesson({
     <Layout breadcrumbs={breadcrumbs}>
       <MetaTags
         description={excerpt}
+        ogImage={ogImage}
         permalink={permalink}
         title={title}
       />
 
-      <PageTitle>
+      <H1>
         {title}
-      </PageTitle>
+      </H1>
 
       <div className="break-words prose prose-blue dark:prose-dark">
         <MDXRemote {...mdxSource} components={MDXComponents} />

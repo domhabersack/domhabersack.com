@@ -3,12 +3,12 @@ import { Tag } from '@yieldui/react'
 
 import ArticleTeasers from '@/components/article-teasers'
 import Figure from '@/components/figure'
+import H1 from '@/components/h1'
 import Icon from '@/components/icon'
 import Layout from '@/components/layout'
 import Lessons from '@/components/lessons'
 import MDXComponents from '@/components/mdx-components'
 import MetaTags from '@/components/meta-tags'
-import PageTitle from '@/components/page-title'
 import PostMeta from '@/components/post-meta'
 import Stack from '@/components/stack'
 import { getAllCourseSlugs, getCourseBySlug } from '@/lib/api/courses'
@@ -47,9 +47,6 @@ export default function Page({
   const hasUrl = url != null
   const hasStack = stack != null
 
-  // TODO meta tags:
-  // - merge description and excerpt?
-
   return (
     <Layout breadcrumbs={breadcrumbs}>
       <MetaTags
@@ -62,9 +59,9 @@ export default function Page({
         title={title}
       />
 
-      <PageTitle>
+      <H1>
         {title}
-      </PageTitle>
+      </H1>
 
       {hasTags && (
         <div className="flex flex-wrap mb-4 space-x-1.5">

@@ -1,7 +1,7 @@
 import FiretipTeaser from '@/components/firetip-teaser'
+import H1 from '@/components/h1'
 import Layout from '@/components/layout'
 import MetaTags from '@/components/meta-tags'
-import PageTitle from '@/components/page-title'
 import { getAllFiretips } from '@/lib/api/firetips'
 
 export default function Firetips({
@@ -17,14 +17,14 @@ export default function Firetips({
     <Layout breadcrumbs={breadcrumbs}>
       <MetaTags
         description="Snack-sized snippets that help you write better HTML, CSS, and JavaScript."
-        imageSubpath="pages/firetips"
+        ogImage="/og-image/firetips.png"
         permalink="/firetips"
         title="Fire tips"
       />
 
-      <PageTitle>
+      <H1>
         Fire tips
-      </PageTitle>
+      </H1>
 
       <div className="grid gap-10">
         {firetips.map(firetip => (
