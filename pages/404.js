@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import { useRouter } from 'next/router'
 
 import H1 from '@/components/h1'
@@ -8,11 +9,13 @@ import { triggerEvent } from '@/lib/analytics'
 export default function Custom404() {
   const router = useRouter()
 
-  triggerEvent('404', {
-    props: {
-      path: router.asPath,
-    }
-  })
+  useEffect(() => {
+    triggerEvent('404', {
+      props: {
+        path: router.asPath,
+      }
+    })
+  }, [])
 
   return (
     <Layout>
