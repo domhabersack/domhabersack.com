@@ -3,6 +3,10 @@ const withMDX = require('@next/mdx')()
 const redirects = require('./redirects.json')
 
 module.exports = withMDX({
+  eslint: {
+    dirs: ['pages', 'src'],
+  },
+
   images: {
     disableStaticImages: true,
   },

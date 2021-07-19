@@ -61,7 +61,7 @@ export default function Footer() {
                 </a>
               </Link>
 
-              <Link href="/posts">
+              <Link href="/writing">
                 <a className="block py-1">
                   Blog
                 </a>

@@ -1,3 +1,5 @@
+import Link from 'next/link'
+
 import { Tag } from '@yieldui/react'
 
 export default function FiretipTeaser({
@@ -14,9 +16,11 @@ export default function FiretipTeaser({
   return (
     <article className="space-y-2">
       <h2 className="font-medium text-gray-900 text-lg dark:text-gray-50">
-        <a href={permalink}>
-          {title}
-        </a>
+        <Link href={permalink}>
+          <a>
+            {title}
+          </a>
+        </Link>
       </h2>
 
       {hasTags && (
@@ -29,9 +33,11 @@ export default function FiretipTeaser({
         </div>
       )}
 
-      <a className="inline-block font-medium text-blue-600 dark:text-blue-500" href={permalink}>
-        Read fire tip
-      </a>
+      <Link href={permalink}>
+        <a className="inline-block font-medium text-blue-600 dark:text-blue-500">
+          Read fire tip
+        </a>
+      </Link>
     </article>
   )
 }

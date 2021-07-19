@@ -26,7 +26,7 @@
     "build": "next build",
     "build:debug": "next build --debug",
     "dev": "next dev",
-    "lint": "next lint",
+    "lint": "next lint --dir pages --dir src",
     "start": "next start",
     "test": "jest",
     "test:watch": "jest --watch"
