@@ -9,16 +9,20 @@ export default function Icon({
   const [path, setPath] = useState(null)
   const [viewBox, setViewBox] = useState(null)
 
-  useEffect(async () => {
-    const result = await fetch(`/api/icons?name=${type}&size=${size}&style=${style}`)
+  useEffect(() => {
+    async function fetchData() {
+      const result = await fetch(`/api/icons?name=${type}&size=${size}&style=${style}`)
 
-    if (result.ok) {
-      const json = await result.json()
+      if (result.ok) {
+        const json = await result.json()
 
-      setPath(json.path)
-      setViewBox(json.viewBox)
+        setPath(json.path)
+        setViewBox(json.viewBox)
+      }
     }
-  }, [])
+
+    fetchData()
+  }, [size, style, type])
 
   return (
     <svg

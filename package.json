@@ -26,6 +26,7 @@
     "build": "next build",
     "build:debug": "next build --debug",
     "dev": "next dev",
+    "lint": "next lint",
     "start": "next start",
     "test": "jest",
     "test:watch": "jest --watch"
@@ -35,6 +36,8 @@
     "@babel/preset-env": "7.14.2",
     "@svgr/webpack": "5.5.0",
     "babel-jest": "27.0.1",
+    "eslint": "7.31.0",
+    "eslint-config-next": "11.0.1",
     "jest": "27.0.1"
   }
 }

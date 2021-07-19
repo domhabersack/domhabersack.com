@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 
 import Icon from '@/components/icon'
 import Layout from '@/components/layout'
@@ -118,9 +119,11 @@ export default function Index({
           </div>
 
           <p>
-            <a className="text-gray-800 dark:text-gray-100" href="/projects">
-              See all projects &rarr;
-            </a>
+            <Link href="/projects">
+              <a className="text-gray-800 dark:text-gray-100">
+                See all projects &rarr;
+              </a>
+            </Link>
           </p>
         </Section>
       </div>
@@ -134,9 +137,11 @@ export default function Index({
         </div>
 
         <p>
-          <a className="text-gray-800 dark:text-gray-100" href="/writing">
-            Read all articles &rarr;
-          </a>
+          <Link href="/writing">
+            <a className="text-gray-800 dark:text-gray-100">
+              Read all articles &rarr;
+            </a>
+          </Link>
         </p>
       </Section>
     </Layout>

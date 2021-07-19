@@ -1,3 +1,5 @@
+import Link from 'next/link'
+
 import Icon from '@/components/icon'
 import NewsletterSignup from '@/components/newsletter-signup'
 import UppercaseHeading from '@/components/uppercase-heading'
@@ -53,25 +55,35 @@ export default function Footer() {
             </UppercaseHeading>
 
             <div className="flex flex-col items-start mb-2 space-y-1.5 text-sm">
-              <a className="block py-1" href="/about">
-                About
-              </a>
+              <Link href="/about">
+                <a className="block py-1">
+                  About
+                </a>
+              </Link>
 
-              <a className="block py-1" href="/posts">
-                Blog
-              </a>
+              <Link href="/posts">
+                <a className="block py-1">
+                  Blog
+                </a>
+              </Link>
 
-              <a className="block py-1" href="/firetips">
-                Fire tips
-              </a>
+              <Link href="/firetips">
+                <a className="block py-1">
+                  Fire tips
+                </a>
+              </Link>
 
-              <a className="block py-1" href="/projects">
-                Projects
-              </a>
+              <Link href="/projects">
+                <a className="block py-1">
+                  Projects
+                </a>
+              </Link>
 
-              <a className="block py-1" href="/contact">
-                Contact
-              </a>
+              <Link href="/contact">
+                <a className="block py-1">
+                  Contact
+                </a>
+              </Link>
             </div>
           </div>
 
@@ -81,9 +93,11 @@ export default function Footer() {
             </UppercaseHeading>
 
             <div className="flex flex-col items-start mb-3 space-y-1.5 text-sm">
-              <a className="block py-1" href="/legal-notice">
-                Legal Notice
-              </a>
+              <Link href="/legal-notice">
+                <a className="block py-1">
+                  Legal Notice
+                </a>
+              </Link>
 
               <a className="block py-1 iubenda-embed iubenda-nostyle no-brand" href="https://www.iubenda.com/privacy-policy/31487586">
                 Privacy Policy

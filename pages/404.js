@@ -1,4 +1,5 @@
 import { useEffect } from 'react'
+import Link from 'next/link'
 import { useRouter } from 'next/router'
 
 import H1 from '@/components/h1'
@@ -15,7 +16,7 @@ export default function Custom404() {
         path: router.asPath,
       }
     })
-  }, [])
+  }, [router.asPath])
 
   return (
     <Layout>
@@ -33,7 +34,7 @@ export default function Custom404() {
       </p>
 
       <p className="max-w-xl text-gray-500 text-xl dark:text-gray-400">
-        This page might have disappeared. If you’re missing something that used to be here, <a href="/contact">shoot me an email</a> or get in touch <a href="https://twitter.com/domhabersack">via Twitter</a> and I’ll see where it ended up.
+        This page might have disappeared. If you’re missing something that used to be here, <Link href="/contact"><a>shoot me an email</a></Link> or get in touch <a href="https://twitter.com/domhabersack">via Twitter</a> and I’ll see where it ended up.
       </p>
     </Layout>
   )

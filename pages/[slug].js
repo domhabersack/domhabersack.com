@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import { MDXRemote } from 'next-mdx-remote'
 import { Tag } from '@yieldui/react'
 
@@ -111,9 +112,11 @@ export default function Page({
           </div>
 
           <p>
-            <a className="text-gray-800 dark:text-gray-100" href="/writing">
-              Read all articles &rarr;
-            </a>
+            <Link href="/writing">
+              <a className="text-gray-800 dark:text-gray-100">
+                Read all articles &rarr;
+              </a>
+            </Link>
           </p>
         </div>
       )}

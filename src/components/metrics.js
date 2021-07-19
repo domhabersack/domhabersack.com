@@ -1,6 +1,6 @@
 function getClassNamesForTrend(trend) {
   if (trend > 0) {
-    return 'bg-green-200 text-green-700 dark:bg-green-600 dark:text-gray-50
+    return 'bg-green-200 text-green-700 dark:bg-green-600 dark:text-gray-50'
   }
 
   return 'bg-red-200 text-red-700 dark:bg-red-600 dark:text-gray-50'
