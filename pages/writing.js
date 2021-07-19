@@ -4,7 +4,7 @@ import Layout from '@/components/layout'
 import MetaTags from '@/components/meta-tags'
 import { getAllArticles } from '@/lib/api/articles'
 
-export default function Posts({
+export default function Writing({
   articles,
 }) {
   const breadcrumbs = [
