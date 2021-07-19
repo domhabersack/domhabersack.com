@@ -1,14 +1,31 @@
 import { getAllFiles, getFileBySlug, getSlugs } from '@/lib/api-helpers'
+import { getCourseBySlug } from '@/lib/api/courses'
+import getOgImageForPath from '@/lib/get-og-image-for-path'
 
-const transform = courseSlug => ({
+const transform = course => ({
+  frontmatter,
   slug,
 }) => ({
-  permalink: `/courses/${courseSlug}/${slug}`,
+  breadcrumbs: [
+    {
+      label: 'Courses',
+      url: '/courses',
+    }, {
+      label: course.title,
+      url: course.permalink,
+    }, {
+      label: frontmatter.title,
+    }
+  ],
+  ogImage: getOgImageForPath(`${course.slug}/${slug}`),
+  permalink: `/${course.slug}/${slug}`,
 })
 
 export async function getAllLessonsByCourseSlug(courseSlug) {
+  const course = await getCourseBySlug(courseSlug)
+
   return (
-    await getAllFiles(`courses/${courseSlug}/lessons`, transform(courseSlug))
+    await getAllFiles(`courses/${courseSlug}/lessons`, transform(course))
   ).sort((a, b) => a.id - b.id)
 }
 
@@ -17,5 +34,7 @@ export function getAllLessonSlugsByCourseSlug(courseSlug) {
 }
 
 export async function getLessonBySlugs(courseSlug, lessonSlug) {
-  return await getFileBySlug(`courses/${courseSlug}/lessons`, lessonSlug, transform(courseSlug))
+  const course = await getCourseBySlug(courseSlug)
+
+  return await getFileBySlug(`courses/${courseSlug}/lessons`, lessonSlug, transform(course))
 }

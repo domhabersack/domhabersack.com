@@ -1,0 +1,33 @@
+---
+title: "Your notes could be products"
+createdAt: "2021-04-21"
+excerpt: "You definitely have at least a few products in you. The collection of tips and tricks you keep for yourself could be valuable to others as well."
+issue: 85
+heroAlt: "Several stacks of bound notebooks."
+heroCaption: "Look at all these fantastic products you have there."
+author: dom-habersack
+related:
+  - picking-projects
+  - css-with-tailwind
+---
+After releasing [logosearch.link](https://logosearch.link) a few days ago, I was looking for a new product to work on. Not having worked with WordPress in a few years, I decided to check that out again. In the process, I accidentally built and released another product.
+
+WordPress now comes with an [official REST-API](https://developer.wordpress.org/rest-api/) built into the core of the product. Before this new REST-API, themes had to use PHP and constructs like [“The Loop”](https://developer.wordpress.org/themes/basics/the-loop/). With it, we can treat WordPress like a headless CMS and put any frontend in front of it. After some research, I started a project that would use WordPress as such a headless CMS.
+
+Then I got sidetracked. Hard.
+
+Working on my third site in a row, I started needing components I had already created in previous ones. Most of them were pretty basic: I wanted similar buttons, signup forms, and content cards. Recreating and maintaining them across projects started to become tedious. I often had to go back to previous projects, find the component I wanted, and fix it or copy it over. It wasn’t the best workflow.
+
+I started collecting some of these components in an independent directory. They were nothing but a few HTML files I could copy over. It’s a similar workflow, but now there is only one place I need to look through instead of five. If that kind of collection is useful to me, it might be useful to others as well. I decided to turn my Tailwind-styled components into their own little product.
+
+Three days later, I published that project. You can check it out at [yieldui.com](https://yieldui.com).
+
+The collection is going to grow over time as I need more components for my other projects. It doesn’t need to compete with libraries that have hundreds of components. It might grow to that size, but having it available in one central project is already a massive benefit to me.
+
+This project started because I found my little collection useful myself. My previous project was very similar in that sense. Logosearch is a directory that lists companies’ official branding guidelines. It’s not groundbreaking stuff at all. Still, having those pages easily available is pretty helpful in certain situations. Most of these links lived in my browser bookmarks before, where they were available to me already. Thinking that what’s useful to me might be useful to others, they too became a standalone project.
+
+Chances are you have something like that. It could be a collection of git commands you refer to when something breaks. It could be notes full of activities you can use in retrospectives to plan meetings with. It could be a few helper functions you need in any project you’re working on. Whatever it is, if it’s useful to you, it might also be useful to others. You can take what you have, package it up, and make it available on the internet.
+
+If you release a project like that, I’d love to see what it is! If you need help packaging it up, talk to me and well do it together.
+
+– Dom

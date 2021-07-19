@@ -1,0 +1,45 @@
+---
+title: "Just enough analytics"
+createdAt: "2021-04-07"
+excerpt: "When we need to gather statistics or other logs from our projects, we don’t always need to use full, privacy-invading analytics solutions."
+issue: 83
+heroAlt: "A bunch of numbers on a board."
+heroCaption: "We need this many numbers. Not more, not fewer. Exactly this many."
+author: dom-habersack
+related:
+  - gdpr-and-you
+  - dnt
+---
+Earlier today, I soft-launched my latest side project.
+
+When working on interfaces, I often need high-quality versions of various logos. A couple of times per year, I go and hunt the logos of React, Twitter, Slack, and others. Most companies provide them through press pages, but finding them always takes a lot of time. Some companies call the page something else. Some don’t provide them in the right format. It’s never a quick in-and-out.
+
+A few years ago, the now defunct [instantlogosearch.com](http://instantlogosearch.com) solved that problem. It offered a searchable database of thousands of logos. You could look up a company and download their logo as PNGs or SVGs right there. It made this whole workflow a lot easier.
+
+Unfortunately, that project stopped working a while ago. The site is still there, but all images are broken. They archived [their GitHub repository](https://github.com/kogg/instant-logos), with no hint about what replaced it. For the last few months, I had to go back to hunting logos across various press pages and formats.
+
+At the end of last week, I sat down and started working on a replacement project. While it’s not done yet, it is already functional. You can visit it here:
+
+[logosearch.link](https://logosearch.link)
+
+With just over 30 logos, the collection is still tiny. I’ll add more logos over time, which brings me to the topic I wanted to write about today: analytics.
+
+Being called “logo search”, the site naturally features a search field. It would be fantastic if I could see what people were searching for to learn where the gaps in my collection are. If a lot of people search for a logo I don’t have yet, I can go find it and add it to the collection.
+
+Google Analytics could track that information for me. They would also track a lot of other things, 99% of which I don’t need. All that extra information would not help me improve my site. I also don’t want subject my visitors to a full, privacy-invading tracking solution.
+
+It would be too bad if I had to miss out on the information I do want because of that. That’s where “just enough analytics” comes in. I created a minimum viable analytics setup for this project.
+
+When someone searches for a term, I store as little information as necessary in a tiny database. It only stores the search term, the returned results, and the time of the search. That’s it. Nothing gets sent to a tracking service, there are no cookies, and I still get useful information.
+
+I don’t even know where the search happened. I have no way of knowing if one person searched 100 times, or if 100 people searched one time each. I don’t know if visitors use their phones, tablets, or desktop computers. I don’t what country they are in. There is no way I could identify a person with what little information I have.
+
+For this project, what I do have is absolutely enough to get **actionable insights**. I only need to know what logos are missing from my collection so I can work on providing them to future visitors.
+
+Slapping Google Analytics on this would have been easy. But Google doesn’t need this information. On top of that, their interface wouldn’t have made it as easy or flexible to get my questions answered. I want just enough analytics. Storing as little as possible feels much better.
+
+Also hey, even though [logosearch.link](https://logosearch.link) is live, I’m not done adding logos and features to it. You’d do me a huge favor if you used the search on the site a little so I know what logos to add first.
+
+Thanks a bunch!
+
+– Dom

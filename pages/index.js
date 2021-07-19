@@ -11,7 +11,7 @@ import Section from '@/components/section'
 import { getAllMilestones } from '@/lib/api/milestones'
 import { getAuthorBySlug } from '@/lib/api/authors'
 import { getProjectBySlug } from '@/lib/api/projects'
-import { getLatestPosts } from '@/lib/api/posts'
+import { getLatestArticles } from '@/lib/api/articles'
 
 const SOCIAL_PROFILES = {
   '@domhabersack on Twitter': {
@@ -34,16 +34,16 @@ const SOCIAL_PROFILES = {
 }
 
 export default function Index({
+  articles,
   avatar,
   featuredProject,
   milestones,
-  posts,
 }) {
   return (
     <Layout>
       <MetaTags
         description="I am a software developer, IT consultant, and content creator with 12+ years of professional experience. Follow along as I build my company in public."
-        imageSubpath="home"
+        ogImage="/og-image/default.png"
         permalink=""
         title="Dom Habersack · Content Creator & IndieHacker"
       />
@@ -130,12 +130,12 @@ export default function Index({
         title="Check out my articles."
       >
         <div className="max-w-md">
-          <ArticleTeasers articles={posts} />
+          <ArticleTeasers articles={articles} />
         </div>
 
         <p>
-          <a className="text-gray-800 dark:text-gray-100" href="/posts">
-            Read all posts &rarr;
+          <a className="text-gray-800 dark:text-gray-100" href="/writing">
+            Read all articles &rarr;
           </a>
         </p>
       </Section>
@@ -146,7 +146,7 @@ export default function Index({
 export async function getStaticProps() {
   const dom = await getAuthorBySlug('dom-habersack')
   const featuredProject = await getProjectBySlug('lovelicons')
-  const latestPosts = await getLatestPosts({ limit: 4 })
+  const latestArticles = await getLatestArticles({ limit: 4 })
   const milestones = await getAllMilestones()
 
   return {
@@ -154,7 +154,7 @@ export async function getStaticProps() {
       avatar: dom.avatar,
       featuredProject,
       milestones,
-      posts: latestPosts,
+      articles: latestArticles,
     }
   }
 }

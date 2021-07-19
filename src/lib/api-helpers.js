@@ -28,7 +28,13 @@ export async function getAllFiles(type, transform = () => {}) {
 }
 
 export async function getFileBySlug(type, slug, transform = () => {}) {
-  const file = fs.readFileSync(path.join(process.cwd(), `_${type}/${slug}/index.mdx`), 'utf8')
+  const filePath = path.join(process.cwd(), `_${type}/${slug}/index.mdx`)
+
+  if (!fs.existsSync(filePath)) {
+    return null
+  }
+
+  const file = fs.readFileSync(filePath, 'utf8')
 
   const {
     content,

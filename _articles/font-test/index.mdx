@@ -1,0 +1,113 @@
+---
+title: "Fonts that make you go “agh!iIl1”"
+createdAt: "2021-02-17"
+excerpt: "This nonsense test string reveals some of the main differences when comparing typefaces, like their weight and related characteristics."
+issue: 76
+heroAlt: "A screaming cat."
+heroCaption: "Has looking for fonts ever made you feel like this?"
+figures:
+  - "fonttest.png"
+  - "highlight-a.png"
+  - "highlight-gh.png"
+  - "highlight-tail.png"
+  - "leaning-exclamation-mark.png"
+  - "typeface-width.png"
+  - "weight-a.png"
+  - "storey-a.png"
+author: dom-habersack
+related:
+  - breaking-designs
+  - accidental-bad-design
+  - inter
+---
+Finding good typefaces can be a hassle. How do you know which of the options on Google Fonts or Adobe Fonts are good? To quickly compare typefaces, you can use the string “agh!iIl1”.
+
+I originally picked this trick up from [Jon Tan](https://twitter.com/jontangerine). It reveals some of the details of a typeface and helps us compare them based on those. Let’s run that test string through a few different typefaces:
+
+<Figure
+  alt="The string “agh!iIl1” in 24 different typefaces."
+  caption="Look at all that screaming."
+  height="512"
+  src={figures['fonttest']}
+  width="1152"
+/>
+
+We already get a good comparison of their individual styles and tone. Let’s look at what this overview reveals.
+
+The _a_ shows the weight of a typeface.
+
+<Figure
+  alt="The letter “a” highlighted in all samples."
+  caption="One letter already sets the tone."
+  height="512"
+  src={figures['highlight-a']}
+  width="1152"
+/>
+
+Despite them all being the same font size, the _a_ in Avenir looks much lighter than the one in Helvetica.
+
+<Figure
+  alt="A direct comparison between Avenir and Helvetica."
+  caption="They have the same size and weight, and yet they don’t."
+  height="512"
+  src={figures['weight-a']}
+  width="1152"
+/>
+
+We also see that most typefaces use the two-storey _a_. Some, like Futura and Monaco, use a single-storey _a_.
+
+<Figure
+  alt="Arial, Georgia, and Verdana use a two-storey a. Futura, Comic Sans, and Monaco use a single-storey a."
+  caption="Let me tell you a “storey” with nothing but aaaa."
+  height="960"
+  src={figures['storey-a']}
+  width="2160"
+/>
+
+The height of a lowercase letter _x_ (not pictured) represents that typeface’s “x-height”. Descenders are the part of a letter that reach **down** from the x-height. Ascenders are the part of a letter that reach **up** from the x-height.
+
+The letters _g_ and _h_ in the test string reveal how the typeface treats descenders and ascenders.
+
+<Figure
+  alt="The letters g and h highlighted in the test string."
+  caption="This highlights serifs and how high/low these letters go."
+  height="512"
+  src={figures['highlight-gh']}
+  width="1152"
+/>
+
+The exclamation mark, lower- and uppercase _i_, lowercase _l_, and digit 1 often look very similar. In some typefaces, an uppercase _i_ and lowercase _l_ look almost identical.
+
+<Figure
+  alt="The tail end of the test string highlighted."
+  caption="In some of these, you can hardly tell the different characters apart."
+  height="512"
+  src={figures['highlight-tail']}
+  width="1152"
+/>
+
+We put the exclamation mark in the middle of the string instead of at the end to see the font’s kerning. Many typefaces center the exclamation mark, whereas it leans to one side in others.
+
+<Figure
+  alt="The exclamation mark leans left in Comic Sans, is centered in Inter, and leans right in Helvetica."
+  caption="Back and forth, side to side."
+  height="512"
+  src={figures['leaning-exclamation-mark']}
+  width="1152"
+/>
+
+We can also see that some typefaces are much wider than others at the same size.
+
+<Figure
+  alt="The same test string is short in League Gothic, medium wide in Times New Roman, and very wide in Verdana."
+  caption="I swear these all use the same font-size."
+  height="512"
+  src={figures['typeface-width']}
+  width="1152"
+/>
+
+None of these attributes make one typeface “better” than another. This comparison quickly highlights some of the differences between them. Whether it works for your use case depends on the tone you’re going for.
+
+Happy typing!
+
+– Dom

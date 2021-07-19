@@ -5,13 +5,12 @@ import config from '@/config'
 export default function MetaTags({
   description,
   expiredAt,
-  imageSubpath = 'default',
   ogImage,
+  ogType,
   permalink,
   publishedAt,
   tags,
   title,
-  type,
   updatedAt,
 }) {
   const {
@@ -19,7 +18,7 @@ export default function MetaTags({
     title: siteTitle,
   } = config
 
-  const isArticle = type === 'article'
+  const isArticle = ogType === 'article'
 
   return (
     <Head>
@@ -34,11 +33,7 @@ export default function MetaTags({
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:creator" content="@domhabersack" />
 
-      {ogImage ? (
-        <meta property="og:image" content={`${siteUrl}${ogImage}`} />
-      ) : (
-        <meta property="og:image" content={`${siteUrl}/assets/rich-previews/${imageSubpath}.jpg`} />
-      )}
+      <meta property="og:image" content={`${siteUrl}${ogImage}`} />
       <meta property="og:image:height" content="314" />
       <meta property="og:image:type" content="image/jpeg" />
       <meta property="og:image:width" content="600" />
@@ -47,13 +42,13 @@ export default function MetaTags({
       <meta property="og:url" content={`${siteUrl}${permalink}`} />
 
       {description && (<meta property="og:description" content={description} />)}
-      {type && (<meta property="og:type" content={type} />)}
+      {ogType && (<meta property="og:type" content={ogType} />)}
 
       {isArticle && (
         <>
           {expiredAt && (<meta property="article:expiration_time" content={expiredAt} />)}
           {publishedAt && (<meta property="article:published_time" content={publishedAt} />)}
-          {tags?.map(tag => (<meta property="article:tag" content={tag.title} key={`tag-${tag.slug}`} />))}
+          {tags?.map(tag => (<meta property="article:tag" content={tag} key={tag.slug} />))}
           {updatedAt && (<meta property="article:modified_time" content={updatedAt} />)}
         </>
       )}

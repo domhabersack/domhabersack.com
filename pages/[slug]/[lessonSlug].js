@@ -1,0 +1,89 @@
+import { MDXRemote } from 'next-mdx-remote'
+
+import H1 from '@/components/h1'
+import Layout from '@/components/layout'
+import Lessons from '@/components/lessons'
+import MDXComponents from '@/components/mdx-components'
+import MetaTags from '@/components/meta-tags'
+import { getAllCourseSlugs, getCourseBySlug } from '@/lib/api/courses'
+import { getLessonBySlugs, getAllLessonSlugsByCourseSlug } from '@/lib/api/course-lessons'
+import getMDXSource from '@/lib/get-mdx-source'
+
+export default function CourseLesson({
+  breadcrumbs,
+  course,
+  excerpt,
+  id,
+  mdxSource,
+  ogImage,
+  permalink,
+  title,
+}) {
+  return (
+    <Layout breadcrumbs={breadcrumbs}>
+      <MetaTags
+        description={excerpt}
+        ogImage={ogImage}
+        permalink={permalink}
+        title={title}
+      />
+
+      <H1>
+        {title}
+      </H1>
+
+      <div className="break-words prose prose-blue dark:prose-dark">
+        <MDXRemote {...mdxSource} components={MDXComponents} />
+      </div>
+
+      {course.lessons && (
+        <>
+          <h2 className="font-bold mb-4 text-gray-900 text-xl dark:text-gray-50">
+            All lessons in this course
+          </h2>
+
+          <Lessons
+            currentLessonId={id}
+            lessons={course.lessons}
+          />
+        </>
+      )}
+    </Layout>
+  )
+}
+
+export async function getStaticProps({ params }) {
+  const course = await getCourseBySlug(params.slug)
+  const lesson = await getLessonBySlugs(params.slug, params.lessonSlug)
+
+  const mdxSource = await getMDXSource(lesson.content, {
+    attachments: lesson.attachments,
+    figures: lesson.figures,
+  })
+
+  return {
+    props: {
+      ...lesson,
+      course,
+      mdxSource,
+    }
+  }
+}
+
+export async function getStaticPaths() {
+  const allCourseSlugs = getAllCourseSlugs()
+
+  return {
+    fallback: false,
+    paths: allCourseSlugs.map(slug => {
+      const allLessonSlugs = getAllLessonSlugsByCourseSlug(slug)
+
+      return allLessonSlugs.map(lessonSlug => ({
+        params: {
+          lessonSlug,
+          slug,
+        },
+      }))
+    }).flat(1),
+  }
+}

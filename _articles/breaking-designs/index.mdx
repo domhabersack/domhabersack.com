@@ -1,0 +1,168 @@
+---
+title: "Get better at design by breaking some designs"
+createdAt: "2021-02-10"
+excerpt: "If good artists copy and great artists steal, why shouldn’t new artists destroy? Break some designs to learn the details that make them work."
+issue: 75
+heroAlt: "A destroyed computer monitor."
+heroCaption: "Not a loss if we learn something along the way."
+figures:
+  - "intercom-our-solution.png"
+  - "text-bottom-margin-styles.png"
+  - "text-no-bottom-margin-styles.png"
+  - "text-no-bottom-margin.png"
+  - "text-10px-bottom-margin.png"
+  - "text-10px-bottom-margin-styles.png"
+  - "padding-around-content-styles.png"
+  - "no-padding-around-content.png"
+  - "no-padding-around-content-styles.png"
+  - "10px-padding-around-content-styles.png"
+  - "10px-padding-around-content.png"
+  - "smile-off-styles.png"
+  - "smile-off.png"
+author: dom-habersack
+related:
+  - poop
+  - font-test
+  - evolution-not-revolution
+---
+“Wow, that website is so pretty! I could never design something as pretty as this!”
+
+Design can feel like a talent you’re either born with, or you’re not. Only a select few can make something look good, while we normal folk are doomed to make people’s eyes bleed forever.
+
+Design is a skill like any other, which means we can learn and get better at it. I recommended some [books for getting better at design](/design-books) before. You can also [keep a list of well designed sites](/bookmarking-inspiration) to use for inspiration.
+
+Let’s look at that list of beautiful sites again. Without formal education, few of us could create something like them from scratch. Looking at pretty sites makes you as much a better designer as eating good food makes you a better cook. If you don’t try to learn what makes a design or dish work, you’re consuming without improving.
+
+When we don’t know the process that went into a great result, all we can do is try to break it apart. If good artists copy and great artists steal, why shouldn’t new artists destroy?
+
+“View Source” is still the most powerful learning tool for aspiring designers. It puts the ingredients behind great designs right at our fingertips. It gives us access to the entire recipe. We can change the recipe to find and understand the importance of each ingredient.
+
+Let’s look at this section from Intercom’s homepage:
+
+<Figure
+  alt="The “Our solutions” section from Intercom’s homepage"
+  caption="Intercom’s take on the cards metaphor"
+  height="1668"
+  src={figures['intercom-our-solution']}
+  width="1830"
+/>
+
+The cards have a very Intercom feel to them. They feel “designed”, but how? Why do they work? Let’s start by looking at this giant margin between the text and the button.
+
+<Figure
+  alt="The styles that define the .card-body."
+  caption="That’s a lot of margin-bottom."
+  height="148"
+  src={figures['text-bottom-margin-styles']}
+  width="552"
+/>
+
+Those 48 pixels sound like a lot. Let’s remove them.
+
+<Figure
+  alt="The card-body styles with the margin turned off."
+  caption="Let’s remove the bottom margin entirely."
+  height="148"
+  src={figures['text-no-bottom-margin-styles']}
+  width="552"
+/>
+
+<Figure
+  alt="The card with no space between text and button."
+  caption="I’m not a fan."
+  height="962"
+  src={figures['text-no-bottom-margin']}
+  width="726"
+/>
+
+Much worse. How about 10 pixels instead?
+
+<Figure
+  alt="The styles with a bottom-margin of 10px."
+  caption="The dev tools let us use any value."
+  height="148"
+  src={figures['text-10px-bottom-margin-styles']}
+  width="552"
+/>
+
+<Figure
+  alt="The card with that 10px space between text and button."
+  caption="It’s better, but not as good as the original."
+  height="982"
+  src={figures['text-10px-bottom-margin']}
+  width="726"
+/>
+
+That’s not very good either. Now that we know what it looks like without this large margin, we can see that it was a good idea in the first place. Let’s look at all this padding around the content next.
+
+<Figure
+  alt="The styles of the wrapper around the entire content."
+  caption="We’ll only look at the padding here."
+  height="278"
+  src={figures['padding-around-content-styles']}
+  width="552"
+/>
+
+Why do they use 34px on the vertical and 36px on the horizontal axis? Why not use 35px for both? I don’t know, but isn’t that interesting. Assuming this wasn’t an accident, someone made this choice intentionally. Huh.
+
+Let’s remove it.
+
+<Figure
+  alt="The body wrapper styles without the padding."
+  caption="Everything else stays as it is."
+  height="278"
+  src={figures['no-padding-around-content-styles']}
+  width="552"
+/>
+
+<Figure
+  alt="The card with no padding around the content."
+  caption="This is terrible."
+  height="846"
+  src={figures['no-padding-around-content']}
+  width="726"
+/>
+
+That’s not good at all. Let’s try 10 pixel instead.
+
+<Figure
+  alt="The padding on the wrapper set to 10px."
+  caption="I doubt this’ll be very good."
+  height="278"
+  src={figures['10px-padding-around-content-styles']}
+  width="552"
+/>
+
+<Figure
+  alt="The card with 10px around the content."
+  caption="See, told ya."
+  height="886"
+  src={figures['10px-padding-around-content']}
+  width="726"
+/>
+
+Next, how about that part of the heading that says “Conversational”? If uses the typeface Smile Script. Let’s turn that off.
+
+<Figure
+  alt="The styles of the cursive heading, with the font-family turned off."
+  caption="Take a break from smiling, buddy."
+  height="200"
+  src={figures['smile-off-styles']}
+  width="552"
+/>
+
+<Figure
+  alt="The card with a sans-serif heading instead of a script looking one."
+  caption="I liked it better when it was smiling."
+  height="886"
+  src={figures['smile-off']}
+  width="726"
+/>
+
+Wow, that is **much** worse. Turns out the typeface was essential for giving the cards their tone.
+
+We could continue this exercise for hours. Along the way, we try to understand all the otherwise invisible details that make the design work. By breaking parts of it, we learn how each of the thousands of tiny decisions support the design. Over time, patterns like the uneven padding on the cards’ body emerge. When we need to design something, we can use the tricks we learned exploring a finished design in our own work.
+
+Web development is one of the areas you can still learn directly from other great designers. Next time you find a pretty site, try to break it. Turn it into something ugly. If you want to become a better designer, being destructive can teach you a whole lot.
+
+– Dom

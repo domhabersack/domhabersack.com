@@ -1,0 +1,42 @@
+---
+title: "Which is it, cookies or no cookies?"
+createdAt: "2021-04-28"
+excerpt: "We still need to show a cookie notice for YouTube’s nocookie embed script, because it sets a cookie as soon as a visitor starts playing a video."
+issue: 86
+heroAlt: "A cookie with a bite taken out of it."
+heroCaption: "It isn’t a full cookie now, but it will be in a second."
+author: dom-habersack
+figures:
+  - "blurred-video-thumbnail.png"
+related:
+  - legal-pivot
+---
+Cookie notices have made the web terrible. You have to appreciate what they are trying to do. Telling people how they are being tracked is excellent in theory. In practice, it doesn’t feel like they are achieving that goal well. Unless I know the site I’m visiting is fishy, I try to dismiss cookie notices as quickly as I can. If I can’t find an opt-out option in two seconds, I’m okay with whatever cookies are being set. Let me get to the article I need to get my work done already! That’s not the intention behind cookie notices.
+
+For the last few months, I had such a cookie notice on my own site. While I don’t set any cookies myself, services I use do. We even need to get our visitors’ consent before loading scripts from third parties. We can’t have them download Twitter’s JavaScript snippet and THEN ask them if we can do that, for example. If that script sets any cookies, we’d violate GDPR without prior consent.
+
+Earlier this month, I removed all third party integrations from my site. I was able to move some to the backend. Instead of sending newsletter signups directly to my provider, I proxy them first. Those requests hit my backend, which forwards the information to the provider’s API. That way, there is never any connection between my visitors and that service. The provider couldn’t set any cookies even if they wanted to.
+
+For other integrations, the process wasn’t as straightforward. I had to completely remove the contact form, asking people to email me instead. It’s too bad, but not a huge loss. The biggest struggle was with the integrations of YouTube and Vimeo.
+
+Their embed codes requires loading a script, for which I needed to get consent first. YouTube offers a “privacy enhanced” version, which isn’t at all what it sounds like. Changing a YouTube embed’s URL from youtube.com to youtube-nocookie.com enables that mode. With it, they no longer set any cookies when first loading the site.
+
+Instead, they store information in localStorage, which is the first violation of GDPR. They then also set a cookie when a visitor starts playing a video, which is the second violation. We still need to ask for consent before letting visitors play any YouTube embeds on our sites.
+
+We don’t have to present every visitor with a cookie notice for that. Instead of a global notice for everybody, we could ask for consent on each video instead. That way, I don’t need to interrupt visitors that don’t want to play any videos with a cookie notice.
+
+At this point, I decided that implementing this was too much effort for too little benefit. Sure it would be nice to embed videos directly on my site. For me, asking for consent, regardless of which form, is worse than not having videos in the first place.
+
+Instead of messing with that, I took the easy way out. I no longer embed videos on my site directly. In their place, I now show a blurred thumbnail with a button that says “Watch on YouTube”. Clicking that takes them off my site and to YouTube, where they can then watch the video. YouTube still tracks them over there, which is out of my control.
+
+<Figure
+  alt="A blurred thumbnail of a video about “Progressive enhancement with @supports”. It has a button on it that says “Watch on YouTube”."
+  caption="This is what you see now instead of a video."
+  height="648"
+  src={figures['blurred-video-thumbnail']}
+  width="1152"
+/>
+
+It’s an unfortunate flow, but better than being liable for YouTube’s practices. Visitors can now immediately explore my site without that annoying cookie notice. That’s worth this cut, right?
+
+– Dom

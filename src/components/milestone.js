@@ -15,7 +15,7 @@ export default function Milestone({
   } = milestone
 
   const {
-    newsletter,
+    article,
     project,
   } = embedded
 
@@ -40,21 +40,21 @@ export default function Milestone({
           </p>
         </div>
 
-        {newsletter && (
+        {article && (
           <div className="mt-4">
             <Card>
               <div className="px-4 py-3 space-y-2">
                 <h4 className="font-medium text-base text-gray-900 dark:text-gray-50">
-                  <a href={newsletter.permalink}>
-                    {newsletter.title}
+                  <a href={article.permalink}>
+                    {article.title}
                   </a>
                 </h4>
 
                 <p className="text-gray-500 text-sm dark:text-gray-400">
-                  {newsletter.excerpt}
+                  {article.excerpt}
                 </p>
 
-                <a className="font-medium inline-block text-blue-600 text-sm dark:text-blue-500" href={newsletter.permalink}>
+                <a className="font-medium inline-block text-blue-600 text-sm dark:text-blue-500" href={article.permalink}>
                   Read full article
                 </a>
               </div>

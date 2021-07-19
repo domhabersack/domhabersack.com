@@ -1,15 +1,21 @@
 import { getAllFiles, getFileBySlug, getSlugs } from '@/lib/api-helpers'
-import { getTagByTitle } from '@/lib/api/firetip-tags'
+import getOgImageForPath from '@/lib/get-og-image-for-path'
 
 const transform = async ({
   frontmatter,
   slug,
 }) => {
-  const tags = await Promise.all(frontmatter.tags?.map(getTagByTitle))
-
   return {
-    permalink: `/firetips/${slug}`,
-    tags,
+    breadcrumbs: [
+      {
+        label: 'Fire tips',
+        url: '/firetips',
+      }, {
+        label: frontmatter.title,
+      },
+    ],
+    ogImage: getOgImageForPath(slug),
+    permalink: `/${slug}`,
   }
 }
 

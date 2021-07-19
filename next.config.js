@@ -1,5 +1,7 @@
 const withMDX = require('@next/mdx')()
 
+const redirects = require('./redirects.json')
+
 module.exports = withMDX({
   images: {
     disableStaticImages: true,
@@ -15,16 +17,10 @@ module.exports = withMDX({
   },
 
   async redirects() {
-    return [
-      {
-        source: '/categories/:slug',
-        destination: '/posts/categories/:slug',
-        permanent: true,
-      }, {
-        source: '/newsletter/archive/:slug',
-        destination: '/newsletter/:slug',
-        permanent: true,
-      },
-    ]
+    return Object.entries(redirects).map(([source, destination]) => ({
+      source,
+      destination,
+      permanent: true,
+    }))
   },
 })
