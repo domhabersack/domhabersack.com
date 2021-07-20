@@ -1,0 +1,39 @@
+---
+title: "Retroulette"
+createdAt: "2021-05-18"
+excerpt: "A tool that helps you plan sprint retrospectives. Find activities that match your teams energy and stage."
+heroAlt: "The Retroulette logo (a roulette) and symbols representing five weather conditions."
+heroCaption: "Find the activities that match your team’s current weather/stage."
+revenue: "0"
+stack: ["Sketch", "JavaScript", "Next.js"]
+url: "https://retroulette.com"
+figures:
+  - "stage-select.png"
+---
+In my time as a consultant, I often ran retrospectives for the teams I worked in and with. With ever-shifting team dynamics, picking the right activities for each team’s current stage was important. Some activities require participants to be open and vulnerable with each other, which young teams don’t always feel comfortable with yet. Picking the wrong activities can leave some team members alienated and feeling left out.
+
+Finding the right combination of activities took a lot of time and effort. With this latest project, I wanted to make this process easier for myself.
+
+According to Tuckman’s stages of group development, all teams go through five stages:
+
+- **Forming:** Team members are motivated but independent. They don’t all understand the team’s objectives.
+- **Storming:** Trust between team members grows. There is some tension; disagreements and arguments happen.
+- **Norming:** All team members work for a shared goal. They accept each other as they are.
+- **Performing:** The team members are competent, autonomous, and able to make decisions without supervision.
+- **Adjourning:** The team separates after they achieved their common goal.
+
+Retroulette is my attempt at collecting activities I used in retrospectives, mapped to one or more of these stages.
+
+To plan a retrospective, a [wizard](https://retroulette.com/plan) first asks people to select which of Tuckman’s stages their team is in.
+
+<Figure
+  alt="A select component for a team’s Tuckman stage."
+  caption="The weather icons represent the teams’ mood or stage."
+  height="720"
+  src={figures['stage-select']}
+  width="1280"
+/>
+
+I could use my [Lovelicons](https://lovelicons.com) again to style this custom input element. People on Twitter seemed to like that component, but the topic of sprint retrospectives itself was a lot less popular. I believe I lost a few followers by bringing up Agile practices, which took some wind out of my sails.
+
+With the wizard set up and functional, the bulk of the remaining work consists of adding more activities. I was pulled out of this project by others and have to get back to it later. The landing page in particular is a mess.

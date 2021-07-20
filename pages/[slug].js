@@ -122,7 +122,7 @@ export default function Page({
       )}
 
       {hasUrl && (
-        <a className="inline-flex font-medium items-center space-x-1.5 text-blue-600 dark:text-blue-500" href={url}>
+        <a className="inline-flex font-medium items-center mt-4 space-x-1.5 text-blue-600 dark:text-blue-500" href={url}>
           <span>
             Visit {prettifyUrl(url)}
           </span>
