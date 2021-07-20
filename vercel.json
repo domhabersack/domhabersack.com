@@ -1,6 +1,6 @@
 {
   "functions": {
-    "sitemap.xml": {
+    "sitemap.xml.js": {
       "includeFiles": "_articles/**"
     }
   },
