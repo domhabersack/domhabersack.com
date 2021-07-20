@@ -6,7 +6,7 @@ export async function getAllFiles(type, transform = () => {}) {
   return getSlugs(type).reduce(async (previousPromise, slug) => {
     const allFiles = await previousPromise
 
-    const file = fs.readFileSync(path.join(__dirname, `_${type}/${slug}/index.mdx`), 'utf8')
+    const file = fs.readFileSync(path.join(process.cwd(), `_${type}/${slug}/index.mdx`), 'utf8')
 
     const {
       data: frontmatter,
@@ -28,7 +28,7 @@ export async function getAllFiles(type, transform = () => {}) {
 }
 
 export async function getFileBySlug(type, slug, transform = () => {}) {
-  const filePath = path.join(__dirname, `_${type}/${slug}/index.mdx`)
+  const filePath = path.join(process.cwd(), `_${type}/${slug}/index.mdx`)
 
   if (!fs.existsSync(filePath)) {
     return null
@@ -75,7 +75,7 @@ export async function getFileBySlug(type, slug, transform = () => {}) {
 }
 
 export function getSlugs(type) {
-  return fs.readdirSync(path.join(__dirname, `_${type}`), {
+  return fs.readdirSync(path.join(process.cwd(), `_${type}`), {
     withFileTypes: true,
   }).filter(dirent => dirent.isDirectory()).map(({ name }) => name)
 }

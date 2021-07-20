@@ -15,7 +15,7 @@ export default function handler(req, res) {
     const isSmall = size === 'small'
     const isSolid = style === 'solid'
 
-    const filePath = path.join(__dirname, 'src', 'icons', `${name}${isSmall ? '--small' : ''}${isSolid ? '--solid' : ''}.svg`)
+    const filePath = path.join(process.cwd(), 'src', 'icons', `${name}${isSmall ? '--small' : ''}${isSolid ? '--solid' : ''}.svg`)
 
     if (fs.existsSync(filePath)) {
       const file = fs.readFileSync(filePath, 'utf8')

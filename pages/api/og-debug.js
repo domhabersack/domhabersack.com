@@ -5,7 +5,7 @@ import getAllPermalinks from '@/lib/get-all-permalinks'
 import partition from '@/lib/partition'
 
 const hasOgImage = permalink => {
-  return fs.existsSync(path.join(__dirname, 'public', 'og-image', `${permalink}.png`))
+  return fs.existsSync(path.join(process.cwd(), 'public', 'og-image', `${permalink}.png`))
 }
 
 export default async function handler(req, res) {

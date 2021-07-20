@@ -28,7 +28,7 @@ export default function handler(req, res) {
     },
   } = req
 
-  const filePath = path.join(__dirname, `_courses`, course, 'lessons', slug, name)
+  const filePath = path.join(process.cwd(), `_courses`, course, 'lessons', slug, name)
   const extension = path.extname(filePath)
 
   const doesFileExist = fs.existsSync(filePath)
