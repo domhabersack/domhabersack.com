@@ -2,11 +2,10 @@ import fs from 'fs'
 import path from 'path'
 
 const ALLOWED_TYPES = [
+  'articles',
   'authors',
   'courses',
-  'newsletters',
   'pages',
-  'posts',
   'projects',
 ]
 
