@@ -1,7 +1,7 @@
 {
   "functions": {
     "sitemap.xml": {
-      "includeFiles": "_articles/**",
+      "includeFiles": "_articles/**"
     }
   },
   "trailingSlash": false
