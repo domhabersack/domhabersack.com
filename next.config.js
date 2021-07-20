@@ -7,6 +7,10 @@ module.exports = withMDX({
     dirs: ['pages', 'src'],
   },
 
+  future: {
+    webpack5: false,
+  },
+
   images: {
     disableStaticImages: true,
   },
