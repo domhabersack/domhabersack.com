@@ -1,8 +1,12 @@
 import { useState } from 'react'
+import Link from 'next/link'
+
+import CTA from '@/components/cta'
 
 const LINKS = {
   'Home': '/',
   'Projects': '/projects',
+  'Services': '/services',
   'Writing': '/writing',
 }
 
@@ -49,14 +53,19 @@ export default function Navigation() {
 
         <div className="hidden py-4 xs:block xs:space-x-4 sm:space-x-5">
           {Object.entries(LINKS).map(([name, href]) => (
-            <a
-              className="font-medium text-gray-700 hover:text-gray-900 hover:no-underline visited:text-gray-700 dark:text-gray-200 dark:hover:text-gray-50 dark:visited:text-gray-200"
-              href={href}
-              key={href}
-            >
-              {name}
-            </a>
+            <Link href={href}>
+              <a
+                className="font-medium text-gray-700 hover:text-gray-900 hover:no-underline visited:text-gray-700 dark:text-gray-200 dark:hover:text-gray-50 dark:visited:text-gray-200"
+                key={href}
+              >
+                {name}
+              </a>
+            </Link>
           ))}
+
+          <CTA>
+            Hire me
+          </CTA>
         </div>
       </nav>
 
@@ -98,14 +107,15 @@ export default function Navigation() {
               role="menu"
             >
               {Object.entries(LINKS).map(([name, href]) => (
-                <a
-                  className="block font-medium px-2 py-2 rounded-md text-gray-700 focus:bg-gray-50 hover:text-gray-900 hover:bg-gray-50 hover:no-underline visited:text-gray-700 dark:text-gray-200 dark:focus:bg-gray-800 dark:hover:text-gray-50 dark:hover:bg-gray-800 dark:visited:text-gray-200"
-                  href={href}
-                  key={href}
-                  role="menuitem"
-                >
-                  {name}
-                </a>
+                <Link href={href}>
+                  <a
+                    className="block font-medium px-2 py-2 rounded-md text-gray-700 focus:bg-gray-50 hover:text-gray-900 hover:bg-gray-50 hover:no-underline visited:text-gray-700 dark:text-gray-200 dark:focus:bg-gray-800 dark:hover:text-gray-50 dark:hover:bg-gray-800 dark:visited:text-gray-200"
+                    key={href}
+                    role="menuitem"
+                  >
+                    {name}
+                  </a>
+                </Link>
               ))}
             </div>
           </div>

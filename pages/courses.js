@@ -26,7 +26,7 @@ export default function Courses({
         Courses
       </H1>
 
-      <p className="max-w-xl mb-8 text-gray-500 text-xl dark:text-gray-400">
+      <p className="max-w-xl mb-12 text-gray-500 text-xl dark:text-gray-400">
         I offer email- and video-courses for designers and developers of any skill level. They are all completely free.
       </p>
 

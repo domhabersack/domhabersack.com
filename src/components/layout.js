@@ -8,7 +8,7 @@ import Container from '@/components/container'
 import Footer from '@/components/footer'
 import Header from '@/components/header'
 
-const IS_IN_DEBUG_MODE = false
+const IS_IN_DEBUG_MODE = true
 
 export default function Layout ({
   breadcrumbs,

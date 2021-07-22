@@ -27,7 +27,7 @@ export default function Projects({
         Projects
       </H1>
 
-      <p className="max-w-xl mb-8 text-gray-500 text-xl">
+      <p className="max-w-xl mb-12 text-gray-500 text-xl">
         I am working on a few free and paid products, trying to earn an income with them over time. This catalog will expand as I add new experiments and try new venues.
       </p>
 

@@ -17,7 +17,7 @@ export default function Firetips({
   return (
     <Layout breadcrumbs={breadcrumbs}>
       <MetaTags
-        description="Snack-sized snippets that help you write better HTML, CSS, and JavaScript."
+        description="A collection of tips and tricks you can use to improve the performance and readability of your code."
         ogImage="/og-image/firetips.png"
         permalink="/firetips"
         title="Fire tips"
@@ -26,6 +26,10 @@ export default function Firetips({
       <H1>
         Fire tips
       </H1>
+
+      <p className="max-w-xl mb-12 text-gray-500 text-xl dark:text-gray-400">
+        These are a collection of tips and tricks you can use to improve the performance and readability of your code.
+      </p>
 
       <div className="grid gap-10">
         {firetips.map(firetip => (

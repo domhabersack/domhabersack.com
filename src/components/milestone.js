@@ -25,7 +25,7 @@ export default function Milestone({
         <Icon className="h-6 text-gray-700 w-6" type={icon} />
       </div>
 
-      <div className="flex-1 -mt-1.5">
+      <div className="flex-1 -mt-1">
         <div className="space-y-2">
           <span className="text-gray-500 text-sm dark:text-gray-400">
             {formatDate(createdAt)}
