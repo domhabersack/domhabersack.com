@@ -1,4 +1,5 @@
 {
+  "/blog/:slug": "/posts/:slug",
   "/categories/:slug": "/writing",
   "/posts/categories/:slug": "/writing",
   "/newsletter/archive/:slug": "/newsletter/:slug",
