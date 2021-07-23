@@ -1,31 +1,22 @@
 const withMDX = require('@next/mdx')()
 
-// const config = require('./src/config')
 const redirects = require('./redirects.json')
 
 const securityHeadersRaw = {
+  'Content-Security-Policy': `
+    default-src 'self';
+    img-src * data:;
+    script-src 'self' 'unsafe-eval' 'unsafe-inline' *.domhabersack.com cdn.iubenda.com;
+    style-src 'self' 'unsafe-inline';
+    frame-ancestors 'self';
+    form-action 'self';
+  `.replace(/\n/g, '').replace(/\s+/g, ' ').trim(),
+  'Permission-Policy': 'camera=(), microphone=(), geolocation=()',
+  'Referrer-Policy': 'no-referrer-when-downgrade',
+  'Strict-Transport-Security': 'max-age=31536000; includeSubDomains; preload',
   'X-Content-Type-Options': 'nosniff',
   'X-Frame-Options': 'DENY',
-  'Content-Security-Policy': `default-src: 'none';`
-  // 'Content-Security-Policy': `
-  //   default-src 'self' ${config.siteUrl} *.${config.siteUrl};
-  //   img-src * blob: data:;
-  // `.replace(/\n/g, '').replace(/\s+/g, ' ').trim(),
-
-  // 'Referrer-Policy': 'origin-when-cross-origin',
-  // "",
-  // "no-referrer",
-  // "no-referrer-when-downgrade",
-  // "same-origin",
-  // "origin",
-  // "strict-origin",
-  // "origin-when-cross-origin",
-  // "strict-origin-when-cross-origin",
-  // "unsafe-url"
-
-  // 'X-DNS-Prefetch-Control': 'on',
-  // 'Strict-Transport-Security': 'max-age=31536000; includeSubDomains; preload',
-  // 'Permission-Policy': 'camera=(), microphone=(), geolocation=()',
+  'X-DNS-Prefetch-Control': 'on',
 }
 
 const securityHeaders = Object.entries(securityHeadersRaw).map(([key, value]) => ({
@@ -56,10 +47,7 @@ module.exports = withMDX({
   async headers() {
     return [
       {
-        source: '/',
-        headers: securityHeaders,
-      }, {
-        source: '/:path*',
+        source: '/(.*)',
         headers: securityHeaders,
       }
     ]
