@@ -10,6 +10,7 @@ export default function Writing({
   const breadcrumbs = [
     {
       label: 'Writing',
+      url: '/writing',
     },
   ]
 

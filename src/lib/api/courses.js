@@ -11,6 +11,7 @@ const transform = ({
       url: '/courses',
     }, {
       label: frontmatter.title,
+      url: `/${slug}`,
     },
   ],
   ogImage: getOgImageForPath(slug),

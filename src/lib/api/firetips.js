@@ -12,6 +12,7 @@ const transform = async ({
         url: '/firetips',
       }, {
         label: frontmatter.title,
+        url: `/${slug}`,
       },
     ],
     ogImage: getOgImageForPath(slug),

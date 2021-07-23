@@ -11,6 +11,7 @@ const transform = ({
       url: '/projects',
     }, {
       label: frontmatter.title,
+      url: `/${slug}`,
     },
   ],
   hero: `/api/projects/${slug}/hero.png`,

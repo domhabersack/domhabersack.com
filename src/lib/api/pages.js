@@ -8,6 +8,7 @@ const transform = ({
   breadcrumbs: [
     {
       label: frontmatter.title,
+      url: `/${slug}`,
     }
   ],
   ogImage: getOgImageForPath(slug),
