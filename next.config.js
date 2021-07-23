@@ -17,6 +17,7 @@ const securityHeadersRaw = {
   'X-Content-Type-Options': 'nosniff',
   'X-Frame-Options': 'DENY',
   'X-DNS-Prefetch-Control': 'on',
+  'X-XSS-Protection': '1; mode=block',
 }
 
 const securityHeaders = Object.entries(securityHeadersRaw).map(([key, value]) => ({
