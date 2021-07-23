@@ -10,6 +10,7 @@ export default function Firetips({
   const breadcrumbs = [
     {
       label: 'Fire tips',
+      url: '/firetips'
     },
   ]
 

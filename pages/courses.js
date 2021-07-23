@@ -9,7 +9,8 @@ export default function Courses({
 }) {
   const breadcrumbs = [
     {
-      label: 'Courses'
+      label: 'Courses',
+      url: '/courses',
     }
   ]
 

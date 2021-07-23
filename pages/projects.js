@@ -9,7 +9,8 @@ export default function Projects({
 }) {
   const breadcrumbs = [
     {
-      label: 'Projects'
+      label: 'Projects',
+      url: '/projects',
     }
   ]
 

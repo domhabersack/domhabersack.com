@@ -15,6 +15,7 @@ const transform = course => ({
       url: course.permalink,
     }, {
       label: frontmatter.title,
+      url: `/${course.slug}/${slug}`,
     }
   ],
   ogImage: getOgImageForPath(`${course.slug}/${slug}`),

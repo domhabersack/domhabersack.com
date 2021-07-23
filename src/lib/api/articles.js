@@ -26,6 +26,7 @@ const transform = async ({
         url: '/writing',
       }, {
         label: frontmatter.title,
+        url: `/${slug}`,
       },
     ],
     ogImage,
