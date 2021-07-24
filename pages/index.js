@@ -2,6 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 import CTA from '@/components/cta'
+import Fullbleed from '@/components/fullbleed'
 import Icon from '@/components/icon'
 import Layout from '@/components/layout'
 import MetaTags from '@/components/meta-tags'
@@ -117,6 +118,36 @@ export default function Index({
           </CTA>
         </div>
       </Section>
+
+      <Fullbleed
+        className="bg-yellow-100"
+      >
+        <Section
+          label="Projects"
+          title="Check out some of my previous work."
+          description="Pictures speak louder than words. Good thing I have both! Explore some case studies on my previous projects."
+        >
+          <div className="max-w-full">
+            <div className="relative mb-20">
+              <div className="border-8 border-gray-800 relative rounded-lg md:-left-8">
+                <img className="md:h-96" src="/featured-project/desktop.png" />
+              </div>
+
+              <div className="border-8 border-gray-800 rounded-lg absolute hidden -bottom-12 -right-8 md:block">
+                <img className="h-96" src="/featured-project/mobile.png" />
+              </div>
+            </div>
+
+            <p>
+              <Link href="/writing">
+                <a className="text-gray-800 dark:text-gray-100">
+                  Read about Retroulette &rarr;
+                </a>
+              </Link>
+            </p>
+          </div>
+        </Section>
+      </Fullbleed>
 
       <Section
         label="Milestone log"
