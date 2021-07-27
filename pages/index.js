@@ -119,9 +119,7 @@ export default function Index({
         </div>
       </Section>
 
-      <Fullbleed
-        className="bg-yellow-100"
-      >
+      <Fullbleed className="bg-yellow-100 dark:bg-pink-900">
         <Section
           label="Projects"
           title="Check out some of my previous work."

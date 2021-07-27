@@ -2,6 +2,7 @@ import { useState } from 'react'
 import Link from 'next/link'
 
 import CTA from '@/components/cta'
+import Icon from '@/components/icon'
 
 const LINKS = {
   'Home': '/',
@@ -24,34 +25,26 @@ export default function Navigation() {
   return (
     <>
       <nav aria-label="Global">
-        <button
-          aria-haspopup="true"
-          className="bg-white border-0 flex items-center justify-center my-2 p-2 rounded-lg shadow-sm text-gray-500 hover:bg-gray-100 hover:text-gray-700 focus:outline-none focus:ring focus:ring-indigo-200 focus:ring-opacity-50 xs:hidden dark:bg-gray-900 dark:text-gray-400 dark:hover:bg-black dark:hover:text-gray-200"
-          onClick={openMenu}
-          type="button"
-        >
-          <span className="sr-only">
-            Open main menu
-          </span>
+        <div className="flex items-center space-x-2.5 sm:hidden">
+          <CTA>
+            Hire me
+          </CTA>
 
-          <svg
-            aria-hidden="true"
-            className="h-6 w-6"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
+          <button
+            aria-haspopup="true"
+            className="bg-white border-0 flex items-center justify-center p-1.5 rounded-lg shadow-sm text-gray-500 hover:bg-gray-100 hover:text-gray-700 focus:outline-none focus:ring focus:ring-indigo-200 focus:ring-opacity-50 dark:bg-gray-900 dark:text-gray-400 dark:hover:bg-black dark:hover:text-gray-200"
+            onClick={openMenu}
+            type="button"
           >
-            <path
-              d="M4 6h16M4 12h16M4 18h16"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-            />
-          </svg>
-        </button>
+            <span className="sr-only">
+              Open main menu
+            </span>
 
-        <div className="hidden py-4 xs:block xs:space-x-4 sm:space-x-5">
+            <Icon ariaHidden="true" className="h-6 w-6" type="hamburger" />
+          </button>
+        </div>
+
+        <div className="hidden sm:block sm:space-x-4 sm:space-x-5">
           {Object.entries(LINKS).map(([name, href]) => (
             <Link href={href}>
               <a
@@ -70,11 +63,11 @@ export default function Navigation() {
       </nav>
 
       {isMenuOpen && (
-        <div className="absolute p-2 top-0 transform transition origin-top-right w-60 -right-4 xs:hidden">
+        <div className="absolute p-2 -top-4 transform transition origin-top-right w-60 -right-4 sm:hidden">
           <div className="bg-white overflow-hidden rounded-lg shadow-md dark:bg-gray-900">
-            <div className="flex items-center justify-end pt-3 px-4">
+            <div className="flex items-center justify-end pt-2 px-2">
               <button
-                className="bg-gray-100 inline-flex items-center justify-center -mr-2 p-2 rounded-lg text-gray-500 hover:text-gray-600 hover:bg-gray-100 focus:outline-none focus:ring focus:ring-indigo-200 focus:ring-opacity-50 dark:bg-black dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-gray-200"
+                className="bg-gray-100 inline-flex items-center justify-center p-1.5 rounded-lg text-gray-500 hover:text-gray-600 hover:bg-gray-100 focus:outline-none focus:ring focus:ring-indigo-200 focus:ring-opacity-50 dark:bg-black dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-gray-200"
                 onClick={closeMenu}
                 type="button"
               >
@@ -82,28 +75,14 @@ export default function Navigation() {
                   Close main menu
                 </span>
 
-                <svg
-                  aria-hidden="true"
-                  className="h-6 w-6"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M6 18L18 6M6 6l12 12"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                  />
-                </svg>
+                <Icon ariaHidden="true" className="h-6 w-6" type="cross" />
               </button>
             </div>
 
             <div
               aria-labelledby="main-menu"
               aria-orientation="vertical"
-              className="px-2 pt-2 pb-3 space-y-1"
+              className="p-2 space-y-1"
               role="menu"
             >
               {Object.entries(LINKS).map(([name, href]) => (

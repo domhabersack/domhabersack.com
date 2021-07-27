@@ -1,21 +1,26 @@
 import Link from 'next/link'
 
+import Availability from '@/components/availability'
 import SiteLogo from '@/components/site-logo'
 import Navigation from '@/components/navigation'
 
 export default function Header() {
   return (
-    <header className="flex flex-wrap items-center justify-between py-3 relative z-10">
-      <Link href="/">
-        <a
-          className="flex-shrink-0 h-6 text-gray-700 w-20 visited:text-gray-700 dark:text-gray-200 dark:visited:text-gray-200"
-          title="Dom Habersack"
-        >
-          <SiteLogo />
-        </a>
-      </Link>
+    <header className="flex flex-col items-end py-3 space-y-1.5">
+      <div className="flex flex-wrap items-center justify-between relative w-full z-10">
+        <Link href="/">
+          <a
+            className="font-semibold text-base text-gray-800 visited:text-gray-800 dark:text-gray-100 dark:visited:text-gray-100"
+            title="Dom Habersack"
+          >
+            Dom Habersack
+          </a>
+        </Link>
 
-      <Navigation />
+        <Navigation />
+      </div>
+
+      <Availability />
     </header>
   )
 }
