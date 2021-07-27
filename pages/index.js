@@ -109,7 +109,7 @@ export default function Index({
         </div>
 
         <div className="flex flex-col items-center space-y-2">
-          <p className="text-base text-gray-700">
+          <p className="text-base text-gray-700 dark:text-gray-200">
             Does that sound good? Sweet, get in touch and
           </p>
 
@@ -119,7 +119,7 @@ export default function Index({
         </div>
       </Section>
 
-      <Fullbleed className="bg-yellow-100 dark:bg-pink-900">
+      <Fullbleed className="bg-yellow-100 dark:bg-gray-800">
         <Section
           label="Projects"
           title="Check out some of my previous work."
@@ -127,11 +127,11 @@ export default function Index({
         >
           <div className="max-w-full">
             <div className="relative mb-20">
-              <div className="border-8 border-gray-800 relative rounded-lg md:-left-8">
+              <div className="border-8 border-gray-800 relative rounded-lg md:-left-8 dark:border-gray-900">
                 <img className="md:h-96" src="/featured-project/desktop.png" />
               </div>
 
-              <div className="border-8 border-gray-800 rounded-lg absolute hidden -bottom-12 -right-8 md:block">
+              <div className="border-8 border-gray-800 rounded-lg absolute hidden -bottom-12 -right-8 md:block dark:border-gray-900">
                 <img className="h-96" src="/featured-project/mobile.png" />
               </div>
             </div>
