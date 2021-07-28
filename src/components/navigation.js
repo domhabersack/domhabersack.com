@@ -46,11 +46,11 @@ export default function Navigation() {
 
         <div className="hidden sm:block sm:space-x-4 sm:space-x-5">
           {Object.entries(LINKS).map(([name, href]) => (
-            <Link href={href}>
-              <a
-                className="font-medium text-gray-700 hover:text-gray-900 hover:no-underline visited:text-gray-700 dark:text-gray-200 dark:hover:text-gray-50 dark:visited:text-gray-200"
-                key={href}
-              >
+            <Link
+              href={href}
+              key={href}
+            >
+              <a className="font-medium text-gray-700 hover:text-gray-900 hover:no-underline visited:text-gray-700 dark:text-gray-200 dark:hover:text-gray-50 dark:visited:text-gray-200">
                 {name}
               </a>
             </Link>
@@ -86,10 +86,12 @@ export default function Navigation() {
               role="menu"
             >
               {Object.entries(LINKS).map(([name, href]) => (
-                <Link href={href}>
+                <Link
+                  href={href}
+                  key={href}
+                >
                   <a
                     className="block font-medium px-2 py-2 rounded-md text-gray-700 focus:bg-gray-50 hover:text-gray-900 hover:bg-gray-50 hover:no-underline visited:text-gray-700 dark:text-gray-200 dark:focus:bg-gray-800 dark:hover:text-gray-50 dark:hover:bg-gray-800 dark:visited:text-gray-200"
-                    key={href}
                     role="menuitem"
                   >
                     {name}

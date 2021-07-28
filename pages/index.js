@@ -128,11 +128,11 @@ export default function Index({
           <div className="max-w-full">
             <div className="relative mb-20">
               <div className="border-8 border-gray-800 relative rounded-lg md:-left-8 dark:border-gray-900">
-                <img className="md:h-96" src="/featured-project/desktop.png" />
+                <img alt="Retroulette on a large viewport" className="md:h-96" src="/featured-project/desktop.png" />
               </div>
 
               <div className="border-8 border-gray-800 rounded-lg absolute hidden -bottom-12 -right-8 md:block dark:border-gray-900">
-                <img className="h-96" src="/featured-project/mobile.png" />
+                <img alt="Retroulette on a small viewport" className="h-96" src="/featured-project/mobile.png" />
               </div>
             </div>
 
