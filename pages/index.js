@@ -190,6 +190,7 @@ export default function Index({
       <Section
         label="From the blog"
         title="Check out my articles."
+        description="I write about all things tech and business. My articles cover design, development, productivity, and more."
       >
         <div className="max-w-md">
           <ArticleTeasers articles={articles} />

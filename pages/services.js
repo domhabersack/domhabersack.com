@@ -7,6 +7,7 @@ export default function Services() {
   const breadcrumbs = [
     {
       label: 'Services',
+      url: '/services',
     },
   ]
 

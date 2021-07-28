@@ -6,6 +6,7 @@ export default function HireMe() {
   const breadcrumbs = [
     {
       label: 'Hire me',
+      url: '/hire-me',
     },
   ]
 
