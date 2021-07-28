@@ -39,11 +39,15 @@ export default function Services() {
 
         <div className="mb-20 space-y-10">
           <Service
-            title="Custom icons"
-            icon="picture"
+            title="Web development"
+            icon="window"
           >
             <p>
-              I sell my own icon set over on <a className="font-medium text-blue-600 underline dark:text-blue-500" href="https://lovelicons.com">lovelicons.com</a>. If those don’t match the style you’re going for, I can create a custom icon set to your taste.
+              Do you want a content-heavy site, an online shop, or an interactive calculator? After collecting your requirements, I will recommend and develop a technical solution that works well for your use case and budget.
+            </p>
+
+            <p>
+              All sites are fully responsive, meaning they adapt seamlessly to the devices they appear on. During and after the project, you’ll be able to maintain and extend the content yourself.
             </p>
           </Service>
 
@@ -52,28 +56,20 @@ export default function Services() {
             icon="pointer-click"
           >
             <p>
-              You have an idea, but are not sure it solves the problem right. Jumping straight into writing code for an unproven idea is risky.
+              You have an idea, but are not sure it solves the problem well? Jumping straight into writing code for an unproven idea is risky and expensive.
             </p>
 
             <p>
-              I’ll build a clickable prototype you can use to present and evaluate your idea sooner and cheaper. The “clickdummy” will look and feel like the finished result, but won’t be fully functional.
+              I’ll build a clickable prototype you can use to present and evaluate your idea sooner and cheaper. The “clickdummy” will look and feel like the finished result, but won’t be fully functional. If the prototype works well, I can take it further and flesh it out into a full-fledged product.
             </p>
           </Service>
 
           <Service
-            title="Web development"
-            icon="window"
+            title="Custom icons"
+            icon="picture"
           >
             <p>
-              Do you want a content-heavy site, an online shop, or an interactive calculator? After collecting your requirements, I will recommend and develop a solution that works well for your use case.
-            </p>
-
-            <p>
-              All sites are fully responsive, meaning they adapt seamlessly to the devices they appear on.
-            </p>
-
-            <p>
-              You’ll be able to maintain and extend the result yourself.
+              I sell my own icon set over on <a className="font-medium text-blue-600 underline dark:text-blue-500" href="https://lovelicons.com">lovelicons.com</a>. If those don’t fit the style you’re going for, I can create a custom icon set that matches your product’s vibe.
             </p>
           </Service>
         </div>
@@ -93,6 +89,10 @@ export default function Services() {
           >
             <p>
               Get your project off to the right start. In this 5 day workshop, we explore the problem you’re trying to solve, build a prototype based on our findings, and test it with real users.
+            </p>
+
+            <p>
+              Design Sprints work best with participants from all involved departments. You bring a product owner, developer, marketing representative, sales person, Head of Product, and more, I bring enough sticky notes and snacks to keep us going and productive.
             </p>
           </Service>
         </div>

@@ -98,7 +98,7 @@ export default function Index({
         title="Everything you need make your project a success."
         description="Having worked with over a dozen mid-sized to large businesses, I picked up skills and habits that will make working together efficient and enjoyable."
       >
-        <div className="gap-y-8 grid max-w-md mb-12 md:gap-x-10 md:grid-cols-2 md:max-w-full">
+        <div className="gap-y-12 grid max-w-md mb-12 md:gap-x-10 md:grid-cols-2 md:max-w-full">
           {services.map(service => (
             <Service key={service.slug} title={service.title} icon={service.icon}>
               <p>
@@ -136,7 +136,7 @@ export default function Index({
               </div>
             </div>
 
-            <p>
+            <p className="text-center">
               <Link href="/writing">
                 <a className="text-gray-800 dark:text-gray-100">
                   Read about Retroulette &rarr;

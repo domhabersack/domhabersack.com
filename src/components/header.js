@@ -6,7 +6,7 @@ import Navigation from '@/components/navigation'
 
 export default function Header() {
   return (
-    <header className="flex flex-col items-end py-3 space-y-1.5">
+    <header className="flex flex-col items-end py-6 space-y-1.5">
       <div className="flex flex-wrap items-center justify-between relative w-full z-10">
         <Link href="/">
           <a

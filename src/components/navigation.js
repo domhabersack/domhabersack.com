@@ -25,40 +25,38 @@ export default function Navigation() {
   return (
     <>
       <nav aria-label="Global">
-        <div className="flex items-center space-x-2.5 sm:hidden">
+        <div className="flex items-center space-x-2.5 sm:space-x-4 md:space-x-5">
+          <div className="hidden sm:block sm:space-x-4 md:space-x-5">
+            {Object.entries(LINKS).map(([name, href]) => (
+              <Link
+                href={href}
+                key={href}
+              >
+                <a className="font-medium text-gray-700 hover:text-gray-900 hover:no-underline visited:text-gray-700 dark:text-gray-200 dark:hover:text-gray-50 dark:visited:text-gray-200">
+                  {name}
+                </a>
+              </Link>
+            ))}
+          </div>
+
           <CTA>
             Hire me
           </CTA>
 
-          <button
-            aria-haspopup="true"
-            className="bg-white border-0 flex items-center justify-center p-1.5 rounded-lg shadow-sm text-gray-500 hover:bg-gray-100 hover:text-gray-700 focus:outline-none focus:ring focus:ring-indigo-200 focus:ring-opacity-50 dark:bg-gray-900 dark:text-gray-400 dark:hover:bg-black dark:hover:text-gray-200"
-            onClick={openMenu}
-            type="button"
-          >
-            <span className="sr-only">
-              Open main menu
-            </span>
-
-            <Icon ariaHidden="true" className="h-6 w-6" type="hamburger" />
-          </button>
-        </div>
-
-        <div className="hidden sm:block sm:space-x-4 sm:space-x-5">
-          {Object.entries(LINKS).map(([name, href]) => (
-            <Link
-              href={href}
-              key={href}
+          <div className="sm:hidden">
+            <button
+              aria-haspopup="true"
+              className="bg-white border-0 flex items-center justify-center p-1.5 rounded-lg shadow-sm text-gray-500 hover:bg-gray-100 hover:text-gray-700 focus:outline-none focus:ring focus:ring-indigo-200 focus:ring-opacity-50 dark:bg-gray-900 dark:text-gray-400 dark:hover:bg-black dark:hover:text-gray-200"
+              onClick={openMenu}
+              type="button"
             >
-              <a className="font-medium text-gray-700 hover:text-gray-900 hover:no-underline visited:text-gray-700 dark:text-gray-200 dark:hover:text-gray-50 dark:visited:text-gray-200">
-                {name}
-              </a>
-            </Link>
-          ))}
+              <span className="sr-only">
+                Open main menu
+              </span>
 
-          <CTA>
-            Hire me
-          </CTA>
+              <Icon ariaHidden="true" className="h-6 w-6" type="hamburger" />
+            </button>
+          </div>
         </div>
       </nav>
 
