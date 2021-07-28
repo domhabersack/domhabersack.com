@@ -17,7 +17,9 @@ export default async function getAllPermalinks() {
     '/',
     '/courses',
     '/firetips',
+    '/hire-me',
     '/projects',
+    '/services',
     '/writing',
     ...[
       ...articles,
