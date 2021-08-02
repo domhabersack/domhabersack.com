@@ -43,7 +43,7 @@ export default function Services() {
             icon="window"
           >
             <p>
-              Do you want a content-heavy site, an online shop, or an interactive calculator? After collecting your requirements, I will recommend and develop a technical solution that works well for your use case and budget.
+              Do you want a blog, online shop, price calculator, or something much more complex? I have built web-based products like these in React, Next.js, WordPress, Shopify, Angular.js and more. After collecting your requirements, I will recommend and develop a technical solution that works well for your use case and budget.
             </p>
 
             <p>
