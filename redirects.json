@@ -1,6 +1,7 @@
 {
   "/blog/:slug": "/posts/:slug",
   "/categories/:slug": "/writing",
+  "/combining-arrow-functions-in-styled-components": "/styled-components-single-arrow",
   "/posts/categories/:slug": "/writing",
   "/newsletter/archive/:slug": "/newsletter/:slug",
   "/courses/:course": "/:course",
