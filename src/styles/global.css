@@ -281,6 +281,8 @@ pre[class*="language-"] code[class*="language-"] {
   @apply bg-transparent font-normal p-0 text-current text-sm;
 }
 
+.language-css .token.string {}
+
 .token.atrule,
 .token.deleted,
 .token.number {
@@ -328,7 +330,6 @@ pre[class*="language-"] code[class*="language-"] {
 .token.builtin,
 .token.operator {}
 
-.language-css .token.string,
 .namespace,
 .style .token.string,
 .token.bold,
