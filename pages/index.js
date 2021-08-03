@@ -94,8 +94,8 @@ export default function Index({
       </Section>
 
       <Section
-        label="Services"
-        title="Everything you need make your project a success."
+        label="Work with me"
+        title="Everything you need to make your project a success."
         description="Having worked with over a dozen mid-sized to large businesses, I picked up skills and habits that will make working together efficient and enjoyable."
       >
         <div className="gap-y-12 grid max-w-md mb-12 md:gap-x-10 md:grid-cols-2 md:max-w-full">
@@ -110,7 +110,7 @@ export default function Index({
 
         <div className="flex flex-col items-center space-y-2">
           <p className="text-base text-gray-700 dark:text-gray-200">
-            Does that sound good? Sweet, get in touch and
+            Interested? Check out <Link href="/services"><a className="font-medium text-blue-600 underline dark:text-blue-500">my services</a></Link> and
           </p>
 
           <CTA>
@@ -128,18 +128,18 @@ export default function Index({
           <div className="max-w-full">
             <div className="relative mb-20">
               <div className="border-8 border-gray-800 relative rounded-lg md:-left-8 dark:border-gray-900">
-                <img alt="Retroulette on a large viewport" className="md:h-96" src="/featured-project/desktop.png" />
+                <img alt="Logosearch on a large viewport" className="md:h-96" src="/featured-project/logosearch-desktop.png" />
               </div>
 
               <div className="border-8 border-gray-800 rounded-lg absolute hidden -bottom-12 -right-8 md:block dark:border-gray-900">
-                <img alt="Retroulette on a small viewport" className="h-96" src="/featured-project/mobile.png" />
+                <img alt="Logosearch on a small viewport" className="h-96" src="/featured-project/logosearch-mobile.png" />
               </div>
             </div>
 
             <p className="text-center">
-              <Link href="/writing">
+              <Link href="/logosearch">
                 <a className="text-gray-800 dark:text-gray-100">
-                  Read about Retroulette &rarr;
+                  Read about Logosearch &rarr;
                 </a>
               </Link>
             </p>

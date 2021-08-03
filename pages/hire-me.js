@@ -8,7 +8,7 @@ import MetaTags from '@/components/meta-tags'
 export default function HireMe() {
   const breadcrumbs = [
     {
-      label: 'Hire me',
+      label: 'Work with me',
       url: '/hire-me',
     },
   ]
@@ -32,7 +32,11 @@ export default function HireMe() {
 
       <div className="prose prose-blue dark:prose-dark">
         <p>
-          Over the last 12+ years, I have worked with over a dozen mid-sized to large companies in many positions and with a variety of responsibilities. If <Link href="/services"><a>my services</a></Link> match what you’re looking for, send a message describing your project to <a href="mailto:dom@domhabersack.com">dom@domhabersack.com</a>.
+          Over the last 12+ years, I have worked with over a dozen mid-sized to large companies in many positions and with a variety of responsibilities. If <Link href="/services"><a>my services</a></Link> match what you’re looking for, send a message describing your project to <a href="mailto:dom@domhabersack.com">dom@domhabersack.com</a>. I’ll get back to you within two working days.
+        </p>
+
+        <p>
+          My services are priced to industry standards. I work on the basis of time and material, meaning you pay a daily rate for the days we work together. This approach keeps us more flexible than fixed price contracts, as we can easily adjust the duration of the project when requirements change.
         </p>
 
         <p>
@@ -42,52 +46,6 @@ export default function HireMe() {
         <p>
           Want to create something together? <a href="mailto:dom@domhabersack.com">Send me a message now</a> to start the conversation!
         </p>
-
-        <h2>
-          How we make this happen
-        </h2>
-
-        <p>
-          This is the condensed view of how we’ll go from idea to working together.
-        </p>
-      </div>
-
-      <div className="max-w-prose mb-20 space-y-10">
-        <div className="flex space-x-2">
-          <div className="bg-green-100 flex items-center justify-center flex-shrink-0 h-8 rounded-full w-8">
-            <Icon className="h-4 text-green-700 w-4" type="tick" size="small" />
-          </div>
-
-          <div className="space-y-2">
-            <h3 className="font-medium text-lg text-gray-900">
-              Decide you want to work with me.
-            </h3>
-
-            <p className="text-base text-gray-500">
-              Explore my <Link href="/projects"><a>projects</a></Link>, <Link href="/services"><a>services</a></Link>, and <Link href="/articles"><a>articles</a></Link> until you love my work and want me to build something for you.
-            </p>
-          </div>
-        </div>
-
-        <div className="flex space-x-2">
-          <div className="bg-blue-500 flex items-center justify-center flex-shrink-0 h-8 rounded-full w-8">
-            <Icon className="h-4 text-white w-4" type="arrow-right" size="small" />
-          </div>
-
-          <div className="space-y-2">
-            <h3 className="font-medium text-lg text-gray-900">
-              Send me a request via email.
-            </h3>
-
-            <p className="text-base text-gray-500">
-              Describe your project and what you need help with in an email to <a className="font-medium text-blue-600 underline" href="mailto:dom@domhabersack.com">dom@domhabersack.com</a>.
-            </p>
-
-            <a className="bg-blue-600 border border-transparent font-medium inline-block text-white px-3.5 py-2 rounded-md shadow-sm text-sm whitespace-nowrap disabled:bg-gray-300 disabled:shadow-none disabled:text-gray-500 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2" href="mailto:dom@domhabersack.com">
-              Send that email
-            </a>
-          </div>
-        </div>
       </div>
     </Layout>
   )

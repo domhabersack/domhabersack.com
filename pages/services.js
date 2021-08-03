@@ -1,3 +1,4 @@
+import CTA from '@/components/cta'
 import H1 from '@/components/h1'
 import Layout from '@/components/layout'
 import MetaTags from '@/components/meta-tags'
@@ -43,7 +44,7 @@ export default function Services() {
             icon="window"
           >
             <p>
-              Do you want a blog, online shop, price calculator, or something much more complex? I have built web-based products like these in React, Next.js, WordPress, Shopify, Angular.js and more. After collecting your requirements, I will recommend and develop a technical solution that works well for your use case and budget.
+              Do you want a blog, online shop, price calculator, or something much more complex? I have built web-based products like these using React, Next.js, WordPress, Shopify and more. After collecting your requirements, I will recommend and develop a technical solution that works well for your use case and budget.
             </p>
 
             <p>
@@ -60,7 +61,7 @@ export default function Services() {
             </p>
 
             <p>
-              I’ll build a clickable prototype you can use to present and evaluate your idea sooner and cheaper. The “clickdummy” will look and feel like the finished result, but won’t be fully functional. If the prototype works well, I can take it further and flesh it out into a full-fledged product.
+              I’ll build a clickable prototype you can use to present and evaluate your idea sooner and cheaper. The “clickdummy” will look and feel like the finished result, but won’t be fully functional. If the prototype works well, I can take it further and build it out into a full-fledged product.
             </p>
           </Service>
 
@@ -82,7 +83,7 @@ export default function Services() {
           I have run product discovery workshops, Design Sprints, sprint retrospectives, agile ceremonies, and more. If you’re looking for a facilitator, I’d be happy to do that for you and your team.
         </p>
 
-        <div className="space-y-10">
+        <div className="mb-20 space-y-10">
           <Service
             title="Design Sprints"
             icon="rocket"
@@ -95,6 +96,16 @@ export default function Services() {
               Design Sprints work best with participants from all involved departments. You bring a product owner, developer, marketing representative, sales person, Head of Product, and more, I bring enough sticky notes and snacks to keep us going and productive.
             </p>
           </Service>
+        </div>
+
+        <div className="space-y-2">
+          <p className="text-base text-gray-700 dark:text-gray-200">
+            Do any of these match what you’re looking for? Get in touch and
+          </p>
+
+          <CTA>
+            Hire me
+          </CTA>
         </div>
       </div>
     </Layout>
