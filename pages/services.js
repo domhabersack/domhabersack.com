@@ -15,7 +15,7 @@ export default function Services() {
   return (
     <Layout breadcrumbs={breadcrumbs}>
       <MetaTags
-        description=""
+        description="My offering is based on my history of working with over a dozen mid-sized to large companies."
         ogImage="/og-image/services.png"
         permalink="/services"
         title="Services"
