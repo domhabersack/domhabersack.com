@@ -37,6 +37,7 @@ export default function Icon({
       <path
         d={path}
         fill="currentColor"
+        fillRule="evenodd"
       />
     </svg>
   )

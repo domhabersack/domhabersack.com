@@ -5,8 +5,8 @@ export default function Section({
   title,
 }) {
   return (
-    <div className="flex flex-col items-center py-24">
-      <header className="max-w-xl mb-10 text-center">
+    <div className="flex flex-col items-center py-36">
+      <header className="max-w-xl mb-12 text-center">
         <h2 className="block font-semibold mb-2 text-base text-blue-600 uppercase dark:text-blue-500">
           {label}
         </h2>
