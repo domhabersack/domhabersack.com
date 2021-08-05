@@ -1,7 +1,7 @@
 import formatDate from './format-date'
 
 describe('formatDate', () => {
-  it('tests', () => {
-    expect(1 + 1).toBe(2)
+  it('returns “YYYY-MM-DD” as MMMM DD, YYYY', () => {
+    expect(formatDate('1986-06-15')).toBe('June 15, 1986')
   })
 })
