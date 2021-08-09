@@ -48,7 +48,7 @@ export default function MetaTags({
         <>
           {expiredAt && (<meta property="article:expiration_time" content={expiredAt} />)}
           {publishedAt && (<meta property="article:published_time" content={publishedAt} />)}
-          {tags?.map(tag => (<meta property="article:tag" content={tag} key={tag.slug} />))}
+          {tags?.map(tag => (<meta property="article:tag" content={tag} key={tag} />))}
           {updatedAt && (<meta property="article:modified_time" content={updatedAt} />)}
         </>
       )}

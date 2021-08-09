@@ -54,7 +54,7 @@ export default function Navigation() {
                 Open main menu
               </span>
 
-              <Icon ariaHidden="true" className="h-6 w-6" type="hamburger" />
+              <Icon aria-hidden="true" className="h-6 w-6" type="hamburger" />
             </button>
           </div>
         </div>
@@ -73,7 +73,7 @@ export default function Navigation() {
                   Close main menu
                 </span>
 
-                <Icon ariaHidden="true" className="h-6 w-6" type="cross" />
+                <Icon aria-hidden="true" className="h-6 w-6" type="cross" />
               </button>
             </div>
 
