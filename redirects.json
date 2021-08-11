@@ -97,6 +97,7 @@
   "/firetips/using-non-alphanumeric-characters-in-css": "/css-non-alphanumeric",
   "/firetips/using-the-ternary-operator-in-assignment-and-return": "/ternary-assignment-and-return",
   "/firetips/:slug": "/:slug",
+  "/namespacing-styled-components": "/styled-components-namespacing",
   "/newsletter": "/writing",
   "/newsletter/a-better-keyboard-layout-for-programming": "/keyboard-layout",
   "/newsletter/a-very-relaxing-refactoring": "/relaxing-refactor",
@@ -215,5 +216,6 @@
   "/posts/writing-high-performance-css": "/high-performance-css",
   "/posts/writing-utility-first-css-with-sass": "/utility-first-sass",
   "/posts/your-api-might-be-sexist": "/sexist-apis",
-  "/projects/:project": "/:project"
+  "/projects/:project": "/:project",
+  "/using-non-alphanumeric-characters-in-css": "/css-non-alphanumeric"
 }
