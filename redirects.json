@@ -96,7 +96,6 @@
   "/firetips/using-boolean-prefixes-for-variables": "/readability-boolean-prefixes",
   "/firetips/using-non-alphanumeric-characters-in-css": "/css-non-alphanumeric",
   "/firetips/using-the-ternary-operator-in-assignment-and-return": "/ternary-assignment-and-return",
-  "/firetips/:slug": "/:slug",
   "/namespacing-styled-components": "/styled-components-namespacing",
   "/newsletter": "/writing",
   "/newsletter/a-better-keyboard-layout-for-programming": "/keyboard-layout",
