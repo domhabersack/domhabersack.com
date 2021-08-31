@@ -5,7 +5,7 @@ const redirects = require('./redirects.json')
 const securityHeadersRaw = {
   'Content-Security-Policy': `
     default-src 'self';
-    connect-src *.domhabersack.com vitals.vercel-insights.com${process.env.NODE_ENV === 'development' ? ' localhost:*' : ''};
+    connect-src *.domhabersack.com${process.env.NODE_ENV === 'development' ? ' localhost:*' : ''};
     img-src * data:;
     script-src 'self' 'unsafe-eval' 'unsafe-inline' *.domhabersack.com cdn.iubenda.com;
     style-src 'self' 'unsafe-inline';
