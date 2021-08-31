@@ -1,5 +1,5 @@
 const config = {
-  availability: 'Available from October!',
+  availability: 'Available from February!',
   siteUrl: `https://domhabersack.com`,
   title: `Dom Habersack`,
 }
