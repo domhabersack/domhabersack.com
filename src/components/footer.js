@@ -14,7 +14,7 @@ const SOCIAL_PROFILES = {
     icon: 'youtube-logo',
   },
   'domhabersack on Twitch': {
-    href: 'https://twitch.tv/domhabersack',
+    href: 'https://www.twitch.tv/domhabersack',
     icon: 'twitch-logo',
   },
   'domhabersack on GitHub': {
