@@ -33,16 +33,17 @@ export default function MetaTags({
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:creator" content="@domhabersack" />
 
+
       <meta property="og:image" content={`${siteUrl}${ogImage}`} />
       <meta property="og:image:height" content="314" />
       <meta property="og:image:type" content="image/jpeg" />
       <meta property="og:image:width" content="600" />
       <meta property="og:site_name" content={siteTitle} />
       <meta property="og:title" content={title ?? siteTitle} />
+      <meta property="og:type" content={ogType ?? 'website'} />
       <meta property="og:url" content={`${siteUrl}${permalink}`} />
 
       {description && (<meta property="og:description" content={description} />)}
-      {ogType && (<meta property="og:type" content={ogType} />)}
 
       {isArticle && (
         <>
