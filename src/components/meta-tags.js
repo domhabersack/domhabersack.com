@@ -35,7 +35,7 @@ export default function MetaTags({
 
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:creator" content="@domhabersack" />
-
+      <meta name="twitter:title" content={title ?? siteTitle} />
 
       <meta property="og:image" content={`${siteUrl}${ogImage}`} />
       <meta property="og:image:height" content="314" />
