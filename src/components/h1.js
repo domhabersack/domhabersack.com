@@ -1,4 +1,4 @@
-export default function PageTitle({
+export default function H1({
   children,
 }) {
   return (
