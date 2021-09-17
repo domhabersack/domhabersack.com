@@ -18,7 +18,7 @@ Switching domains can be dangerous business. Closing one domain and starting ove
 
 A single 301 redirect can prevent all that chaos.
 
-Instead of letting all requests to the old domain end in nothingness, we have to direct them to the new location. If you try to go to [islovely.co/projects](https://islovely.co/projects), I have to send you to [domhabersack.com/projects](https://domhabersack.com/projects) instead.
+Instead of letting all requests to the old domain end in nothingness, we have to direct them to the new location. If you try to go to [islovely.co/projects](https://domhabersack.com/projects), I have to send you to [domhabersack.com/projects](https://domhabersack.com/projects) instead.
 
 An HTTP status code beginning with 3xx signals a redirect. If we want to bring back the original version some time later, we’d have to declare the redirect as “temporary”. That’s what the status code `307 Temporary Redirect` is for. Because I am not going to use the old domain anymore, my change is permanent. I want all links to my old domain to point to my new domain forever. The status code for this situation is `301 Moved Permanently`.
 
