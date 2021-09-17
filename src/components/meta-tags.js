@@ -9,6 +9,7 @@ export default function MetaTags({
   ogType,
   permalink,
   publishedAt,
+  robots,
   tags,
   title,
   updatedAt,
@@ -23,6 +24,8 @@ export default function MetaTags({
   return (
     <Head>
       {description && (<meta name="description" content={description} />)}
+
+      {robots && (<meta name="robots" content={robots} />)}
 
       {title ? (
         <title>{title} · {siteTitle}</title>

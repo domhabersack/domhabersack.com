@@ -35,6 +35,7 @@ export default function Page({
   ogType,
   permalink,
   related,
+  robots,
   stack,
   tags,
   title,
@@ -56,6 +57,7 @@ export default function Page({
         ogType={ogType}
         permalink={permalink}
         publishedAt={createdAt}
+        robots={robots}
         tags={tags}
         title={title}
       />

@@ -17,6 +17,7 @@ export default function Courses({
   return (
     <Layout breadcrumbs={breadcrumbs}>
       <MetaTags
+        description="I offer email- and video-courses for designers and developers of any skill level. They are all completely free."
         ogImage="/og-image/courses.png"
         permalink="/courses"
         title="Courses"
