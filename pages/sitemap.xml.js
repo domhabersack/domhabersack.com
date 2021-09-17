@@ -3,6 +3,10 @@ import { renderToStaticMarkup } from 'react-dom/server'
 import config from '@/config'
 import getAllPermalinks from '@/lib/get-all-permalinks'
 
+const EXCLUDES = [
+  '/confirm-subscription',
+]
+
 export default function SitemapIndex() {
   return null
 }
@@ -26,8 +30,10 @@ function Sitemap({
 export async function getServerSideProps({ res }) {
   const permalinks = await getAllPermalinks()
 
+  const filteredPermalinks = permalinks.filter(permalink => !EXCLUDES.includes(permalink))
+
   res.setHeader('Content-Type', 'text/xml')
-  res.write(renderToStaticMarkup(<Sitemap permalinks={permalinks} />))
+  res.write(renderToStaticMarkup(<Sitemap permalinks={filteredPermalinks} />))
   res.end()
 
   return {
